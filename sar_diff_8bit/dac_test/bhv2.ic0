@@ -1,0 +1,63 @@
+* "simulator" "HSPICE" 
+* "version" "O-2018.09 linux64"
+* "format" "HSP"
+* "rundate" "12:13:04 12/10/2019 "
+* "netlist" "bhv2.sp "
+* "runtitle" "* idc_mod simulation"
+* time =    0.            
+* temperature =   60.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ agnd =   0.            
++ avdd =   1.0000        
++ clk =   0.            
++ clk_b =   1.0000        
++ clkp =   0.            
++ clkp_b =   1.0000        
++ d =   1.0000        
++ d_b =  10.0000f       
++ dac2_n = 249.8757u       
++ dac2_p = 249.8756u       
++ dac_n = 499.9994m       
++ dac_p = 500.0006m       
++ dgnd =   0.            
++ dsub =   0.            
++ dvdd =   1.0000        
++ iref =   0.            
++ net0135 =  40.0000f       
++ net045 =   1.0000        
++ net046 =   1.0000        
++ outn = 499.9994m       
++ outp = 500.0006m       
++ pdac =  10.0000f       
++ pdac_b =   1.0000        
++ pdacb =  10.0000f       
++ pdacb_b =   1.0000        
++ pdet2 =   1.0000        
++ pdet2_b =  10.0000f       
++ pdn =   0.            
++ ps_gnd_n = 249.8757u       
++ ps_gnd_p = 249.8756u       
++ psamp =   0.            
++ psamp_b =   1.0000        
++ vcm = 500.0000m       
++ vcm1 = 500.0000m       
++ vrefn =   0.            
++ vrefp =   1.0000        
++ xi23.net23 =   1.0000        
++ xi21.net23 =  10.0000f       
++ xi20.net23 =   1.0000        
++ xi16.net23 =  10.0000f       
++ xi17.net23 =   1.0000        
++ xi10.net23 =   1.0000        
++ xi9.net23 =   1.0000        
++ xi13.net23 =   1.0000        
++ xi19.net23 =  10.0000f       
++ xi11.net23 =  10.0000f       
++ xi18.net8 =  10.0000f       
++ xi12.net8 =  20.0000f       
++ xi22.net8 = 499.5005u       
++ xop.vcmi = 500.0000m       
+***   END: Saved Operating Point ***                     

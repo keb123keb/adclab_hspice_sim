@@ -1,0 +1,25 @@
+Using: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv_v4_2.sp
+ ****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+  Copyright (c) 1986 - 2019 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: bhv_v4_2.sp                                                       
+  Command line options: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv_v4_2.sp
+ lic:  
+ lic: FLEXlm: SDK_11.6.9.6 
+ lic: USER:   ychuang              HOSTNAME: adc 
+ lic: HOSTID: "b4969141dd1f"       PID:      104061 
+ lic: Using FLEXlm license file: 
+ lic: 26585@lsnctu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09 
+ lic: 145(in_use)/190(total) FLOATING license(s) on SERVER 26585@lsnctu 
+ lic:   
+  **error** (bhv_v4_2.sp:12) unable to open file "ADC_DS_mod2bit1_ff_SAR_8bit_monotonic_v4_2.cir" .Either file doesn't exists or path is wrong. Please enter the correct file location. 
+
+               ***** job aborted
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.37(s)

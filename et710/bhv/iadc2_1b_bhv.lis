@@ -1,0 +1,687 @@
+Using: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice iadc2_1b_bhv.sp
+ ****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+  Copyright (c) 1986 - 2019 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: iadc2_1b_bhv.sp                                                   
+  Command line options: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice iadc2_1b_bhv.sp
+ lic:  
+ lic: FLEXlm: SDK_11.6.9.6 
+ lic: USER:   derekchen            HOSTNAME: adc 
+ lic: HOSTID: "b4969141dd1f"       PID:      23641 
+ lic: Using FLEXlm license file: 
+ lic: 26585@lsnctu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 14-may-2019/2017.12 
+ lic: 85(in_use)/90(total) FLOATING license(s) on SERVER 26585@lsnctu 
+ lic:   
+1****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+ ******  
+ * iadc behavior simulation
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xint1.                          int1_1b_bhv        1.00 
+        2 xclk_fb.                        clk_fb_1bit        1.00 
+        3 xquantizer_1b.                  adder_cmp_1b_ciff2
+                                                                 1.00 
+        4 xint2.                          int2_bhv           1.00 
+        5 xint1.xop.                      fdopb              1.00 
+        6 xint1.xdac.                     dac_int_1bit       1.00 
+        7 xint1.xswinn_0.                 tgb                1.00 
+        8 xint1.xswinn_1.                 tgb                1.00 
+        9 xint1.xswinn_2.                 tgb                1.00 
+       10 xint1.xswinn_3.                 tgb                1.00 
+       11 xint1.xswrst2.                  tgb                1.00 
+       12 xint1.xsw6.                     tgb                1.00 
+       13 xint1.xswrst1.                  tgb                1.00 
+       14 xint1.xsw2.                     tgb                1.00 
+       15 xint1.xsw3.                     tgb                1.00 
+       16 xint1.xswinp_0.                 tgb                1.00 
+       17 xint1.xswinp_1.                 tgb                1.00 
+       18 xint1.xswinp_2.                 tgb                1.00 
+       19 xint1.xswinp_3.                 tgb                1.00 
+       20 xint1.xsw7.                     tgb                1.00 
+       21 xclk_fb.xi64.                   inv_bhv            1.00 
+       22 xclk_fb.xi20.                   inv_bhv            1.00 
+       23 xclk_fb.xi60.                   inv_bhv            1.00 
+       24 xclk_fb.xi59.                   inv_bhv            1.00 
+       25 xclk_fb.xi63.                   inv_bhv            1.00 
+       26 xclk_fb.xi62.                   nand2_bhv          1.00 
+       27 xclk_fb.xi19.                   nand2_bhv          1.00 
+       28 xquantizer_1b.xpreamp_bhv.      preamp_cmp_b       1.00 
+       29 xquantizer_1b.xcmp3.            cmp_clk            1.00 
+       30 xquantizer_1b.xi1.              inv_bhv            1.00 
+       31 xquantizer_1b.xi52.             tgb                1.00 
+       32 xquantizer_1b.xi63.             tgb                1.00 
+       33 xquantizer_1b.xi62.             tgb                1.00 
+       34 xquantizer_1b.xi55.             tgb                1.00 
+       35 xquantizer_1b.xi56.             tgb                1.00 
+       36 xquantizer_1b.xi65.             tgb                1.00 
+       37 xquantizer_1b.xi64.             tgb                1.00 
+       38 xquantizer_1b.xi60.             tgb                1.00 
+       39 xquantizer_1b.xi59.             tgb                1.00 
+       40 xquantizer_1b.xi13.             tgb                1.00 
+       41 xquantizer_1b.xi9.              tgb                1.00 
+       42 xquantizer_1b.xsw1.             tgb                1.00 
+       43 xquantizer_1b.xi2.              tgb                1.00 
+       44 xquantizer_1b.xsw4.             tgb                1.00 
+       45 xint2.xop.                      fdopb              1.00 
+       46 xint2.xi24.                     tgb                1.00 
+       47 xint2.xi66.                     tgb                1.00 
+       48 xint2.xsw5.                     tgb                1.00 
+       49 xint2.xi65.                     tgb                1.00 
+       50 xint2.xsw6.                     tgb                1.00 
+       51 xint2.xi25.                     tgb                1.00 
+       52 xint2.xsw2.                     tgb                1.00 
+       53 xint2.xsw3.                     tgb                1.00 
+       54 xint2.xsw1.                     tgb                1.00 
+       55 xint2.xsw7.                     tgb                1.00 
+       56 xint1.xdac.xi6.                 tgb                1.00 
+       57 xint1.xdac.xi7.                 tgb                1.00 
+       58 xint1.xdac.xi40.                tgb                1.00 
+       59 xint1.xdac.xi41.                tgb                1.00 
+       60 xclk_fb.xi64.xp1.               pmos_b             1.00 
+       61 xclk_fb.xi64.xn1.               nmos_b             1.00 
+       62 xclk_fb.xi20.xp1.               pmos_b             1.00 
+       63 xclk_fb.xi20.xn1.               nmos_b             1.00 
+       64 xclk_fb.xi60.xp1.               pmos_b             1.00 
+       65 xclk_fb.xi60.xn1.               nmos_b             1.00 
+       66 xclk_fb.xi59.xp1.               pmos_b             1.00 
+       67 xclk_fb.xi59.xn1.               nmos_b             1.00 
+       68 xclk_fb.xi63.xp1.               pmos_b             1.00 
+       69 xclk_fb.xi63.xn1.               nmos_b             1.00 
+       70 xclk_fb.xi62.xn1.               nmos_b             1.00 
+       71 xclk_fb.xi62.xi9.               nmos_b             1.00 
+       72 xclk_fb.xi62.xp1.               pmos_b             1.00 
+       73 xclk_fb.xi62.xi10.              pmos_b             1.00 
+       74 xclk_fb.xi19.xn1.               nmos_b             1.00 
+       75 xclk_fb.xi19.xi9.               nmos_b             1.00 
+       76 xclk_fb.xi19.xp1.               pmos_b             1.00 
+       77 xclk_fb.xi19.xi10.              pmos_b             1.00 
+       78 xquantizer_1b.xcmp3.xdff.       dff                1.00 
+       79 xquantizer_1b.xcmp3.xpreamp.    amp_cmp            1.00 
+       80 xquantizer_1b.xi1.xp1.          pmos_b             1.00 
+       81 xquantizer_1b.xi1.xn1.          nmos_b             1.00 
+       82 xquantizer_1b.xcmp3.xdff.xi13.  dlatch             1.00 
+       83 xquantizer_1b.xcmp3.xdff.xi14.  dlatch             1.00 
+       84 xquantizer_1b.xcmp3.xdff.xi13.xi2.
+                                            inv_bhv            1.00 
+       85 xquantizer_1b.xcmp3.xdff.xi13.xi1.
+                                            inv_bhv            1.00 
+       86 xquantizer_1b.xcmp3.xdff.xi13.xi29.
+                                            tgb                1.00 
+       87 xquantizer_1b.xcmp3.xdff.xi13.xsw1.
+                                            tgb                1.00 
+       88 xquantizer_1b.xcmp3.xdff.xi14.xi2.
+                                            inv_bhv            1.00 
+       89 xquantizer_1b.xcmp3.xdff.xi14.xi1.
+                                            inv_bhv            1.00 
+       90 xquantizer_1b.xcmp3.xdff.xi14.xi29.
+                                            tgb                1.00 
+       91 xquantizer_1b.xcmp3.xdff.xi14.xsw1.
+                                            tgb                1.00 
+       92 xquantizer_1b.xcmp3.xdff.xi13.xi2.xp1.
+                                            pmos_b             1.00 
+       93 xquantizer_1b.xcmp3.xdff.xi13.xi2.xn1.
+                                            nmos_b             1.00 
+       94 xquantizer_1b.xcmp3.xdff.xi13.xi1.xp1.
+                                            pmos_b             1.00 
+       95 xquantizer_1b.xcmp3.xdff.xi13.xi1.xn1.
+                                            nmos_b             1.00 
+       96 xquantizer_1b.xcmp3.xdff.xi14.xi2.xp1.
+                                            pmos_b             1.00 
+       97 xquantizer_1b.xcmp3.xdff.xi14.xi2.xn1.
+                                            nmos_b             1.00 
+       98 xquantizer_1b.xcmp3.xdff.xi14.xi1.xp1.
+                                            pmos_b             1.00 
+       99 xquantizer_1b.xcmp3.xdff.xi14.xi1.xn1.
+                                            nmos_b             1.00 
+  **info** (iadc2_1b_bhv.sp:78) DC voltage reset to initial transient source value in source 0:vinn. new dc=0.0000D+00
+  
+  **warning** No connections on node iref_1; Node ignored.
+
+  **warning** the following singular supplies were terminated to 1 meg resistor 
+          supply       node1            node2
+(iadc2_1b_bhv.sp:32)vdgnd                   0:dgnd             defined in subckt 0                     0:0                defined in subckt 0               
+(iadc2_1b_bhv.sp:31)vdvdd                   0:dvdd             defined in subckt 0                     0:0                defined in subckt 0               
+(iadc2_1b_bhv.sp:68)vrst_b                  0:rst_b            defined in subckt 0                     0:0                defined in subckt 0               
+(iadc2_1b_bhv.sp:70)vrst_m                  0:rst_matlab       defined in subckt 0                     0:0                defined in subckt 0               
+(../ece627_bhv_ckt.cir:65)e1                      5:vcmi             defined in subckt fdopb                 0:0                defined in subckt 0               
+(../ece627_bhv_ckt.cir:65)e1                     45:vcmi             defined in subckt fdopb                 0:0                defined in subckt 0               
+      
+
+Element variations(Local):   element              parameter
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+             
+ Summary of Linear Res Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e+00  ~  1e+03|21        |11.4130   |
+ |1e+03  ~  1e+05|2         |1.0870    |
+ |1e+05  ~  1e+06|10        |5.4348    |
+ |1e+08  ~  1e+09|2         |1.0870    |
+ |1e+09  ~  1e+10|1         |0.5435    |
+ |1e+11  ~  1e+12|148       |80.4348   |
+ ---------------------------------------
+              
+             
+ Summary of Linear Cap Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e-17  ~  1e-16|74        |60.1626   |
+ |1e-16  ~  1e-15|8         |6.5041    |
+ |1e-15  ~  1e-14|26        |21.1382   |
+ |1e-14  ~  1e-13|15        |12.1951   |
+ ---------------------------------------
+              
+             
+ Summary of Detailed RC Type Statistics
+ -----------------------------
+ |Element Type    |Number    |
+ |----------------+----------|
+ |Constant Res    |178       |
+ |Other Linear Res|6         |
+ |                |          |
+ |Constant Cap    |123       |
+ -----------------------------
+              
+  Opening plot unit= 15
+ file=iadc2_1b_bhv.pa0
+
+ **info** dc convergence successful at Newton-Raphson method 
+ ******  
+ * iadc behavior simulation
+
+ ****** operating point information tnom=  25.000 temp=  60.000 ******
+ ****** operating point status is all       simulation time is     0.     
+     node    =voltage       node    =voltage       node    =voltage
+
+ + 0:adcinn  = 900.0000m  0:adcinp  = 900.0000m  0:agnd    =   0.     
+ + 0:avdd    =   1.8000   0:dgnd    =   0.       0:dout    = 899.5502u
+ + 0:dvdd    =   1.8000   0:int1n   = 900.0000m  0:int1p   = 900.0000m
+ + 0:int2n   = 900.0000m  0:int2p   = 900.0000m  0:iref_1  =   0.     
+ + 0:iref_2  =   0.       0:iref_3  =   0.       0:p1      =   0.     
+ + 0:p1_b    =   1.8000   0:p1a     =   0.       0:p1d     =   0.     
+ + 0:p1d_b   =   1.8000   0:p1da    =   0.       0:p1dna   =   1.8000 
+ + 0:p1na    =   1.8000   0:p2      =   0.       0:p2_b    =   1.8000 
+ + 0:p2a     =   0.       0:p2d     =   0.       0:p2d_b   =   1.8000 
+ + 0:p2da    =   0.       0:p2dna   =   1.8000   0:p2na    =   1.8000 
+ + 0:pdn     =   0.       0:pvrefn  =  18.0000f  0:pvrefn_b=   1.8000 
+ + 0:pvrefp  =  18.0000f  0:pvrefp_b=   1.8000   0:rst     =   0.     
+ + 0:rst_b   =   1.8000   0:rst_matl=   0.       0:vcm     = 900.0000m
+ + 0:vcm1    = 900.0000m  0:vrefn   =   0.       0:vrefp   =   1.8000 
+ + 1:cinn    = 899.1009u  1:cinp    = 899.1009u  1:dacn    = 899.1009u
+ + 1:dacp    = 899.1009u  1:opin    = 900.0000m  1:opip    = 900.0000m
+ + 2:d_b     =   1.8000   2:net43   =   1.8000   2:net48   =   1.8000 
+ + 3:amp_n   = 900.0000m  3:amp_p   = 900.0000m  3:d_b     =  18.0000f
+ + 3:net0107 = 899.1009u  3:net0137 = 899.1009u  3:net0155 = 899.1009u
+ + 3:net0161 = 899.1009u  3:net082  = 899.1009u  3:net088  = 899.1009u
+ + 3:opin    = 899.1009u  3:opip    = 899.1009u  4:inn_1   = 899.1009u
+ + 4:inp_1   = 899.1009u  4:net69   = 899.1009u  4:net99   = 899.1009u
+ + 4:opin    = 900.0000m  4:opip    = 900.0000m  5:vcmi    = 900.0000m
+ +21:net23   =   1.8000  22:net23   =  18.0000f 23:net23   =  18.0000f
+ +24:net23   =   1.8000  25:net23   =   1.8000  26:net8    =   1.8000 
+ +27:net8    = 900.0131u 28:on1     =   0.      28:op1     =   0.     
+ +28:vcm1    = 900.0000m 29:net22   = 1.800e-27 30:net23   = 900.4498m
+ +45:vcmi    = 900.0000m 78:net275  =  18.0000f 79:vout1   =   0.     
+ +82:net017  =   1.8000  82:net22   =  18.0000f 82:net8    =   1.8000 
+ +83:net017  =   1.8000  83:net22   =  18.0000f 83:net8    =   1.8000 
+ +84:net23   =  18.0000f 85:net23   =   1.8000  88:net23   =  18.0000f
+ +89:net23   =   1.8000 
+
+
+ **** voltage sources
+
+ subckt                                                              
+ element   0:v_refn    0:v_refp    0:v_vcm     0:vagnd     0:vavdd   
+  volts       0.          1.8000    900.0000m     0.          1.8000 
+  current     1.7982a    -3.6036p   -10.8108p    18.9032f   -89.9550m
+  power       0.          6.4865p     9.7297p     0.        161.9190m
+
+ subckt                                                              
+ element   0:vdgnd     0:vdvdd     0:vinn      0:vinp      0:vp1a    
+  volts       0.          1.8000     55.1091a     0.          0.     
+  current     0.         -1.8000u    -4.5045p    -4.5045p     0.     
+  power       0.          3.2400u   2.482e-28     0.          0.     
+
+ subckt                                                              
+ element   0:vp1da     0:vp1dna    0:vp1na     0:vp2a      0:vp2da   
+  volts       0.          1.8000      1.8000      0.          0.     
+  current     0.          0.          0.          0.          0.     
+  power       0.          0.          0.          0.          0.     
+
+ subckt                                                              
+ element   0:vp2dna    0:vp2na     0:vrst      0:vrst_b    0:vrst_m  
+  volts       1.8000      1.8000      0.          1.8000      0.     
+  current     0.          0.          0.         -1.8000u     0.     
+  power       0.          0.          0.          3.2400u     0.     
+
+     total voltage source power dissipation=  161.9255m       watts
+
+
+
+ **** resistors
+
+ subckt                                                              
+ element   0:rp1       0:rp1n      0:rp1d      0:rp1dn     0:rp2     
+  r value    20.0000     20.0000     20.0000     20.0000     20.0000 
+  v drop      0.          0.          0.          0.          0.     
+  current     0.          0.          0.          0.          0.     
+  power       0.          0.          0.          0.          0.     
+
+ subckt                                        xint1.xswi  xint1.xswi
+ element   0:rp2n      0:rp2d      0:rp2dn     7:r1        7:r2      
+  r value    20.0000     20.0000     20.0000    250.0000g   250.0000g
+  v drop      0.          0.          0.        900.0000m   899.1009u
+  current     0.          0.          0.          3.6000p     3.5964f
+  power       0.          0.          0.          3.2400p     3.2335a
+
+ subckt    xint1.xswr  xint1.xswr  xint1.xsw6  xint1.xsw6  xint1.xswr
+ element  11:r1       11:r2       12:r1       12:r2       13:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    900.0000m   900.0000m   899.1009u   900.0000m   900.0000m
+  current   900.0000f   900.0000f   899.1009a   900.0000f   900.0000f
+  power     810.0000f   810.0000f   8.084e-19   810.0000f   810.0000f
+
+ subckt    xint1.xswr  xint1.xsw2  xint1.xsw2  xint1.xsw3  xint1.xsw3
+ element  13:r2       14:r1       14:r2       15:r1       15:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    900.0000m   899.1009u   900.0000m   900.0000m   899.1009u
+  current   900.0000f   899.1009a   900.0000f   900.0000f   899.1009a
+  power     810.0000f   8.084e-19   810.0000f   810.0000f   8.084e-19
+
+ subckt    xint1.xswi  xint1.xswi  xint1.xsw7  xint1.xsw7  xclk_fb.xi
+ element  16:r1       16:r2       20:r1       20:r2       21:r1      
+  r value   250.0000g   250.0000g   1.000e+12   1.000e+12    10.0000 
+  v drop    900.0000m   899.1009u   900.0000m   899.1009u     0.     
+  current     3.6000p     3.5964f   900.0000f   899.1009a     0.     
+  power       3.2400p     3.2335a   810.0000f   8.084e-19     0.     
+
+ subckt    xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xquantizer
+ element  22:r1       23:r1       24:r1       25:r1       28:rin     
+  r value    10.0000     10.0000     10.0000     10.0000     10.0000g
+  v drop      0.          0.       -222.0446a     0.          0.     
+  current     0.          0.        -22.2045a     0.          0.     
+  power       0.          0.          0.          0.          0.     
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  28:ron      28:rop      30:r1       31:r1       31:r2      
+  r value     4.0000k     4.0000k    10.0000    1.000e+12   1.000e+12
+  v drop      0.          0.        899.5502m   900.0000m   899.1009u
+  current     0.          0.         89.9550m   900.0000f   899.1009a
+  power       0.          0.         80.9191m   810.0000f   8.084e-19
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  32:r1       32:r2       33:r1       33:r2       34:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    900.0000m   899.1009u   900.0000m   899.1009u   900.0000m
+  current   900.0000f   899.1009a   900.0000f   899.1009a   900.0000f
+  power     810.0000f   8.084e-19   810.0000f   8.084e-19   810.0000f
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  34:r2       35:r1       35:r2       36:r1       36:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    899.1009u   900.0000m   899.1009u   900.0000m   899.1009u
+  current   899.1009a   900.0000f   899.1009a   900.0000f   899.1009a
+  power     8.084e-19   810.0000f   8.084e-19   810.0000f   8.084e-19
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  37:r1       37:r2       38:r1       38:r2       39:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    900.0000m   899.1009u   900.0000m   899.1009u   900.0000m
+  current   900.0000f   899.1009a   900.0000f   899.1009a   900.0000f
+  power     810.0000f   8.084e-19   810.0000f   8.084e-19   810.0000f
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  39:r2       40:r1       40:r2       41:r1       41:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    899.1009u   900.0000m   899.1009u   900.0000m   899.1009u
+  current   899.1009a   900.0000f   899.1009a   900.0000f   899.1009a
+  power     8.084e-19   810.0000f   8.084e-19   810.0000f   8.084e-19
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  42:r1       42:r2       43:r1       43:r2       44:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    900.0000m   899.1009u   900.0000m   899.1009u   900.0000m
+  current   900.0000f   899.1009a   900.0000f   899.1009a   900.0000f
+  power     810.0000f   8.084e-19   810.0000f   8.084e-19   810.0000f
+
+ subckt    xquantizer  xint2.xi24  xint2.xi24  xint2.xi66  xint2.xi66
+ element  44:r2       46:r1       46:r2       47:r1       47:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    899.1009u   900.0000m   900.0000m   900.0000m   899.1009u
+  current   899.1009a   900.0000f   900.0000f   900.0000f   899.1009a
+  power     8.084e-19   810.0000f   810.0000f   810.0000f   8.084e-19
+
+ subckt    xint2.xsw5  xint2.xsw5  xint2.xi65  xint2.xi65  xint2.xsw6
+ element  48:r1       48:r2       49:r1       49:r2       50:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    900.0000m   899.1009u   900.0000m   899.1009u   899.1009u
+  current   900.0000f   899.1009a   900.0000f   899.1009a   899.1009a
+  power     810.0000f   8.084e-19   810.0000f   8.084e-19   8.084e-19
+
+ subckt    xint2.xsw6  xint2.xi25  xint2.xi25  xint2.xsw2  xint2.xsw2
+ element  50:r2       51:r1       51:r2       52:r1       52:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    900.0000m   900.0000m   900.0000m   899.1009u   900.0000m
+  current   900.0000f   900.0000f   900.0000f   899.1009a   900.0000f
+  power     810.0000f   810.0000f   810.0000f   8.084e-19   810.0000f
+
+ subckt    xint2.xsw3  xint2.xsw3  xint2.xsw1  xint2.xsw1  xint2.xsw7
+ element  53:r1       53:r2       54:r1       54:r2       55:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    900.0000m   899.1009u   900.0000m   899.1009u   900.0000m
+  current   900.0000f   899.1009a   900.0000f   899.1009a   900.0000f
+  power     810.0000f   8.084e-19   810.0000f   8.084e-19   810.0000f
+
+ subckt    xint2.xsw7  xint1.xdac  xint1.xdac  xint1.xdac  xint1.xdac
+ element  55:r2       56:r1       56:r2       57:r1       57:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    899.1009u     0.        899.1009u     1.8000    899.1009u
+  current   899.1009a     0.        899.1009a     1.8000p   899.1009a
+  power     8.084e-19     0.        8.084e-19     3.2400p   8.084e-19
+
+ subckt    xint1.xdac  xint1.xdac  xint1.xdac  xint1.xdac  xclk_fb.xi
+ element  58:r1       58:r2       59:r1       59:r2       60:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.8000    899.1009u     0.        899.1009u     1.8000 
+  current     1.8000p   899.1009a     0.        899.1009a     1.8000p
+  power       3.2400p   8.084e-19     0.        8.084e-19     3.2400p
+
+ subckt    xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi
+ element  60:r2       61:r1       61:r2       62:r1       62:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.8000      1.8000      0.         18.0000f     1.8000 
+  current     1.8000p     1.8000p     0.        1.800e-26     1.8000p
+  power       3.2400p     3.2400p     0.          0.          3.2400p
+
+ subckt    xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi
+ element  63:r1       63:r2       64:r1       64:r2       65:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop     18.0000f     0.         18.0000f     1.8000     18.0000f
+  current   1.800e-26     0.        1.800e-26     1.8000p   1.800e-26
+  power       0.          0.          0.          3.2400p     0.     
+
+ subckt    xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi
+ element  65:r2       66:r1       66:r2       67:r1       67:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      0.          1.8000      1.8000      1.8000      0.     
+  current     0.          1.8000p     1.8000p     1.8000p     0.     
+  power       0.          3.2400p     3.2400p     3.2400p     0.     
+
+ subckt    xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi
+ element  68:r1       68:r2       69:r1       69:r2       70:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.8000      1.8000      1.8000      0.          1.8000 
+  current     1.8000p     1.8000p     1.8000p     0.          1.8000p
+  power       3.2400p     3.2400p     3.2400p     0.          3.2400p
+
+ subckt    xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi
+ element  70:r2       71:r1       71:r2       72:r1       72:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.8000      1.8000      0.          1.8000      1.8000 
+  current     1.8000p     1.8000p     0.          1.8000p     1.8000p
+  power       3.2400p     3.2400p     0.          3.2400p     3.2400p
+
+ subckt    xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi
+ element  73:r1       73:r2       74:r1       74:r2       75:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.8000      1.8000      1.8000    900.0131u   900.0131u
+  current     1.8000p     1.8000p     1.8000p   900.0131a   900.0131a
+  power       3.2400p     3.2400p     3.2400p   8.100e-19   8.100e-19
+
+ subckt    xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi  xclk_fb.xi
+ element  75:r2       76:r1       76:r2       77:r1       77:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      0.          1.8000      1.8000      1.8000      1.8000 
+  current     0.          1.8000p     1.8000p     1.8000p     1.8000p
+  power       0.          3.2400p     3.2400p     3.2400p     3.2400p
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  79:rinp     79:rinn     79:rvout    80:r1       80:r2      
+  r value     1.0000g     1.0000g   100.0000    1.000e+12   1.000e+12
+  v drop    900.0000m   900.0000m  -1.800e-27   900.4498m     1.8000 
+  current   900.0000p   900.0000p     0.        900.4498f     1.8000p
+  power     810.0000p   810.0000p     0.        810.8098f     3.2400p
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  81:r1       81:r2       82:r1       83:r1       84:r1      
+  r value   1.000e+12   1.000e+12     2.0000      2.0000     10.0000 
+  v drop    900.4498m     0.          0.          0.        9.955e-25
+  current   900.4498f     0.          0.          0.        9.955e-26
+  power     810.8098f     0.          0.          0.          0.     
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  85:r1       86:r1       86:r2       87:r1       87:r2      
+  r value    10.0000    1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop   -666.1338a   1.800e-27    18.0000f    18.0000f    18.0000f
+  current   -66.6134a     0.        1.800e-26   1.800e-26   1.800e-26
+  power       0.          0.          0.          0.          0.     
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  88:r1       89:r1       90:r1       90:r2       91:r1      
+  r value    10.0000     10.0000    1.000e+12   1.000e+12   1.000e+12
+  v drop    1.800e-25  -666.1338a    18.0000f    18.0000f    18.0000f
+  current   1.800e-26   -66.6134a   1.800e-26   1.800e-26   1.800e-26
+  power       0.          0.          0.          0.          0.     
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  91:r2       92:r1       92:r2       93:r1       93:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop     18.0000f    18.0000f     1.8000     18.0000f     0.     
+  current   1.800e-26   1.800e-26     1.8000p   1.800e-26     0.     
+  power       0.          0.          3.2400p     0.          0.     
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  94:r1       94:r2       95:r1       95:r2       96:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.8000      1.8000      1.8000      0.         18.0000f
+  current     1.8000p     1.8000p     1.8000p     0.        1.800e-26
+  power       3.2400p     3.2400p     3.2400p     0.          0.     
+
+ subckt    xquantizer  xquantizer  xquantizer  xquantizer  xquantizer
+ element  96:r2       97:r1       97:r2       98:r1       98:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.8000     18.0000f     0.          1.8000      1.8000 
+  current     1.8000p   1.800e-26     0.          1.8000p     1.8000p
+  power       3.2400p     0.          0.          3.2400p     3.2400p
+
+ subckt    xquantizer  xquantizer
+ element  99:r1       99:r2      
+  r value   1.000e+12   1.000e+12
+  v drop      1.8000      0.     
+  current     1.8000p     0.     
+  power       3.2400p     0.     
+
+
+ **** voltage-controlled current sources
+
+
+ subckt      xquantiz    xquantiz
+ element  28:gin      28:gip     
+  v drop      0.          0.     
+  current     0.          0.     
+
+
+
+
+ **** voltage-controlled resistors
+
+
+ subckt      xint1.xs    xint1.xs    xint1.xs    xint1.xs    xint1.xs
+ element   7:g1       11:g1       12:g1       13:g1       14:g1      
+  r value   2.500e+14   1.000e+15   1.000e+15   1.000e+15   1.000e+15
+
+
+
+ subckt      xint1.xs    xint1.xs    xint1.xs    xquantiz    xquantiz
+ element  15:g1       16:g1       20:g1       31:g1       32:g1      
+  r value   1.000e+15   2.500e+14   1.000e+15   1.000e+15   1.000e+15
+
+
+
+ subckt      xquantiz    xquantiz    xquantiz    xquantiz    xquantiz
+ element  33:g1       34:g1       35:g1       36:g1       37:g1      
+  r value   1.000e+15   1.000e+15   1.000e+15   1.000e+15   1.000e+15
+
+
+
+ subckt      xquantiz    xquantiz    xquantiz    xquantiz    xquantiz
+ element  38:g1       39:g1       40:g1       41:g1       42:g1      
+  r value   1.000e+15   1.000e+15   1.000e+15   1.000e+15   1.000e+15
+
+
+
+ subckt      xquantiz    xquantiz    xint2.xi    xint2.xi    xint2.xs
+ element  43:g1       44:g1       46:g1       47:g1       48:g1      
+  r value   1.000e+15   1.000e+15   1.000e+15   1.000e+15   1.000e+15
+
+
+
+ subckt      xint2.xi    xint2.xs    xint2.xi    xint2.xs    xint2.xs
+ element  49:g1       50:g1       51:g1       52:g1       53:g1      
+  r value   1.000e+15   1.000e+15   1.000e+15   1.000e+15   1.000e+15
+
+
+
+ subckt      xint2.xs    xint2.xs    xint1.xd    xint1.xd    xint1.xd
+ element  54:g1       55:g1       56:g1       57:g1       58:g1      
+  r value   1.000e+15   1.000e+15   1.000e+15   1.000e+15   1.000e+15
+
+
+
+ subckt      xint1.xd    xclk_fb.    xclk_fb.    xclk_fb.    xclk_fb.
+ element  59:g1       60:g1       61:g1       62:g1       63:g1      
+  r value   1.000e+15    10.0000    1.000e+15   1.000e+15    10.0000 
+
+
+
+ subckt      xclk_fb.    xclk_fb.    xclk_fb.    xclk_fb.    xclk_fb.
+ element  64:g1       65:g1       66:g1       67:g1       68:g1      
+  r value   1.000e+15    10.0000     10.0911    9.989e+14    10.0000 
+
+
+
+ subckt      xclk_fb.    xclk_fb.    xclk_fb.    xclk_fb.    xclk_fb.
+ element  69:g1       70:g1       71:g1       72:g1       73:g1      
+  r value   1.000e+15    10.0000    1.000e+15    10.0000    1.000e+15
+
+
+
+ subckt      xclk_fb.    xclk_fb.    xclk_fb.    xclk_fb.    xquantiz
+ element  74:g1       75:g1       76:g1       77:g1       80:g1      
+  r value   9.989e+14   1.000e+15    10.0000     10.0911     10.0000 
+
+
+
+ subckt      xquantiz    xquantiz    xquantiz    xquantiz    xquantiz
+ element  81:g1       86:g1       87:g1       90:g1       91:g1      
+  r value   1.000e+15   1.000e+15    10.0000     10.0000    1.000e+15
+
+
+
+ subckt      xquantiz    xquantiz    xquantiz    xquantiz    xquantiz
+ element  92:g1       93:g1       94:g1       95:g1       96:g1      
+  r value   1.000e+15    10.0000     10.0000    1.000e+15   1.000e+15
+
+
+
+ subckt      xquantiz    xquantiz    xquantiz
+ element  97:g1       98:g1       99:g1      
+  r value    10.0000     10.0000    1.000e+15
+
+
+
+
+ **** voltage-controlled voltage sources
+
+
+ subckt                  xint1.xo    xint1.xo    xint1.xo    xquantiz
+ element   0:evcm1     5:e1        5:ep        5:en       28:eon     
+  volts     900.0000m   900.0000m   900.0000m   900.0000m     0.     
+  current    -9.0090p  -900.0000n    -1.1355n     1.1301n  -900.9009p
+
+
+
+ subckt      xquantiz    xquantiz    xint2.xo    xint2.xo    xint2.xo
+ element  28:eop      28:evcmo    45:e1       45:ep       45:en      
+  volts       0.        900.0000m   900.0000m   900.0000m   900.0000m
+  current  -900.9009p    -1.8018n  -900.0000n    -1.1346n     1.1310n
+
+
+
+ subckt      xquantiz
+ element  79:evcvs   
+  volts       0.     
+  current     0.     
+
+
+
+
+          ***** job concluded
+ ******  
+ * iadc behavior simulation
+
+ ****** job statistics summary tnom=  25.000 temp=  60.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Core(TM) i7-7820X CPU @ 3.60GHz
+ cpu MHz	: 1199.926
+  
+ OS:
+ Linux version 3.10.0-957.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Thu Nov 8 23:39:32 UTC 2018
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    16
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      95 # elements   =     414
+  # resistors   =     184 # capacitors =     123 # inductors   =       0
+  # mutual_inds =       0 # vccs       =      76 # vcvs        =      11
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =      20
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           7
+  transient       1013.98       38411    48202189    15215970 rev=   1025415
+  readin             0.03
+  errchk             0.02
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        326.61 megabytes
+           total cpu time         1014.05 seconds
+           total elapsed time     1042.57 seconds
+           job started at     18:50:35 02/23/2019
+           job ended   at     19:07:58 02/23/2019
+
+
+
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.30(s)

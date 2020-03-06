@@ -1,0 +1,50 @@
+### Custom WaveView ADV log file, revision O-2018.09 (build Aug 27, ) ###
+### created at 19:35:04 on Wed Jan 29 2020 (Linux AMD64) ###
+### Host Name: adc   User ID: ychuang   PID: 95317   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+wv_move_window {Custom WaveView} {} 183 202
+wv_select_window {Custom WaveView} 
+wv_resize_window {Custom WaveView} 800 586
+wv_move_window {Custom WaveView} {} 183 202
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {506}
+wv_select_list_item {FileDialog} {} {FileList} {bhv2_IDNL.tr0} 20
+wv_dclick_list_item {FileDialog} {} {FileList} {bhv2_IDNL.tr0} 20
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_IDNL.tr0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_IDNL.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_move_window {Custom WaveView} {} 0 22
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 563
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 1106 537
+wv_resize_window {Custom WaveView} 1366 706
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_0)} 5
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_1)} 6
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_0)} 5
+wv_press_key Shift_S 63 635
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_9)} 14 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(d_9)} 14 155 21
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_window {Custom WaveView} 
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1.LINE6
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {SignalPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_press_button {WaveformExportParameters} {} {Browse} 
+wv_select_dialog {FileDialog} 
+wv_select_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_dclick_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {130}
+wv_select_list_item {FileDialog} {} {FileList} {sar_10bits_vin_n3db_np_100_fsig_13k_two_stage_cbu_IDNL.m} 6
+wv_press_button {FileDialog} {} {Ok} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_set_radion {WaveformExportParameters} {} {MFile} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 

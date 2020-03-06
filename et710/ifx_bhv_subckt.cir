@@ -1,0 +1,126 @@
+** subckt for behavior simulation
+
+
+** FDOPB_IFX1 is "FDOPB_SLEW" at "ece627_bhv_ckt.cir"
+.SUBCKT FDOPB_IFX1 AGND AVDD INN INP IR ON OP PDN VCM VCMFB 
+.param  c_wp_ifx1=0.4p  gm_ifx1=100n  op_gain_ifx1=1e3 
++ r_wp_ifx1='op_gain_ifx1/gm_ifx1'  ILIM_ifx1=100n  voffset1=0
+** offset is added; 10/24/2012.  
+** to remove the offset, remove the following 2 lines.
+*.SUBCKT FDOPB_AKM AGND AVDD INN INP1 IR ON OP PDN VCM VCMFB 
+*VOFFSET  INP1 INP  voffset1
+cinp INP agnd  0.1p
+cinn INN agnd  0.1p
+COP OP1 AGND  c_wp_ifx1 
+CON AGND ON1  c_wp_ifx1 
+GIN ON1 AGND  VCCS INP INN  gm_ifx1  max='1*ILIM_ifx1' min='-1*ILIM_ifx1' 
+GIP AGND OP1  VCCS INP INN  gm_ifx1  max='1*ILIM_ifx1' min='-1*ILIM_ifx1'
+EON ON VCM1  VCVS ON1 AGND  1.0  
+EOP OP VCM1  VCVS OP1 AGND  1.0  
+EVCMO VCM1 0  VCVS VCM 0  1.0 
+RIN INP INN  10g  
+RON AGND ON1  r_wp_ifx1  
+ROP OP1 AGND  r_wp_ifx1
+.ENDS FDOPB_IFX1
+** slew rate = ILIM/CLoad, EX: 1uA/1pF = 1 V/usec
+
+*--------------------  test below
+*evcmo vcm1 0 VCVS vcm 0 1
+*gip  vcm1 op  VCCS inp inn gm_ifx1
+*gin  on vcm1  VCCS inp inn gm_ifx1
+*cop op vcm1 50e-15
+*con vcm1 on 50e-15
+*cinn inn vcm1 50e-15
+*cinp inp vcm1 50e-15
+*rop op vcm1 r_wp_ifx1
+*ron vcm1 on r_wp_ifx1
+*rin inp inn 10e9
+*------------------------------------
+
+.SUBCKT FDOPB_IFX_ideal AGND AVDD INN INP IR ON OP PDN VCM VCMFB 
+.param  c_wp_ifx_ideal=0.4p  gm_ifx_ideal=1m  op_gain_ifx_ideal=1e4 
++ r_wp_ifx_ideal='op_gain_ifx_ideal/gm_ifx_ideal'  ILIM_ifx_ideal=1m  voffset=0
+** offset is added; 3/10/2013;  to remove the offset, remove the following 2 lines.
+*.SUBCKT FDOPB_IFX_ideal AGND AVDD INN INP1 IR ON OP PDN VCM VCMFB 
+*VOFFSET  INP1 INP  voffset
+cinp INP agnd  20f
+cinn INN agnd  20f
+COP OP1 AGND  c_wp_ifx_ideal 
+CON AGND ON1  c_wp_ifx_ideal 
+GIN ON1 AGND  VCCS INP INN  gm_ifx_ideal  max='1*ILIM_ifx_ideal' min='-1*ILIM_ifx_ideal' 
+GIP AGND OP1  VCCS INP INN  gm_ifx_ideal  max='1*ILIM_ifx_ideal' min='-1*ILIM_ifx_ideal'
+EON ON VCM1  VCVS ON1 AGND  1.0  max='pwra'
+EOP OP VCM1  VCVS OP1 AGND  1.0  max='pwra'
+EVCMO VCM1 0  VCVS VCM 0  1.0 
+RIN INP INN  10g  
+RON AGND ON1  r_wp_ifx_ideal  
+ROP OP1 AGND  r_wp_ifx_ideal
+.ENDS
+
+.SUBCKT FDOPB_IFX_offset AGND AVDD INN INP1 IR ON OP PDN VCM VCMFB 
+*.SUBCKT FDOPB_IFX_offset AGND AVDD INN INP IR ON OP PDN VCM VCMFB 
+.param  c_wp_ifx_ideal=0.4p  gm_ifx_ideal=1m  op_gain_ifx_ideal=1e4 
++ r_wp_ifx_ideal='op_gain_ifx_ideal/gm_ifx_ideal'  ILIM_ifx_ideal=1m  voffset=4m
+** offset is added; 3/10/2013;  to remove the offset, remove the following 2 lines.
+VOFFSET  INP1 INP  voffset
+cinp INP agnd  20f
+cinn INN agnd  20f
+COP OP1 AGND  c_wp_ifx_ideal 
+CON AGND ON1  c_wp_ifx_ideal 
+GIN ON1 AGND  VCCS INP INN  gm_ifx_ideal  max='1*ILIM_ifx_ideal' min='-1*ILIM_ifx_ideal' 
+GIP AGND OP1  VCCS INP INN  gm_ifx_ideal  max='1*ILIM_ifx_ideal' min='-1*ILIM_ifx_ideal'
+EON ON VCM1  VCVS ON1 AGND  1.0  max='pwra'
+EOP OP VCM1  VCVS OP1 AGND  1.0  max='pwra'
+EVCMO VCM1 0  VCVS VCM 0  1.0 
+RIN INP INN  10g  
+RON AGND ON1  r_wp_ifx_ideal  
+ROP OP1 AGND  r_wp_ifx_ideal
+.ENDS
+
+
+.SUBCKT FDOPB_IFX2 AGND AVDD INN INP IR ON OP PDN VCM VCMFB 
+.param  c_wp_ifx2=0.1p  gm_ifx2=100n  op_gain_ifx2=1e4 
++ r_wp_ifx2='op_gain_ifx2/gm_ifx2' 
++ ILIM_ifx2=100n  voffset2=0
+** offset is added; 10/24/2012.  
+** to remove the offset, remove the following 2 lines.
+*.SUBCKT FDOPB_AKM AGND AVDD INN INP1 IR ON OP PDN VCM VCMFB 
+*VOFFSET  INP1 INP  voffset2
+cinp INP agnd  0.1p
+cinn INN agnd  0.1p
+COP OP1 AGND  c_wp_ifx2 
+CON AGND ON1  c_wp_ifx2 
+GIN ON1 AGND  VCCS INP INN  gm_ifx2  max='1*ILIM_ifx2' min='-1*ILIM_ifx2' 
+GIP AGND OP1  VCCS INP INN  gm_ifx2  max='1*ILIM_ifx2' min='-1*ILIM_ifx2'
+EON ON VCM1  VCVS ON1 AGND  1.0  
+EOP OP VCM1  VCVS OP1 AGND  1.0  
+EVCMO VCM1 0  VCVS VCM 0  1.0 
+RIN INP INN  10g  
+RON AGND ON1  r_wp_ifx2  
+ROP OP1 AGND  r_wp_ifx2
+.ENDS FDOPB_IFX2
+** slew rate = ILIM/CLoad, EX: 1uA/1pF = 1 V/usec
+
+
+** Preamp of comparator
+.SUBCKT preamp_ifx  AGND AVDD INN INP IR ON OP PDN VCM VCMFB 
+.param  c_wp_pre=10f  r_wp_pre=5k  gain_pre=10  gm_pre='gain_pre/r_wp_pre'
+*.param  c_wp_pre=50f  gm_pre=100u  gain_pre=10  r_wp_pre='gain_pre/gm_pre'
++ ILIM_pre=100u  
+RIN INP INN  10g 
+cinp INP agnd  20f
+cinn INN agnd  20f
+COP OP1 AGND  c_wp_pre 
+CON AGND ON1  c_wp_pre 
+GIN ON1 AGND  VCCS INP INN  gm_pre  max='1*ILIM_pre' min='-1*ILIM_pre' 
+GIP AGND OP1  VCCS INP INN  gm_pre  max='1*ILIM_pre' min='-1*ILIM_pre'
+*GIN ON1 AGND  VCCS INP INN  gm_pre
+*GIP AGND OP1  VCCS INP INN  gm_pre
+EON ON VCM1  VCVS ON1 AGND  1.0   max='pwra'  min='-1*pwra'
+EOP OP VCM1  VCVS OP1 AGND  1.0   max='pwra'  min='-1*pwra'
+EVCMO VCM1 0  VCVS VCM 0  1.0 
+RON AGND ON1  r_wp_pre  
+ROP OP1 AGND  r_wp_pre
+
+.ENDS preamp_ifx 
+

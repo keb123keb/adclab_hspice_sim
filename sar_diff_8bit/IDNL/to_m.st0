@@ -1,0 +1,13 @@
+****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******
+ Input File: to_m.py
+ lic:
+ lic: FLEXlm: SDK_11.6.9.6
+ lic: USER:   ychuang              HOSTNAME: adc
+ lic: HOSTID: "b4969141dd1f"       PID:      18780
+ lic: Using FLEXlm license file:
+ lic: 26585@lsnctu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09
+ lic: 174(in_use)/190(total) FLOATING license(s) on SERVER 26585@lsnctu
+ lic:
+ lic: Release hspice token(s)

@@ -1,0 +1,72 @@
+header
+"PSFversion" "1.00"
+"simulator" "HSPICE"
+"version" "O-2018.09 linux64"
+"rundate" "13:59:54 07/30/2019 "
+"runtitle" "* idc_mod simulation                                              "
+"runtype" "logFile"
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING * )
+VALUE
+"opBegin" "analysisInst" ( 
+"Operating Point"
+"bhv.op0"
+"PSF"
+""
+()
+"Operating Point"
+)
+"timeSweep" "analysisInst" ( 
+"Transient Analysis"
+"bhv.tr0"
+"PSF"
+""
+()
+"Transient Analysis"
+)
+"opEnd" "analysisInst" ( 
+"Operating Point"
+"bhv.op0@2.22222e-05"
+"PSF"
+""
+()
+"Operating Point"
+)
+"bhv.op1" "analysisInst" ( 
+"Operating Point"
+"bhv.op1"
+"PSF"
+""
+()
+"Operating Point"
+)
+"timeSweep1" "analysisInst" ( 
+"Transient Analysis"
+"bhv.tr1"
+"PSF"
+""
+()
+"Transient Analysis"
+)
+"opEnd" "analysisInst" ( 
+"Operating Point"
+"bhv.op1@2.22222e-05"
+"PSF"
+""
+()
+"Operating Point"
+)
+"summary" "analysisInst" ( 
+"Summary Information"
+"bhv.su0"
+"PSF"
+""
+()
+"Summary Information"
+)

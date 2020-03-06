@@ -1,0 +1,11 @@
+\o Program:		@(#)$CDS: libManager.exe version Exp 01/19/2010 20:09 (ocelot-linux) $
+\o Sub version:		sub-version none
+\o Arguments:		-unmapped -mpssession icfb433143 -mpshost adc 
+\o Working Directory:	adc:/net/lab/ychuang/hspice_sim/mod2_bit1_fb
+\o Extended color mode (TrueColor 32 0x41) in use.
+\o Library Manager customization server connected.
+MPS service: map window
+\o Log file is "/net/lab/ychuang/hspice_sim/mod2_bit1_fb/libManager.log".
+Opening libManager window.
+No main selection
+\o libManager is exiting.

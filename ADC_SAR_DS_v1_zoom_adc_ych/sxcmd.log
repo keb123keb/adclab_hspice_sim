@@ -1,0 +1,128 @@
+### Custom WaveView ADV log file, revision O-2018.09 (build Aug 27, ) ###
+### created at 09:20:01 on Tue Oct  1 2019 (Linux AMD64) ###
+### Host Name: adc   User ID: ychuang   PID: 61688   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+wv_move_window {Custom WaveView} {} 58 77
+wv_select_window {Custom WaveView} 
+wv_resize_window {Custom WaveView} 800 586
+wv_press_key "V" 945 424
+wv_resize_window {Custom WaveView} 800 400
+wv_press_key "4" 608 471
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_set_text {FileDialog} {} {FileName} "bhvv4_3.tr"
+wv_press_button {FileDialog} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_set_text {FileDialog} {} {FileName} "bhv_v4_3.tr"
+wv_press_button {FileDialog} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {1502}
+wv_select_list_item {FileDialog} {} {FileList} {bhv_v4_3.tr0} 45
+wv_select_list_item {FileDialog} {} {FileList} {bhv_v4_3.tr0} 45
+wv_select_list_item {FileDialog} {} {FileList} {bhv_v4_3.tr0} 45
+wv_press_button {FileDialog} {} {Ok} 
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv_v4_3.tr0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv_v4_3.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_0)} 2
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(d_0)} 2
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_1)} 3
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(d_1)} 3
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_2)} 4
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(d_2)} 4
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_3)} 5
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(d_3)} 5
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_4)} 6
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(d_4)} 6
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_5)} 7
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_5)} 7
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_5)} 7
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(d_5)} 7
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_6)} 8
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(d_6)} 8
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_7)} 9
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(d_7)} 9
+wv_select_list_item {Custom WaveView} {} {sigview} {par(d_out)} 0
+wv_dclick_list_item {Custom WaveView} {} {sigview} {par(d_out)} 0
+wv_select_list_item {Custom WaveView} {} {sigview} {v(dsout)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(dsout)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(clk_sar)} 1
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(clk_sar)} 1
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p1)} 13
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p1)} 13
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p2)} 17
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p2)} 17
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {1}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {3}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {4}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {5}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {6}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {8}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {9}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {12}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {13}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {16}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {18}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {22}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {23}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {26}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {27}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {30}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {32}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {34}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {35}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(inp)} 12
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(inp)} 12
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 24
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 24
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_b)} 23
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(rst_b)} 23
+wv_select_list_item {Custom WaveView} {} {sigview} {v(psamp)} 21
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(psamp)} 21
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {34}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {31}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {26}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {14}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {4}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {0}
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1.LINE1
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {SignalPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {MFile} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Browse} 
+wv_select_dialog {FileDialog} 
+wv_select_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_dclick_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {8}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {394}
+wv_select_list_item {FileDialog} {} {FileList} {int2_5lev_ff_vin_n3db_np_1602_fsig_21k_v4_3.m} 8
+wv_press_button {FileDialog} {} {Ok} 
+wv_select_dialog {WaveformExportParameters} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1.LINE1
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {SignalPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim/ADC_SAR_DS_v1_zoom_adc_ych/m_file/int2_2lev_ff_vin_n3db_np_1602_fsig_21k_v4_3.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_close_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+#wv_press_button {Confirmation} {} {Ok} 
+#*WARNING* Can not remove '/net/lab/ychuang/.cx_hostport/.cx_hostport_adc_61688'.

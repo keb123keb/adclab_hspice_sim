@@ -1,0 +1,123 @@
+### Custom WaveView ADV log file, revision O-2018.09 (build Aug 27, ) ###
+### created at 20:38:08 on Fri Nov 29 2019 (Linux AMD64) ###
+### Host Name: adc   User ID: ychuang   PID: 93620   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+wv_move_window {Custom WaveView} {} 83 101
+wv_select_window {Custom WaveView} 
+wv_resize_window {Custom WaveView} 800 586
+wv_move_window {Custom WaveView} {} 83 101
+wv_resize_window {Custom WaveView} 800 586
+wv_move_window {Custom WaveView} {} 0 22
+wv_resize_window {Custom WaveView} 1920 1028
+wv_move_window {Custom WaveView} {} 762 256
+wv_resize_window {Custom WaveView} 800 586
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_close_dialog {FileDialog} 
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {RecentFile0} 
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_move_window {Custom WaveView} {} 0 22
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 885
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 1660 859
+wv_resize_window {Custom WaveView} 1920 1028
+wv_move_window {Custom WaveView} {} 874 213
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 443
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 540 417
+wv_resize_window {Custom WaveView} 800 586
+wv_collapse_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)} {+sep=@}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {6}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {13}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {31}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {52}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {65}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {84}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {98}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {146}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {157}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {163}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {153}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {142}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {128}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {107}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {88}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {69}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {46}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {23}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {4}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {0}
+wv_move_window {Custom WaveView} {} 0 22
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 885
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 1660 859
+wv_resize_window {Custom WaveView} 1920 1028
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 251 885
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 1659 859
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 444 885
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 1466 859
+wv_move_window {Custom WaveView} {} 1215 618
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 444 443
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 346 417
+wv_resize_window {Custom WaveView} 800 586
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 1115 995
+wv_move_window {Custom WaveView} {} 1117 1028
+wv_move_window {Custom WaveView} {} 160 736
+wv_move_window {Custom WaveView} {} 0 22
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 444 885
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 1466 859
+wv_resize_window {Custom WaveView} 1920 1028
+wv_move_window {Custom WaveView} {} 705 985
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 444 443
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 346 417
+wv_resize_window {Custom WaveView} 800 586
+wv_move_window {Custom WaveView} {} 250 392
+wv_move_window {Custom WaveView} {} 0 22
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 444 885
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 1466 859
+wv_resize_window {Custom WaveView} 1920 1028
+wv_select_list_item {Custom WaveView} {} {sigview} {v(clk_sar_pre)} 1
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(clk_sar_pre)} 1
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p1)} 21
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p1)} 21
+wv_select_list_item {Custom WaveView} {} {sigview} {v(inp)} 20
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(inp)} 20
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 18
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 18
+wv_select_waveview 1 {waveview 1}
+wv_select_panel WV1.PANEL4:1 7.40629e-05 0.0193548
+wv_drag_item_to WV1 223 787
+wv_zoom WV1.PANEL4:1 7.40629e-05 0.0193548 -1.29801e-05 1.95484
+wv_select_waveview 1 {waveview 1}
+wv_select_panel WV1.PANEL4:1 -3.73412e-07 1.88859
+wv_drag_item_to WV1 307 613
+wv_zoom WV1.PANEL4:1 -3.73412e-07 1.88859 4.00277e-05 -0.206518
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.LEGEND.WIDTH
+wv_drag_item_to WV1 88 377
+wv_move_wv_item WV1.PANEL1:1.LEGEND.WIDTH 160
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.LEGEND.WIDTH
+wv_drag_item_to WV1 160 375
+wv_move_wv_item WV1.PANEL1:1.LEGEND.WIDTH 163
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL4:1.LEGEND
+wv_select_panel WV1.PANEL4:1.LEGEND
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL1:1.XAXIS1
+wv_drag_item_to WV1 381 805
+wv_zoom_x WV1.PANEL1:1 5.23288e-06 1.35869e-05
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_latch_0)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_latch_7)} 17 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(d_latch_3)} 13 61 219
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_close_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+#wv_press_button {Confirmation} {} {Ok} 
+#*WARNING* Can not remove '/net/lab/ychuang/.cx_hostport/.cx_hostport_adc_93620'.

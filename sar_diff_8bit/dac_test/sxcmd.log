@@ -1,0 +1,74 @@
+### Custom WaveView ADV log file, revision O-2018.09 (build Aug 27, ) ###
+### created at 15:17:05 on Tue Dec 24 2019 (Linux AMD64) ###
+### Host Name: adc   User ID: ychuang   PID: 47495   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+wv_move_window {Custom WaveView} {} 108 127
+wv_select_window {Custom WaveView} 
+wv_resize_window {Custom WaveView} 800 586
+wv_move_window {Custom WaveView} {} 8 30
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {155}
+wv_select_list_item {FileDialog} {} {FileList} {bhv2_z2.tr0} 14
+wv_dclick_list_item {FileDialog} {} {FileList} {bhv2_z2.tr0} 14
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z2.tr0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z2.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(outp)} 7
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(outp)} 7
+wv_select_list_item {Custom WaveView} {} {sigview} {v(clk)} 0
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(clk)} 0
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d)} 1
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(d)} 1
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL1:1.LINE1
+wv_drag_item_to WV1 48 37
+wv_select_line WV1.PANEL1:1.LINE1
+wv_drag_enter WV1
+wv_drag_to WV1 47 79
+wv_drag_to WV1 51 283
+wv_drag_to WV1 47 320
+wv_drag_to WV1 45 342
+wv_drag_to WV1 23 474
+wv_drop_on WV1
+wv_drag_item_to WV1 48 37
+wv_select_menu_item {Custom WaveView} {} {AxisCursor.Add H-Cursor} 
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL1:1.CURSOR1
+wv_move_wv_item WV1.PANEL1:1.CURSOR1 274 98
+wv_press_key Delete 532 262
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1.CURSOR1
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {HairPopMenu.Delete} 
+wv_select_list_item {Custom WaveView} {} {sigview} {v(outp)} 7
+wv_select_list_item {Custom WaveView} {} {sigview} {v(outp)} 7
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(outp)} 7
+wv_select_menu_item {Custom WaveView} {} {AxisCursor.Add Cursor} 
+wv_select_waveview 1 {waveview 1}
+wv_select_panel WV1.PANEL3:1 9.91415e-06 -0.00849628
+wv_move_wv_item WV1.PANEL3:1.CURSOR1 529 474
+wv_select_menu_item {Custom WaveView} {} {AxisCursor.Add Cursor} 
+wv_select_waveview 1 {waveview 1}
+wv_select_panel WV1.PANEL3:1 1.99179e-05 0.00189442
+wv_move_wv_item WV1.PANEL3:1.CURSOR2 864 472
+wv_select_window {Custom WaveView} 
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL3:1.CURSOR2
+wv_move_wv_item WV1.PANEL3:1.CURSOR2 864 362
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL3:1.CURSOR2
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {HairPopMenu.Delete} 
+wv_select_window {Custom WaveView} 
+wv_select_waveview 1 {waveview 1}
+wv_select_panel WV1.PANEL3:1 1.99179e-05 -0.00330093
+wv_close_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+#wv_press_button {Confirmation} {} {Ok} 
+#*WARNING* Can not remove '/net/lab/ychuang/.cx_hostport/.cx_hostport_adc_47495'.

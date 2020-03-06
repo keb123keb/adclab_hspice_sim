@@ -1,0 +1,272 @@
+****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******
+ Input File: bhv4.sp
+ lic:
+ lic: FLEXlm: SDK_11.6.9.6
+ lic: USER:   ychuang              HOSTNAME: adc
+ lic: HOSTID: "b026281535a3"       PID:      373922
+ lic: Using FLEXlm license file:
+ lic: 26585@lsnctu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09
+ lic: 113(in_use)/190(total) FLOATING license(s) on SERVER 26585@lsnctu
+ lic:
+ init: begin read circuit files, cpu clock= 3.20E-01
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     0.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    1.000E-09
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 3.30E-01 peak memory=     321 mb
+ init: begin check errors, cpu clock= 3.30E-01
+ init: end check errors, cpu clock= 4.10E-01 peak memory=     327 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 4.10E-01
+       establish matrix -- done, cpu clock= 4.10E-01 peak memory=     327 mb
+       re-order matrix -- done, cpu clock= 4.10E-01 peak memory=     327 mb
+ init: end setup matrix, cpu clock= 4.30E-01 peak memory=     327 mb
+ dcop: begin dcop, cpu clock= 4.30E-01
+ dcop: end dcop, cpu clock= 4.70E-01 peak memory=     327 mb tot_iter=      12
+ output: bhv4.tr0
+ sweep: tran tran0    begin, stop_t=  1.00E-03 #sweeps= 101 cpu clock= 4.70E-01
+ tran: time= 1.0000E-04 tot_iter=  334128 conv_iter=  135149 cpu clock= 1.42E+02
+ tran: time= 2.0000E-04 tot_iter=  669246 conv_iter=  270587 cpu clock= 2.81E+02
+ tran: time= 3.0000E-04 tot_iter= 1001536 conv_iter=  405238 cpu clock= 4.20E+02
+ tran: time= 4.0000E-04 tot_iter= 1332188 conv_iter=  539515 cpu clock= 5.58E+02
+ tran: time= 5.0000E-04 tot_iter= 1661656 conv_iter=  673628 cpu clock= 6.95E+02
+ tran: time= 6.0000E-04 tot_iter= 1994746 conv_iter=  808669 cpu clock= 8.32E+02
+ tran: time= 7.0000E-04 tot_iter= 2327691 conv_iter=  943226 cpu clock= 9.69E+02
+ tran: time= 8.0000E-04 tot_iter= 2660445 conv_iter= 1077981 cpu clock= 1.10E+03
+ tran: time= 9.0000E-04 tot_iter= 2994981 conv_iter= 1213284 cpu clock= 1.24E+03
+ tran: time= 1.0000E-03 tot_iter= 3331775 conv_iter= 1348923 cpu clock= 1.38E+03
+ sweep: tran tran0    end, cpu clock= 1.38E+03 peak memory=     322 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 1.38E+03
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     0.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    1.000E-09
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 1.38E+03 peak memory=     322 mb
+ init: begin check errors, cpu clock= 1.38E+03
+ init: end check errors, cpu clock= 1.38E+03 peak memory=     322 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 1.38E+03
+       establish matrix -- done, cpu clock= 1.38E+03 peak memory=     322 mb
+       re-order matrix -- done, cpu clock= 1.38E+03 peak memory=     322 mb
+ init: end setup matrix, cpu clock= 1.38E+03 peak memory=     322 mb
+ dcop: begin dcop, cpu clock= 1.38E+03
+ dcop: end dcop, cpu clock= 1.38E+03 peak memory=     322 mb tot_iter=      12
+ output: bhv4.tr1
+ sweep: tran tran0    begin, stop_t=  1.00E-03 #sweeps= 101 cpu clock= 1.38E+03
+ tran: time= 1.0000E-04 tot_iter=  333238 conv_iter=  134589 cpu clock= 1.52E+03
+ tran: time= 2.0000E-04 tot_iter=  666499 conv_iter=  269055 cpu clock= 1.65E+03
+ tran: time= 3.0000E-04 tot_iter=  996180 conv_iter=  402505 cpu clock= 1.79E+03
+ tran: time= 4.0000E-04 tot_iter= 1324078 conv_iter=  535883 cpu clock= 1.92E+03
+ tran: time= 5.0000E-04 tot_iter= 1653435 conv_iter=  669527 cpu clock= 2.06E+03
+ tran: time= 6.0000E-04 tot_iter= 1980985 conv_iter=  802880 cpu clock= 2.19E+03
+ tran: time= 7.0000E-04 tot_iter= 2310511 conv_iter=  936364 cpu clock= 2.32E+03
+ tran: time= 8.0000E-04 tot_iter= 2637743 conv_iter= 1069396 cpu clock= 2.46E+03
+ tran: time= 9.0000E-04 tot_iter= 2971313 conv_iter= 1204279 cpu clock= 2.59E+03
+ tran: time= 1.0000E-03 tot_iter= 3301482 conv_iter= 1337987 cpu clock= 2.73E+03
+ sweep: tran tran0    end, cpu clock= 2.73E+03 peak memory=     322 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 2.73E+03
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     0.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    1.000E-09
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 2.73E+03 peak memory=     322 mb
+ init: begin check errors, cpu clock= 2.73E+03
+ init: end check errors, cpu clock= 2.73E+03 peak memory=     322 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 2.73E+03
+       establish matrix -- done, cpu clock= 2.73E+03 peak memory=     322 mb
+       re-order matrix -- done, cpu clock= 2.73E+03 peak memory=     322 mb
+ init: end setup matrix, cpu clock= 2.73E+03 peak memory=     322 mb
+ dcop: begin dcop, cpu clock= 2.73E+03
+ dcop: end dcop, cpu clock= 2.73E+03 peak memory=     322 mb tot_iter=      12
+ output: bhv4.tr2
+ sweep: tran tran0    begin, stop_t=  1.00E-03 #sweeps= 101 cpu clock= 2.73E+03
+ tran: time= 1.0000E-04 tot_iter=  326481 conv_iter=  133002 cpu clock= 2.86E+03
+ tran: time= 2.0000E-04 tot_iter=  655354 conv_iter=  266164 cpu clock= 3.00E+03
+ tran: time= 3.0000E-04 tot_iter=  982230 conv_iter=  399131 cpu clock= 3.13E+03
+ tran: time= 4.0000E-04 tot_iter= 1312609 conv_iter=  532795 cpu clock= 3.27E+03
+ tran: time= 5.0000E-04 tot_iter= 1643232 conv_iter=  666388 cpu clock= 3.40E+03
+ tran: time= 6.0000E-04 tot_iter= 1974499 conv_iter=  800390 cpu clock= 3.54E+03
+ tran: time= 7.0000E-04 tot_iter= 2300399 conv_iter=  933189 cpu clock= 3.67E+03
+ tran: time= 8.0000E-04 tot_iter= 2627454 conv_iter= 1065947 cpu clock= 3.81E+03
+ tran: time= 9.0000E-04 tot_iter= 2954074 conv_iter= 1198920 cpu clock= 3.94E+03
+ tran: time= 1.0000E-03 tot_iter= 3277773 conv_iter= 1330956 cpu clock= 4.07E+03
+ sweep: tran tran0    end, cpu clock= 4.07E+03 peak memory=     322 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 4.07E+03
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     0.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    1.000E-09
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 4.07E+03 peak memory=     322 mb
+ init: begin check errors, cpu clock= 4.07E+03
+ init: end check errors, cpu clock= 4.07E+03 peak memory=     322 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 4.07E+03
+       establish matrix -- done, cpu clock= 4.07E+03 peak memory=     322 mb
+       re-order matrix -- done, cpu clock= 4.07E+03 peak memory=     322 mb
+ init: end setup matrix, cpu clock= 4.07E+03 peak memory=     322 mb
+ dcop: begin dcop, cpu clock= 4.07E+03
+ dcop: end dcop, cpu clock= 4.07E+03 peak memory=     322 mb tot_iter=      12
+ output: bhv4.tr3
+ sweep: tran tran0    begin, stop_t=  1.00E-03 #sweeps= 101 cpu clock= 4.07E+03
+ tran: time= 1.0000E-04 tot_iter=  325400 conv_iter=  132190 cpu clock= 4.20E+03
+ tran: time= 2.0000E-04 tot_iter=  650175 conv_iter=  264184 cpu clock= 4.34E+03
+ tran: time= 3.0000E-04 tot_iter=  973799 conv_iter=  395887 cpu clock= 4.47E+03
+ tran: time= 4.0000E-04 tot_iter= 1299107 conv_iter=  527907 cpu clock= 4.60E+03
+ tran: time= 5.0000E-04 tot_iter= 1625749 conv_iter=  660293 cpu clock= 4.74E+03
+ tran: time= 6.0000E-04 tot_iter= 1949944 conv_iter=  792136 cpu clock= 4.87E+03
+ tran: time= 7.0000E-04 tot_iter= 2271288 conv_iter=  923456 cpu clock= 5.00E+03
+ tran: time= 8.0000E-04 tot_iter= 2596567 conv_iter= 1055540 cpu clock= 5.13E+03
+ tran: time= 9.0000E-04 tot_iter= 2921171 conv_iter= 1187585 cpu clock= 5.26E+03
+ tran: time= 1.0000E-03 tot_iter= 3241187 conv_iter= 1318379 cpu clock= 5.39E+03
+ sweep: tran tran0    end, cpu clock= 5.39E+03 peak memory=     322 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 5.39E+03
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     0.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    1.000E-09
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 5.39E+03 peak memory=     322 mb
+ init: begin check errors, cpu clock= 5.39E+03
+ init: end check errors, cpu clock= 5.39E+03 peak memory=     322 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 5.39E+03
+       establish matrix -- done, cpu clock= 5.39E+03 peak memory=     322 mb
+       re-order matrix -- done, cpu clock= 5.39E+03 peak memory=     322 mb
+ init: end setup matrix, cpu clock= 5.39E+03 peak memory=     322 mb
+ dcop: begin dcop, cpu clock= 5.39E+03
+ dcop: end dcop, cpu clock= 5.39E+03 peak memory=     322 mb tot_iter=      12
+ output: bhv4.tr4
+ sweep: tran tran0    begin, stop_t=  1.00E-03 #sweeps= 101 cpu clock= 5.39E+03
+ tran: time= 1.0000E-04 tot_iter=  321135 conv_iter=  130963 cpu clock= 5.53E+03
+ tran: time= 2.0000E-04 tot_iter=  646579 conv_iter=  262854 cpu clock= 5.66E+03
+ tran: time= 3.0000E-04 tot_iter=  967782 conv_iter=  393888 cpu clock= 5.79E+03
+ tran: time= 4.0000E-04 tot_iter= 1288335 conv_iter=  524686 cpu clock= 5.92E+03
+ tran: time= 5.0000E-04 tot_iter= 1614811 conv_iter=  656861 cpu clock= 6.06E+03
+ tran: time= 6.0000E-04 tot_iter= 1939769 conv_iter=  788688 cpu clock= 6.19E+03
+ tran: time= 7.0000E-04 tot_iter= 2260021 conv_iter=  919507 cpu clock= 6.32E+03
+ tran: time= 8.0000E-04 tot_iter= 2584951 conv_iter= 1051171 cpu clock= 6.45E+03
+ tran: time= 9.0000E-04 tot_iter= 2912347 conv_iter= 1183608 cpu clock= 6.59E+03
+ tran: time= 1.0000E-03 tot_iter= 3231145 conv_iter= 1313872 cpu clock= 6.72E+03
+ sweep: tran tran0    end, cpu clock= 6.72E+03 peak memory=     322 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 6.72E+03
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     0.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    1.000E-09
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 6.72E+03 peak memory=     322 mb
+ init: begin check errors, cpu clock= 6.72E+03
+ init: end check errors, cpu clock= 6.72E+03 peak memory=     322 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 6.72E+03
+       establish matrix -- done, cpu clock= 6.72E+03 peak memory=     322 mb
+       re-order matrix -- done, cpu clock= 6.72E+03 peak memory=     322 mb
+ init: end setup matrix, cpu clock= 6.72E+03 peak memory=     322 mb
+ dcop: begin dcop, cpu clock= 6.72E+03
+ dcop: end dcop, cpu clock= 6.72E+03 peak memory=     322 mb tot_iter=      12
+ output: bhv4.tr5
+ sweep: tran tran0    begin, stop_t=  1.00E-03 #sweeps= 101 cpu clock= 6.72E+03
+ tran: time= 1.0000E-04 tot_iter=  325745 conv_iter=  132108 cpu clock= 6.85E+03
+ tran: time= 2.0000E-04 tot_iter=  649363 conv_iter=  263823 cpu clock= 6.99E+03
+ tran: time= 3.0000E-04 tot_iter=  968957 conv_iter=  394476 cpu clock= 7.11E+03
+ tran: time= 4.0000E-04 tot_iter= 1290431 conv_iter=  525543 cpu clock= 7.25E+03
+ tran: time= 5.0000E-04 tot_iter= 1616040 conv_iter=  657530 cpu clock= 7.38E+03
+ tran: time= 6.0000E-04 tot_iter= 1933511 conv_iter=  787824 cpu clock= 7.51E+03
+ tran: time= 7.0000E-04 tot_iter= 2252127 conv_iter=  918343 cpu clock= 7.64E+03
+ tran: time= 8.0000E-04 tot_iter= 2576375 conv_iter= 1049871 cpu clock= 7.77E+03
+ tran: time= 9.0000E-04 tot_iter= 2899117 conv_iter= 1181245 cpu clock= 7.90E+03
+ tran: time= 1.0000E-03 tot_iter= 3217314 conv_iter= 1311532 cpu clock= 8.03E+03
+ sweep: tran tran0    end, cpu clock= 8.03E+03 peak memory=     322 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 8.03E+03
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     0.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    1.000E-09
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 8.03E+03 peak memory=     322 mb
+ init: begin check errors, cpu clock= 8.03E+03
+ init: end check errors, cpu clock= 8.03E+03 peak memory=     322 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 8.03E+03
+       establish matrix -- done, cpu clock= 8.03E+03 peak memory=     322 mb
+       re-order matrix -- done, cpu clock= 8.03E+03 peak memory=     322 mb
+ init: end setup matrix, cpu clock= 8.03E+03 peak memory=     322 mb
+ dcop: begin dcop, cpu clock= 8.03E+03
+ dcop: end dcop, cpu clock= 8.03E+03 peak memory=     322 mb tot_iter=      12
+ output: bhv4.tr6
+ sweep: tran tran0    begin, stop_t=  1.00E-03 #sweeps= 101 cpu clock= 8.03E+03
+ tran: time= 1.0000E-04 tot_iter=  323592 conv_iter=  131645 cpu clock= 8.17E+03
+ tran: time= 2.0000E-04 tot_iter=  649511 conv_iter=  263551 cpu clock= 8.30E+03
+ tran: time= 3.0000E-04 tot_iter=  968731 conv_iter=  394203 cpu clock= 8.43E+03
+ tran: time= 4.0000E-04 tot_iter= 1288750 conv_iter=  524946 cpu clock= 8.56E+03
+ tran: time= 5.0000E-04 tot_iter= 1613494 conv_iter=  656608 cpu clock= 8.69E+03
+ tran: time= 6.0000E-04 tot_iter= 1931644 conv_iter=  786960 cpu clock= 8.82E+03
+ tran: time= 7.0000E-04 tot_iter= 2248969 conv_iter=  917034 cpu clock= 8.95E+03
+ tran: time= 8.0000E-04 tot_iter= 2571636 conv_iter= 1048195 cpu clock= 9.08E+03
+ tran: time= 9.0000E-04 tot_iter= 2891852 conv_iter= 1178957 cpu clock= 9.21E+03
+ tran: time= 1.0000E-03 tot_iter= 3204970 conv_iter= 1308009 cpu clock= 9.34E+03
+ sweep: tran tran0    end, cpu clock= 9.34E+03 peak memory=     322 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

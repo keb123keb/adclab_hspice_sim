@@ -1,0 +1,75 @@
+### Custom WaveView ADV log file, revision O-2018.09 (build Aug 27, ) ###
+### created at 09:25:55 on Tue Feb  4 2020 (Linux AMD64) ###
+### Host Name: adc   User ID: ychuang   PID: 19630   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+wv_move_window {Custom WaveView} {} 183 202
+wv_select_window {Custom WaveView} 
+wv_resize_window {Custom WaveView} 800 586
+wv_move_window {Custom WaveView} {} 183 202
+wv_move_window {Custom WaveView} {} 226 51
+wv_move_window {Custom WaveView} {} 295 50
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {4516}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {5300}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {170}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {324}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {767}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {4107}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {4959}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {5266}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {5061}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {2965}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {0}
+wv_close_dialog {FileDialog} 
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 512 93
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {5164}
+wv_close_dialog {FileDialog} 
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_set_text {FileDialog} {} {FileName} "bhv2_IDNL.sp"
+wv_press_button {FileDialog} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {1602}
+wv_select_list_item {FileDialog} {} {FileList} {bhv2_IDNL.tr0} 122
+wv_dclick_list_item {FileDialog} {} {FileList} {bhv2_IDNL.tr0} 122
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_IDNL.tr0(0)} {+sep=@}
+wv_collapse_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_IDNL.tr0(0)} {+sep=@}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_IDNL.tr0(0)} {+sep=@}
+wv_collapse_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_IDNL.tr0(0)} {+sep=@}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_IDNL.tr0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_IDNL.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_0)} 5
+wv_select_list_item {Custom WaveView} {} {sigview} {v(d_7)} 12 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(d_7)} 12 140 58
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1.LINE8
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {SignalPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_press_button {WaveformExportParameters} {} {Browse} 
+wv_select_dialog {FileDialog} 
+wv_select_list_item {FileDialog} {} {FileList} {m_file} 3
+wv_dclick_list_item {FileDialog} {} {FileList} {m_file} 3
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {631}
+wv_select_list_item {FileDialog} {} {FileList} {sar_8bits_vin_n3db_np_100_fsig_13k_two_stage.m} 13
+wv_press_button {FileDialog} {} {Ok} 
+wv_select_dialog {WaveformExportParameters} 
+wv_move_window {WaveformExportParameters} {} 505 185
+wv_set_radion {WaveformExportParameters} {} {MFile} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_move_window {WaveformExportParameters} {} 450 114
+wv_move_window {WaveformExportParameters} {} 413 35
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/sar_diff_8bit/m_file/sar_8bits_vin_n3db_np_100_fsig_13k_two_stage_IDNL.m"
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_move_window {Custom WaveView} {} 0 0

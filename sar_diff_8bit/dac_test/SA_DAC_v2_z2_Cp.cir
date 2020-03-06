@@ -1,0 +1,108 @@
+** Generated for: hspiceD
+** Generated on: Dec 10 15:35:32 2019
+** Design library name: SAR_ADC_ych
+** Design cell name: SA_DAC_v2
+** Design view name: schematic
+
+
+*****  .TEMP 25
+*****  .OPTION
+*****  +    ARTIST=2
+*****  +    INGOLD=2
+*****  +    MEASOUT=1
+*****  +    PARHIER=LOCAL
+*****  +    PSF=2
+
+** Library name: cell_bhv
+** Cell name: PMOS_B
+** View name: schematic
+*****  .subckt PMOS_B b d g s
+*****  .ends PMOS_B
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: NMOS_B
+** View name: schematic
+*****  .subckt NMOS_B b d g s
+*****  .ends NMOS_B
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: inv_bhv
+** View name: schematic
+.subckt inv_bhv dgnd vdd y yn
+r1 net23 yn 10
+c1 yn dgnd 5e-15
+xp1 vdd net23 y vdd PMOS_B
+xn1 dgnd net23 y dgnd NMOS_B
+.ends inv_bhv
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: nand2_bhv
+** View name: schematic
+.subckt nand2_bhv dgnd vdd y1 y2 yn
+xn1 dgnd yn y2 net8 NMOS_B
+xi9 dgnd net8 y1 dgnd NMOS_B
+xp1 vdd yn y1 vdd PMOS_B
+xi10 vdd yn y2 vdd PMOS_B
+.ends nand2_bhv
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: TGB
+** View name: schematic
+*****  .subckt TGB bi1 bi2 pwra sub t tn
+*****  .ends TGB
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: fdopb
+** View name: schematic
+*****  .subckt fdopb agnd avdd inn inp ir on op pdn vcm vcmfb
+*****  .ends fdopb
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: SA_DAC_v2
+** View name: schematic
+xi21 dgnd dvdd net046 pdacb inv_bhv
+xi20 dgnd dvdd pdacb pdacb_b inv_bhv
+xi16 dgnd dvdd net045 pdac inv_bhv
+xi17 dgnd dvdd pdac pdac_b inv_bhv
+xi10 dgnd dvdd net0135 pdet2 inv_bhv
+xi9 dgnd dvdd psamp psamp_b inv_bhv
+xi13 dgnd dvdd clk clk_b inv_bhv
+xi19 dgnd dvdd d d_b inv_bhv
+xi23 dgnd dvdd clkp clkp_b inv_bhv
+xi11 dgnd dvdd pdet2 pdet2_b inv_bhv
+xi18 dgnd dvdd d clk net045 nand2_bhv
+xi12 dgnd dvdd psamp_b clkp_b net0135 nand2_bhv
+xi22 dgnd dvdd d_b clk net046 nand2_bhv
+xi15 vrefp dac_n agnd avdd pdacb pdacb_b TGB
+xi32 ps_gnd_n outn agnd avdd psamp psamp_b TGB
+xi3 dac2_n vcm agnd avdd clkp clkp_b TGB
+xi5 dac2_p ps_gnd_p agnd avdd pdet2 pdet2_b TGB
+xi2 dac2_n ps_gnd_n agnd avdd pdet2 pdet2_b TGB
+xi31 ps_gnd_p outp agnd avdd psamp psamp_b TGB
+xi4 dac2_p vcm agnd avdd clkp clkp_b TGB
+xi24 vrefp dac_p agnd avdd pdac pdac_b TGB
+xswvcmp vrefn dac_n agnd avdd pdac pdac_b TGB
+xi30 dac_p outp agnd avdd pdet2 pdet2_b TGB
+xi27 dac_n outn agnd avdd pdet2 pdet2_b TGB
+xi14 vrefn dac_p agnd avdd pdacb pdacb_b TGB
+cp3_p ps_gnd_p vcm "12e-15*k"
+cp2_p dac2_p vcm "12e-15*k"
+cp1_n dac_n vcm "12e-15*kin"
+cp4_p outp vcm "12e-15*kout"
+cp2_n dac2_n vcm "12e-15*k"
+c7 outn ps_gnd_n 12e-15
+cp3_n ps_gnd_n vcm "12e-15*k"
+cp1_p dac_p vcm "12e-15*kin"
+cp4_n outn vcm "12e-15*kout"
+c6 dac2_n dac_n 12e-15
+c5 outp ps_gnd_p 12e-15
+c4 dac2_p dac_p 12e-15
+*xop agnd avdd ps_gnd_p ps_gnd_n iref outn outp pdn vcm vcm fdopb
+xop agnd avdd ps_gnd_p ps_gnd_n iref outn outp pdn vcm vcm fdopb_slew
+*****  .END

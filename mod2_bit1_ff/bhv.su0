@@ -1,0 +1,19 @@
+HEADER
+"PSFversion" "1.00"
+"simulator" "HSPICE"
+"version" "O-2018.09 linux64"
+"rundate" "17:08:34 06/12/2019"
+"runtitle" "*behavior simulation                                                            "
+"runtype" "Summary Information"
+"op point time" "0.00"
+"op point iterations" "16"
+"transient time" "726.37"
+"transient iterations" "35059684"
+"total cpu time" "726.50"
+"node value" "invalid"
+"operating point" "invalid"
+"ac analysis" "invalid"
+"dc sweep" "invalid"
+"transient analysis" "complete"
+TRAILER
+END

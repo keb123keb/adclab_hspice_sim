@@ -1,0 +1,232 @@
+** Generated for: hspiceD
+** Generated on: Aug 18 21:26:09 2019
+** Design library name: SAR_ADC_ych
+** Design cell name: ADC_SAR_diff_8bit_v2_two_stage_v5_del_Cu_v6
+** Design view name: schematic
+
+
+*****  .TEMP 25
+*****  .OPTION
+*****  +    ARTIST=2
+*****  +    INGOLD=2
+*****  +    MEASOUT=1
+*****  +    PARHIER=LOCAL
+*****  +    PSF=2
+
+** Library name: cell_bhv
+** Cell name: PMOS_B
+** View name: schematic
+*****  .subckt PMOS_B b d g s
+*****  .ends PMOS_B
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: NMOS_B
+** View name: schematic
+*****  .subckt NMOS_B b d g s
+*****  .ends NMOS_B
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: inv_bhv
+** View name: schematic
+.subckt inv_bhv dgnd vdd y yn
+r1 net23 yn 10
+c1 yn dgnd 5e-15
+xp1 vdd net23 y vdd PMOS_B
+xn1 dgnd net23 y dgnd NMOS_B
+.ends inv_bhv
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: nand2_bhv
+** View name: schematic
+.subckt nand2_bhv dgnd vdd y1 y2 yn
+xn1 dgnd yn y2 net8 NMOS_B
+xi9 dgnd net8 y1 dgnd NMOS_B
+xp1 vdd yn y1 vdd PMOS_B
+xi10 vdd yn y2 vdd PMOS_B
+.ends nand2_bhv
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: TGB
+** View name: schematic
+*****  .subckt TGB bi1 bi2 pwra sub t tn
+*****  .ends TGB
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: DAC_SW
+** View name: schematic
+.subckt DAC_SW agnd avdd d dac d_b psamp psamp_b vin vrefn vrefp
+xi7 agnd avdd pvrefn pvrefn_b inv_bhv
+xi3 agnd avdd pvrefp pvrefp_b inv_bhv
+xi20 agnd avdd net054 pvrefp inv_bhv
+xi1 agnd avdd net049 pvrefn inv_bhv
+xi2 agnd avdd psamp_b d_b net049 nand2_bhv
+xi19 agnd avdd psamp_b d net054 nand2_bhv
+xswp vrefp dac avdd agnd pvrefp pvrefp_b TGB
+xswn vrefn dac avdd agnd pvrefn pvrefn_b TGB
+xswin vin dac avdd agnd psamp psamp_b TGB
+.ends DAC_SW
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: SA_DAC_8bit
+** View name: schematic
+.subckt SA_DAC_8bit agnd avdd d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 dac00 dac_0 dac_1 dac_2 dac_3 dac_4 dac_5 dac_6 dac_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 pdac psamp psamp_b vdac00 vin vrefn vrefp
+xswdac_0 agnd avdd d_0 dac_0 db_0 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_1 agnd avdd d_1 dac_1 db_1 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_2 agnd avdd d_2 dac_2 db_2 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_3 agnd avdd d_3 dac_3 db_3 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_4 agnd avdd d_4 dac_4 db_4 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_5 agnd avdd d_5 dac_5 db_5 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_6 agnd avdd d_6 dac_6 db_6 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_7 agnd avdd d_7 dac_7 db_7 psamp psamp_b vin vrefn vrefp DAC_SW
+xi1 agnd avdd pdac pdac_b inv_bhv
+xswdac00 vdac00 dac00 avdd agnd pdac pdac_b TGB
+xswvin vin dac00 avdd agnd psamp psamp_b TGB
+.ends SA_DAC_8bit
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: SA_8bit_C_Array_with_DAC_two_stage_v5_del_Cu_v6
+** View name: schematic
+.subckt SA_8bit_C_Array_with_DAC_two_stage_v5_del_Cu_v6 agnd avdd d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 pdac psamp psamp_b to_cmp vcm vdac00 vinp vrefn vrefp
+xsa_dac agnd avdd d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 net032 dac_0 dac_1 dac_2 dac_3 dac_4 dac_5 dac_6 dac_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 pdac psamp psamp_b vdac00 vinp vrefn vrefp SA_DAC_8bit
+xi2 vcm to_cmp agnd avdd psamp psamp_b TGB
+c8 to_cmp net30 12e-15
+c0 net30 dac_0 12e-15
+c2 net30 dac_2 48e-15
+c1 net30 dac_1 24e-15
+c3 to_cmp dac_3 12e-15
+c4 to_cmp dac_4 24e-15
+c7 to_cmp dac_7 192e-15
+c5 to_cmp dac_5 48e-15
+c6 to_cmp dac_6 96e-15
+.ends SA_8bit_C_Array_with_DAC_two_stage_v5_del_Cu_v6
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: VCVS_CMP
+** View name: schematic
+*****  .subckt VCVS_CMP vm vout vp
+*****  .ends VCVS_CMP
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: nor2_bhv
+** View name: schematic
+.subckt nor2_bhv dgnd vdd y1 y2 yn
+xn1 dgnd yn y1 dgnd NMOS_B
+xi9 dgnd yn y2 dgnd NMOS_B
+xp1 vdd yn y2 net16 PMOS_B
+xi10 vdd net16 y1 vdd PMOS_B
+.ends nor2_bhv
+** End of subcircuit definition.
+
+** Library name: SAR_bhv
+** Cell name: DFF_SET_RST
+** View name: schematic
+.subckt DFF_SET_RST q d clk dvdd dgnd set q_b rst
+xi1 dgnd dvdd clk clkb inv_bhv
+xi40 d dff1 dvdd dgnd clkb clk TGB
+xi34 dff3 q_b dvdd dgnd clkb clk TGB
+xi41 dff2 dff3 dvdd dgnd clk clkb TGB
+xsw1 dff1 net41 dvdd dgnd clk clkb TGB
+r1 net69 dff2 2
+r0 net54 q 2
+c3 q_b dgnd 100e-15
+c2 net41 dgnd 100e-15
+c4 q dgnd 100e-15
+c1 dff2 dgnd 100e-15
+xi42 dgnd dvdd dff2 rst net41 nor2_bhv
+xi43 dgnd dvdd q set q_b nor2_bhv
+xi31 dgnd dvdd dff1 set net69 nor2_bhv
+xi37 dgnd dvdd dff3 rst net54 nor2_bhv
+.ends DFF_SET_RST
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: SA_LOGIC_8bit
+** View name: schematic
+.subckt SA_LOGIC_8bit clk comp d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 dgnd dvdd rst
+xrsh00 q00 q0 clk dvdd dgnd dgnd net0150 rst DFF_SET_RST
+xdata3 d_3 comp d_2 dvdd dgnd q3 db_3 rst DFF_SET_RST
+xdata2 d_2 comp d_1 dvdd dgnd q2 db_2 rst DFF_SET_RST
+xdata1 d_1 comp d_0 dvdd dgnd q1 db_1 rst DFF_SET_RST
+xdata00 net089 dgnd dgnd dvdd dgnd q00 net060 rst DFF_SET_RST
+xdata0 d_0 comp net089 dvdd dgnd q0 db_0 rst DFF_SET_RST
+xdata5 d_5 comp d_4 dvdd dgnd q5 db_5 rst DFF_SET_RST
+xrsh0 q0 q1 clk dvdd dgnd dgnd net0158 rst DFF_SET_RST
+xrsh3 q3 q4 clk dvdd dgnd dgnd net0166 rst DFF_SET_RST
+xrsh2 q2 q3 clk dvdd dgnd dgnd net0174 rst DFF_SET_RST
+xrsh1 q1 q2 clk dvdd dgnd dgnd net0182 rst DFF_SET_RST
+xrsh4 q4 q5 clk dvdd dgnd dgnd net0190 rst DFF_SET_RST
+xdata7 d_7 comp d_6 dvdd dgnd q7 db_7 dgnd DFF_SET_RST
+xrsh5 q5 q6 clk dvdd dgnd dgnd net0198 rst DFF_SET_RST
+xdata6 d_6 comp d_5 dvdd dgnd q6 db_6 rst DFF_SET_RST
+xdata4 d_4 comp d_3 dvdd dgnd q4 db_4 rst DFF_SET_RST
+xrsh6 q6 q7 clk dvdd dgnd dgnd net0206 rst DFF_SET_RST
+xrsh7 q7 dgnd clk dvdd dgnd rst net0214 dgnd DFF_SET_RST
+.ends SA_LOGIC_8bit
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: DFF_SET_RST
+** View name: schematic
+.subckt DFF_SET_RST_schematic q d clk dvdd dgnd set q_b rst
+xi1 dgnd dvdd clk clkb inv_bhv
+xi40 d dff1 dvdd dgnd clkb clk TGB
+xi34 dff3 q_b dvdd dgnd clkb clk TGB
+xi41 dff2 dff3 dvdd dgnd clk clkb TGB
+xsw1 dff1 net41 dvdd dgnd clk clkb TGB
+r1 net69 dff2 2
+r0 net54 q 2
+c3 q_b dgnd 100e-15
+c2 net41 dgnd 100e-15
+c4 q dgnd 100e-15
+c1 dff2 dgnd 100e-15
+xi42 dgnd dvdd dff2 rst net41 nor2_bhv
+xi43 dgnd dvdd q set q_b nor2_bhv
+xi31 dgnd dvdd dff1 set net69 nor2_bhv
+xi37 dgnd dvdd dff3 rst net54 nor2_bhv
+.ends DFF_SET_RST_schematic
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: Dlatch
+** View name: schematic
+.subckt Dlatch q d clk clkb dvdd dgnd
+xi2 dgnd dvdd net017 q inv_bhv
+xi1 dgnd dvdd net22 net8 inv_bhv
+c0 q dgnd 5e-15
+c1 net017 dgnd 5e-15
+r1 net8 net017 2
+xi29 d net22 dvdd dgnd clk clkb TGB
+xsw1 net22 q dvdd dgnd clkb clk TGB
+.ends Dlatch
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: ADC_SAR_diff_8bit_v2_two_stage_v5_del_Cu_v6
+** View name: schematic
+xc_array_n agnd avdd d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 pdac psamp psamp_b cmp_inp vcm vrefp vinn vrefp vrefn SA_8bit_C_Array_with_DAC_two_stage_v5_del_Cu_v6
+xc_array_p agnd avdd d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 pdac psamp psamp_b cmp_inn vcm vrefn vinp vrefn vrefp SA_8bit_C_Array_with_DAC_two_stage_v5_del_Cu_v6
+xcmp cmp_inn cmp_diff cmp_inp VCVS_CMP
+xsa_logic pdac_b cmp_out d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 dgnd dvdd psamp SA_LOGIC_8bit
+xdffout_7 sa_7 d_7 psamp dvdd dgnd dgnd sa_b_7 dgnd DFF_SET_RST_schematic
+xdffout_6 sa_6 d_6 psamp dvdd dgnd dgnd sa_b_6 dgnd DFF_SET_RST_schematic
+xdffout_5 sa_5 d_5 psamp dvdd dgnd dgnd sa_b_5 dgnd DFF_SET_RST_schematic
+xdffout_4 sa_4 d_4 psamp dvdd dgnd dgnd sa_b_4 dgnd DFF_SET_RST_schematic
+xdffout_3 sa_3 d_3 psamp dvdd dgnd dgnd sa_b_3 dgnd DFF_SET_RST_schematic
+xdffout_2 sa_2 d_2 psamp dvdd dgnd dgnd sa_b_2 dgnd DFF_SET_RST_schematic
+xdffout_1 sa_1 d_1 psamp dvdd dgnd dgnd sa_b_1 dgnd DFF_SET_RST_schematic
+xdffout_0 sa_0 d_0 psamp dvdd dgnd dgnd sa_b_0 dgnd DFF_SET_RST_schematic
+xnand2 dgnd dvdd psamp_b clk net23 nand2_bhv
+xnot2_3 dgnd dvdd pdac pdac_b inv_bhv
+xnot2_2 dgnd dvdd net23 pdac inv_bhv
+xnot1 dgnd dvdd psamp psamp_b inv_bhv
+xcmplatch cmp_out cmp_diff pdac pdac_b dvdd dgnd Dlatch
+*****  .END

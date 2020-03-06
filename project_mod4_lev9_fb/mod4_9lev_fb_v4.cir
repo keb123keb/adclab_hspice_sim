@@ -1,0 +1,466 @@
+** Generated for: hspiceD
+** Generated on: Jul 18 16:46:49 2019
+** Design library name: adc_project_mod4_9lev_fb
+** Design cell name: adc_mod4_9lev_fb
+** Design view name: schematic
+
+
+** Library name: adc_project_mod4_9lev_fb
+** Cell name: vth_9Lev
+** View name: schematic
+.subckt vth_9Lev vrefn vrefp vthp_0 vthp_1 vthp_2 vthp_3 vthp_4 vthp_5 vthp_6 vthp_7
+r84 vthp_3 vthp_4 5e3
+r82 vthp_5 vthp_6 5e3
+r83 vthp_4 vthp_5 5e3
+r85 vthp_6 vthp_7 5e3
+r25 vthp_2 vthp_3 5e3
+r9 vrefn vthp_0 5e3
+r18 vrefp vthp_7 5e3
+r8 vrefn vthp_0 5e3
+r3 vthp_1 vthp_2 5e3
+r2 vthp_0 vthp_1 5e3
+r1 vrefp vthp_7 5e3
+.ends vth_9Lev
+** End of subcircuit definition.
+
+
+** Library name: cell_bhv
+** Cell name: inv_bhv
+** View name: schematic
+.subckt inv_bhv dgnd vdd y yn
+r1 net23 yn 10
+c1 yn dgnd 5e-15
+xp1 vdd net23 y vdd PMOS_B
+xn1 dgnd net23 y dgnd NMOS_B
+.ends inv_bhv
+** End of subcircuit definition.
+
+
+** Library name: cell_bhv
+** Cell name: Dlatch
+** View name: schematic
+.subckt Dlatch q d clk clkb dvdd dgnd
+xi2 dgnd dvdd net017 q inv_bhv
+xi1 dgnd dvdd net22 net8 inv_bhv
+c0 q dgnd 5e-15
+c1 net017 dgnd 5e-15
+r1 net8 net017 2
+xi29 d net22 dvdd dgnd clk clkb TGB
+xsw1 net22 q dvdd dgnd clkb clk TGB
+.ends Dlatch
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: dff
+** View name: schematic
+.subckt dff q d clk clkb dvdd dgnd
+xi13 net275 d clkb clk dvdd dgnd Dlatch
+xi14 q net275 clk clkb dvdd dgnd Dlatch
+.ends dff
+** End of subcircuit definition.
+
+
+** Library name: ET710_ADC_bhv
+** Cell name: cmp_clk
+** View name: schematic
+.subckt cmp_clk agnd avdd clk clk_b inn inp y
+xdff y net22 clk clk_b avdd agnd dff
+xpreamp inn net22 inp amp_cmp
+.ends cmp_clk
+** End of subcircuit definition.
+
+** Library name: adc_project_mod4_9lev_fb
+** Cell name: adder_cmp_1b_CIFB
+** View name: schematic
+.subckt adder_cmp_1b_CIFB agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b d iref pdn vcm vthn vthp inn inp s_inn s_inp
+xpreamp_bhv agnd avdd opin opip iref amp_n amp_p pdn vcm vcm preamp_cmp_b
+xcmp3 agnd avdd p1_b p1 amp_n amp_p d_b cmp_clk
+xi1 agnd avdd d_b d inv_bhv
+xi52 amp_p opin avdd agnd p2 p2_b TGB
+xi55 inp net0107 avdd agnd p1d p1d_b TGB
+xi56 vcm net0107 avdd agnd p2d p2d_b TGB
+xi60 vcm net0137 avdd agnd p2d p2d_b TGB
+xi59 inn net0137 avdd agnd p1d p1d_b TGB
+xi13 amp_n opip avdd agnd p2 p2_b TGB
+xi9 vthn net0161 avdd agnd p2d p2d_b TGB
+xsw1 s_inp net0155 avdd agnd p1d p1d_b TGB
+xi2 s_inn net0161 avdd agnd p1d p1d_b TGB
+xsw4 vthp net0155 avdd agnd p2d p2d_b TGB
+cint1p opin net0107 10e-15
+cint1n opip net0137 10e-15
+cintn opip net0161 14e-15
+cintp opin net0155 14e-15
+.ends adder_cmp_1b_CIFB
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: dac_int_1bit
+** View name: schematic
+.subckt dac_int_1bit agnd avdd dacn dacp pvrefn pvrefn_b pvrefp pvrefp_b vrefn vrefp
+xi6 vrefn dacn avdd agnd pvrefp pvrefp_b TGB
+xi7 vrefp dacn avdd agnd pvrefn pvrefn_b TGB
+xi40 vrefp dacp avdd agnd pvrefp pvrefp_b TGB
+xi41 vrefn dacp avdd agnd pvrefn pvrefn_b TGB
+.ends dac_int_1bit
+** End of subcircuit definition.
+
+
+** Library name: adc_project_mod4_9lev_fb
+** Cell name: int4_with_9lev_dac
+** View name: schematic
+.subckt int4_with_9lev_dac agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref outn outp pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_4 pvrefn_5 pvrefn_6 pvrefn_7 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefn_b_4 pvrefn_b_5 pvrefn_b_6 pvrefn_b_7 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_4 pvrefp_5 pvrefp_6 pvrefp_7 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 pvrefp_b_4 pvrefp_b_5 pvrefp_b_6 pvrefp_b_7 rst rst_b vcm vrefn vrefp s_inn s_inp
+xdac_0 agnd avdd dacn_0 dacp_0 pvrefn_0 pvrefn_b_0 pvrefp_0 pvrefp_b_0 vrefn vrefp dac_int_1bit
+xdac_1 agnd avdd dacn_1 dacp_1 pvrefn_1 pvrefn_b_1 pvrefp_1 pvrefp_b_1 vrefn vrefp dac_int_1bit
+xdac_2 agnd avdd dacn_2 dacp_2 pvrefn_2 pvrefn_b_2 pvrefp_2 pvrefp_b_2 vrefn vrefp dac_int_1bit
+xdac_3 agnd avdd dacn_3 dacp_3 pvrefn_3 pvrefn_b_3 pvrefp_3 pvrefp_b_3 vrefn vrefp dac_int_1bit
+xdac_4 agnd avdd dacn_4 dacp_4 pvrefn_4 pvrefn_b_4 pvrefp_4 pvrefp_b_4 vrefn vrefp dac_int_1bit
+xdac_5 agnd avdd dacn_5 dacp_5 pvrefn_5 pvrefn_b_5 pvrefp_5 pvrefp_b_5 vrefn vrefp dac_int_1bit
+xdac_6 agnd avdd dacn_6 dacp_6 pvrefn_6 pvrefn_b_6 pvrefp_6 pvrefp_b_6 vrefn vrefp dac_int_1bit
+xdac_7 agnd avdd dacn_7 dacp_7 pvrefn_7 pvrefn_b_7 pvrefp_7 pvrefp_b_7 vrefn vrefp dac_int_1bit
+c0 s_cinp s_dacp 4.8e-12
+c3 s_cinn s_cacn 4.8e-12
+cfbp_0 opip outp 1e-12
+cfbp_1 opip outp 1e-12
+cfbp_2 opip outp 1e-12
+cfbp_3 opip outp 1e-12
+cfbp_4 opip outp 1e-12
+cfbp_5 opip outp 1e-12
+cfbp_6 opip outp 1e-12
+cfbp_7 opip outp 1e-12
+c1_0 cinp dacp_0 600e-15
+c1_1 cinp dacp_1 600e-15
+c1_2 cinp dacp_2 600e-15
+c1_3 cinp dacp_3 600e-15
+c1_4 cinp dacp_4 600e-15
+c1_5 cinp dacp_5 600e-15
+c1_6 cinp dacp_6 600e-15
+c1_7 cinp dacp_7 600e-15
+c2_0 cinn dacn_0 600e-15
+c2_1 cinn dacn_1 600e-15
+c2_2 cinn dacn_2 600e-15
+c2_3 cinn dacn_3 600e-15
+c2_4 cinn dacn_4 600e-15
+c2_5 cinn dacn_5 600e-15
+c2_6 cinn dacn_6 600e-15
+c2_7 cinn dacn_7 600e-15
+cfbn_0 opin outn 1e-12
+cfbn_1 opin outn 1e-12
+cfbn_2 opin outn 1e-12
+cfbn_3 opin outn 1e-12
+cfbn_4 opin outn 1e-12
+cfbn_5 opin outn 1e-12
+cfbn_6 opin outn 1e-12
+cfbn_7 opin outn 1e-12
+xsw3 vcm cinp avdd agnd p1 p1_b TGB
+xsw7 vcm cinn avdd agnd p1 p1_b TGB
+xi1 s_cinn opin avdd agnd p2 p2_b TGB
+xi66 vcm s_cacn avdd agnd p2d p2d_b TGB
+xi3 vcm s_cinp avdd agnd p1 p1_b TGB
+xi2 s_inn s_cacn avdd agnd p1d p1d_b TGB
+xi65 vcm s_dacp avdd agnd p2d p2d_b TGB
+xswinn_0 inn dacn_0 avdd agnd p1d p1d_b TGB
+xswinn_1 inn dacn_1 avdd agnd p1d p1d_b TGB
+xswinn_2 inn dacn_2 avdd agnd p1d p1d_b TGB
+xswinn_3 inn dacn_3 avdd agnd p1d p1d_b TGB
+xswinn_4 inn dacn_4 avdd agnd p1d p1d_b TGB
+xswinn_5 inn dacn_5 avdd agnd p1d p1d_b TGB
+xswinn_6 inn dacn_6 avdd agnd p1d p1d_b TGB
+xswinn_7 inn dacn_7 avdd agnd p1d p1d_b TGB
+xi4 s_inp s_dacp avdd agnd p1d p1d_b TGB
+xi5 s_cinp opip avdd agnd p2 p2_b TGB
+xi0 vcm s_cinn avdd agnd p1 p1_b TGB
+xsw2 cinp opip avdd agnd p2 p2_b TGB
+xsw6 cinn opin avdd agnd p2 p2_b TGB
+xi12 outn opin avdd agnd rst rst_b TGB
+xi13 outp opip avdd agnd rst rst_b TGB
+xswinp_0 inp dacp_0 avdd agnd p1d p1d_b TGB
+xswinp_1 inp dacp_1 avdd agnd p1d p1d_b TGB
+xswinp_2 inp dacp_2 avdd agnd p1d p1d_b TGB
+xswinp_3 inp dacp_3 avdd agnd p1d p1d_b TGB
+xswinp_4 inp dacp_4 avdd agnd p1d p1d_b TGB
+xswinp_5 inp dacp_5 avdd agnd p1d p1d_b TGB
+xswinp_6 inp dacp_6 avdd agnd p1d p1d_b TGB
+xswinp_7 inp dacp_7 avdd agnd p1d p1d_b TGB
+xop agnd avdd opip opin iref outn outp pdn vcm vcm fdopb
+.ends int4_with_9lev_dac
+** End of subcircuit definition.
+
+** Library name: adc_project_mod4_9lev_fb
+** Cell name: int3_with_9lev_dac
+** View name: schematic
+.subckt int3_with_9lev_dac agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref outn outp pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_4 pvrefn_5 pvrefn_6 pvrefn_7 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefn_b_4 pvrefn_b_5 pvrefn_b_6 pvrefn_b_7 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_4 pvrefp_5 pvrefp_6 pvrefp_7 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 pvrefp_b_4 pvrefp_b_5 pvrefp_b_6 pvrefp_b_7 rst rst_b vcm vrefn vrefp s_inn s_inp
+xdac_0 agnd avdd dacn_0 dacp_0 pvrefn_0 pvrefn_b_0 pvrefp_0 pvrefp_b_0 vrefn vrefp dac_int_1bit
+xdac_1 agnd avdd dacn_1 dacp_1 pvrefn_1 pvrefn_b_1 pvrefp_1 pvrefp_b_1 vrefn vrefp dac_int_1bit
+xdac_2 agnd avdd dacn_2 dacp_2 pvrefn_2 pvrefn_b_2 pvrefp_2 pvrefp_b_2 vrefn vrefp dac_int_1bit
+xdac_3 agnd avdd dacn_3 dacp_3 pvrefn_3 pvrefn_b_3 pvrefp_3 pvrefp_b_3 vrefn vrefp dac_int_1bit
+xdac_4 agnd avdd dacn_4 dacp_4 pvrefn_4 pvrefn_b_4 pvrefp_4 pvrefp_b_4 vrefn vrefp dac_int_1bit
+xdac_5 agnd avdd dacn_5 dacp_5 pvrefn_5 pvrefn_b_5 pvrefp_5 pvrefp_b_5 vrefn vrefp dac_int_1bit
+xdac_6 agnd avdd dacn_6 dacp_6 pvrefn_6 pvrefn_b_6 pvrefp_6 pvrefp_b_6 vrefn vrefp dac_int_1bit
+xdac_7 agnd avdd dacn_7 dacp_7 pvrefn_7 pvrefn_b_7 pvrefp_7 pvrefp_b_7 vrefn vrefp dac_int_1bit
+c0 s_cinp s_dacp 1.6e-12
+c3 s_cinn s_cacn 1.6e-12
+cfbp_0 opip outp 1e-12
+cfbp_1 opip outp 1e-12
+cfbp_2 opip outp 1e-12
+cfbp_3 opip outp 1e-12
+cfbp_4 opip outp 1e-12
+cfbp_5 opip outp 1e-12
+cfbp_6 opip outp 1e-12
+cfbp_7 opip outp 1e-12
+c1_0 cinp dacp_0 400e-15
+c1_1 cinp dacp_1 400e-15
+c1_2 cinp dacp_2 400e-15
+c1_3 cinp dacp_3 400e-15
+c1_4 cinp dacp_4 400e-15
+c1_5 cinp dacp_5 400e-15
+c1_6 cinp dacp_6 400e-15
+c1_7 cinp dacp_7 400e-15
+c2_0 cinn dacn_0 400e-15
+c2_1 cinn dacn_1 400e-15
+c2_2 cinn dacn_2 400e-15
+c2_3 cinn dacn_3 400e-15
+c2_4 cinn dacn_4 400e-15
+c2_5 cinn dacn_5 400e-15
+c2_6 cinn dacn_6 400e-15
+c2_7 cinn dacn_7 400e-15
+cfbn_0 opin outn 1e-12
+cfbn_1 opin outn 1e-12
+cfbn_2 opin outn 1e-12
+cfbn_3 opin outn 1e-12
+cfbn_4 opin outn 1e-12
+cfbn_5 opin outn 1e-12
+cfbn_6 opin outn 1e-12
+cfbn_7 opin outn 1e-12
+xsw3 vcm cinp avdd agnd p1 p1_b TGB
+xsw7 vcm cinn avdd agnd p1 p1_b TGB
+xi1 s_cinn opin avdd agnd p2 p2_b TGB
+xi66 vcm s_cacn avdd agnd p2d p2d_b TGB
+xi3 vcm s_cinp avdd agnd p1 p1_b TGB
+xi2 s_inn s_cacn avdd agnd p1d p1d_b TGB
+xi65 vcm s_dacp avdd agnd p2d p2d_b TGB
+xswinn_0 inn dacn_0 avdd agnd p1d p1d_b TGB
+xswinn_1 inn dacn_1 avdd agnd p1d p1d_b TGB
+xswinn_2 inn dacn_2 avdd agnd p1d p1d_b TGB
+xswinn_3 inn dacn_3 avdd agnd p1d p1d_b TGB
+xswinn_4 inn dacn_4 avdd agnd p1d p1d_b TGB
+xswinn_5 inn dacn_5 avdd agnd p1d p1d_b TGB
+xswinn_6 inn dacn_6 avdd agnd p1d p1d_b TGB
+xswinn_7 inn dacn_7 avdd agnd p1d p1d_b TGB
+xi4 s_inp s_dacp avdd agnd p1d p1d_b TGB
+xi5 s_cinp opip avdd agnd p2 p2_b TGB
+xi0 vcm s_cinn avdd agnd p1 p1_b TGB
+xsw2 cinp opip avdd agnd p2 p2_b TGB
+xsw6 cinn opin avdd agnd p2 p2_b TGB
+xi12 outn opin avdd agnd rst rst_b TGB
+xi13 outp opip avdd agnd rst rst_b TGB
+xswinp_0 inp dacp_0 avdd agnd p1d p1d_b TGB
+xswinp_1 inp dacp_1 avdd agnd p1d p1d_b TGB
+xswinp_2 inp dacp_2 avdd agnd p1d p1d_b TGB
+xswinp_3 inp dacp_3 avdd agnd p1d p1d_b TGB
+xswinp_4 inp dacp_4 avdd agnd p1d p1d_b TGB
+xswinp_5 inp dacp_5 avdd agnd p1d p1d_b TGB
+xswinp_6 inp dacp_6 avdd agnd p1d p1d_b TGB
+xswinp_7 inp dacp_7 avdd agnd p1d p1d_b TGB
+xop agnd avdd opip opin iref outn outp pdn vcm vcm fdopb
+.ends int3_with_9lev_dac
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: nand2_bhv
+** View name: schematic
+.subckt nand2_bhv dgnd vdd y1 y2 yn
+xn1 dgnd yn y2 net8 NMOS_B
+xi9 dgnd net8 y1 dgnd NMOS_B
+xp1 vdd yn y1 vdd PMOS_B
+xi10 vdd yn y2 vdd PMOS_B
+.ends nand2_bhv
+** End of subcircuit definition.
+
+** Library name: adc_project_mod4_9lev_fb
+** Cell name: clk_fb_1bit
+** View name: schematic
+.subckt clk_fb_1bit agnd avdd d p2 pvrefn pvrefn_b pvrefp pvrefp_b
+xi64 agnd avdd pvrefn pvrefn_b inv_bhv
+xi20 agnd avdd net43 pvrefp inv_bhv
+xi60 agnd avdd net48 pvrefn inv_bhv
+xi59 agnd avdd d d_b inv_bhv
+xi63 agnd avdd pvrefp pvrefp_b inv_bhv
+xi62 agnd avdd p2 d_b net48 nand2_bhv
+xi19 agnd avdd p2 d net43 nand2_bhv
+.ends clk_fb_1bit
+** End of subcircuit definition.
+
+** Library name: adc_project_mod4_9lev_fb
+** Cell name: int2_with_9lev_dac
+** View name: schematic
+.subckt int2_with_9lev_dac agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref outn outp pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_4 pvrefn_5 pvrefn_6 pvrefn_7 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefn_b_4 pvrefn_b_5 pvrefn_b_6 pvrefn_b_7 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_4 pvrefp_5 pvrefp_6 pvrefp_7 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 pvrefp_b_4 pvrefp_b_5 pvrefp_b_6 pvrefp_b_7 rst rst_b vcm vrefn vrefp s_inn s_inp
+xdac_0 agnd avdd dacn_0 dacp_0 pvrefn_0 pvrefn_b_0 pvrefp_0 pvrefp_b_0 vrefn vrefp dac_int_1bit
+xdac_1 agnd avdd dacn_1 dacp_1 pvrefn_1 pvrefn_b_1 pvrefp_1 pvrefp_b_1 vrefn vrefp dac_int_1bit
+xdac_2 agnd avdd dacn_2 dacp_2 pvrefn_2 pvrefn_b_2 pvrefp_2 pvrefp_b_2 vrefn vrefp dac_int_1bit
+xdac_3 agnd avdd dacn_3 dacp_3 pvrefn_3 pvrefn_b_3 pvrefp_3 pvrefp_b_3 vrefn vrefp dac_int_1bit
+xdac_4 agnd avdd dacn_4 dacp_4 pvrefn_4 pvrefn_b_4 pvrefp_4 pvrefp_b_4 vrefn vrefp dac_int_1bit
+xdac_5 agnd avdd dacn_5 dacp_5 pvrefn_5 pvrefn_b_5 pvrefp_5 pvrefp_b_5 vrefn vrefp dac_int_1bit
+xdac_6 agnd avdd dacn_6 dacp_6 pvrefn_6 pvrefn_b_6 pvrefp_6 pvrefp_b_6 vrefn vrefp dac_int_1bit
+xdac_7 agnd avdd dacn_7 dacp_7 pvrefn_7 pvrefn_b_7 pvrefp_7 pvrefp_b_7 vrefn vrefp dac_int_1bit
+c0 s_cinp s_dacp 800e-15
+c3 s_cinn s_cacn 800e-15
+cfbp_0 opip outp 1e-12
+cfbp_1 opip outp 1e-12
+cfbp_2 opip outp 1e-12
+cfbp_3 opip outp 1e-12
+cfbp_4 opip outp 1e-12
+cfbp_5 opip outp 1e-12
+cfbp_6 opip outp 1e-12
+cfbp_7 opip outp 1e-12
+c1_0 cinp dacp_0 400e-15
+c1_1 cinp dacp_1 400e-15
+c1_2 cinp dacp_2 400e-15
+c1_3 cinp dacp_3 400e-15
+c1_4 cinp dacp_4 400e-15
+c1_5 cinp dacp_5 400e-15
+c1_6 cinp dacp_6 400e-15
+c1_7 cinp dacp_7 400e-15
+c2_0 cinn dacn_0 400e-15
+c2_1 cinn dacn_1 400e-15
+c2_2 cinn dacn_2 400e-15
+c2_3 cinn dacn_3 400e-15
+c2_4 cinn dacn_4 400e-15
+c2_5 cinn dacn_5 400e-15
+c2_6 cinn dacn_6 400e-15
+c2_7 cinn dacn_7 400e-15
+cfbn_0 opin outn 1e-12
+cfbn_1 opin outn 1e-12
+cfbn_2 opin outn 1e-12
+cfbn_3 opin outn 1e-12
+cfbn_4 opin outn 1e-12
+cfbn_5 opin outn 1e-12
+cfbn_6 opin outn 1e-12
+cfbn_7 opin outn 1e-12
+xsw3 vcm cinp avdd agnd p1 p1_b TGB
+xsw7 vcm cinn avdd agnd p1 p1_b TGB
+xi1 s_cinn opin avdd agnd p2 p2_b TGB
+xi66 vcm s_cacn avdd agnd p2d p2d_b TGB
+xi3 vcm s_cinp avdd agnd p1 p1_b TGB
+xi2 s_inn s_cacn avdd agnd p1d p1d_b TGB
+xi65 vcm s_dacp avdd agnd p2d p2d_b TGB
+xswinn_0 inn dacn_0 avdd agnd p1d p1d_b TGB
+xswinn_1 inn dacn_1 avdd agnd p1d p1d_b TGB
+xswinn_2 inn dacn_2 avdd agnd p1d p1d_b TGB
+xswinn_3 inn dacn_3 avdd agnd p1d p1d_b TGB
+xswinn_4 inn dacn_4 avdd agnd p1d p1d_b TGB
+xswinn_5 inn dacn_5 avdd agnd p1d p1d_b TGB
+xswinn_6 inn dacn_6 avdd agnd p1d p1d_b TGB
+xswinn_7 inn dacn_7 avdd agnd p1d p1d_b TGB
+xi4 s_inp s_dacp avdd agnd p1d p1d_b TGB
+xi5 s_cinp opip avdd agnd p2 p2_b TGB
+xi0 vcm s_cinn avdd agnd p1 p1_b TGB
+xsw2 cinp opip avdd agnd p2 p2_b TGB
+xsw6 cinn opin avdd agnd p2 p2_b TGB
+xi12 outn opin avdd agnd rst rst_b TGB
+xi13 outp opip avdd agnd rst rst_b TGB
+xswinp_0 inp dacp_0 avdd agnd p1d p1d_b TGB
+xswinp_1 inp dacp_1 avdd agnd p1d p1d_b TGB
+xswinp_2 inp dacp_2 avdd agnd p1d p1d_b TGB
+xswinp_3 inp dacp_3 avdd agnd p1d p1d_b TGB
+xswinp_4 inp dacp_4 avdd agnd p1d p1d_b TGB
+xswinp_5 inp dacp_5 avdd agnd p1d p1d_b TGB
+xswinp_6 inp dacp_6 avdd agnd p1d p1d_b TGB
+xswinp_7 inp dacp_7 avdd agnd p1d p1d_b TGB
+xop agnd avdd opip opin iref outn outp pdn vcm vcm fdopb
+.ends int2_with_9lev_dac
+** End of subcircuit definition.
+
+** Library name: adc_project_mod4_9lev_fb
+** Cell name: int1_with_9lev_dac
+** View name: schematic
+.subckt int1_with_9lev_dac agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref outn outp pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_4 pvrefn_5 pvrefn_6 pvrefn_7 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefn_b_4 pvrefn_b_5 pvrefn_b_6 pvrefn_b_7 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_4 pvrefp_5 pvrefp_6 pvrefp_7 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 pvrefp_b_4 pvrefp_b_5 pvrefp_b_6 pvrefp_b_7 rst rst_b vcm vrefn vrefp
+xdac_0 agnd avdd dacn_0 dacp_0 pvrefn_0 pvrefn_b_0 pvrefp_0 pvrefp_b_0 vrefn vrefp dac_int_1bit
+xdac_1 agnd avdd dacn_1 dacp_1 pvrefn_1 pvrefn_b_1 pvrefp_1 pvrefp_b_1 vrefn vrefp dac_int_1bit
+xdac_2 agnd avdd dacn_2 dacp_2 pvrefn_2 pvrefn_b_2 pvrefp_2 pvrefp_b_2 vrefn vrefp dac_int_1bit
+xdac_3 agnd avdd dacn_3 dacp_3 pvrefn_3 pvrefn_b_3 pvrefp_3 pvrefp_b_3 vrefn vrefp dac_int_1bit
+xdac_4 agnd avdd dacn_4 dacp_4 pvrefn_4 pvrefn_b_4 pvrefp_4 pvrefp_b_4 vrefn vrefp dac_int_1bit
+xdac_5 agnd avdd dacn_5 dacp_5 pvrefn_5 pvrefn_b_5 pvrefp_5 pvrefp_b_5 vrefn vrefp dac_int_1bit
+xdac_6 agnd avdd dacn_6 dacp_6 pvrefn_6 pvrefn_b_6 pvrefp_6 pvrefp_b_6 vrefn vrefp dac_int_1bit
+xdac_7 agnd avdd dacn_7 dacp_7 pvrefn_7 pvrefn_b_7 pvrefp_7 pvrefp_b_7 vrefn vrefp dac_int_1bit
+cfbp_0 opip outp 1e-12
+cfbp_1 opip outp 1e-12
+cfbp_2 opip outp 1e-12
+cfbp_3 opip outp 1e-12
+cfbp_4 opip outp 1e-12
+cfbp_5 opip outp 1e-12
+cfbp_6 opip outp 1e-12
+cfbp_7 opip outp 1e-12
+c1_0 cinp dacp_0 400e-15
+c1_1 cinp dacp_1 400e-15
+c1_2 cinp dacp_2 400e-15
+c1_3 cinp dacp_3 400e-15
+c1_4 cinp dacp_4 400e-15
+c1_5 cinp dacp_5 400e-15
+c1_6 cinp dacp_6 400e-15
+c1_7 cinp dacp_7 400e-15
+c2_0 cinn dacn_0 400e-15
+c2_1 cinn dacn_1 400e-15
+c2_2 cinn dacn_2 400e-15
+c2_3 cinn dacn_3 400e-15
+c2_4 cinn dacn_4 400e-15
+c2_5 cinn dacn_5 400e-15
+c2_6 cinn dacn_6 400e-15
+c2_7 cinn dacn_7 400e-15
+cfbn_0 opin outn 1e-12
+cfbn_1 opin outn 1e-12
+cfbn_2 opin outn 1e-12
+cfbn_3 opin outn 1e-12
+cfbn_4 opin outn 1e-12
+cfbn_5 opin outn 1e-12
+cfbn_6 opin outn 1e-12
+cfbn_7 opin outn 1e-12
+xsw3 vcm cinp avdd agnd p1 p1_b TGB
+xsw7 vcm cinn avdd agnd p1 p1_b TGB
+xswinn_0 inn dacn_0 avdd agnd p1d p1d_b TGB
+xswinn_1 inn dacn_1 avdd agnd p1d p1d_b TGB
+xswinn_2 inn dacn_2 avdd agnd p1d p1d_b TGB
+xswinn_3 inn dacn_3 avdd agnd p1d p1d_b TGB
+xswinn_4 inn dacn_4 avdd agnd p1d p1d_b TGB
+xswinn_5 inn dacn_5 avdd agnd p1d p1d_b TGB
+xswinn_6 inn dacn_6 avdd agnd p1d p1d_b TGB
+xswinn_7 inn dacn_7 avdd agnd p1d p1d_b TGB
+xsw2 cinp opip avdd agnd p2 p2_b TGB
+xsw6 cinn opin avdd agnd p2 p2_b TGB
+xi12 outn opin avdd agnd rst rst_b TGB
+xi13 outp opip avdd agnd rst rst_b TGB
+xswinp_0 inp dacp_0 avdd agnd p1d p1d_b TGB
+xswinp_1 inp dacp_1 avdd agnd p1d p1d_b TGB
+xswinp_2 inp dacp_2 avdd agnd p1d p1d_b TGB
+xswinp_3 inp dacp_3 avdd agnd p1d p1d_b TGB
+xswinp_4 inp dacp_4 avdd agnd p1d p1d_b TGB
+xswinp_5 inp dacp_5 avdd agnd p1d p1d_b TGB
+xswinp_6 inp dacp_6 avdd agnd p1d p1d_b TGB
+xswinp_7 inp dacp_7 avdd agnd p1d p1d_b TGB
+xop agnd avdd opip opin iref outn outp pdn vcm vcm fdopb
+.ends int1_with_9lev_dac
+** End of subcircuit definition.
+
+** Library name: adc_project_mod4_9lev_fb
+** Cell name: adc_mod4_9lev_fb
+** View name: schematic
+xvth vrefn vrefp vthp_0 vthp_1 vthp_2 vthp_3 vthp_4 vthp_5 vthp_6 vthp_7 vth_9Lev
+xquantizer_1bit_0 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_0 iref_cmp_0 pdn vcm vthp_7 vthp_0 inn inp int4_n int4_p adder_cmp_1b_CIFB
+xquantizer_1bit_1 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_1 iref_cmp_1 pdn vcm vthp_6 vthp_1 inn inp int4_n int4_p adder_cmp_1b_CIFB
+xquantizer_1bit_2 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_2 iref_cmp_2 pdn vcm vthp_5 vthp_2 inn inp int4_n int4_p adder_cmp_1b_CIFB
+xquantizer_1bit_3 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_3 iref_cmp_3 pdn vcm vthp_4 vthp_3 inn inp int4_n int4_p adder_cmp_1b_CIFB
+xquantizer_1bit_4 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_4 iref_cmp_4 pdn vcm vthp_3 vthp_4 inn inp int4_n int4_p adder_cmp_1b_CIFB
+xquantizer_1bit_5 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_5 iref_cmp_5 pdn vcm vthp_2 vthp_5 inn inp int4_n int4_p adder_cmp_1b_CIFB
+xquantizer_1bit_6 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_6 iref_cmp_6 pdn vcm vthp_1 vthp_6 inn inp int4_n int4_p adder_cmp_1b_CIFB
+xquantizer_1bit_7 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_7 iref_cmp_7 pdn vcm vthp_0 vthp_7 inn inp int4_n int4_p adder_cmp_1b_CIFB
+xint4 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref_4 int4_n int4_p pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_4 pvrefn_5 pvrefn_6 pvrefn_7 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefn_b_4 pvrefn_b_5 pvrefn_b_6 pvrefn_b_7 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_4 pvrefp_5 pvrefp_6 pvrefp_7 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 pvrefp_b_4 pvrefp_b_5 pvrefp_b_6 pvrefp_b_7 rst rst_b vcm vrefn vrefp int3_n int3_p int4_with_9lev_dac
+xint3 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref_3 int3_n int3_p pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_4 pvrefn_5 pvrefn_6 pvrefn_7 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefn_b_4 pvrefn_b_5 pvrefn_b_6 pvrefn_b_7 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_4 pvrefp_5 pvrefp_6 pvrefp_7 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 pvrefp_b_4 pvrefp_b_5 pvrefp_b_6 pvrefp_b_7 rst rst_b vcm vrefn vrefp int2_n int2_p int3_with_9lev_dac
+xclk_fb_0 agnd avdd dout_0 p2d pvrefn_0 pvrefn_b_0 pvrefp_0 pvrefp_b_0 clk_fb_1bit
+xclk_fb_1 agnd avdd dout_1 p2d pvrefn_1 pvrefn_b_1 pvrefp_1 pvrefp_b_1 clk_fb_1bit
+xclk_fb_2 agnd avdd dout_2 p2d pvrefn_2 pvrefn_b_2 pvrefp_2 pvrefp_b_2 clk_fb_1bit
+xclk_fb_3 agnd avdd dout_3 p2d pvrefn_3 pvrefn_b_3 pvrefp_3 pvrefp_b_3 clk_fb_1bit
+xclk_fb_4 agnd avdd dout_4 p2d pvrefn_4 pvrefn_b_4 pvrefp_4 pvrefp_b_4 clk_fb_1bit
+xclk_fb_5 agnd avdd dout_5 p2d pvrefn_5 pvrefn_b_5 pvrefp_5 pvrefp_b_5 clk_fb_1bit
+xclk_fb_6 agnd avdd dout_6 p2d pvrefn_6 pvrefn_b_6 pvrefp_6 pvrefp_b_6 clk_fb_1bit
+xclk_fb_7 agnd avdd dout_7 p2d pvrefn_7 pvrefn_b_7 pvrefp_7 pvrefp_b_7 clk_fb_1bit
+xint2 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref_2 int2_n int2_p pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_4 pvrefn_5 pvrefn_6 pvrefn_7 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefn_b_4 pvrefn_b_5 pvrefn_b_6 pvrefn_b_7 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_4 pvrefp_5 pvrefp_6 pvrefp_7 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 pvrefp_b_4 pvrefp_b_5 pvrefp_b_6 pvrefp_b_7 rst rst_b vcm vrefn vrefp int1_n int1_p int2_with_9lev_dac
+xint1 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref_1 int1_n int1_p pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_4 pvrefn_5 pvrefn_6 pvrefn_7 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefn_b_4 pvrefn_b_5 pvrefn_b_6 pvrefn_b_7 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_4 pvrefp_5 pvrefp_6 pvrefp_7 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 pvrefp_b_4 pvrefp_b_5 pvrefp_b_6 pvrefp_b_7 rst rst_b vcm vrefn vrefp int1_with_9lev_dac

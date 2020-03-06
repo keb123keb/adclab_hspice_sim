@@ -1,0 +1,22 @@
+Using: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv_v4_4.sp
+ ****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+  Copyright (c) 1986 - 2019 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: bhv_v4_4.sp                                                       
+  Command line options: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv_v4_4.sp
+ lic:  
+ lic: FLEXlm: SDK_11.6.9.6 
+ lic: USER:   ychuang              HOSTNAME: adc 
+ lic: HOSTID: "b026281535a3"       PID:      435691 
+ lic: Cannot connect to license server system.  The license server manager (lmgrd) has not been star
+ lic: lmgrd did not run on license SERVER 
+ lic: Please start lmgrd on SERVER 
+ lic: Using FLEXlm license files: 
+ lic: 5280@lscic:5280@lsntu:5280@lsncku:26585@lsnctu 
+ lic: Unable to checkout (hspice) 
+ lic:   
+ lic: total license checkout elapse time:       30.10(s)

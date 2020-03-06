@@ -1,0 +1,499 @@
+Using: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv2.sp
+ ****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+  Copyright (c) 1986 - 2019 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: bhv2.sp                                                           
+  Command line options: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv2.sp
+ lic:  
+ lic: FLEXlm: SDK_11.6.9.6 
+ lic: USER:   ychuang              HOSTNAME: adc 
+ lic: HOSTID: "b4969141dd1f"       PID:      29132 
+ lic: Using FLEXlm license file: 
+ lic: 26585@lsnctu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09 
+ lic: 117(in_use)/190(total) FLOATING license(s) on SERVER 26585@lsnctu 
+ lic:   
+
+ **warning** RUNLVL=0 option detected. RUNLVL=0 is automatically switched to RUNLVL=5 from Release H-2013.03-SP1. RUNLVL=0 is a legacy setting with poor runtime performance.
+
+
+1****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+ ******  
+ * idc_mod simulation
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xi21.                           inv_bhv            1.00 
+        2 xi20.                           inv_bhv            1.00 
+        3 xi19.                           inv_bhv            1.00 
+        4 xi17.                           inv_bhv            1.00 
+        5 xi16.                           inv_bhv            1.00 
+        6 xi8.                            inv_bhv            1.00 
+        7 xi10.                           inv_bhv            1.00 
+        8 xi6.                            inv_bhv            1.00 
+        9 xi9.                            inv_bhv            1.00 
+       10 xi13.                           inv_bhv            1.00 
+       11 xi11.                           inv_bhv            1.00 
+       12 xi22.                           nand2_bhv          1.00 
+       13 xi18.                           nand2_bhv          1.00 
+       14 xi12.                           nand2_bhv          1.00 
+       15 xi7.                            nand2_bhv          1.00 
+       16 xi15.                           tgb                1.00 
+       17 xi14.                           tgb                1.00 
+       18 xswvcmp.                        tgb                1.00 
+       19 xi24.                           tgb                1.00 
+       20 xi32.                           tgb                1.00 
+       21 xi3.                            tgb                1.00 
+       22 xi5.                            tgb                1.00 
+       23 xi2.                            tgb                1.00 
+       24 xi31.                           tgb                1.00 
+       25 xi4.                            tgb                1.00 
+       26 xi30.                           tgb                1.00 
+       27 xi27.                           tgb                1.00 
+       28 xop.                            fdopb              1.00 
+       29 xi21.xp1.                       pmos_b             1.00 
+       30 xi21.xn1.                       nmos_b             1.00 
+       31 xi20.xp1.                       pmos_b             1.00 
+       32 xi20.xn1.                       nmos_b             1.00 
+       33 xi19.xp1.                       pmos_b             1.00 
+       34 xi19.xn1.                       nmos_b             1.00 
+       35 xi17.xp1.                       pmos_b             1.00 
+       36 xi17.xn1.                       nmos_b             1.00 
+       37 xi16.xp1.                       pmos_b             1.00 
+       38 xi16.xn1.                       nmos_b             1.00 
+       39 xi8.xp1.                        pmos_b             1.00 
+       40 xi8.xn1.                        nmos_b             1.00 
+       41 xi10.xp1.                       pmos_b             1.00 
+       42 xi10.xn1.                       nmos_b             1.00 
+       43 xi6.xp1.                        pmos_b             1.00 
+       44 xi6.xn1.                        nmos_b             1.00 
+       45 xi9.xp1.                        pmos_b             1.00 
+       46 xi9.xn1.                        nmos_b             1.00 
+       47 xi13.xp1.                       pmos_b             1.00 
+       48 xi13.xn1.                       nmos_b             1.00 
+       49 xi11.xp1.                       pmos_b             1.00 
+       50 xi11.xn1.                       nmos_b             1.00 
+       51 xi22.xn1.                       nmos_b             1.00 
+       52 xi22.xi9.                       nmos_b             1.00 
+       53 xi22.xp1.                       pmos_b             1.00 
+       54 xi22.xi10.                      pmos_b             1.00 
+       55 xi18.xn1.                       nmos_b             1.00 
+       56 xi18.xi9.                       nmos_b             1.00 
+       57 xi18.xp1.                       pmos_b             1.00 
+       58 xi18.xi10.                      pmos_b             1.00 
+       59 xi12.xn1.                       nmos_b             1.00 
+       60 xi12.xi9.                       nmos_b             1.00 
+       61 xi12.xp1.                       pmos_b             1.00 
+       62 xi12.xi10.                      pmos_b             1.00 
+       63 xi7.xn1.                        nmos_b             1.00 
+       64 xi7.xi9.                        nmos_b             1.00 
+       65 xi7.xp1.                        pmos_b             1.00 
+       66 xi7.xi10.                       pmos_b             1.00 
+  **info** (bhv2.sp:29) DC voltage reset to initial transient source value in source 0:vclk. new dc=0.0000D+00
+  **warning** (bhv2.sp:58) Unable to find referenced node dacp; Output variable ignored. Specify a valid node.
+  **warning** (bhv2.sp:58) .print/.probe statement contains unused output; the unused output is ignored.
+  
+  **warning** No connections on node iref; Node ignored.
+
+  **warning** the following singular supplies were terminated to 1 meg resistor 
+          supply       node1            node2
+(bhv2.sp:23)vagnd                   0:agnd             defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2.sp:22)vavdd                   0:avdd             defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2.sp:26)vdsub                   0:dsub             defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2.sp:36)evcm1                   0:vcm1             defined in subckt 0                     0:0                defined in subckt 0               
+(../../et710/ece627_bhv_ckt.cir:65)e1                     28:vcmi             defined in subckt fdopb                 0:0                defined in subckt 0               
+      
+
+Element variations(Local):   element              parameter
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 5         bypass  = 2.0000    
+             
+ Summary of Linear Res Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e+00  ~  1e+03|11        |9.3220    |
+ |1e+05  ~  1e+06|7         |5.9322    |
+ |1e+11  ~  1e+12|100       |84.7458   |
+ ---------------------------------------
+              
+             
+ Summary of Linear Cap Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e-17  ~  1e-16|50        |76.9231   |
+ |1e-15  ~  1e-14|11        |16.9231   |
+ |1e-14  ~  1e-13|4         |6.1538    |
+ ---------------------------------------
+              
+             
+ Summary of Detailed RC Type Statistics
+ -----------------------------
+ |Element Type    |Number    |
+ |----------------+----------|
+ |Constant Res    |113       |
+ |Other Linear Res|5         |
+ |                |          |
+ |Constant Cap    |65        |
+ -----------------------------
+              
+  Opening plot unit= 15
+ file=bhv2.pa0
+
+ **info** dc convergence successful at Newton-Raphson method 
+ ******  
+ * idc_mod simulation
+
+ ****** operating point information tnom=  25.000 temp=  60.000 ******
+ ****** operating point status is all       simulation time is     0.     
+     node    =voltage       node    =voltage       node    =voltage
+
+ + 0:agnd    =   0.       0:avdd    =   1.0000   0:clk     =   0.     
+ + 0:clk_b   =   1.0000   0:d       =   1.0000   0:d_b     =  10.0000f
+ + 0:dac_n   = 500.0000m  0:dac_p   = 500.0000m  0:dgnd    =   0.     
+ + 0:dsub    =   0.       0:dvdd    =   1.0000   0:iref    =   0.     
+ + 0:net0135 =  40.0000f  0:net0157 =   1.0000   0:net045  =   1.0000 
+ + 0:net046  =   1.0000   0:net103  = 249.8755u  0:net99   = 249.8755u
+ + 0:outn    = 500.0000m  0:outp    = 500.0000m  0:pdac    =  10.0000f
+ + 0:pdac_b  =   1.0000   0:pdacb   =  10.0000f  0:pdacb_b =   1.0000 
+ + 0:pdet1   =  10.0000f  0:pdet1_b =   1.0000   0:pdet2   =   1.0000 
+ + 0:pdet2_b =  10.0000f  0:pdn     =   0.       0:ps_gnd_n= 249.8755u
+ + 0:ps_gnd_p= 249.8755u  0:psamp   =   0.       0:psamp_b =   1.0000 
+ + 0:vcm     = 500.0000m  0:vcm1    = 500.0000m  0:vrefn   =   0.     
+ + 0:vrefp   =   1.0000   1:net23   =  10.0000f  2:net23   =   1.0000 
+ + 3:net23   =  10.0000f  4:net23   =   1.0000   5:net23   =  10.0000f
+ + 6:net23   =   1.0000   7:net23   =   1.0000   8:net23   =  10.0000f
+ + 9:net23   =   1.0000  10:net23   =   1.0000  11:net23   =  10.0000f
+ +12:net8    = 499.5005u 13:net8    =  10.0000f 14:net8    =  20.0000f
+ +15:net8    =  10.0000f 28:vcmi    = 500.0000m
+
+
+ **** voltage sources
+
+ subckt                                                              
+ element   0:v_refn    0:v_refp    0:v_vcm     0:vagnd     0:vavdd   
+  volts       0.          1.0000    500.0000m     0.          1.0000 
+  current     1.0000f    -2.0010p    -1.0010p     0.         -1.0000u
+  power       0.          2.0010p   500.4998f     0.          1.0000u
+
+ subckt                                                              
+ element   0:vclk      0:vd        0:vdgnd     0:vdsub     0:vdvdd   
+  volts       0.          1.0000      0.          0.          1.0000 
+  current     0.          0.         15.0005f     0.        -40.0159p
+  power       0.          0.          0.          0.         40.0159p
+
+ subckt              
+ element   0:vsamp   
+  volts       0.     
+  current     0.     
+  power       0.     
+
+     total voltage source power dissipation=    1.0000u       watts
+
+
+
+ **** resistors
+
+ subckt    xi21        xi20        xi19        xi17        xi16      
+ element   1:r1        2:r1        3:r1        4:r1        5:r1      
+  r value    10.0000     10.0000     10.0000     10.0000     10.0000 
+  v drop      0.          0.          0.          0.          0.     
+  current     0.          0.          0.          0.          0.     
+  power       0.          0.          0.          0.          0.     
+
+ subckt    xi8         xi10        xi6         xi9         xi13      
+ element   6:r1        7:r1        8:r1        9:r1       10:r1      
+  r value    10.0000     10.0000     10.0000     10.0000     10.0000 
+  v drop      0.          0.          0.          0.          0.     
+  current     0.          0.          0.          0.          0.     
+  power       0.          0.          0.          0.          0.     
+
+ subckt    xi11        xi15        xi15        xi14        xi14      
+ element  11:r1       16:r1       16:r2       17:r1       17:r2      
+  r value    10.0000    1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      0.          1.0000    500.0000m     0.        500.0000m
+  current     0.          1.0000p   500.0000f     0.        500.0000f
+  power       0.          1.0000p   250.0000f     0.        250.0000f
+
+ subckt    xswvcmp     xswvcmp     xi24        xi24        xi32      
+ element  18:r1       18:r2       19:r1       19:r2       20:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      0.        500.0000m     1.0000    500.0000m   249.8755u
+  current     0.        500.0000f     1.0000p   500.0000f   249.8755a
+  power       0.        250.0000f     1.0000p   250.0000f   6.244e-20
+
+ subckt    xi32        xi3         xi3         xi5         xi5       
+ element  20:r2       21:r1       21:r2       22:r1       22:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    500.0000m   249.8755u   500.0000m   249.8755u   249.8755u
+  current   500.0000f   249.8755a   500.0000f   249.8755a   249.8755a
+  power     250.0000f   6.244e-20   250.0000f   6.244e-20   6.244e-20
+
+ subckt    xi2         xi2         xi31        xi31        xi4       
+ element  23:r1       23:r2       24:r1       24:r2       25:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    249.8755u   249.8755u   249.8755u   500.0000m   249.8755u
+  current   249.8755a   249.8755a   249.8755a   500.0000f   249.8755a
+  power     6.244e-20   6.244e-20   6.244e-20   250.0000f   6.244e-20
+
+ subckt    xi4         xi30        xi30        xi27        xi27      
+ element  25:r2       26:r1       26:r2       27:r1       27:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    500.0000m   500.0000m   500.0000m   500.0000m   500.0000m
+  current   500.0000f   500.0000f   500.0000f   500.0000f   500.0000f
+  power     250.0000f   250.0000f   250.0000f   250.0000f   250.0000f
+
+ subckt    xi21.xp1    xi21.xp1    xi21.xn1    xi21.xn1    xi20.xp1  
+ element  29:r1       29:r2       30:r1       30:r2       31:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop     10.0000f     1.0000     10.0000f     0.          1.0000 
+  current   1.000e-26     1.0000p   1.000e-26     0.          1.0000p
+  power       0.          1.0000p     0.          0.          1.0000p
+
+ subckt    xi20.xp1    xi20.xn1    xi20.xn1    xi19.xp1    xi19.xp1  
+ element  31:r2       32:r1       32:r2       33:r1       33:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.0000      1.0000      0.         10.0000f     1.0000 
+  current     1.0000p     1.0000p     0.        1.000e-26     1.0000p
+  power       1.0000p     1.0000p     0.          0.          1.0000p
+
+ subckt    xi19.xn1    xi19.xn1    xi17.xp1    xi17.xp1    xi17.xn1  
+ element  34:r1       34:r2       35:r1       35:r2       36:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop     10.0000f     0.          1.0000      1.0000      1.0000 
+  current   1.000e-26     0.          1.0000p     1.0000p     1.0000p
+  power       0.          0.          1.0000p     1.0000p     1.0000p
+
+ subckt    xi17.xn1    xi16.xp1    xi16.xp1    xi16.xn1    xi16.xn1  
+ element  36:r2       37:r1       37:r2       38:r1       38:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      0.         10.0000f     1.0000     10.0000f     0.     
+  current     0.        1.000e-26     1.0000p   1.000e-26     0.     
+  power       0.          0.          1.0000p     0.          0.     
+
+ subckt    xi8.xp1     xi8.xp1     xi8.xn1     xi8.xn1     xi10.xp1  
+ element  39:r1       39:r2       40:r1       40:r2       41:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.0000      1.0000      1.0000      0.          1.0000 
+  current     1.0000p     1.0000p     1.0000p     0.          1.0000p
+  power       1.0000p     1.0000p     1.0000p     0.          1.0000p
+
+ subckt    xi10.xp1    xi10.xn1    xi10.xn1    xi6.xp1     xi6.xp1   
+ element  41:r2       42:r1       42:r2       43:r1       43:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.0000      1.0000      0.         10.0000f     1.0000 
+  current     1.0000p     1.0000p     0.        1.000e-26     1.0000p
+  power       1.0000p     1.0000p     0.          0.          1.0000p
+
+ subckt    xi6.xn1     xi6.xn1     xi9.xp1     xi9.xp1     xi9.xn1   
+ element  44:r1       44:r2       45:r1       45:r2       46:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop     10.0000f     0.          1.0000      1.0000      1.0000 
+  current   1.000e-26     0.          1.0000p     1.0000p     1.0000p
+  power       0.          0.          1.0000p     1.0000p     1.0000p
+
+ subckt    xi9.xn1     xi13.xp1    xi13.xp1    xi13.xn1    xi13.xn1  
+ element  46:r2       47:r1       47:r2       48:r1       48:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      0.          1.0000      1.0000      1.0000      0.     
+  current     0.          1.0000p     1.0000p     1.0000p     0.     
+  power       0.          1.0000p     1.0000p     1.0000p     0.     
+
+ subckt    xi11.xp1    xi11.xp1    xi11.xn1    xi11.xn1    xi22.xn1  
+ element  49:r1       49:r2       50:r1       50:r2       51:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop     10.0000f     1.0000     10.0000f     0.          1.0000 
+  current   1.000e-26     1.0000p   1.000e-26     0.          1.0000p
+  power       0.          1.0000p     0.          0.          1.0000p
+
+ subckt    xi22.xn1    xi22.xi9    xi22.xi9    xi22.xp1    xi22.xp1  
+ element  51:r2       52:r1       52:r2       53:r1       53:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop    499.5005u   499.5005u     0.          1.0000      1.0000 
+  current   499.5005a   499.5005a     0.          1.0000p     1.0000p
+  power     2.495e-19   2.495e-19     0.          1.0000p     1.0000p
+
+ subckt    xi22.xi10   xi22.xi10   xi18.xn1    xi18.xn1    xi18.xi9  
+ element  54:r1       54:r2       55:r1       55:r2       56:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.0000      1.0000      1.0000     10.0000f    10.0000f
+  current     1.0000p     1.0000p     1.0000p   1.000e-26   1.000e-26
+  power       1.0000p     1.0000p     1.0000p     0.          0.     
+
+ subckt    xi18.xi9    xi18.xp1    xi18.xp1    xi18.xi10   xi18.xi10 
+ element  56:r2       57:r1       57:r2       58:r1       58:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      0.          1.0000      1.0000      1.0000      1.0000 
+  current     0.          1.0000p     1.0000p     1.0000p     1.0000p
+  power       0.          1.0000p     1.0000p     1.0000p     1.0000p
+
+ subckt    xi12.xn1    xi12.xn1    xi12.xi9    xi12.xi9    xi12.xp1  
+ element  59:r1       59:r2       60:r1       60:r2       61:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop     40.0000f    20.0000f    20.0000f     0.         40.0000f
+  current   4.000e-26   2.000e-26   2.000e-26     0.        4.000e-26
+  power       0.          0.          0.          0.          0.     
+
+ subckt    xi12.xp1    xi12.xi10   xi12.xi10   xi7.xn1     xi7.xn1   
+ element  61:r2       62:r1       62:r2       63:r1       63:r2      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop      1.0000     40.0000f     1.0000      1.0000     10.0000f
+  current     1.0000p   4.000e-26     1.0000p     1.0000p   1.000e-26
+  power       1.0000p     0.          1.0000p     1.0000p     0.     
+
+ subckt    xi7.xi9     xi7.xi9     xi7.xp1     xi7.xp1     xi7.xi10  
+ element  64:r1       64:r2       65:r1       65:r2       66:r1      
+  r value   1.000e+12   1.000e+12   1.000e+12   1.000e+12   1.000e+12
+  v drop     10.0000f     0.          1.0000      1.0000      1.0000 
+  current   1.000e-26     0.          1.0000p     1.0000p     1.0000p
+  power       0.          0.          1.0000p     1.0000p     1.0000p
+
+ subckt    xi7.xi10  
+ element  66:r2      
+  r value   1.000e+12
+  v drop      1.0000 
+  current     1.0000p
+  power       1.0000p
+
+
+ **** voltage-controlled resistors
+
+
+ subckt      xi15        xi14        xswvcmp     xi24        xi32    
+ element  16:g1       17:g1       18:g1       19:g1       20:g1      
+  r value   1.000e+15   1.000e+15   1.000e+15   1.000e+15   1.000e+15
+
+
+
+ subckt      xi3         xi5         xi2         xi31        xi4     
+ element  21:g1       22:g1       23:g1       24:g1       25:g1      
+  r value   1.000e+15    10.0000     10.0000    1.000e+15   1.000e+15
+
+
+
+ subckt      xi30        xi27        xi21.xp1    xi21.xn1    xi20.xp1
+ element  26:g1       27:g1       29:g1       30:g1       31:g1      
+  r value    10.0000     10.0000    1.000e+15    10.0000     10.0000 
+
+
+
+ subckt      xi20.xn1    xi19.xp1    xi19.xn1    xi17.xp1    xi17.xn1
+ element  32:g1       33:g1       34:g1       35:g1       36:g1      
+  r value   1.000e+15   1.000e+15    10.0000     10.0000    1.000e+15
+
+
+
+ subckt      xi16.xp1    xi16.xn1    xi8.xp1     xi8.xn1     xi10.xp1
+ element  37:g1       38:g1       39:g1       40:g1       41:g1      
+  r value   1.000e+15    10.0000     10.0000    1.000e+15    10.0000 
+
+
+
+ subckt      xi10.xn1    xi6.xp1     xi6.xn1     xi9.xp1     xi9.xn1 
+ element  42:g1       43:g1       44:g1       45:g1       46:g1      
+  r value   1.000e+15   1.000e+15    10.0000     10.0000    1.000e+15
+
+
+
+ subckt      xi13.xp1    xi13.xn1    xi11.xp1    xi11.xn1    xi22.xn1
+ element  47:g1       48:g1       49:g1       50:g1       51:g1      
+  r value    10.0000    1.000e+15   1.000e+15    10.0000    1.000e+15
+
+
+
+ subckt      xi22.xi9    xi22.xp1    xi22.xi1    xi18.xn1    xi18.xi9
+ element  52:g1       53:g1       54:g1       55:g1       56:g1      
+  r value   1.000e+15    10.0000     10.0000    1.000e+15    10.0000 
+
+
+
+ subckt      xi18.xp1    xi18.xi1    xi12.xn1    xi12.xi9    xi12.xp1
+ element  57:g1       58:g1       59:g1       60:g1       61:g1      
+  r value   1.000e+15    10.0000     10.0000     10.0000    1.000e+15
+
+
+
+ subckt      xi12.xi1    xi7.xn1     xi7.xi9     xi7.xp1     xi7.xi10
+ element  62:g1       63:g1       64:g1       65:g1       66:g1      
+  r value   1.000e+15   1.000e+15    10.0000    1.000e+15    10.0000 
+
+
+
+
+ **** voltage-controlled voltage sources
+
+
+ subckt                  xop         xop         xop     
+ element   0:evcm1    28:e1       28:ep       28:en      
+  volts     500.0000m   500.0000m   500.0000m   500.0000m
+  current  -500.0000n  -500.0000n    -2.5005p    -2.5005p
+
+
+
+
+          ***** job concluded
+ ******  
+ * idc_mod simulation
+
+ ****** job statistics summary tnom=  25.000 temp=  60.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Core(TM) i7-7820X CPU @ 3.60GHz
+ cpu MHz	: 1199.926
+  
+ OS:
+ Linux version 3.10.0-957.21.3.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Tue Jun 18 16:35:19 UTC 2019
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    16
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      54 # elements   =     248
+  # resistors   =     118 # capacitors =      65 # inductors   =       0
+  # mutual_inds =       0 # vccs       =      50 # vcvs        =       4
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =      11
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.02           1           8
+  transient          1.09         161       60244       27245 rev=      1189
+  readin             0.03
+  errchk             0.01
+  setup              0.03
+  output             0.00
+
+
+           peak memory used        322.59 megabytes
+           total cpu time            1.17 seconds
+           total elapsed time        1.45 seconds
+           job started at     11:25:40 12/10/2019
+           job ended   at     11:25:42 12/10/2019
+
+
+
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.41(s)

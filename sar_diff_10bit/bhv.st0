@@ -1,0 +1,40 @@
+****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******
+ Input File: bhv.sp
+ lic:
+ lic: FLEXlm: SDK_11.6.9.6
+ lic: USER:   ychuang              HOSTNAME: adc
+ lic: HOSTID: "b4969141dd1f"       PID:      93875
+ lic: Using FLEXlm license file:
+ lic: 26585@lsnctu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09
+ lic: 171(in_use)/190(total) FLOATING license(s) on SERVER 26585@lsnctu
+ lic:
+ init: begin read circuit files, cpu clock= 3.40E-01
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     0.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    1.000E-09
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 3.50E-01 peak memory=     321 mb
+ init: begin check errors, cpu clock= 3.50E-01
+ init: end check errors, cpu clock= 4.10E-01 peak memory=     328 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 4.10E-01
+       establish matrix -- done, cpu clock= 4.10E-01 peak memory=     328 mb
+       re-order matrix -- done, cpu clock= 4.10E-01 peak memory=     328 mb
+ init: end setup matrix, cpu clock= 4.20E-01 peak memory=     328 mb
+ dcop: begin dcop, cpu clock= 4.20E-01
+ dcop: end dcop, cpu clock= 4.50E-01 peak memory=     328 mb tot_iter=      11
+ output: bhv.tr0
+ sweep: tran tran0    begin, stop_t=  1.00E-03 #sweeps= 101 cpu clock= 4.60E-01
+ **error** stop simulation by signal SIGINT = 2
+
+ lic: Release hspice token(s)

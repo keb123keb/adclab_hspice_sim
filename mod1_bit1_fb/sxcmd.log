@@ -1,0 +1,170 @@
+### Custom WaveView ADV log file, revision O-2018.09 (build Aug 27, ) ###
+### created at 14:15:22 on Fri May 17 2019 (Linux AMD64) ###
+### Host Name: adc   User ID: ychuang   PID: 28847   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+wv_move_window {Custom WaveView} {} 133 152
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {RecentFile1} 
+wv_collapse_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)} {+sep=@}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(inp)} 2
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(inp)} 2
+wv_select_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 4
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 4
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_press_tool_button {Custom WaveView} {waveview 1:1} {Waveview.CloseBtn} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)} {0} {+sep=@}
+wv_tree_context_menu {Custom WaveView} {} {hierview} 25 11 {D0:bhv.tr0(0)} {+sep=@}
+wv_select_menu_item {Custom WaveView} {} {FileViewPopMenu.Close This File} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {OpenWaveformFile0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {143}
+wv_select_list_item {FileDialog} {} {FileList} {bhv.tr0} 18
+wv_dclick_list_item {FileDialog} {} {FileList} {bhv.tr0} 18
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 746 519
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(inp)} 2
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(inp)} 2
+wv_select_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 4
+wv_select_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 4
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 4
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p1)} 5
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p1)} 5
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p1d)} 7
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p1d)} 7
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p1d)} 7
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p1d)} 7
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p1_b)} 6
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p1_b)} 6
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p2)} 9
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p2)} 9
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p1d_b)} 8
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p1d_b)} 8
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p2_b)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p2_b)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p2_b)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p2d)} 11
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p2d)} 11
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p2d)} 11
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p2d)} 11
+wv_select_list_item {Custom WaveView} {} {sigview} {v(p2d_b)} 12
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(p2d_b)} 12
+wv_select_list_item {Custom WaveView} {} {sigview} {v(vcm)} 13
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(vcm)} 13
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_press_tool_button {Custom WaveView} {} {NewWaveView0} 
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 4
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {NewWaveView0} 
+wv_press_tool_button {Custom WaveView} {waveview 3:3} {Waveview.CloseBtn} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_select_list_item {Custom WaveView} {} {sigview} {v(dout)} 0
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(dout)} 0
+wv_select_waveview 2 {waveview 2}
+wv_waveview_context_menu WV2.PANEL1:1.LEGEND
+wv_select_waveview 2 {waveview 2}
+wv_select_menu_item {Custom WaveView} {waveview 2:2} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_press_button {WaveformExportParameters} {} {Browse} 
+wv_move_window {FileDialog} {} 421 161
+wv_move_window {FileDialog} {} 431 200
+wv_select_dialog {FileDialog} 
+wv_select_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_select_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_dclick_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_select_list_item {FileDialog} {} {FileList} {int1_1bit_fb_vin_n6db_np_1280_fsig_20M} 2
+wv_set_text {FileDialog} {} {FileName} "int1_1bit_fb_vin_n6db_np_1280_fsig_20M_G1o3.m"
+wv_press_button {FileDialog} {} {Ok} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {MFile} 
+wv_move_window {WaveformExportParameters} {} 170 50
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_move_window {Custom WaveView} {} 0 0
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 94 30
+wv_select_window {Custom WaveView} 
+wv_select_waveview 2 {waveview 2}
+wv_waveview_context_menu WV2.PANEL1:1.LEGEND
+wv_select_waveview 2 {waveview 2}
+wv_select_menu_item {Custom WaveView} {waveview 2:2} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_move_window {Custom WaveView} {} 448 166
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 871 145
+wv_select_window {Custom WaveView} 
+wv_select_waveview 2 {waveview 2}
+wv_waveview_context_menu WV2.PANEL1:1.LEGEND
+wv_select_waveview 2 {waveview 2}
+wv_select_menu_item {Custom WaveView} {waveview 2:2} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_move_window {WaveformExportParameters} {} 710 175
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_move_window {WaveformExportParameters} {} 434 59
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {KeepOld} 
+wv_move_window {Custom WaveView} {} 962 497
+wv_press_key "V" 135 -100
+wv_press_key "I" 135 -100
+wv_press_key "M" 135 -100
+wv_select_window {Custom WaveView} 
+wv_select_tab {Custom WaveView} {} {RBMenu} {Bar.Tools}
+wv_select_tab {Custom WaveView} {} {RBMenu} {Bar.File}
+wv_move_window {Custom WaveView} {} 744 214
+wv_select_waveview 2 {waveview 2}
+wv_waveview_context_menu WV2.PANEL1:1.LEGEND
+wv_select_waveview 2 {waveview 2}
+wv_select_menu_item {Custom WaveView} {waveview 2:2} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_move_window {WaveformExportParameters} {} 589 253
+wv_set_radion {WaveformExportParameters} {} {MFile} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_move_window {Custom WaveView} {} 982 180
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 406 155
+wv_move_window {Custom WaveView} {} 0 22
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 563
+wv_resize_browser {Custom WaveView} {} {waveview 2:2} 1106 537
+wv_resize_window {Custom WaveView} 1366 706
+wv_close_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+#wv_press_button {Confirmation} {} {Ok} 
+#*WARNING* Can not remove '/net/lab/ychuang/.cx_hostport/.cx_hostport_adc_28847'.

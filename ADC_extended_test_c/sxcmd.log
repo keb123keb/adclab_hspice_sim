@@ -1,0 +1,324 @@
+### Custom WaveView ADV log file, revision O-2018.09 (build Aug 27, ) ###
+### created at 15:02:10 on Tue Jan 14 2020 (Linux AMD64) ###
+### Host Name: adc   User ID: ychuang   PID: 111156   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+wv_move_window {Custom WaveView} {} 108 127
+wv_select_window {Custom WaveView} 
+wv_resize_window {Custom WaveView} 800 586
+wv_press_tool_button {Custom WaveView} {} {OpenWaveform0} 
+wv_select_dialog {FileDialog} 
+wv_set_text {FileDialog} {} {FileName} "bhv2.tr0;bhv2_z2.tr0;bhv2_z3.tr0;bhv2_z4.tr0;bhv2_z5.tr0;bhv2_z6.tr0;
+"
+wv_press_button {FileDialog} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {NewWaveView0} 
+wv_press_tool_button {Custom WaveView} {} {NewWaveView0} 
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2.tr0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 1:1}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 224 71
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 2:2}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z2.tr0(1)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z2.tr0(1)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 218 75
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 3:3}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z3.tr0(2)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z3.tr0(2)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 213 74
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z4.tr0(3)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z4.tr0(3)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_drag_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 209 67
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z5.tr0(4)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z5.tr0(4)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 222 75
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 6:6}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z6.tr0(5)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z6.tr0(5)@toplevel(0)} {0} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z6.tr0(5)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 223 74
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 1:1}
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1.LEGEND
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_press_button {WaveformExportParameters} {} {Browse} 
+wv_select_dialog {FileDialog} 
+wv_select_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_dclick_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_select_list_item {FileDialog} {} {FileList} {v2_cu12f_cpx100m.m} 6
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {239}
+wv_set_text {FileDialog} {} {FileName} "v2_cu12f_cpx100m_cbu.m"
+wv_press_button {FileDialog} {} {Ok} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {MFile} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 2:2}
+wv_select_waveview 2 {waveview 2}
+wv_select_wv_item WV2.PANEL1:1.LEGEND
+wv_select_panel WV2.PANEL1:1.LEGEND
+wv_select_waveview 2 {waveview 2}
+wv_waveview_context_menu WV2.PANEL1:1.LEGEND
+wv_select_waveview 2 {waveview 2}
+wv_select_menu_item {Custom WaveView} {waveview 2:2} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu6f_cpx100m_cbu.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 3:3}
+wv_select_waveview 3 {waveview 3}
+wv_select_wv_item WV3.PANEL1:1.LEGEND
+wv_select_panel WV3.PANEL1:1.LEGEND
+wv_select_waveview 3 {waveview 3}
+wv_waveview_context_menu WV3.PANEL1:1.LEGEND
+wv_select_waveview 3 {waveview 3}
+wv_select_menu_item {Custom WaveView} {waveview 3:3} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu3f_cpx100m_cbu.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 4:4}
+wv_select_waveview 4 {waveview 4}
+wv_select_wv_item WV4.PANEL1:1.LEGEND
+wv_select_panel WV4.PANEL1:1.LEGEND
+wv_select_waveview 4 {waveview 4}
+wv_waveview_context_menu WV4.PANEL1:1.LEGEND
+wv_select_waveview 4 {waveview 4}
+wv_select_menu_item {Custom WaveView} {waveview 4:4} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu1500a_cpx100m_cbu.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 5:5}
+wv_select_waveview 5 {waveview 5}
+wv_select_wv_item WV5.PANEL1:1.LEGEND
+wv_select_panel WV5.PANEL1:1.LEGEND
+wv_select_waveview 5 {waveview 5}
+wv_waveview_context_menu WV5.PANEL1:1.LEGEND
+wv_select_waveview 5 {waveview 5}
+wv_select_menu_item {Custom WaveView} {waveview 5:5} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu750a_cpx100m_cbu.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 6:6}
+wv_select_waveview 6 {waveview 6}
+wv_select_wv_item WV6.PANEL1:1.LEGEND
+wv_select_panel WV6.PANEL1:1.LEGEND
+wv_select_waveview 6 {waveview 6}
+wv_waveview_context_menu WV6.PANEL1:1.LEGEND
+wv_select_waveview 6 {waveview 6}
+wv_select_menu_item {Custom WaveView} {waveview 6:6} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu500a_cpx100m_cbu.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {OpenWaveformFile0} 
+wv_select_dialog {FileDialog} 
+wv_select_list_item {FileDialog} {} {FileList} {..} 1
+wv_dclick_list_item {FileDialog} {} {FileList} {..} 1
+wv_select_dialog {FileDialog} 
+wv_set_text {FileDialog} {} {FileName} "bhv2_cpx100m.tr0;bhv2_z2_cpx100m.tr0;bhv2_z3_cpx100m.tr0;bhv2_z4_cpx100m.tr0;bhv2_z5_cpx100m.tr0;bhv2_z6_cpx100m.tr0;
+"
+wv_press_button {FileDialog} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {OpenWaveformFile0} 
+wv_select_dialog {FileDialog} 
+wv_set_text {FileDialog} {} {FileName} ""
+wv_select_window {Custom WaveView} 
+wv_select_dialog {FileDialog} 
+wv_set_text {FileDialog} {} {FileName} "bhv2_10b_cpx100m.tr0;bhv2_z2_10b_cpx100m.tr0;bhv2_z3_10b_cpx100m.tr0;bhv2_z4_10b_cpx100m.tr0;bhv2_z5_10b_cpx100m.tr0;bhv2_z6_10b_cpx100m.tr0;
+"
+wv_press_button {FileDialog} {} {Ok} 
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_10b_cpx100m.tr0(6)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_10b_cpx100m.tr0(6)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_drag_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 229 73
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 8:8}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z2_10b_cpx100m.tr0(7)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z2_10b_cpx100m.tr0(7)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 228 65
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 9:9}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z3_10b_cpx100m.tr0(8)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z3_10b_cpx100m.tr0(8)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_drag_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_drag_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 218 68
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 10:10}
+wv_move_scrollbar {Custom WaveView} {} {hierview.VScrollBar} {8}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z4_10b_cpx100m.tr0(9)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z4_10b_cpx100m.tr0(9)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 225 73
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 11:11}
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 11:11}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z5_10b_cpx100m.tr0(10)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z5_10b_cpx100m.tr0(10)@toplevel(0)} {0} {+sep=@}
+wv_move_scrollbar {Custom WaveView} {} {hierview.VScrollBar} {9}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_drag_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 216 73
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z6_10b_cpx100m.tr0(11)} {+sep=@}
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 12:12}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv2_z6_10b_cpx100m.tr0(11)@toplevel(0)} {0} {+sep=@}
+wv_move_scrollbar {Custom WaveView} {} {hierview.VScrollBar} {11}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_drag_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(ds_out)} 10
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(rst_matlab)} 22
+wv_select_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_drag_list_item {Custom WaveView} {} {sigview} {v(sa_7)} 30 +shift
+wv_list_context_menu {Custom WaveView} {} {sigview} {v(sa_7)} 30 229 72
+wv_select_menu_item {Custom WaveView} {} {SigViewPopMenu.Plot Waveform} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 7:7}
+wv_select_waveview 7 {waveview 7}
+wv_select_wv_item WV7.PANEL1:1.LEGEND
+wv_select_panel WV7.PANEL1:1.LEGEND
+wv_select_waveview 7 {waveview 7}
+wv_waveview_context_menu WV7.PANEL1:1.LEGEND
+wv_select_waveview 7 {waveview 7}
+wv_select_menu_item {Custom WaveView} {waveview 7:7} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_move_window {WaveformExportParameters} {} 297 47
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_move_window {WaveformExportParameters} {} 288 33
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cua_cpx100m_cbu.m"
+wv_press_button {WaveformExportParameters} {} {Browse} 
+wv_select_dialog {FileDialog} 
+wv_select_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_dclick_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_select_list_item {FileDialog} {} {FileList} {v2_cu12f_10b_cpx100m.m} 3
+wv_press_button {FileDialog} {} {Ok} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu12f_10b_cpx100m_cbu.m"
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 8:8}
+wv_select_waveview 8 {waveview 8}
+wv_select_wv_item WV8.PANEL1:1.LEGEND
+wv_select_panel WV8.PANEL1:1.LEGEND
+wv_select_waveview 8 {waveview 8}
+wv_waveview_context_menu WV8.PANEL1:1.LEGEND
+wv_select_waveview 8 {waveview 8}
+wv_select_menu_item {Custom WaveView} {waveview 8:8} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu6f_10b_cpx100m_cbu.m"
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 9:9}
+wv_select_waveview 9 {waveview 9}
+wv_select_wv_item WV9.PANEL1:1.LEGEND
+wv_select_panel WV9.PANEL1:1.LEGEND
+wv_select_waveview 9 {waveview 9}
+wv_waveview_context_menu WV9.PANEL1:1.LEGEND
+wv_select_waveview 9 {waveview 9}
+wv_select_menu_item {Custom WaveView} {waveview 9:9} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu3f_10b_cpx100m_cbu.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 10:10}
+wv_select_waveview 10 {waveview 10}
+wv_select_wv_item WV10.PANEL1:1.LEGEND
+wv_select_panel WV10.PANEL1:1.LEGEND
+wv_select_waveview 10 {waveview 10}
+wv_waveview_context_menu WV10.PANEL1:1.LEGEND
+wv_select_waveview 10 {waveview 10}
+wv_select_menu_item {Custom WaveView} {waveview 10:10} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu1500a_10b_cpx100m_cbu.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 11:11}
+wv_select_waveview 11 {waveview 11}
+wv_select_wv_item WV11.PANEL1:1.LEGEND
+wv_select_panel WV11.PANEL1:1.LEGEND
+wv_select_waveview 11 {waveview 11}
+wv_waveview_context_menu WV11.PANEL1:1.LEGEND
+wv_select_waveview 11 {waveview 11}
+wv_select_menu_item {Custom WaveView} {waveview 11:11} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu750a_10b_cpx100m_cbu.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_tab {Custom WaveView} {} {WVTab} {waveview 12:12}
+wv_select_waveview 12 {waveview 12}
+wv_select_wv_item WV12.PANEL1:1.LEGEND
+wv_select_panel WV12.PANEL1:1.LEGEND
+wv_select_waveview 12 {waveview 12}
+wv_waveview_context_menu WV12.PANEL1:1.LEGEND
+wv_select_waveview 12 {waveview 12}
+wv_select_menu_item {Custom WaveView} {waveview 12:12} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_text {WaveformExportParameters} {} {OutFile} "/net/lab/ychuang/hspice_sim_ych/ADC_extended_test_c/m_file/v2_cu500a_10b_cpx100m_cbu.m"
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_move_scrollbar {Custom WaveView} {} {hierview.VScrollBar} {9}
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 603
+wv_resize_browser {Custom WaveView} {} {waveview 12:12} 1106 577
+wv_resize_window {Custom WaveView} 1366 746
+wv_select_window {Custom WaveView} 
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 563
+wv_resize_browser {Custom WaveView} {} {waveview 12:12} 1106 537
+wv_resize_window {Custom WaveView} 1366 706
+wv_select_window {Custom WaveView} 

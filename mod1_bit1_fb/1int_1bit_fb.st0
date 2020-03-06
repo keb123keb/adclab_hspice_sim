@@ -1,0 +1,20 @@
+****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******
+ Input File: 1int_1bit_fb.cir
+ lic:
+ lic: FLEXlm: SDK_11.6.9.6
+ lic: USER:   ychuang              HOSTNAME: adc
+ lic: HOSTID: "b4969141dd1f"       PID:      17603
+ lic: Using FLEXlm license file:
+ lic: 26585@lsnctu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 14-may-2019/2018.09
+ lic: 57(in_use)/90(total) FLOATING license(s) on SERVER 26585@lsnctu
+ lic:
+ init: begin read circuit files, cpu clock= 3.00E-01
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+ init: end read circuit files, cpu clock= 3.10E-01 peak memory=     321 mb
+ init: begin check errors, cpu clock= 3.10E-01
+>error          ***** hspice job aborted
+ lic: Release hspice token(s)

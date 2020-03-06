@@ -1,0 +1,277 @@
+Using: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhvz2.sp
+ ****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+  Copyright (c) 1986 - 2019 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: bhvz2.sp                                                          
+  Command line options: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhvz2.sp
+ lic:  
+ lic: FLEXlm: SDK_11.6.9.6 
+ lic: USER:   ychuang              HOSTNAME: adc 
+ lic: HOSTID: "b4969141dd1f"       PID:      73307 
+ lic: Using FLEXlm license file: 
+ lic: 26585@lsnctu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09 
+ lic: 58(in_use)/190(total) FLOATING license(s) on SERVER 26585@lsnctu 
+ lic:   
+1****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+ ******  
+ *behavior simulation
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xi15.                           mod1               1.00 
+        2 xi14.                           adder_cmp_1b_ciff2_schematic
+                                                                 1.00 
+        3 xi12.                           mod1_g1o4_with_1b_dac
+                                                                 1.00 
+        4 xclk_fb.                        clk_fb_1bit        1.00 
+        5 xi15.xi65.                      tgb                1.00 
+        6 xi15.xsw7.                      tgb                1.00 
+        7 xi15.xsw3.                      tgb                1.00 
+        8 xi15.xswinn.                    tgb                1.00 
+        9 xi15.xswinp.                    tgb                1.00 
+       10 xi15.xsw2.                      tgb                1.00 
+       11 xi15.xsw6.                      tgb                1.00 
+       12 xi15.xi6.                       tgb                1.00 
+       13 xi15.xi9.                       tgb                1.00 
+       14 xi15.xi66.                      tgb                1.00 
+       15 xi15.xop.                       fdopb              1.00 
+       16 xi14.xpreamp_bhv.               preamp_cmp_b       1.00 
+       17 xi14.xcmp3.                     cmp_clk            1.00 
+       18 xi14.xi1.                       inv_bhv            1.00 
+       19 xi14.xi52.                      tgb                1.00 
+       20 xi14.xi63.                      tgb                1.00 
+       21 xi14.xi62.                      tgb                1.00 
+       22 xi14.xi55.                      tgb                1.00 
+       23 xi14.xi56.                      tgb                1.00 
+       24 xi14.xi65.                      tgb                1.00 
+       25 xi14.xi64.                      tgb                1.00 
+       26 xi14.xi60.                      tgb                1.00 
+       27 xi14.xi59.                      tgb                1.00 
+       28 xi14.xi13.                      tgb                1.00 
+       29 xi14.xi9.                       tgb                1.00 
+       30 xi14.xsw1.                      tgb                1.00 
+       31 xi14.xi2.                       tgb                1.00 
+       32 xi14.xsw4.                      tgb                1.00 
+       33 xi12.xdac.                      dac_int_1bit       1.00 
+       34 xi12.xsw3.                      tgb                1.00 
+       35 xi12.xsw7.                      tgb                1.00 
+       36 xi12.xswinn.                    tgb                1.00 
+       37 xi12.xsw2.                      tgb                1.00 
+       38 xi12.xsw6.                      tgb                1.00 
+       39 xi12.xi12.                      tgb                1.00 
+       40 xi12.xi13.                      tgb                1.00 
+       41 xi12.xswinp.                    tgb                1.00 
+       42 xi12.xop.                       fdopb              1.00 
+       43 xclk_fb.xi64.                   inv_bhv            1.00 
+       44 xclk_fb.xi20.                   inv_bhv            1.00 
+       45 xclk_fb.xi60.                   inv_bhv            1.00 
+       46 xclk_fb.xi59.                   inv_bhv            1.00 
+       47 xclk_fb.xi63.                   inv_bhv            1.00 
+       48 xclk_fb.xi62.                   nand2_bhv          1.00 
+       49 xclk_fb.xi19.                   nand2_bhv          1.00 
+       50 xi14.xcmp3.xdff.                dff                1.00 
+       51 xi14.xcmp3.xpreamp.             amp_cmp            1.00 
+       52 xi14.xi1.xp1.                   pmos_b             1.00 
+       53 xi14.xi1.xn1.                   nmos_b             1.00 
+       54 xi12.xdac.xi6.                  tgb                1.00 
+       55 xi12.xdac.xi7.                  tgb                1.00 
+       56 xi12.xdac.xi40.                 tgb                1.00 
+       57 xi12.xdac.xi41.                 tgb                1.00 
+       58 xclk_fb.xi64.xp1.               pmos_b             1.00 
+       59 xclk_fb.xi64.xn1.               nmos_b             1.00 
+       60 xclk_fb.xi20.xp1.               pmos_b             1.00 
+       61 xclk_fb.xi20.xn1.               nmos_b             1.00 
+       62 xclk_fb.xi60.xp1.               pmos_b             1.00 
+       63 xclk_fb.xi60.xn1.               nmos_b             1.00 
+       64 xclk_fb.xi59.xp1.               pmos_b             1.00 
+       65 xclk_fb.xi59.xn1.               nmos_b             1.00 
+       66 xclk_fb.xi63.xp1.               pmos_b             1.00 
+       67 xclk_fb.xi63.xn1.               nmos_b             1.00 
+       68 xclk_fb.xi62.xn1.               nmos_b             1.00 
+       69 xclk_fb.xi62.xi9.               nmos_b             1.00 
+       70 xclk_fb.xi62.xp1.               pmos_b             1.00 
+       71 xclk_fb.xi62.xi10.              pmos_b             1.00 
+       72 xclk_fb.xi19.xn1.               nmos_b             1.00 
+       73 xclk_fb.xi19.xi9.               nmos_b             1.00 
+       74 xclk_fb.xi19.xp1.               pmos_b             1.00 
+       75 xclk_fb.xi19.xi10.              pmos_b             1.00 
+       76 xi14.xcmp3.xdff.xi13.           dlatch             1.00 
+       77 xi14.xcmp3.xdff.xi14.           dlatch             1.00 
+       78 xi14.xcmp3.xdff.xi13.xi2.       inv_bhv            1.00 
+       79 xi14.xcmp3.xdff.xi13.xi1.       inv_bhv            1.00 
+       80 xi14.xcmp3.xdff.xi13.xi29.      tgb                1.00 
+       81 xi14.xcmp3.xdff.xi13.xsw1.      tgb                1.00 
+       82 xi14.xcmp3.xdff.xi14.xi2.       inv_bhv            1.00 
+       83 xi14.xcmp3.xdff.xi14.xi1.       inv_bhv            1.00 
+       84 xi14.xcmp3.xdff.xi14.xi29.      tgb                1.00 
+       85 xi14.xcmp3.xdff.xi14.xsw1.      tgb                1.00 
+       86 xi14.xcmp3.xdff.xi13.xi2.xp1.   pmos_b             1.00 
+       87 xi14.xcmp3.xdff.xi13.xi2.xn1.   nmos_b             1.00 
+       88 xi14.xcmp3.xdff.xi13.xi1.xp1.   pmos_b             1.00 
+       89 xi14.xcmp3.xdff.xi13.xi1.xn1.   nmos_b             1.00 
+       90 xi14.xcmp3.xdff.xi14.xi2.xp1.   pmos_b             1.00 
+       91 xi14.xcmp3.xdff.xi14.xi2.xn1.   nmos_b             1.00 
+       92 xi14.xcmp3.xdff.xi14.xi1.xp1.   pmos_b             1.00 
+       93 xi14.xcmp3.xdff.xi14.xi1.xn1.   nmos_b             1.00 
+  **info** (bhvz2.sp:108) DC voltage reset to initial transient source value in source 0:vinn. new dc=0.0000D+00
+  
+  **warning** No connections on node iref_1; Node ignored.
+
+  **warning** the following singular supplies were terminated to 1 meg resistor 
+          supply       node1            node2
+(bhvz2.sp:47)vdgnd                   0:dgnd             defined in subckt 0                     0:0                defined in subckt 0               
+(bhvz2.sp:46)vdvdd                   0:dvdd             defined in subckt 0                     0:0                defined in subckt 0               
+(bhvz2.sp:72)vp1dna                  0:p1d_b            defined in subckt 0                     0:0                defined in subckt 0               
+(bhvz2.sp:74)vp2na                   0:p2_b             defined in subckt 0                     0:0                defined in subckt 0               
+(bhvz2.sp:76)vp2dna                  0:p2d_b            defined in subckt 0                     0:0                defined in subckt 0               
+(bhvz2.sp:97)vrst_b                  0:rst_b            defined in subckt 0                     0:0                defined in subckt 0               
+(bhvz2.sp:99)vrst_m                  0:rst_matlab       defined in subckt 0                     0:0                defined in subckt 0               
+(../et710/ece627_bhv_ckt.cir:65)e1                     15:vcmi             defined in subckt fdopb                 0:0                defined in subckt 0               
+(../et710/ece627_bhv_ckt.cir:65)e1                     42:vcmi             defined in subckt fdopb                 0:0                defined in subckt 0               
+      
+
+Element variations(Local):   element              parameter
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+             
+ Summary of Linear Res Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e+00  ~  1e+03|13        |7.7844    |
+ |1e+03  ~  1e+05|2         |1.1976    |
+ |1e+05  ~  1e+06|13        |7.7844    |
+ |1e+08  ~  1e+09|2         |1.1976    |
+ |1e+09  ~  1e+10|1         |0.5988    |
+ |1e+11  ~  1e+12|136       |81.4371   |
+ ---------------------------------------
+              
+             
+ Summary of Linear Cap Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e-17  ~  1e-16|68        |56.1983   |
+ |1e-15  ~  1e-14|46        |38.0165   |
+ |1e-14  ~  1e-13|7         |5.7851    |
+ ---------------------------------------
+              
+             
+ Summary of Detailed RC Type Statistics
+ -----------------------------
+ |Element Type    |Number    |
+ |----------------+----------|
+ |Constant Res    |158       |
+ |Other Linear Res|9         |
+ |                |          |
+ |Constant Cap    |121       |
+ -----------------------------
+              
+  Opening plot unit= 15
+ file=bhvz2.pa0
+
+ **info** dc convergence successful at Newton-Raphson method 
+ ******  
+ *behavior simulation
+
+ ****** operating point information tnom=  25.000 temp=  27.000 ******
+ ****** operating point status is voltage   simulation time is     0.     
+     node    =voltage       node    =voltage       node    =voltage
+
+ + 0:agnd    =   0.       0:avdd    =   1.8000   0:dgnd    =   0.     
+ + 0:dout    =   1.8000   0:dvdd    =   1.8000   0:inn     = 900.0000m
+ + 0:inp     = 900.0000m  0:iref_1  =   0.       0:iref_2  =   0.     
+ + 0:iref_3  =   0.       0:out_int1= 900.0000m  0:out_int1= 900.0000m
+ + 0:out_int2= 900.0000m  0:out_int2= 900.0000m  0:p1      =   0.     
+ + 0:p1_b    =   1.8000   0:p1d     =   0.       0:p1d_b   =   1.8000 
+ + 0:p2      =   0.       0:p2_b    =   1.8000   0:p2d     =   0.     
+ + 0:p2d_b   =   1.8000   0:pdn     =   0.       0:pvrefn  =  18.0000f
+ + 0:pvrefn_b=   1.8000   0:pvrefp  =  18.0000f  0:pvrefp_b=   1.8000 
+ + 0:rst     =   0.       0:rst_b   =   1.8000   0:rst_matl=   0.     
+ + 0:vcm     = 900.0000m  0:vcm1    = 900.0000m  0:vrefn   =   0.     
+ + 0:vrefp   =   1.8000   1:cinn    = 449.7751u  1:cinp    = 449.7751u
+ + 1:dacn    = 899.1009u  1:dacp    = 899.1009u  1:opin    = 449.7751u
+ + 1:opip    = 449.7751u  2:amp_n   = 900.0000m  2:amp_p   = 900.0000m
+ + 2:d_b     =  18.0000f  2:net0107 = 899.1009u  2:net0137 = 899.1009u
+ + 2:net0155 = 899.1009u  2:net0161 = 899.1009u  2:net082  = 899.1009u
+ + 2:net088  = 899.1009u  2:opin    = 899.1009u  2:opip    = 899.1009u
+ + 3:cinn    = 449.7751u  3:cinp    = 449.7751u  3:dacn    = 899.1009u
+ + 3:dacp    = 899.1009u  3:opin    = 449.7751u  3:opip    = 449.7751u
+ + 4:d_b     =  18.0000f  4:net43   =   1.8000   4:net48   =   1.8000 
+ +15:vcmi    = 900.0000m 16:on1     =   0.      16:op1     =   0.     
+ +16:vcm1    = 900.0000m 17:net22   = 1.800e-27 18:net23   =   1.8000 
+ +42:vcmi    = 900.0000m 43:net23   =   1.8000  44:net23   =  18.0000f
+ +45:net23   =  18.0000f 46:net23   =  18.0000f 47:net23   =   1.8000 
+ +48:net8    = 899.1009u 49:net8    =   1.8000  50:net275  =  18.0000f
+ +51:vout1   =   0.      76:net017  =   1.8000  76:net22   =  18.0000f
+ +76:net8    =   1.8000  77:net017  =   1.8000  77:net22   =  18.0000f
+ +77:net8    =   1.8000  78:net23   =  18.0000f 79:net23   =   1.8000 
+ +82:net23   =  18.0000f 83:net23   =   1.8000 
+
+
+          ***** job concluded
+ ******  
+ *behavior simulation
+
+ ****** job statistics summary tnom=  25.000 temp=  27.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Core(TM) i7-7820X CPU @ 3.60GHz
+ cpu MHz	: 1199.926
+  
+ OS:
+ Linux version 3.10.0-957.21.3.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Tue Jun 18 16:35:19 UTC 2019
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    16
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      87 # elements   =     389
+  # resistors   =     167 # capacitors =     121 # inductors   =       0
+  # mutual_inds =       0 # vccs       =      70 # vcvs        =      11
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =      20
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           8
+  transient          4.61        1025      186935       59252 rev=      4031
+  readin             0.03
+  errchk             0.01
+  setup              0.01
+  output             0.00
+
+
+           peak memory used        323.13 megabytes
+           total cpu time            4.66 seconds
+           total elapsed time        4.98 seconds
+           job started at     15:29:53 08/26/2019
+           job ended   at     15:29:58 08/26/2019
+
+
+
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.29(s)

@@ -1,0 +1,56 @@
+****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******
+ Input File: bhv.sp
+ lic:
+ lic: FLEXlm: SDK_11.6.9.6
+ lic: USER:   ychuang              HOSTNAME: adc
+ lic: HOSTID: "b026281535a3"       PID:      119527
+ lic: Using FLEXlm license file:
+ lic: 26585@lsnctu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09
+ lic: 180(in_use)/190(total) FLOATING license(s) on SERVER 26585@lsnctu
+ lic:
+ init: begin read circuit files, cpu clock= 4.60E-01
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     3.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    5.000E-10
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 4.70E-01 peak memory=     321 mb
+ init: begin check errors, cpu clock= 4.70E-01
+ init: end check errors, cpu clock= 5.60E-01 peak memory=     328 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 5.60E-01
+       establish matrix -- done, cpu clock= 5.60E-01 peak memory=     328 mb
+       re-order matrix -- done, cpu clock= 5.70E-01 peak memory=     328 mb
+ init: end setup matrix, cpu clock= 5.80E-01 peak memory=     329 mb
+ dcop: begin dcop, cpu clock= 5.90E-01
+ dcop: end dcop, cpu clock= 6.20E-01 peak memory=     329 mb tot_iter=      17
+ output: bhv.tr0
+ sweep: tran tran0    begin, stop_t=  1.01E-03 #sweeps=**** cpu clock= 6.20E-01
+ tran: time= 1.0102E-04 tot_iter= 1819458 conv_iter=  568788 cpu clock= 1.03E+03
+ tran: time= 2.0203E-04 tot_iter= 3641266 conv_iter= 1138973 cpu clock= 2.55E+03
+ tran: time= 3.0305E-04 tot_iter= 5462762 conv_iter= 1710207 cpu clock= 6.69E+03
+ lic: Try to reconnect to license server: 1/10
+ lic: Reconnect to license server is done
+ lic: Try to reconnect to license server: 1/10
+ lic: Reconnect to license server is done
+ lic: Try to reconnect to license server: 1/10
+ lic: Reconnect to license server is done
+ lic: Reconnect to license server is done
+ tran: time= 4.0406E-04 tot_iter= 7281004 conv_iter= 2280158 cpu clock= 2.13E+04
+ tran: time= 5.0508E-04 tot_iter= 9098722 conv_iter= 2850026 cpu clock= 3.74E+04
+ tran: time= 6.0609E-04 tot_iter=10914379 conv_iter= 3418620 cpu clock= 3.91E+04
+ tran: time= 7.0711E-04 tot_iter=12733895 conv_iter= 3987728 cpu clock= 4.08E+04
+ tran: time= 8.0813E-04 tot_iter=14555077 conv_iter= 4557218 cpu clock= 4.24E+04
+ tran: time= 9.0914E-04 tot_iter=16381465 conv_iter= 5126470 cpu clock= 4.41E+04
+ sweep: tran tran0    end, cpu clock= 4.58E+04 peak memory=     328 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

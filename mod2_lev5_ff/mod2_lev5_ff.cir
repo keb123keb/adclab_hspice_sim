@@ -1,0 +1,228 @@
+** Generated for: hspiceD
+** Generated on: Jun 12 15:39:06 2019
+** Design library name: myfirstlib
+** Design cell name: adc_mod2_lev5_ff
+** Design view name: schematic
+
+
+*****  .TEMP 25
+*****  .OPTION
+*****  +    ARTIST=2
+*****  +    INGOLD=2
+*****  +    MEASOUT=1
+*****  +    PARHIER=LOCAL
+*****  +    PSF=2
+
+** Library name: myfirstlib
+** Cell name: mod1
+** View name: schematic
+.subckt mod1 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref outn outp pdn rst rst_b vcm
+c0 cinp dacp 10e-15
+c3 cinn dacn 10e-15
+c4 opip outp 10e-15
+c5 opin outn 10e-15
+xi65 vcm dacp avdd agnd p2d p2d_b TGB
+xsw7 vcm cinn avdd agnd p1 p1_b TGB
+xsw3 vcm cinp avdd agnd p1 p1_b TGB
+xswinn_0 inn dacn avdd agnd p1d p1d_b TGB
+xswinn_1 inn dacn avdd agnd p1d p1d_b TGB
+xswinn_2 inn dacn avdd agnd p1d p1d_b TGB
+xswinn_3 inn dacn avdd agnd p1d p1d_b TGB
+xswinp_0 inp dacp avdd agnd p1d p1d_b TGB
+xswinp_1 inp dacp avdd agnd p1d p1d_b TGB
+xswinp_2 inp dacp avdd agnd p1d p1d_b TGB
+xswinp_3 inp dacp avdd agnd p1d p1d_b TGB
+xsw2 cinp opip avdd agnd p2 p2_b TGB
+xsw6 cinn opin avdd agnd p2 p2_b TGB
+xi6 outn opin avdd agnd rst rst_b TGB
+xi9 outp opip avdd agnd rst rst_b TGB
+xi66 vcm dacn avdd agnd p2d p2d_b TGB
+xop agnd avdd opip opin iref outn outp pdn vcm vcm fdopb
+.ends mod1
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: dac_int_1bit
+** View name: schematic
+.subckt dac_int_1bit agnd avdd dacn dacp pvrefn pvrefn_b pvrefp pvrefp_b vrefn vrefp
+xi6 vrefn dacn avdd agnd pvrefp pvrefp_b TGB
+xi7 vrefp dacn avdd agnd pvrefn pvrefn_b TGB
+xi40 vrefp dacp avdd agnd pvrefp pvrefp_b TGB
+xi41 vrefn dacp avdd agnd pvrefn pvrefn_b TGB
+.ends dac_int_1bit
+** End of subcircuit definition.
+
+** Library name: myfirstlib
+** Cell name: mod1_Gain_1o3_with_lev5_dac
+** View name: schematic
+.subckt mod1_Gain_1o3_with_lev5_dac agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref outn outp pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 rst rst_b vcm vrefn vrefp
+xdac_0 agnd avdd dacn_0 dacp_0 pvrefn_0 pvrefn_b_0 pvrefp_0 pvrefp_b_0 vrefn vrefp dac_int_1bit
+xdac_1 agnd avdd dacn_1 dacp_1 pvrefn_1 pvrefn_b_1 pvrefp_1 pvrefp_b_1 vrefn vrefp dac_int_1bit
+xdac_2 agnd avdd dacn_2 dacp_2 pvrefn_2 pvrefn_b_2 pvrefp_2 pvrefp_b_2 vrefn vrefp dac_int_1bit
+xdac_3 agnd avdd dacn_3 dacp_3 pvrefn_3 pvrefn_b_3 pvrefp_3 pvrefp_b_3 vrefn vrefp dac_int_1bit
+cfbp_0 opip outp 10e-15
+cfbp_1 opip outp 10e-15
+cfbp_2 opip outp 10e-15
+cfbp_3 opip outp 10e-15
+c1_0 cinp dacp_0 10e-15
+c1_1 cinp dacp_1 10e-15
+c1_2 cinp dacp_2 10e-15
+c1_3 cinp dacp_3 10e-15
+c2_0 cinn dacn_0 10e-15
+c2_1 cinn dacn_1 10e-15
+c2_2 cinn dacn_2 10e-15
+c2_3 cinn dacn_3 10e-15
+cfbn_0 opin outn 10e-15
+cfbn_1 opin outn 10e-15
+cfbn_2 opin outn 10e-15
+cfbn_3 opin outn 10e-15
+xsw3 vcm cinp avdd agnd p1 p1_b TGB
+xsw7 vcm cinn avdd agnd p1 p1_b TGB
+xswinn_0 inn dacn_0 avdd agnd p1d p1d_b TGB
+xswinn_1 inn dacn_1 avdd agnd p1d p1d_b TGB
+xswinn_2 inn dacn_2 avdd agnd p1d p1d_b TGB
+xswinn_3 inn dacn_3 avdd agnd p1d p1d_b TGB
+xsw2 cinp opip avdd agnd p2 p2_b TGB
+xsw6 cinn opin avdd agnd p2 p2_b TGB
+xi12 outn opin avdd agnd rst rst_b TGB
+xi13 outp opip avdd agnd rst rst_b TGB
+xswinp_0 inp dacp_0 avdd agnd p1d p1d_b TGB
+xswinp_1 inp dacp_1 avdd agnd p1d p1d_b TGB
+xswinp_2 inp dacp_2 avdd agnd p1d p1d_b TGB
+xswinp_3 inp dacp_3 avdd agnd p1d p1d_b TGB
+xop agnd avdd opip opin iref outn outp pdn vcm vcm fdopb
+.ends mod1_Gain_1o3_with_lev5_dac
+** End of subcircuit definition.
+
+** Library name: myfirstlib
+** Cell name: vth_5Lev
+** View name: schematic
+.subckt vth_5Lev vrefn vrefp vthp_0 vthp_1 vthp_2 vthp_3
+r25 vthp_2 vthp_3 50e3
+r9 vrefn vthp_0 50e3
+r18 vrefp vthp_3 50e3
+r8 vrefn vthp_0 50e3
+r3 vthp_1 vthp_2 50e3
+r2 vthp_0 vthp_1 50e3
+r1 vrefp vthp_3 50e3
+.ends vth_5Lev
+** End of subcircuit definition.
+
+
+
+
+** Library name: cell_bhv
+** Cell name: inv_bhv
+** View name: schematic
+.subckt inv_bhv dgnd vdd y yn
+r1 net23 yn 10
+c1 yn dgnd 5e-15
+xp1 vdd net23 y vdd PMOS_B
+xn1 dgnd net23 y dgnd NMOS_B
+.ends inv_bhv
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: Dlatch
+** View name: schematic
+.subckt Dlatch q d clk clkb dvdd dgnd
+xi2 dgnd dvdd net017 q inv_bhv
+xi1 dgnd dvdd net22 net8 inv_bhv
+c0 q dgnd 5e-15
+c1 net017 dgnd 5e-15
+r1 net8 net017 2
+xi29 d net22 dvdd dgnd clk clkb TGB
+xsw1 net22 q dvdd dgnd clkb clk TGB
+.ends Dlatch
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: dff
+** View name: schematic
+.subckt dff q d clk clkb dvdd dgnd
+xi13 net275 d clkb clk dvdd dgnd Dlatch
+xi14 q net275 clk clkb dvdd dgnd Dlatch
+.ends dff
+** End of subcircuit definition.
+
+
+** Library name: ET710_ADC_bhv
+** Cell name: cmp_clk
+** View name: schematic
+.subckt cmp_clk agnd avdd clk clk_b inn inp y
+xdff y net22 clk clk_b avdd agnd dff
+xpreamp inn net22 inp amp_cmp
+.ends cmp_clk
+** End of subcircuit definition.
+
+** Library name: myfirstlib
+** Cell name: adder_cmp_1b_CIFF2
+** View name: schematic
+.subckt adder_cmp_1b_CIFF2 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b d iref pdn uin_n uin_p vcm vthn vthp int1n int1p int2n int2p
+xpreamp_bhv agnd avdd opin opip iref amp_n amp_p pdn vcm vcm preamp_cmp_b
+xcmp3 agnd avdd p1_b p1 amp_n amp_p d_b cmp_clk
+xi1 agnd avdd d_b d inv_bhv
+xi52 amp_p opin avdd agnd p2 p2_b TGB
+xi63 vcm net088 avdd agnd p2d p2d_b TGB
+xi62 uin_p net088 avdd agnd p1d p1d_b TGB
+xi55 int1p net0107 avdd agnd p1d p1d_b TGB
+xi56 vcm net0107 avdd agnd p2d p2d_b TGB
+xi65 uin_n net082 avdd agnd p1d p1d_b TGB
+xi64 vcm net082 avdd agnd p2d p2d_b TGB
+xi60 vcm net0137 avdd agnd p2d p2d_b TGB
+xi59 int1n net0137 avdd agnd p1d p1d_b TGB
+xi13 amp_n opip avdd agnd p2 p2_b TGB
+xi9 vthn net0161 avdd agnd p2d p2d_b TGB
+xsw1 int2p net0155 avdd agnd p1d p1d_b TGB
+xi2 int2n net0161 avdd agnd p1d p1d_b TGB
+xsw4 vthp net0155 avdd agnd p2d p2d_b TGB
+c20 opin net088 10e-15
+cint1p_1 opin net0107 10e-15
+cint1p_2 opin net0107 10e-15
+c21 opip net082 10e-15
+cint1n_1 opip net0137 10e-15
+cint1n_2 opip net0137 10e-15
+cintn opip net0161 10e-15
+cintp opin net0155 10e-15
+.ends adder_cmp_1b_CIFF2
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: nand2_bhv
+** View name: schematic
+.subckt nand2_bhv dgnd vdd y1 y2 yn
+xn1 dgnd yn y2 net8 NMOS_B
+xi9 dgnd net8 y1 dgnd NMOS_B
+xp1 vdd yn y1 vdd PMOS_B
+xi10 vdd yn y2 vdd PMOS_B
+.ends nand2_bhv
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: clk_fb_1bit
+** View name: schematic
+.subckt clk_fb_1bit agnd avdd d p2 pvrefn pvrefn_b pvrefp pvrefp_b
+xi64 agnd avdd pvrefn pvrefn_b inv_bhv
+xi20 agnd avdd net43 pvrefp inv_bhv
+xi60 agnd avdd net48 pvrefn inv_bhv
+xi59 agnd avdd d d_b inv_bhv
+xi63 agnd avdd pvrefp pvrefp_b inv_bhv
+xi62 agnd avdd p2 d_b net48 nand2_bhv
+xi19 agnd avdd p2 d net43 nand2_bhv
+.ends clk_fb_1bit
+** End of subcircuit definition.
+
+** Library name: myfirstlib
+** Cell name: adc_mod2_lev5_ff
+** View name: schematic
+xi18 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b out_int1_n out_int1_p iref_2 out_int2_n out_int2_p pdn rst rst_b vcm mod1
+xi16 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref_1 out_int1_n out_int1_p pdn pvrefn_0 pvrefn_1 pvrefn_2 pvrefn_3 pvrefn_b_0 pvrefn_b_1 pvrefn_b_2 pvrefn_b_3 pvrefp_0 pvrefp_1 pvrefp_2 pvrefp_3 pvrefp_b_0 pvrefp_b_1 pvrefp_b_2 pvrefp_b_3 rst rst_b vcm vrefn vrefp mod1_Gain_1o3_with_lev5_dac
+xvth vrefn vrefp vthp_0 vthp_1 vthp_2 vthp_3 vth_5Lev
+xquantizer_1b_0 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_0 iref_cmp_0 pdn inn inp vcm vthp_3 vthp_0 out_int1_n out_int1_p out_int2_n out_int2_p adder_cmp_1b_CIFF2
+xquantizer_1b_1 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_1 iref_cmp_1 pdn inn inp vcm vthp_2 vthp_1 out_int1_n out_int1_p out_int2_n out_int2_p adder_cmp_1b_CIFF2
+xquantizer_1b_2 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_2 iref_cmp_2 pdn inn inp vcm vthp_1 vthp_2 out_int1_n out_int1_p out_int2_n out_int2_p adder_cmp_1b_CIFF2
+xquantizer_1b_3 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout_3 iref_cmp_3 pdn inn inp vcm vthp_0 vthp_3 out_int1_n out_int1_p out_int2_n out_int2_p adder_cmp_1b_CIFF2
+xclk_fb_0 agnd avdd dout_0 p2d pvrefn_0 pvrefn_b_0 pvrefp_0 pvrefp_b_0 clk_fb_1bit
+xclk_fb_1 agnd avdd dout_1 p2d pvrefn_1 pvrefn_b_1 pvrefp_1 pvrefp_b_1 clk_fb_1bit
+xclk_fb_2 agnd avdd dout_2 p2d pvrefn_2 pvrefn_b_2 pvrefp_2 pvrefp_b_2 clk_fb_1bit
+xclk_fb_3 agnd avdd dout_3 p2d pvrefn_3 pvrefn_b_3 pvrefp_3 pvrefp_b_3 clk_fb_1bit

@@ -1,0 +1,223 @@
+* revised from adc_subckt_behav.cir
+* It's the behavior sub-circuits of ADC modulator.
+* It includes the following sub-circuits:
+* tgb, pmos_b, nmos_b, fdopb, cmpb 
+*
+
+.SUBCKT TGB BI1 BI2 PWRA SUB T TN
+*.SUBCKT TGB BI1 BI2 T   TN  PWRA SUB
+G1   BI1 BI2 VCR PWL(1) T 0 0,1e15 0.4,1e9 'pwra-0.4',0.1k pwra,0.01k
+R1   BI1 0  1e12
+R2   BI2 0  1e12
+C1   T   0  0.1f
+.ENDS
+
+*.SUBCKT PMOSB   D   G   S   B  
+.SUBCKT PMOS_B   B   D   G   S
+G1   D S VCR PWL(1) G 0 0,0.01k 0.4,0.1k 'pwra-0.4',1e9 pwra,1e15
+R1   D 0  1e12
+R2   S 0  1e12
+C1   G 0  0.1f
+.ENDS
+
+*.SUBCKT NMOSB   D   G   S   B  
+.SUBCKT NMOS_B   B    D   G   S
+G1   D S VCR PWL(1) G 0 0,1e15 0.4,1e9 'pwra-0.4',0.1k pwra,0.01k
+R1   D 0  1e12
+R2   S 0  1e12
+C1   G 0  0.1f
+.ENDS
+
+** Preamp of the AZ Comparator;  added on 3/17/2012
+*.SUBCKT preamp_cmp_b   AGND AVDD INN INP IR  ON  OP  PDN VCM VCMFB
+*cinp inp vcm  10f
+*cinn inn vcm  10f
+*E1   VCMI 0 VCM 0 1
+**EP   OP VCMI INP INN 10000 MAX=PWRA MIN=0 
+*EP   OP 0 VOL='(V(INP)-V(INN))*40+V(VCM)' MAX='PWRA*1' MIN='0*pwra' 
+**EN   ON VCMI INN INP 1E4 MAX=PWRA MIN=0
+*EN   ON 0 VOL='2*V(VCM)-V(OP)' MAX='PWRA*1' MIN='0*pwra'
+*.ENDS
+** preamp macromodel is replaced as FDOPB_SLEW to help HSPICE's convergeence problem
+.param  c_wp=50f  r_wp=1e3  op_gain=10  gm_pre='op_gain/r_wp'
++ ILIM=1000u  
+.SUBCKT preamp_cmp_b  AGND AVDD INN INP IR ON OP PDN VCM VCMFB 
+cinp inp gnd  20f
+cinn inn gnd  20f
+COP OP1 AGND  c_wp 
+CON AGND ON1  c_wp 
+GIN ON1 AGND  VCCS INP INN  gm_pre  max='1*ILIM' min='-1*ILIM' 
+GIP AGND OP1  VCCS INP INN  gm_pre  max='1*ILIM' min='-1*ILIM'
+EON ON VCM1  VCVS ON1 AGND  1.0 
+EOP OP VCM1  VCVS OP1 AGND  1.0 
+EVCMO VCM1 0  VCVS VCM 0  1.0 
+RIN INP INN  10g  
+RON AGND ON1  r_wp  
+ROP OP1 AGND  r_wp  
+.ENDS preamp_cmp_b 
+** slew rate = ILIM/COP, EX: 1uA/1pF = 1 V/usec
+
+
+
+.SUBCKT FDOPB   AGND AVDD INN INP IR  ON  OP  PDN VCM VCMFB
+*cinp inp vcm  0.1p
+*cinn inn vcm  0.1p
+E1   VCMI 0 VCM 0 1
+*EP   OP VCMI INP INN 10000 MAX=PWRA MIN=0 
+EP   OP 0 VOL='(V(INP)-V(INN))*100000+V(VCM)' MAX='PWRA*1' MIN='0*pwra' 
+*EN   ON VCMI INN INP 1E4 MAX=PWRA MIN=0
+EN   ON 0 VOL='2*V(VCM)-V(OP)' MAX='PWRA*1' MIN='0*pwra'
+.ENDS
+
+** FDOPB_SLEW is "FDOPB_3" of library "cell_bhv"
+.param  c_wp=0.1p  r_wp=4e3  op_gain=1e5  gain_vccs='op_gain/r_wp'
++ ILIM=10000u  
+.SUBCKT FDOPB_SLEW AGND AVDD INN INP IR ON OP PDN VCM VCMFB 
+cinp inp gnd  0.1p
+cinn inn gnd  0.1p
+COP OP1 AGND  c_wp 
+CON AGND ON1  c_wp 
+GIN ON1 AGND  VCCS INP INN  gain_vccs  max='1*ILIM' min='-1*ILIM' 
+GIP AGND OP1  VCCS INP INN  gain_vccs  max='1*ILIM' min='-1*ILIM'
+EON ON VCM1  VCVS ON1 AGND  1.0 
+EOP OP VCM1  VCVS OP1 AGND  1.0 
+EVCMO VCM1 0  VCVS VCM 0  1.0 
+RIN INP INN  10g  
+RON AGND ON1  r_wp  
+ROP OP1 AGND  r_wp  
+.ENDS FDOPB_SLEW 
+** slew rate = ILIM/COP, EX: 1uA/1pF = 1 V/usec
+
+
+** added on 06/09/2010
+** OP_SLEW2 is from ece626_ckt_bhv.cir
+.SUBCKT FDOPB_SLEW2   AGND AVDD INN INP IR  ON  OP  PDN VCM VCMFB
+*.SUBCKT OP_SLEW2  Vcm  Vinm Vinp  Voutm Voutp   
+EON VOUTM VCM1  VCVS ON1 AGND  1.0 
+EOP VOUTP VCM1  VCVS OP1 AGND  1.0 
+EVCMO VCM1 0  VCVS VCM 0  1.0 
+*RINP Vinp gnd  10g
+*RINN Vinn gnd  10g
+RIN VINP VINM 1g
+cpar_inp VINP gnd  0.01p
+cpar_inm VINM gnd  0.01p
+GIN ON1 AGND  VCCS VINP VINM  gain_vccs 
+GIP AGND OP1  VCCS VINP VINM  gain_vccs 
+COP OP1 AGND  c_wp 
+CON AGND ON1  c_wp 
+RON AGND ON1  r_wp M=1.0 
+ROP OP1 AGND  r_wp M=1.0 
+.ENDS
+
+
+.SUBCKT CMPB AGND AVDD INN INP P1 P2 Y
+** output data at P1 phase. 
+*X1   INP INP1 P1 P1 AVDD AGND  TGB 
+RX1  INP INP1 10
+C1   INP1 0 1f
+*X2   INN INN1 P1 P1 AVDD AGND  TGB 
+RX2 INN INN1 100
+C2   INN1 0 1f
+** large RC is for delaying the input; to avoid glitch
+ECMP Y1 0 INP1 INN1 1e5 MAX=PWRA MIN=0
+R1   Y1 Y1_A 10
+C3   Y1_A 0  1f
+Xlatch P1 P2 Y1_A AGND Y AVDD / Dlatch_CMP
+* a latch is added; 11/13/2009
+
+*XDFF P1 P1_B Y1_A AGND AVDD Y / DFF
+* a DFF is added; 06/09/2010
+
+
+*EYN  YN 0 VOL='PWRA-V(Y)' MAX=PWRA MIN=0
+**xinv Ycmp Ycmp_b / inv_bhv
+**xlatch  Ycmp Ycmp_b  Y YB / sr_latch
+.ENDS
+
+*.SUBCKT DFF Clk Clkb D DGND DVDD Q
+*XI13 Clkb Clk D DGND net275 DVDD / Dlatch_CMP
+*XI14 Clk Clkb net275 DGND Q DVDD / Dlatch_CMP
+*.ENDS
+
+.subckt Dlatch_CMP q d clk clkb vdd gnd
+xi2 gnd vdd net017 q inv_bhv
+xi1 gnd vdd net22 net8 inv_bhv
+c0 q gnd 1f
+c1 net017 gnd 1f
+r0 clk clk_int 1e-3
+r2 clkb clkb_int 1e-3
+r1 net8 net017 2
+xi29 d net22 vdd gnd clk_int clkb_int TGB
+xsw1 net22 q vdd gnd clkb_int clk_int TGB
+.ends Dlatch_CMP
+
+*.subckt SR_LATCH  S R Q QB
+*es1 S1 0  VOL='V(S)-pwra/2'
+*er1 R1 0  VOL='V(R)-pwra/2'
+*x1  S1 Q QB  nand2_bhv
+*x2  QB R1 Q  nand2_bhv
+*.ends
+
+
+.SUBCKT Ideal_Differential_Op_Amp Vcm Vinm Vinp Voutm Voutp
+RR4 Vcom Vcm 10G $[RP]
+RR3 Vinp Vinm 10G $[RP]
+RR2 Vcom Voutm 1 $[RP]
+RR0 Voutp Vcom 1 $[RP]
+G0 voutp vcom vinm vinp  1
+G2 vcom voutm vinm vinp  1
+G3 vcom 0     vcom vcm   1
+.ENDS
+
+.SUBCKT VCVS Vm Vout Vp
+Rin vp vm  1g
+cin vp vm  0.1p
+evcvs Vout1 0  vp vm  1
+rvout vout1 vout  100
+cvout vout 0  0.1p
+.ENDS
+
+.SUBCKT V_diff Vm Vout Vp
+Rin vp vm  1g
+cin vp vm  0.1p
+evcvs Vout1 0  vp vm  1
+rvout vout1 vout  100
+cvout vout 0  0.1p
+.ENDS
+
+
+.SUBCKT AMP_CMP Vm Vout Vp
+Rinp vp 0  1g
+Rinn vm 0  1g
+cinp vp 0  40f
+cinn vm 0  40f
+evcvs Vout1 0  vp vm  10000  MAX=PWRA MIN=0
+*self-implemented
+*evcvs Vout1 0  vp vm  1000000  MAX=PWRA MIN=0
+*evcvs Vout 0  vp vm  1000000  MAX=PWRA MIN=0
+*evcvs Vout 0  vp vm  1000000 MAX=PWRA MIN='-PWRA' 
+rvout vout1 vout  100
+cvout vout 0  100f
+.ENDS
+
+
+.SUBCKT VCVS_CMP  Vm Vout Vp
+Rin vp vm  1g
+cinp vp 0  0.1p
+cinn vm 0  0.1p
+evcvs Vout1 0  vp vm  10000  max='pwra' min=0
+rvout vout1 vout  100
+cvout vout 0  5f
+.ENDS
+
+.SUBCKT VCVS_diff VCM inn inp outn outp
+** subckt is as same as FDOPB
+cinp inp vcm  20f
+cinn inn vcm  20f
+E1   VCMI 0 VCM 0 1
+EP   outp 0 VOL=' (V(INP)-V(INN))*5 + v(vcmi) ' MAX='PWRA*0.8' MIN='0.3*pwra' 
+*EN   ON 0 VOL='2*V(VCM)-V(OP)' MAX='PWRA*1' MIN='0*pwra'
+EN   outn 0 VOL=' (V(inn)-v(inp))*5 + v(vcmi) ' max='pwra*0.8' min='0.3*pwra'
+
+.ENDS
+

@@ -1,0 +1,60 @@
+****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******
+ Input File: bhv4_z3_noCp.sp
+ lic:
+ lic: FLEXlm: SDK_11.6.9.6
+ lic: USER:   ychuang              HOSTNAME: adc
+ lic: HOSTID: "b026281535a3"       PID:      121967
+ lic: Licensed number of users already reached. Feature:       hspice License path:  26585@lsnctu: F
+ lic: MAX # of tokens reached!
+ lic: 'setenv META_QUEUE 1' is ON
+ lic: hspice waiting for license
+ lic: STOP job in queue: CNTL C or/and kill -9 121967
+ lic: Try to reconnect to license server: 1/10
+ lic: Reconnect to license server is done
+ lic: Using FLEXlm license file:
+ lic: 26585@lsnctu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09
+ lic: 378(in_use)/380(total) FLOATING license(s) on SERVER 26585@lsnctu
+ lic:
+ init: begin read circuit files, cpu clock= 2.75E+00
+       option search = /usr/cad/synopsys/hspice/cur/hspice/O-2018.09/hs
+                         pice/parts/ad
+       option runlvl
+       option runlvl =     3.00
+       option method = gear
+       option lvltim =     2.00
+       option vntol =    1.000E-06
+       option reltol =    1.000E-06
+       option rmin =    1.000E-15
+       option delmax =    5.000E-10
+       option post
+       option probe
+       option interp
+ init: end read circuit files, cpu clock= 2.76E+00 peak memory=     316 mb
+ init: begin check errors, cpu clock= 2.76E+00
+ init: end check errors, cpu clock= 3.01E+00 peak memory=     323 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 3.01E+00
+       establish matrix -- done, cpu clock= 3.02E+00 peak memory=     323 mb
+       re-order matrix -- done, cpu clock= 3.04E+00 peak memory=     323 mb
+ init: end setup matrix, cpu clock= 3.06E+00 peak memory=     324 mb
+ dcop: begin dcop, cpu clock= 3.09E+00
+ dcop: end dcop, cpu clock= 3.37E+00 peak memor lic: Reconnect to license server is done
+ lic: Try to reconnect to license server: 1/10
+ lic: Reconnect to license server is done
+ lic: Reconnect to license server is done
+ tran: time= 3.0305E-04 tot_iter= 5444563 conv_iter= 1705351 cpu clock= 1.12E+04
+ tran: time= 4.0406E-04 tot_iter= 7262818 conv_iter= 2273669 cpu clock= 2.71E+04
+ tran: time= 5.0508E-04 tot_iter= 9081517 conv_iter= 2842978 cpu clock= 4.27E+04
+ tran: time= 6.0609E-04 tot_iter=10893141 conv_iter= 3409687 cpu clock= 5.66E+04
+ tran: time= 7.0711E-04 tot_iter=12707510 conv_iter= 3976917 cpu clock= 7.10E+04
+ tran: time= 8.0813E-04 tot_iter=14526412 conv_iter= 4546620 cpu clock= 8.15E+04
+ tran: time= 9.0914E-04 tot_iter=16358491 conv_iter= 5116708 cpu clock= 8.39E+04
+ sweep: tran tran0    end, cpu clock= 8.54E+04 peak memory=     328 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)
+ 4546620 cpu clock= 7.53E+04
+ tran: time= 9.0914E-04 tot_iter=16358491 conv_iter= 5116708 cpu clock= 7.66E+04
+ sweep: tran tran0    end, cpu clock= 7.77E+04 peak memory=     328 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

@@ -1,0 +1,2 @@
+hspice:
+	hspice bhv.sp

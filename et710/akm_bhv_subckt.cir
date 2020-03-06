@@ -1,0 +1,47 @@
+** subckt for behavior simulation
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  AKM_ADC_bhv
+* Top Cell Name: SH_ideal
+* View Name:     schematic
+* Netlisted on:  Mar 28 23:14:13 2012
+************************************************************************
+
+
+.SUBCKT SH_ideal ADCINN ADCINP AGND AVDD INN INP CLK CLK_B
+RR1 net019 ADCINN 10
+RR0 net023 ADCINP 10
+E2 NET019 AGND  VCVS NET12 ADCINN  1000 
+E0 NET023 AGND  VCVS NET18 ADCINP  1000 
+CC2 ADCINN AGND 10p
+CC1 ADCINP AGND 10p
+CCINN net12 AGND 10p
+CCINP net18 AGND 10p
+XSWINN INN net12 AVDD AGND CLK CLK_B / TGB
+XSWINP INP net18 AVDD AGND CLK CLK__B / TGB
+.ENDS
+
+
+** FDOPB_AKM is "FDOPB_SLEW" at "ece627_bhv_ckt.cir"
+.param  c_wp_akm=0.1p  r_wp_akm=4e3  op_gain_akm=1e5 gm_vccs='op_gain_akm/r_wp_akm'
++ ILIM=10000u voffset=0
+** offset is added; 10/24/2012.  
+** to remove the offset, remove the following 2 lines.
+*.SUBCKT FDOPB_AKM AGND AVDD INN INP1 IR ON OP PDN VCM VCMFB 
+*VOFFSET  INP1 INP  voffset
+.SUBCKT FDOPB_AKM AGND AVDD INN INP IR ON OP PDN VCM VCMFB 
+cinp INP agnd  0.1p
+cinn INN agnd  0.1p
+COP OP1 AGND  c_wp_akm 
+CON AGND ON1  c_wp_akm 
+GIN ON1 AGND  VCCS INP INN  gm_vccs  max='1*ILIM' min='-1*ILIM' 
+GIP AGND OP1  VCCS INP INN  gm_vccs  max='1*ILIM' min='-1*ILIM'
+EON ON VCM1  VCVS ON1 AGND  1.0 
+EOP OP VCM1  VCVS OP1 AGND  1.0 
+EVCMO VCM1 0  VCVS VCM 0  1.0 
+RIN INP INN  10g  
+RON AGND ON1  r_wp_akm  
+ROP OP1 AGND  r_wp_akm
+.ENDS FDOPB_AKM
+** slew rate = ILIM/COP, EX: 1uA/1pF = 1 V/usec

@@ -1,0 +1,623 @@
+Using: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv2.sp
+ ****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+  Copyright (c) 1986 - 2019 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: bhv2.sp                                                           
+  Command line options: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv2.sp
+ lic:  
+ lic: FLEXlm: SDK_11.6.9.6 
+ lic: USER:   ychuang              HOSTNAME: adc 
+ lic: HOSTID: "b4969141dd1f"       PID:      113547 
+ lic: Using FLEXlm license file: 
+ lic: 26585@lsnctu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09 
+ lic: 2(in_use)/190(total) FLOATING license(s) on SERVER 26585@lsnctu 
+ lic:   
+1****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+ ******  
+ *behavior simulation
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xi18.                           mod1               1.00 
+        2 xi16.                           mod1_gain_1o3_with_lev5_dac
+                                                                 1.00 
+        3 xvth.                           vth_5lev           1.00 
+        4 xquantizer_1b_0.                adder_cmp_1b_ciff2
+                                                                 1.00 
+        5 xquantizer_1b_1.                adder_cmp_1b_ciff2
+                                                                 1.00 
+        6 xquantizer_1b_2.                adder_cmp_1b_ciff2
+                                                                 1.00 
+        7 xquantizer_1b_3.                adder_cmp_1b_ciff2
+                                                                 1.00 
+        8 xclk_fb_0.                      clk_fb_1bit        1.00 
+        9 xclk_fb_1.                      clk_fb_1bit        1.00 
+       10 xclk_fb_2.                      clk_fb_1bit        1.00 
+       11 xclk_fb_3.                      clk_fb_1bit        1.00 
+       12 xi18.xi65.                      tgb                1.00 
+       13 xi18.xsw7.                      tgb                1.00 
+       14 xi18.xsw3.                      tgb                1.00 
+       15 xi18.xswinn_0.                  tgb                1.00 
+       16 xi18.xswinn_1.                  tgb                1.00 
+       17 xi18.xswinn_2.                  tgb                1.00 
+       18 xi18.xswinn_3.                  tgb                1.00 
+       19 xi18.xswinp_0.                  tgb                1.00 
+       20 xi18.xswinp_1.                  tgb                1.00 
+       21 xi18.xswinp_2.                  tgb                1.00 
+       22 xi18.xswinp_3.                  tgb                1.00 
+       23 xi18.xsw2.                      tgb                1.00 
+       24 xi18.xsw6.                      tgb                1.00 
+       25 xi18.xi6.                       tgb                1.00 
+       26 xi18.xi9.                       tgb                1.00 
+       27 xi18.xi66.                      tgb                1.00 
+       28 xi18.xop.                       fdopb              1.00 
+       29 xi16.xdac_0.                    dac_int_1bit       1.00 
+       30 xi16.xdac_1.                    dac_int_1bit       1.00 
+       31 xi16.xdac_2.                    dac_int_1bit       1.00 
+       32 xi16.xdac_3.                    dac_int_1bit       1.00 
+       33 xi16.xsw3.                      tgb                1.00 
+       34 xi16.xsw7.                      tgb                1.00 
+       35 xi16.xswinn_0.                  tgb                1.00 
+       36 xi16.xswinn_1.                  tgb                1.00 
+       37 xi16.xswinn_2.                  tgb                1.00 
+       38 xi16.xswinn_3.                  tgb                1.00 
+       39 xi16.xsw2.                      tgb                1.00 
+       40 xi16.xsw6.                      tgb                1.00 
+       41 xi16.xi12.                      tgb                1.00 
+       42 xi16.xi13.                      tgb                1.00 
+       43 xi16.xswinp_0.                  tgb                1.00 
+       44 xi16.xswinp_1.                  tgb                1.00 
+       45 xi16.xswinp_2.                  tgb                1.00 
+       46 xi16.xswinp_3.                  tgb                1.00 
+       47 xi16.xop.                       fdopb              1.00 
+       48 xquantizer_1b_0.xpreamp_bhv.    preamp_cmp_b       1.00 
+       49 xquantizer_1b_0.xcmp3.          cmp_clk            1.00 
+       50 xquantizer_1b_0.xi1.            inv_bhv            1.00 
+       51 xquantizer_1b_0.xi52.           tgb                1.00 
+       52 xquantizer_1b_0.xi63.           tgb                1.00 
+       53 xquantizer_1b_0.xi62.           tgb                1.00 
+       54 xquantizer_1b_0.xi55.           tgb                1.00 
+       55 xquantizer_1b_0.xi56.           tgb                1.00 
+       56 xquantizer_1b_0.xi65.           tgb                1.00 
+       57 xquantizer_1b_0.xi64.           tgb                1.00 
+       58 xquantizer_1b_0.xi60.           tgb                1.00 
+       59 xquantizer_1b_0.xi59.           tgb                1.00 
+       60 xquantizer_1b_0.xi13.           tgb                1.00 
+       61 xquantizer_1b_0.xi9.            tgb                1.00 
+       62 xquantizer_1b_0.xsw1.           tgb                1.00 
+       63 xquantizer_1b_0.xi2.            tgb                1.00 
+       64 xquantizer_1b_0.xsw4.           tgb                1.00 
+       65 xquantizer_1b_1.xpreamp_bhv.    preamp_cmp_b       1.00 
+       66 xquantizer_1b_1.xcmp3.          cmp_clk            1.00 
+       67 xquantizer_1b_1.xi1.            inv_bhv            1.00 
+       68 xquantizer_1b_1.xi52.           tgb                1.00 
+       69 xquantizer_1b_1.xi63.           tgb                1.00 
+       70 xquantizer_1b_1.xi62.           tgb                1.00 
+       71 xquantizer_1b_1.xi55.           tgb                1.00 
+       72 xquantizer_1b_1.xi56.           tgb                1.00 
+       73 xquantizer_1b_1.xi65.           tgb                1.00 
+       74 xquantizer_1b_1.xi64.           tgb                1.00 
+       75 xquantizer_1b_1.xi60.           tgb                1.00 
+       76 xquantizer_1b_1.xi59.           tgb                1.00 
+       77 xquantizer_1b_1.xi13.           tgb                1.00 
+       78 xquantizer_1b_1.xi9.            tgb                1.00 
+       79 xquantizer_1b_1.xsw1.           tgb                1.00 
+       80 xquantizer_1b_1.xi2.            tgb                1.00 
+       81 xquantizer_1b_1.xsw4.           tgb                1.00 
+       82 xquantizer_1b_2.xpreamp_bhv.    preamp_cmp_b       1.00 
+       83 xquantizer_1b_2.xcmp3.          cmp_clk            1.00 
+       84 xquantizer_1b_2.xi1.            inv_bhv            1.00 
+       85 xquantizer_1b_2.xi52.           tgb                1.00 
+       86 xquantizer_1b_2.xi63.           tgb                1.00 
+       87 xquantizer_1b_2.xi62.           tgb                1.00 
+       88 xquantizer_1b_2.xi55.           tgb                1.00 
+       89 xquantizer_1b_2.xi56.           tgb                1.00 
+       90 xquantizer_1b_2.xi65.           tgb                1.00 
+       91 xquantizer_1b_2.xi64.           tgb                1.00 
+       92 xquantizer_1b_2.xi60.           tgb                1.00 
+       93 xquantizer_1b_2.xi59.           tgb                1.00 
+       94 xquantizer_1b_2.xi13.           tgb                1.00 
+       95 xquantizer_1b_2.xi9.            tgb                1.00 
+       96 xquantizer_1b_2.xsw1.           tgb                1.00 
+       97 xquantizer_1b_2.xi2.            tgb                1.00 
+       98 xquantizer_1b_2.xsw4.           tgb                1.00 
+       99 xquantizer_1b_3.xpreamp_bhv.    preamp_cmp_b       1.00 
+      100 xquantizer_1b_3.xcmp3.          cmp_clk            1.00 
+      101 xquantizer_1b_3.xi1.            inv_bhv            1.00 
+      102 xquantizer_1b_3.xi52.           tgb                1.00 
+      103 xquantizer_1b_3.xi63.           tgb                1.00 
+      104 xquantizer_1b_3.xi62.           tgb                1.00 
+      105 xquantizer_1b_3.xi55.           tgb                1.00 
+      106 xquantizer_1b_3.xi56.           tgb                1.00 
+      107 xquantizer_1b_3.xi65.           tgb                1.00 
+      108 xquantizer_1b_3.xi64.           tgb                1.00 
+      109 xquantizer_1b_3.xi60.           tgb                1.00 
+      110 xquantizer_1b_3.xi59.           tgb                1.00 
+      111 xquantizer_1b_3.xi13.           tgb                1.00 
+      112 xquantizer_1b_3.xi9.            tgb                1.00 
+      113 xquantizer_1b_3.xsw1.           tgb                1.00 
+      114 xquantizer_1b_3.xi2.            tgb                1.00 
+      115 xquantizer_1b_3.xsw4.           tgb                1.00 
+      116 xclk_fb_0.xi64.                 inv_bhv            1.00 
+      117 xclk_fb_0.xi20.                 inv_bhv            1.00 
+      118 xclk_fb_0.xi60.                 inv_bhv            1.00 
+      119 xclk_fb_0.xi59.                 inv_bhv            1.00 
+      120 xclk_fb_0.xi63.                 inv_bhv            1.00 
+      121 xclk_fb_0.xi62.                 nand2_bhv          1.00 
+      122 xclk_fb_0.xi19.                 nand2_bhv          1.00 
+      123 xclk_fb_1.xi64.                 inv_bhv            1.00 
+      124 xclk_fb_1.xi20.                 inv_bhv            1.00 
+      125 xclk_fb_1.xi60.                 inv_bhv            1.00 
+      126 xclk_fb_1.xi59.                 inv_bhv            1.00 
+      127 xclk_fb_1.xi63.                 inv_bhv            1.00 
+      128 xclk_fb_1.xi62.                 nand2_bhv          1.00 
+      129 xclk_fb_1.xi19.                 nand2_bhv          1.00 
+      130 xclk_fb_2.xi64.                 inv_bhv            1.00 
+      131 xclk_fb_2.xi20.                 inv_bhv            1.00 
+      132 xclk_fb_2.xi60.                 inv_bhv            1.00 
+      133 xclk_fb_2.xi59.                 inv_bhv            1.00 
+      134 xclk_fb_2.xi63.                 inv_bhv            1.00 
+      135 xclk_fb_2.xi62.                 nand2_bhv          1.00 
+      136 xclk_fb_2.xi19.                 nand2_bhv          1.00 
+      137 xclk_fb_3.xi64.                 inv_bhv            1.00 
+      138 xclk_fb_3.xi20.                 inv_bhv            1.00 
+      139 xclk_fb_3.xi60.                 inv_bhv            1.00 
+      140 xclk_fb_3.xi59.                 inv_bhv            1.00 
+      141 xclk_fb_3.xi63.                 inv_bhv            1.00 
+      142 xclk_fb_3.xi62.                 nand2_bhv          1.00 
+      143 xclk_fb_3.xi19.                 nand2_bhv          1.00 
+      144 xi16.xdac_0.xi6.                tgb                1.00 
+      145 xi16.xdac_0.xi7.                tgb                1.00 
+      146 xi16.xdac_0.xi40.               tgb                1.00 
+      147 xi16.xdac_0.xi41.               tgb                1.00 
+      148 xi16.xdac_1.xi6.                tgb                1.00 
+      149 xi16.xdac_1.xi7.                tgb                1.00 
+      150 xi16.xdac_1.xi40.               tgb                1.00 
+      151 xi16.xdac_1.xi41.               tgb                1.00 
+      152 xi16.xdac_2.xi6.                tgb                1.00 
+      153 xi16.xdac_2.xi7.                tgb                1.00 
+      154 xi16.xdac_2.xi40.               tgb                1.00 
+      155 xi16.xdac_2.xi41.               tgb                1.00 
+      156 xi16.xdac_3.xi6.                tgb                1.00 
+      157 xi16.xdac_3.xi7.                tgb                1.00 
+      158 xi16.xdac_3.xi40.               tgb                1.00 
+      159 xi16.xdac_3.xi41.               tgb                1.00 
+      160 xquantizer_1b_0.xcmp3.xdff.     dff                1.00 
+      161 xquantizer_1b_0.xcmp3.xpreamp.  amp_cmp            1.00 
+      162 xquantizer_1b_0.xi1.xp1.        pmos_b             1.00 
+      163 xquantizer_1b_0.xi1.xn1.        nmos_b             1.00 
+      164 xquantizer_1b_1.xcmp3.xdff.     dff                1.00 
+      165 xquantizer_1b_1.xcmp3.xpreamp.  amp_cmp            1.00 
+      166 xquantizer_1b_1.xi1.xp1.        pmos_b             1.00 
+      167 xquantizer_1b_1.xi1.xn1.        nmos_b             1.00 
+      168 xquantizer_1b_2.xcmp3.xdff.     dff                1.00 
+      169 xquantizer_1b_2.xcmp3.xpreamp.  amp_cmp            1.00 
+      170 xquantizer_1b_2.xi1.xp1.        pmos_b             1.00 
+      171 xquantizer_1b_2.xi1.xn1.        nmos_b             1.00 
+      172 xquantizer_1b_3.xcmp3.xdff.     dff                1.00 
+      173 xquantizer_1b_3.xcmp3.xpreamp.  amp_cmp            1.00 
+      174 xquantizer_1b_3.xi1.xp1.        pmos_b             1.00 
+      175 xquantizer_1b_3.xi1.xn1.        nmos_b             1.00 
+      176 xclk_fb_0.xi64.xp1.             pmos_b             1.00 
+      177 xclk_fb_0.xi64.xn1.             nmos_b             1.00 
+      178 xclk_fb_0.xi20.xp1.             pmos_b             1.00 
+      179 xclk_fb_0.xi20.xn1.             nmos_b             1.00 
+      180 xclk_fb_0.xi60.xp1.             pmos_b             1.00 
+      181 xclk_fb_0.xi60.xn1.             nmos_b             1.00 
+      182 xclk_fb_0.xi59.xp1.             pmos_b             1.00 
+      183 xclk_fb_0.xi59.xn1.             nmos_b             1.00 
+      184 xclk_fb_0.xi63.xp1.             pmos_b             1.00 
+      185 xclk_fb_0.xi63.xn1.             nmos_b             1.00 
+      186 xclk_fb_0.xi62.xn1.             nmos_b             1.00 
+      187 xclk_fb_0.xi62.xi9.             nmos_b             1.00 
+      188 xclk_fb_0.xi62.xp1.             pmos_b             1.00 
+      189 xclk_fb_0.xi62.xi10.            pmos_b             1.00 
+      190 xclk_fb_0.xi19.xn1.             nmos_b             1.00 
+      191 xclk_fb_0.xi19.xi9.             nmos_b             1.00 
+      192 xclk_fb_0.xi19.xp1.             pmos_b             1.00 
+      193 xclk_fb_0.xi19.xi10.            pmos_b             1.00 
+      194 xclk_fb_1.xi64.xp1.             pmos_b             1.00 
+      195 xclk_fb_1.xi64.xn1.             nmos_b             1.00 
+      196 xclk_fb_1.xi20.xp1.             pmos_b             1.00 
+      197 xclk_fb_1.xi20.xn1.             nmos_b             1.00 
+      198 xclk_fb_1.xi60.xp1.             pmos_b             1.00 
+      199 xclk_fb_1.xi60.xn1.             nmos_b             1.00 
+      200 xclk_fb_1.xi59.xp1.             pmos_b             1.00 
+      201 xclk_fb_1.xi59.xn1.             nmos_b             1.00 
+      202 xclk_fb_1.xi63.xp1.             pmos_b             1.00 
+      203 xclk_fb_1.xi63.xn1.             nmos_b             1.00 
+      204 xclk_fb_1.xi62.xn1.             nmos_b             1.00 
+      205 xclk_fb_1.xi62.xi9.             nmos_b             1.00 
+      206 xclk_fb_1.xi62.xp1.             pmos_b             1.00 
+      207 xclk_fb_1.xi62.xi10.            pmos_b             1.00 
+      208 xclk_fb_1.xi19.xn1.             nmos_b             1.00 
+      209 xclk_fb_1.xi19.xi9.             nmos_b             1.00 
+      210 xclk_fb_1.xi19.xp1.             pmos_b             1.00 
+      211 xclk_fb_1.xi19.xi10.            pmos_b             1.00 
+      212 xclk_fb_2.xi64.xp1.             pmos_b             1.00 
+      213 xclk_fb_2.xi64.xn1.             nmos_b             1.00 
+      214 xclk_fb_2.xi20.xp1.             pmos_b             1.00 
+      215 xclk_fb_2.xi20.xn1.             nmos_b             1.00 
+      216 xclk_fb_2.xi60.xp1.             pmos_b             1.00 
+      217 xclk_fb_2.xi60.xn1.             nmos_b             1.00 
+      218 xclk_fb_2.xi59.xp1.             pmos_b             1.00 
+      219 xclk_fb_2.xi59.xn1.             nmos_b             1.00 
+      220 xclk_fb_2.xi63.xp1.             pmos_b             1.00 
+      221 xclk_fb_2.xi63.xn1.             nmos_b             1.00 
+      222 xclk_fb_2.xi62.xn1.             nmos_b             1.00 
+      223 xclk_fb_2.xi62.xi9.             nmos_b             1.00 
+      224 xclk_fb_2.xi62.xp1.             pmos_b             1.00 
+      225 xclk_fb_2.xi62.xi10.            pmos_b             1.00 
+      226 xclk_fb_2.xi19.xn1.             nmos_b             1.00 
+      227 xclk_fb_2.xi19.xi9.             nmos_b             1.00 
+      228 xclk_fb_2.xi19.xp1.             pmos_b             1.00 
+      229 xclk_fb_2.xi19.xi10.            pmos_b             1.00 
+      230 xclk_fb_3.xi64.xp1.             pmos_b             1.00 
+      231 xclk_fb_3.xi64.xn1.             nmos_b             1.00 
+      232 xclk_fb_3.xi20.xp1.             pmos_b             1.00 
+      233 xclk_fb_3.xi20.xn1.             nmos_b             1.00 
+      234 xclk_fb_3.xi60.xp1.             pmos_b             1.00 
+      235 xclk_fb_3.xi60.xn1.             nmos_b             1.00 
+      236 xclk_fb_3.xi59.xp1.             pmos_b             1.00 
+      237 xclk_fb_3.xi59.xn1.             nmos_b             1.00 
+      238 xclk_fb_3.xi63.xp1.             pmos_b             1.00 
+      239 xclk_fb_3.xi63.xn1.             nmos_b             1.00 
+      240 xclk_fb_3.xi62.xn1.             nmos_b             1.00 
+      241 xclk_fb_3.xi62.xi9.             nmos_b             1.00 
+      242 xclk_fb_3.xi62.xp1.             pmos_b             1.00 
+      243 xclk_fb_3.xi62.xi10.            pmos_b             1.00 
+      244 xclk_fb_3.xi19.xn1.             nmos_b             1.00 
+      245 xclk_fb_3.xi19.xi9.             nmos_b             1.00 
+      246 xclk_fb_3.xi19.xp1.             pmos_b             1.00 
+      247 xclk_fb_3.xi19.xi10.            pmos_b             1.00 
+      248 xquantizer_1b_0.xcmp3.xdff.xi13.
+                                            dlatch             1.00 
+      249 xquantizer_1b_0.xcmp3.xdff.xi14.
+                                            dlatch             1.00 
+      250 xquantizer_1b_1.xcmp3.xdff.xi13.
+                                            dlatch             1.00 
+      251 xquantizer_1b_1.xcmp3.xdff.xi14.
+                                            dlatch             1.00 
+      252 xquantizer_1b_2.xcmp3.xdff.xi13.
+                                            dlatch             1.00 
+      253 xquantizer_1b_2.xcmp3.xdff.xi14.
+                                            dlatch             1.00 
+      254 xquantizer_1b_3.xcmp3.xdff.xi13.
+                                            dlatch             1.00 
+      255 xquantizer_1b_3.xcmp3.xdff.xi14.
+                                            dlatch             1.00 
+      256 xquantizer_1b_0.xcmp3.xdff.xi13.xi2.
+                                            inv_bhv            1.00 
+      257 xquantizer_1b_0.xcmp3.xdff.xi13.xi1.
+                                            inv_bhv            1.00 
+      258 xquantizer_1b_0.xcmp3.xdff.xi13.xi29.
+                                            tgb                1.00 
+      259 xquantizer_1b_0.xcmp3.xdff.xi13.xsw1.
+                                            tgb                1.00 
+      260 xquantizer_1b_0.xcmp3.xdff.xi14.xi2.
+                                            inv_bhv            1.00 
+      261 xquantizer_1b_0.xcmp3.xdff.xi14.xi1.
+                                            inv_bhv            1.00 
+      262 xquantizer_1b_0.xcmp3.xdff.xi14.xi29.
+                                            tgb                1.00 
+      263 xquantizer_1b_0.xcmp3.xdff.xi14.xsw1.
+                                            tgb                1.00 
+      264 xquantizer_1b_1.xcmp3.xdff.xi13.xi2.
+                                            inv_bhv            1.00 
+      265 xquantizer_1b_1.xcmp3.xdff.xi13.xi1.
+                                            inv_bhv            1.00 
+      266 xquantizer_1b_1.xcmp3.xdff.xi13.xi29.
+                                            tgb                1.00 
+      267 xquantizer_1b_1.xcmp3.xdff.xi13.xsw1.
+                                            tgb                1.00 
+      268 xquantizer_1b_1.xcmp3.xdff.xi14.xi2.
+                                            inv_bhv            1.00 
+      269 xquantizer_1b_1.xcmp3.xdff.xi14.xi1.
+                                            inv_bhv            1.00 
+      270 xquantizer_1b_1.xcmp3.xdff.xi14.xi29.
+                                            tgb                1.00 
+      271 xquantizer_1b_1.xcmp3.xdff.xi14.xsw1.
+                                            tgb                1.00 
+      272 xquantizer_1b_2.xcmp3.xdff.xi13.xi2.
+                                            inv_bhv            1.00 
+      273 xquantizer_1b_2.xcmp3.xdff.xi13.xi1.
+                                            inv_bhv            1.00 
+      274 xquantizer_1b_2.xcmp3.xdff.xi13.xi29.
+                                            tgb                1.00 
+      275 xquantizer_1b_2.xcmp3.xdff.xi13.xsw1.
+                                            tgb                1.00 
+      276 xquantizer_1b_2.xcmp3.xdff.xi14.xi2.
+                                            inv_bhv            1.00 
+      277 xquantizer_1b_2.xcmp3.xdff.xi14.xi1.
+                                            inv_bhv            1.00 
+      278 xquantizer_1b_2.xcmp3.xdff.xi14.xi29.
+                                            tgb                1.00 
+      279 xquantizer_1b_2.xcmp3.xdff.xi14.xsw1.
+                                            tgb                1.00 
+      280 xquantizer_1b_3.xcmp3.xdff.xi13.xi2.
+                                            inv_bhv            1.00 
+      281 xquantizer_1b_3.xcmp3.xdff.xi13.xi1.
+                                            inv_bhv            1.00 
+      282 xquantizer_1b_3.xcmp3.xdff.xi13.xi29.
+                                            tgb                1.00 
+      283 xquantizer_1b_3.xcmp3.xdff.xi13.xsw1.
+                                            tgb                1.00 
+      284 xquantizer_1b_3.xcmp3.xdff.xi14.xi2.
+                                            inv_bhv            1.00 
+      285 xquantizer_1b_3.xcmp3.xdff.xi14.xi1.
+                                            inv_bhv            1.00 
+      286 xquantizer_1b_3.xcmp3.xdff.xi14.xi29.
+                                            tgb                1.00 
+      287 xquantizer_1b_3.xcmp3.xdff.xi14.xsw1.
+                                            tgb                1.00 
+      288 xquantizer_1b_0.xcmp3.xdff.xi13.xi2.xp1.
+                                            pmos_b             1.00 
+      289 xquantizer_1b_0.xcmp3.xdff.xi13.xi2.xn1.
+                                            nmos_b             1.00 
+      290 xquantizer_1b_0.xcmp3.xdff.xi13.xi1.xp1.
+                                            pmos_b             1.00 
+      291 xquantizer_1b_0.xcmp3.xdff.xi13.xi1.xn1.
+                                            nmos_b             1.00 
+      292 xquantizer_1b_0.xcmp3.xdff.xi14.xi2.xp1.
+                                            pmos_b             1.00 
+      293 xquantizer_1b_0.xcmp3.xdff.xi14.xi2.xn1.
+                                            nmos_b             1.00 
+      294 xquantizer_1b_0.xcmp3.xdff.xi14.xi1.xp1.
+                                            pmos_b             1.00 
+      295 xquantizer_1b_0.xcmp3.xdff.xi14.xi1.xn1.
+                                            nmos_b             1.00 
+      296 xquantizer_1b_1.xcmp3.xdff.xi13.xi2.xp1.
+                                            pmos_b             1.00 
+      297 xquantizer_1b_1.xcmp3.xdff.xi13.xi2.xn1.
+                                            nmos_b             1.00 
+      298 xquantizer_1b_1.xcmp3.xdff.xi13.xi1.xp1.
+                                            pmos_b             1.00 
+      299 xquantizer_1b_1.xcmp3.xdff.xi13.xi1.xn1.
+                                            nmos_b             1.00 
+      300 xquantizer_1b_1.xcmp3.xdff.xi14.xi2.xp1.
+                                            pmos_b             1.00 
+      301 xquantizer_1b_1.xcmp3.xdff.xi14.xi2.xn1.
+                                            nmos_b             1.00 
+      302 xquantizer_1b_1.xcmp3.xdff.xi14.xi1.xp1.
+                                            pmos_b             1.00 
+      303 xquantizer_1b_1.xcmp3.xdff.xi14.xi1.xn1.
+                                            nmos_b             1.00 
+      304 xquantizer_1b_2.xcmp3.xdff.xi13.xi2.xp1.
+                                            pmos_b             1.00 
+      305 xquantizer_1b_2.xcmp3.xdff.xi13.xi2.xn1.
+                                            nmos_b             1.00 
+      306 xquantizer_1b_2.xcmp3.xdff.xi13.xi1.xp1.
+                                            pmos_b             1.00 
+      307 xquantizer_1b_2.xcmp3.xdff.xi13.xi1.xn1.
+                                            nmos_b             1.00 
+      308 xquantizer_1b_2.xcmp3.xdff.xi14.xi2.xp1.
+                                            pmos_b             1.00 
+      309 xquantizer_1b_2.xcmp3.xdff.xi14.xi2.xn1.
+                                            nmos_b             1.00 
+      310 xquantizer_1b_2.xcmp3.xdff.xi14.xi1.xp1.
+                                            pmos_b             1.00 
+      311 xquantizer_1b_2.xcmp3.xdff.xi14.xi1.xn1.
+                                            nmos_b             1.00 
+      312 xquantizer_1b_3.xcmp3.xdff.xi13.xi2.xp1.
+                                            pmos_b             1.00 
+      313 xquantizer_1b_3.xcmp3.xdff.xi13.xi2.xn1.
+                                            nmos_b             1.00 
+      314 xquantizer_1b_3.xcmp3.xdff.xi13.xi1.xp1.
+                                            pmos_b             1.00 
+      315 xquantizer_1b_3.xcmp3.xdff.xi13.xi1.xn1.
+                                            nmos_b             1.00 
+      316 xquantizer_1b_3.xcmp3.xdff.xi14.xi2.xp1.
+                                            pmos_b             1.00 
+      317 xquantizer_1b_3.xcmp3.xdff.xi14.xi2.xn1.
+                                            nmos_b             1.00 
+      318 xquantizer_1b_3.xcmp3.xdff.xi14.xi1.xp1.
+                                            pmos_b             1.00 
+      319 xquantizer_1b_3.xcmp3.xdff.xi14.xi1.xn1.
+                                            nmos_b             1.00 
+  **info** (bhv2.sp:107) DC voltage reset to initial transient source value in source 0:vinn. new dc=0.0000D+00
+  
+  **warning** No connections on node iref_1; Node ignored.
+
+  **warning** the following singular supplies were terminated to 1 meg resistor 
+          supply       node1            node2
+(bhv2.sp:44)vdgnd                   0:dgnd             defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2.sp:43)vdvdd                   0:dvdd             defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2.sp:69)vp1dna                  0:p1d_b            defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2.sp:71)vp2na                   0:p2_b             defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2.sp:73)vp2dna                  0:p2d_b            defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2.sp:96)vrst_b                  0:rst_b            defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2.sp:98)vrst_m                  0:rst_matlab       defined in subckt 0                     0:0                defined in subckt 0               
+(../et710/ece627_bhv_ckt.cir:65)e1                     28:vcmi             defined in subckt fdopb                 0:0                defined in subckt 0               
+(../et710/ece627_bhv_ckt.cir:65)e1                     47:vcmi             defined in subckt fdopb                 0:0                defined in subckt 0               
+      
+
+Element variations(Local):   element              parameter
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+             
+ Summary of Linear Res Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e+00  ~  1e+03|52        |9.3694    |
+ |1e+03  ~  1e+05|15        |2.7027    |
+ |1e+05  ~  1e+06|16        |2.8829    |
+ |1e+08  ~  1e+09|8         |1.4414    |
+ |1e+09  ~  1e+10|4         |0.7207    |
+ |1e+11  ~  1e+12|460       |82.8829   |
+ ---------------------------------------
+              
+             
+ Summary of Linear Cap Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e-17  ~  1e-16|230       |62.8415   |
+ |1e-15  ~  1e-14|108       |29.5082   |
+ |1e-14  ~  1e-13|28        |7.6503    |
+ ---------------------------------------
+              
+             
+ Summary of Detailed RC Type Statistics
+ -----------------------------
+ |Element Type    |Number    |
+ |----------------+----------|
+ |Constant Res    |546       |
+ |Other Linear Res|9         |
+ |                |          |
+ |Constant Cap    |366       |
+ -----------------------------
+              
+  Opening plot unit= 15
+ file=bhv2.pa0
+
+ **info** dc convergence successful at Newton-Raphson method 
+ ******  
+ *behavior simulation
+
+ ****** operating point information tnom=  25.000 temp=  27.000 ******
+ ****** operating point status is voltage   simulation time is     0.     
+      node    =voltage        node    =voltage        node    =voltage
+
+ +  0:agnd    =   0.        0:avdd    =   1.8000    0:dgnd    =   0.     
+ +  0:dout_0  =   1.8000    0:dout_1  =   1.8000    0:dout_2  =   1.8000 
+ +  0:dout_3  =   1.8000    0:dvdd    =   1.8000    0:inn     = 900.0000m
+ +  0:inp     = 900.0000m   0:iref_1  =   0.        0:iref_2  =   0.     
+ +  0:iref_cmp=   0.        0:iref_cmp=   0.        0:iref_cmp=   0.     
+ +  0:iref_cmp=   0.        0:out_int1= 900.0000m   0:out_int1= 900.0000m
+ +  0:out_int2= 900.0000m   0:out_int2= 900.0000m   0:p1      =   0.     
+ +  0:p1_b    =   1.8000    0:p1d     =   0.        0:p1d_b   =   1.8000 
+ +  0:p2      =   0.        0:p2_b    =   1.8000    0:p2d     =   0.     
+ +  0:p2d_b   =   1.8000    0:pdn     =   0.        0:pvrefn_0=  18.0000f
+ +  0:pvrefn_1=  18.0000f   0:pvrefn_2=  18.0000f   0:pvrefn_3=  18.0000f
+ +  0:pvrefn_b=   1.8000    0:pvrefn_b=   1.8000    0:pvrefn_b=   1.8000 
+ +  0:pvrefn_b=   1.8000    0:pvrefp_0=  18.0000f   0:pvrefp_1=  18.0000f
+ +  0:pvrefp_2=  18.0000f   0:pvrefp_3=  18.0000f   0:pvrefp_b=   1.8000 
+ +  0:pvrefp_b=   1.8000    0:pvrefp_b=   1.8000    0:pvrefp_b=   1.8000 
+ +  0:rst     =   0.        0:rst_b   =   1.8000    0:rst_matl=   0.     
+ +  0:vcm     = 900.0000m   0:vcm1    = 900.0000m   0:vrefn   =   0.     
+ +  0:vrefp   =   1.8000    0:vthp_0  = 224.9999m   0:vthp_1  = 674.9998m
+ +  0:vthp_2  =   1.1250    0:vthp_3  =   1.5750    1:cinn    = 449.7751u
+ +  1:cinp    = 449.7751u   1:dacn    = 899.1009u   1:dacp    = 899.1009u
+ +  1:opin    = 449.7751u   1:opip    = 449.7751u   2:cinn    = 449.7751u
+ +  2:cinp    = 449.7751u   2:dacn_0  = 899.1009u   2:dacn_1  = 899.1009u
+ +  2:dacn_2  = 899.1009u   2:dacn_3  = 899.1009u   2:dacp_0  = 899.1009u
+ +  2:dacp_1  = 899.1009u   2:dacp_2  = 899.1009u   2:dacp_3  = 899.1009u
+ +  2:opin    = 449.7751u   2:opip    = 449.7751u   4:amp_n   = 900.0000m
+ +  4:amp_p   = 900.0000m   4:d_b     =  18.0000f   4:net0107 = 899.1009u
+ +  4:net0137 = 899.1009u   4:net0155 = 561.9380u   4:net0161 =   1.2363m
+ +  4:net082  = 899.1009u   4:net088  = 899.1009u   4:opin    = 899.1009u
+ +  4:opip    = 899.1009u   5:amp_n   = 900.0000m   5:amp_p   = 900.0000m
+ +  5:d_b     =  18.0000f   5:net0107 = 899.1009u   5:net0137 = 899.1009u
+ +  5:net0155 = 786.7132u   5:net0161 =   1.0115m   5:net082  = 899.1009u
+ +  5:net088  = 899.1009u   5:opin    = 899.1009u   5:opip    = 899.1009u
+ +  6:amp_n   = 900.0000m   6:amp_p   = 900.0000m   6:d_b     =  18.0000f
+ +  6:net0107 = 899.1009u   6:net0137 = 899.1009u   6:net0155 =   1.0115m
+ +  6:net0161 = 786.7132u   6:net082  = 899.1009u   6:net088  = 899.1009u
+ +  6:opin    = 899.1009u   6:opip    = 899.1009u   7:amp_n   = 900.0000m
+ +  7:amp_p   = 900.0000m   7:d_b     =  18.0000f   7:net0107 = 899.1009u
+ +  7:net0137 = 899.1009u   7:net0155 =   1.2363m   7:net0161 = 561.9380u
+ +  7:net082  = 899.1009u   7:net088  = 899.1009u   7:opin    = 899.1009u
+ +  7:opip    = 899.1009u   8:d_b     =  18.0000f   8:net43   =   1.8000 
+ +  8:net48   =   1.8000    9:d_b     =  18.0000f   9:net43   =   1.8000 
+ +  9:net48   =   1.8000   10:d_b     =  18.0000f  10:net43   =   1.8000 
+ + 10:net48   =   1.8000   11:d_b     =  18.0000f  11:net43   =   1.8000 
+ + 11:net48   =   1.8000   28:vcmi    = 900.0000m  47:vcmi    = 900.0000m
+ + 48:on1     =   0.       48:op1     =   0.       48:vcm1    = 900.0000m
+ + 49:net22   = 1.800e-27  50:net23   =   1.8000   65:on1     =   0.     
+ + 65:op1     =   0.       65:vcm1    = 900.0000m  66:net22   = 1.800e-27
+ + 67:net23   =   1.8000   82:on1     =   0.       82:op1     =   0.     
+ + 82:vcm1    = 900.0000m  83:net22   = 1.800e-27  84:net23   =   1.8000 
+ + 99:on1     =   0.       99:op1     =   0.       99:vcm1    = 900.0000m
+ +100:net22   = 1.800e-27 101:net23   =   1.8000  116:net23   =   1.8000 
+ +117:net23   =  18.0000f 118:net23   =  18.0000f 119:net23   =  18.0000f
+ +120:net23   =   1.8000  121:net8    = 899.1009u 122:net8    =   1.8000 
+ +123:net23   =   1.8000  124:net23   =  18.0000f 125:net23   =  18.0000f
+ +126:net23   =  18.0000f 127:net23   =   1.8000  128:net8    = 899.1009u
+ +129:net8    =   1.8000  130:net23   =   1.8000  131:net23   =  18.0000f
+ +132:net23   =  18.0000f 133:net23   =  18.0000f 134:net23   =   1.8000 
+ +135:net8    = 899.1009u 136:net8    =   1.8000  137:net23   =   1.8000 
+ +138:net23   =  18.0000f 139:net23   =  18.0000f 140:net23   =  18.0000f
+ +141:net23   =   1.8000  142:net8    = 899.1009u 143:net8    =   1.8000 
+ +160:net275  =  18.0000f 161:vout1   =   0.      164:net275  =  18.0000f
+ +165:vout1   =   0.      168:net275  =  18.0000f 169:vout1   =   0.     
+ +172:net275  =  18.0000f 173:vout1   =   0.      248:net017  =   1.8000 
+ +248:net22   =  18.0000f 248:net8    =   1.8000  249:net017  =   1.8000 
+ +249:net22   =  18.0000f 249:net8    =   1.8000  250:net017  =   1.8000 
+ +250:net22   =  18.0000f 250:net8    =   1.8000  251:net017  =   1.8000 
+ +251:net22   =  18.0000f 251:net8    =   1.8000  252:net017  =   1.8000 
+ +252:net22   =  18.0000f 252:net8    =   1.8000  253:net017  =   1.8000 
+ +253:net22   =  18.0000f 253:net8    =   1.8000  254:net017  =   1.8000 
+ +254:net22   =  18.0000f 254:net8    =   1.8000  255:net017  =   1.8000 
+ +255:net22   =  18.0000f 255:net8    =   1.8000  256:net23   =  18.0000f
+ +257:net23   =   1.8000  260:net23   =  18.0000f 261:net23   =   1.8000 
+ +264:net23   =  18.0000f 265:net23   =   1.8000  268:net23   =  18.0000f
+ +269:net23   =   1.8000  272:net23   =  18.0000f 273:net23   =   1.8000 
+ +276:net23   =  18.0000f 277:net23   =   1.8000  280:net23   =  18.0000f
+ +281:net23   =   1.8000  284:net23   =  18.0000f 285:net23   =   1.8000 
+
+ **error** stop simulation by signal SIGINT = 2
+
+ ******  
+ *behavior simulation
+
+ ****** job statistics summary tnom=  25.000 temp=  27.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Core(TM) i7-7820X CPU @ 3.60GHz
+ cpu MHz	: 1199.926
+  
+ OS:
+ Linux version 3.10.0-957.21.3.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Tue Jun 18 16:35:19 UTC 2019
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    16
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =     229 # elements   =    1202
+  # resistors   =     555 # capacitors =     366 # inductors   =       0
+  # mutual_inds =       0 # vccs       =     238 # vcvs        =      23
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =      20
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           8
+  transient          0.00       12801           0           0 rev=         0
+  readin             0.04
+  errchk             0.02
+  setup              0.01
+  output             0.00
+
+
+           peak memory used        323.62 megabytes
+           total cpu time            1.68 seconds
+           total elapsed time        1.64 seconds
+           job started at     21:37:50 08/14/2019
+           job ended   at     21:37:52 08/14/2019
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.28(s)

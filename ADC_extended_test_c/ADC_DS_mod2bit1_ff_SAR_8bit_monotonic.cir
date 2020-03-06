@@ -1,0 +1,438 @@
+** Generated for: hspiceD
+** Generated on: Dec 24 09:49:34 2019
+** Design library name: ADC_DS_SAR_v1_extented_range_ych
+** Design cell name: ADC_DS_mod2bit1_ff_SAR_8bit_v4_monotonic
+** Design view name: schematic
+
+
+*****  .TEMP 25
+*****  .OPTION
+*****  +    ARTIST=2
+*****  +    INGOLD=2
+*****  +    MEASOUT=1
+*****  +    PARHIER=LOCAL
+*****  +    PSF=2
+
+** Library name: cell_bhv
+** Cell name: PMOS_B
+** View name: schematic
+*****  .subckt PMOS_B b d g s
+*****  .ends PMOS_B
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: NMOS_B
+** View name: schematic
+*****  .subckt NMOS_B b d g s
+*****  .ends NMOS_B
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: inv_bhv
+** View name: schematic
+.subckt inv_bhv dgnd vdd y yn
+r1 net23 yn 10
+c1 yn dgnd 5e-15
+xp1 vdd net23 y vdd PMOS_B
+xn1 dgnd net23 y dgnd NMOS_B
+.ends inv_bhv
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: TGB
+** View name: schematic
+*****  .subckt TGB bi1 bi2 pwra sub t tn
+*****  .ends TGB
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: Dlatch
+** View name: schematic
+.subckt Dlatch q d clk clkb dvdd dgnd
+xi2 dgnd dvdd net017 q inv_bhv
+xi1 dgnd dvdd net22 net8 inv_bhv
+c0 q dgnd 5e-15
+c1 net017 dgnd 5e-15
+r1 net8 net017 2
+xi29 d net22 dvdd dgnd clk clkb TGB
+xsw1 net22 q dvdd dgnd clkb clk TGB
+.ends Dlatch
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: nand2_bhv
+** View name: schematic
+.subckt nand2_bhv dgnd vdd y1 y2 yn
+xn1 dgnd yn y2 net8 NMOS_B
+xi9 dgnd net8 y1 dgnd NMOS_B
+xp1 vdd yn y1 vdd PMOS_B
+xi10 vdd yn y2 vdd PMOS_B
+.ends nand2_bhv
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: VCVS_CMP
+** View name: schematic
+*****  .subckt VCVS_CMP vm vout vp
+*****  .ends VCVS_CMP
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: DAC_SW
+** View name: schematic
+.subckt DAC_SW agnd avdd d dac d_b psamp psamp_b vin vrefn vrefp
+xi7 agnd avdd pvrefn pvrefn_b inv_bhv
+xi3 agnd avdd pvrefp pvrefp_b inv_bhv
+xi20 agnd avdd net054 pvrefp inv_bhv
+xi1 agnd avdd net049 pvrefn inv_bhv
+xi2 agnd avdd psamp_b d_b net049 nand2_bhv
+xi19 agnd avdd psamp_b d net054 nand2_bhv
+xswp vrefp dac avdd agnd pvrefp pvrefp_b TGB
+xswn vrefn dac avdd agnd pvrefn pvrefn_b TGB
+xswin vin dac avdd agnd psamp psamp_b TGB
+.ends DAC_SW
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: SA_DAC_8bit
+** View name: schematic
+.subckt SA_DAC_8bit agnd avdd d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 dac00 dac_0 dac_1 dac_2 dac_3 dac_4 dac_5 dac_6 dac_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 pdac psamp psamp_b vdac00 vin vrefn vrefp
+xswdac_0 agnd avdd d_0 dac_0 db_0 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_1 agnd avdd d_1 dac_1 db_1 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_2 agnd avdd d_2 dac_2 db_2 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_3 agnd avdd d_3 dac_3 db_3 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_4 agnd avdd d_4 dac_4 db_4 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_5 agnd avdd d_5 dac_5 db_5 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_6 agnd avdd d_6 dac_6 db_6 psamp psamp_b vin vrefn vrefp DAC_SW
+xswdac_7 agnd avdd d_7 dac_7 db_7 psamp psamp_b vin vrefn vrefp DAC_SW
+xi1 agnd avdd pdac pdac_b inv_bhv
+xswdac00 vdac00 dac00 avdd agnd pdac pdac_b TGB
+xswvin vin dac00 avdd agnd psamp psamp_b TGB
+.ends SA_DAC_8bit
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: SA_8bit_C_Array_with_DAC_monotonic
+** View name: schematic
+.subckt SA_8bit_C_Array_with_DAC_monotonic agnd avdd d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 pdac psamp psamp_b to_cmp vin vrefn vrefp
+xsa_dac agnd avdd d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 net30 dac_0 dac_1 dac_2 dac_3 dac_4 dac_5 dac_6 dac_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 pdac psamp psamp_b net023 vrefp vrefn vrefp SA_DAC_8bit
+xswvcmp vin to_cmp agnd avdd psamp psamp_b TGB
+c7 to_cmp dac_7 '768e-15/k'
+c5 to_cmp dac_5 '192e-15/k'
+c6 to_cmp dac_6 '384e-15/k'
+c4 to_cmp dac_4 '96e-15/k'
+c3 to_cmp dac_3 '48e-15/k'
+c0 to_cmp dac_0 '12e-15/k'
+c2 to_cmp dac_2 '24e-15/k'
+c1 to_cmp dac_1 '12e-15/k'
+.ends SA_8bit_C_Array_with_DAC_monotonic
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: nor2_bhv
+** View name: schematic
+.subckt nor2_bhv dgnd vdd y1 y2 yn
+xn1 dgnd yn y1 dgnd NMOS_B
+xi9 dgnd yn y2 dgnd NMOS_B
+xp1 vdd yn y2 net16 PMOS_B
+xi10 vdd net16 y1 vdd PMOS_B
+.ends nor2_bhv
+** End of subcircuit definition.
+
+** Library name: SAR_bhv
+** Cell name: DFF_SET_RST
+** View name: schematic
+.subckt DFF_SET_RST q d clk dvdd dgnd set q_b rst
+xi1 dgnd dvdd clk clkb inv_bhv
+xi40 d dff1 dvdd dgnd clkb clk TGB
+xi34 dff3 q_b dvdd dgnd clkb clk TGB
+xi41 dff2 dff3 dvdd dgnd clk clkb TGB
+xsw1 dff1 net41 dvdd dgnd clk clkb TGB
+r1 net69 dff2 2
+r0 net54 q 2
+c3 q_b dgnd 100e-15
+c2 net41 dgnd 100e-15
+c4 q dgnd 100e-15
+c1 dff2 dgnd 100e-15
+xi42 dgnd dvdd dff2 rst net41 nor2_bhv
+xi43 dgnd dvdd q set q_b nor2_bhv
+xi31 dgnd dvdd dff1 set net69 nor2_bhv
+xi37 dgnd dvdd dff3 rst net54 nor2_bhv
+.ends DFF_SET_RST
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: SA_LOGIC_8bit_monotonic
+** View name: schematic
+.subckt SA_LOGIC_8bit_monotonic clk data_in d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 dgnd dvdd n_sw_0 n_sw_1 n_sw_2 n_sw_3 n_sw_4 n_sw_5 n_sw_6 n_sw_7 n_sw_b_0 n_sw_b_1 n_sw_b_2 n_sw_b_3 n_sw_b_4 n_sw_b_5 n_sw_b_6 n_sw_b_7 rst
+xi36 dgnd dvdd data_in net383 inv_bhv
+xi19 dgnd dvdd db_7 q7 n_sw_b_7 nor2_bhv
+xi23 dgnd dvdd db_5 q5 n_sw_b_5 nor2_bhv
+xi22 dgnd dvdd db_6 q6 n_sw_b_6 nor2_bhv
+xi26 dgnd dvdd db_4 q4 n_sw_b_4 nor2_bhv
+xi27 dgnd dvdd db_3 q3 n_sw_b_3 nor2_bhv
+xi29 dgnd dvdd db_2 q2 n_sw_b_2 nor2_bhv
+xi32 dgnd dvdd db_1 q1 n_sw_b_1 nor2_bhv
+xi33 dgnd dvdd db_0 q0 n_sw_b_0 nor2_bhv
+xi24 dgnd dvdd qb5 d_5 n_sw_5 nand2_bhv
+xi20 dgnd dvdd d_7 qb7 n_sw_7 nand2_bhv
+xi21 dgnd dvdd d_6 qb6 n_sw_6 nand2_bhv
+xi25 dgnd dvdd qb4 d_4 n_sw_4 nand2_bhv
+xi28 dgnd dvdd qb3 d_3 n_sw_3 nand2_bhv
+xi30 dgnd dvdd qb2 d_2 n_sw_2 nand2_bhv
+xi31 dgnd dvdd qb1 d_1 n_sw_1 nand2_bhv
+xi34 dgnd dvdd qb0 d_0 n_sw_0 nand2_bhv
+xdata3 d_3 net383 qb3 dvdd dgnd rst db_3 dgnd DFF_SET_RST
+xdata2 d_2 net383 qb2 dvdd dgnd rst db_2 dgnd DFF_SET_RST
+xdata1 d_1 net383 qb1 dvdd dgnd rst db_1 dgnd DFF_SET_RST
+xdata0 d_0 net383 qb0 dvdd dgnd rst db_0 dgnd DFF_SET_RST
+xdata5 d_5 net383 qb5 dvdd dgnd rst db_5 dgnd DFF_SET_RST
+xrsh0 q0 q1 clk dvdd dgnd rst qb0 dgnd DFF_SET_RST
+xrsh3 q3 q4 clk dvdd dgnd rst qb3 dgnd DFF_SET_RST
+xrsh2 q2 q3 clk dvdd dgnd rst qb2 dgnd DFF_SET_RST
+xrsh1 q1 q2 clk dvdd dgnd rst qb1 dgnd DFF_SET_RST
+xrsh4 q4 q5 clk dvdd dgnd rst qb4 dgnd DFF_SET_RST
+xdata7 d_7 net383 qb7 dvdd dgnd rst db_7 dgnd DFF_SET_RST
+xrsh5 q5 q6 clk dvdd dgnd rst qb5 dgnd DFF_SET_RST
+xdata6 d_6 net383 qb6 dvdd dgnd rst db_6 dgnd DFF_SET_RST
+xdata4 d_4 net383 qb4 dvdd dgnd rst db_4 dgnd DFF_SET_RST
+xrsh6 q6 q7 clk dvdd dgnd rst qb6 dgnd DFF_SET_RST
+xrsh7 q7 dgnd clk dvdd dgnd rst qb7 dgnd DFF_SET_RST
+.ends SA_LOGIC_8bit_monotonic
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: DFF_SET_RST
+** View name: schematic
+.subckt DFF_SET_RST_schematic q d clk dvdd dgnd set q_b rst
+xi1 dgnd dvdd clk clkb inv_bhv
+xi40 d dff1 dvdd dgnd clkb clk TGB
+xi34 dff3 q_b dvdd dgnd clkb clk TGB
+xi41 dff2 dff3 dvdd dgnd clk clkb TGB
+xsw1 dff1 net41 dvdd dgnd clk clkb TGB
+r1 net69 dff2 2
+r0 net54 q 2
+c3 q_b dgnd 100e-15
+c2 net41 dgnd 100e-15
+c4 q dgnd 100e-15
+c1 dff2 dgnd 100e-15
+xi42 dgnd dvdd dff2 rst net41 nor2_bhv
+xi43 dgnd dvdd q set q_b nor2_bhv
+xi31 dgnd dvdd dff1 set net69 nor2_bhv
+xi37 dgnd dvdd dff3 rst net54 nor2_bhv
+.ends DFF_SET_RST_schematic
+** End of subcircuit definition.
+
+** Library name: SAR_ADC_ych
+** Cell name: ADC_SAR_diff_8bit_v4_monotonic
+** View name: schematic
+.subckt ADC_SAR_diff_8bit_v4_monotonic agnd avdd clk d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 dgnd dvdd psamp sa_7 sa_6 sa_5 sa_4 sa_3 sa_2 sa_1 sa_0 sa_b_7 sa_b_6 sa_b_5 sa_b_4 sa_b_3 sa_b_2 sa_b_1 sa_b_0 vinn vinp vrefn vrefp
+cp_p vrefp cmp_inp "3.84e-15/k*kp"
+cp_n vrefp cmp_inn "3.84e-15/k*kp"
+xcmp cmp_inn cmp_out cmp_inp VCVS_CMP
+xc_array_p agnd avdd db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 pdac psamp psamp_b cmp_inp vinp vrefn vrefp SA_8bit_C_Array_with_DAC_monotonic
+xc_array_n agnd avdd n_sw_0 n_sw_1 n_sw_2 n_sw_3 n_sw_4 n_sw_5 n_sw_6 n_sw_7 n_sw_b_0 n_sw_b_1 n_sw_b_2 n_sw_b_3 n_sw_b_4 n_sw_b_5 n_sw_b_6 n_sw_b_7 pdac psamp psamp_b cmp_inn vinn vrefn vrefp SA_8bit_C_Array_with_DAC_monotonic
+xsa_logic clk_b cmp_out db_0 db_1 db_2 db_3 db_4 db_5 db_6 db_7 d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 dgnd dvdd n_sw_0 n_sw_1 n_sw_2 n_sw_3 n_sw_4 n_sw_5 n_sw_6 n_sw_7 n_sw_b_0 n_sw_b_1 n_sw_b_2 n_sw_b_3 n_sw_b_4 n_sw_b_5 n_sw_b_6 n_sw_b_7 psamp SA_LOGIC_8bit_monotonic
+xdffout_7 sa_7 d_7 psamp dvdd dgnd dgnd sa_b_7 dgnd DFF_SET_RST_schematic
+xdffout_6 sa_6 d_6 psamp dvdd dgnd dgnd sa_b_6 dgnd DFF_SET_RST_schematic
+xdffout_5 sa_5 d_5 psamp dvdd dgnd dgnd sa_b_5 dgnd DFF_SET_RST_schematic
+xdffout_4 sa_4 d_4 psamp dvdd dgnd dgnd sa_b_4 dgnd DFF_SET_RST_schematic
+xdffout_3 sa_3 d_3 psamp dvdd dgnd dgnd sa_b_3 dgnd DFF_SET_RST_schematic
+xdffout_2 sa_2 d_2 psamp dvdd dgnd dgnd sa_b_2 dgnd DFF_SET_RST_schematic
+xdffout_1 sa_1 d_1 psamp dvdd dgnd dgnd sa_b_1 dgnd DFF_SET_RST_schematic
+xdffout_0 sa_0 d_0 psamp dvdd dgnd dgnd sa_b_0 dgnd DFF_SET_RST_schematic
+xi7 dgnd dvdd psamp_b clk net23 nand2_bhv
+xi28 dgnd dvdd clk clk_b inv_bhv
+xi6 dgnd dvdd net23 pdac inv_bhv
+xi5 dgnd dvdd psamp psamp_b inv_bhv
+.ends ADC_SAR_diff_8bit_v4_monotonic
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: dac_int_1bit
+** View name: schematic
+.subckt dac_int_1bit agnd avdd dacn dacp pvrefn pvrefn_b pvrefp pvrefp_b vrefn vrefp
+xi6 vrefn dacn avdd agnd pvrefp pvrefp_b TGB
+xi7 vrefp dacn avdd agnd pvrefn pvrefn_b TGB
+xi40 vrefp dacp avdd agnd pvrefp pvrefp_b TGB
+xi41 vrefn dacp avdd agnd pvrefn pvrefn_b TGB
+.ends dac_int_1bit
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: fdopb
+** View name: schematic
+*****  .subckt fdopb agnd avdd inn inp ir on op pdn vcm vcmfb
+*****  .ends fdopb
+** End of subcircuit definition.
+
+** Library name: adc_mod2_bit1_ff
+** Cell name: int1_G103_with_1b_dac
+** View name: schematic
+.subckt int1_G103_with_1b_dac agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref outn outp pdn pvrefn pvrefn_b pvrefp pvrefp_b rst rst_b vcm vrefn vrefp
+xdac agnd avdd dacn dacp pvrefn pvrefn_b pvrefp pvrefp_b vrefn vrefp dac_int_1bit
+cfbp_1 opip outp 10e-15
+cfbp_2 opip outp 10e-15
+cfbp_3 opip outp 10e-15
+c1 cinp dacp 10e-15
+c2 cinn dacn 10e-15
+cfbn_1 opin outn 10e-15
+cfbn_2 opin outn 10e-15
+cfbn_3 opin outn 10e-15
+xsw3 vcm cinp avdd agnd p1 p1_b TGB
+xsw7 vcm cinn avdd agnd p1 p1_b TGB
+xswinn inn dacn avdd agnd p1d p1d_b TGB
+xsw2 cinp opip avdd agnd p2 p2_b TGB
+xsw6 cinn opin avdd agnd p2 p2_b TGB
+xi12 outn opin avdd agnd rst rst_b TGB
+xi13 outp opip avdd agnd rst rst_b TGB
+xswinp inp dacp avdd agnd p1d p1d_b TGB
+xop agnd avdd opip opin iref outn outp pdn vcm vcm fdopb
+.ends int1_G103_with_1b_dac
+** End of subcircuit definition.
+
+** Library name: adc_mod2_bit1_ff
+** Cell name: int2
+** View name: schematic
+.subckt int2 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref outn outp pdn rst rst_b vcm
+c0 cinp dacp 10e-15
+c3 cinn dacn 10e-15
+cfbp opip outp 10e-15
+cfbn opin outn 10e-15
+xi65 vcm dacp avdd agnd p2d p2d_b TGB
+xsw7 vcm cinn avdd agnd p1 p1_b TGB
+xsw3 vcm cinp avdd agnd p1 p1_b TGB
+xswinn inn dacn avdd agnd p1d p1d_b TGB
+xswinp inp dacp avdd agnd p1d p1d_b TGB
+xsw2 cinp opip avdd agnd p2 p2_b TGB
+xsw6 cinn opin avdd agnd p2 p2_b TGB
+xi6 outn opin avdd agnd rst rst_b TGB
+xi9 outp opip avdd agnd rst rst_b TGB
+xi66 vcm dacn avdd agnd p2d p2d_b TGB
+xop agnd avdd opip opin iref outn outp pdn vcm vcm fdopb
+.ends int2
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: preamp_cmp_b
+** View name: schematic
+*****  .subckt preamp_cmp_b agnd avdd inn inp ir on op pdn vcm vcmfb
+*****  .ends preamp_cmp_b
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: dff
+** View name: schematic
+.subckt dff q d clk clkb dvdd dgnd
+xi13 net275 d clkb clk dvdd dgnd Dlatch
+xi14 q net275 clk clkb dvdd dgnd Dlatch
+.ends dff
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: amp_cmp
+** View name: schematic
+*****  .subckt amp_cmp vm vout vp
+*****  .ends amp_cmp
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: cmp_clk
+** View name: schematic
+.subckt cmp_clk agnd avdd clk clk_b inn inp y
+xdff y net22 clk clk_b avdd agnd dff
+xpreamp inn net22 inp amp_cmp
+.ends cmp_clk
+** End of subcircuit definition.
+
+** Library name: adc_mod2_bit1_ff
+** Cell name: adder_cmp_1b_CIFF2
+** View name: schematic
+.subckt adder_cmp_1b_CIFF2 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b d iref pdn uin_n uin_p vcm vthn vthp int1n int1p int2n int2p
+xpreamp_bhv agnd avdd opin opip iref amp_n amp_p pdn vcm vcm preamp_cmp_b
+xcmp3 agnd avdd p1_b p1 amp_n amp_p d_b cmp_clk
+xi1 agnd avdd d_b d inv_bhv
+xi52 amp_p opin avdd agnd p2 p2_b TGB
+xi63 vcm net088 avdd agnd p2d p2d_b TGB
+xi62 uin_p net088 avdd agnd p1d p1d_b TGB
+xi55 int1p net0107 avdd agnd p1d p1d_b TGB
+xi56 vcm net0107 avdd agnd p2d p2d_b TGB
+xi65 uin_n net082 avdd agnd p1d p1d_b TGB
+xi64 vcm net082 avdd agnd p2d p2d_b TGB
+xi60 vcm net0137 avdd agnd p2d p2d_b TGB
+xi59 int1n net0137 avdd agnd p1d p1d_b TGB
+xi13 amp_n opip avdd agnd p2 p2_b TGB
+xi9 vthn net0161 avdd agnd p2d p2d_b TGB
+xsw1 int2p net0155 avdd agnd p1d p1d_b TGB
+xi2 int2n net0161 avdd agnd p1d p1d_b TGB
+xsw4 vthp net0155 avdd agnd p2d p2d_b TGB
+c20 opin net088 10e-15
+cint1p_1 opin net0107 10e-15
+cint1p_2 opin net0107 10e-15
+cint1p_3 opin net0107 10e-15
+cint1p_4 opin net0107 10e-15
+cint1p_5 opin net0107 10e-15
+cint1p_6 opin net0107 10e-15
+c21 opip net082 10e-15
+cint1n_1 opip net0137 10e-15
+cint1n_2 opip net0137 10e-15
+cint1n_3 opip net0137 10e-15
+cint1n_4 opip net0137 10e-15
+cint1n_5 opip net0137 10e-15
+cint1n_6 opip net0137 10e-15
+cintn_1 opip net0161 10e-15
+cintn_2 opip net0161 10e-15
+cintn_3 opip net0161 10e-15
+cintp_1 opin net0155 10e-15
+cintp_2 opin net0155 10e-15
+cintp_3 opin net0155 10e-15
+.ends adder_cmp_1b_CIFF2
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: clk_fb_1bit
+** View name: schematic
+.subckt clk_fb_1bit agnd avdd d p2 pvrefn pvrefn_b pvrefp pvrefp_b
+xi64 agnd avdd pvrefn pvrefn_b inv_bhv
+xi20 agnd avdd net43 pvrefp inv_bhv
+xi60 agnd avdd net48 pvrefn inv_bhv
+xi59 agnd avdd d d_b inv_bhv
+xi63 agnd avdd pvrefp pvrefp_b inv_bhv
+xi62 agnd avdd p2 d_b net48 nand2_bhv
+xi19 agnd avdd p2 d net43 nand2_bhv
+.ends clk_fb_1bit
+** End of subcircuit definition.
+
+** Library name: adc_mod2_bit1_ff
+** Cell name: adc_mod2_bit1_ff
+** View name: schematic
+.subckt adc_mod2_bit1_ff agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dgnd dout dvdd inn inp iref_1 iref_2 iref_3 out_int2_n out_int2_p pdn rst rst_b vcm vrefn vrefp
+xint1 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref_1 out_int1_n out_int1_p pdn pvrefn pvrefn_b pvrefp pvrefp_b rst rst_b vcm vrefn vrefp int1_G103_with_1b_dac
+xint2 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b out_int1_n out_int1_p iref_2 out_int2_n out_int2_p pdn rst rst_b vcm int2
+xquantizer agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout iref_3 pdn inn inp vcm vcm vcm out_int1_n out_int1_p out_int2_n out_int2_p adder_cmp_1b_CIFF2
+xclk_fb agnd avdd dout p2d pvrefn pvrefn_b pvrefp pvrefp_b clk_fb_1bit
+.ends adc_mod2_bit1_ff
+** End of subcircuit definition.
+
+** Library name: ADC_DS_SAR_v1_extented_range_ych
+** Cell name: ADC_DS_mod2bit1_ff_SAR_8bit_v4_monotonic
+** View name: schematic
+xdlatch_0 d_latch_0 d_0 platch platch_b dvdd dgnd Dlatch
+xdlatch_1 d_latch_1 d_1 platch platch_b dvdd dgnd Dlatch
+xdlatch_2 d_latch_2 d_2 platch platch_b dvdd dgnd Dlatch
+xdlatch_3 d_latch_3 d_3 platch platch_b dvdd dgnd Dlatch
+xdlatch_4 d_latch_4 d_4 platch platch_b dvdd dgnd Dlatch
+xdlatch_5 d_latch_5 d_5 platch platch_b dvdd dgnd Dlatch
+xdlatch_6 d_latch_6 d_6 platch platch_b dvdd dgnd Dlatch
+xdlatch_7 d_latch_7 d_7 platch platch_b dvdd dgnd Dlatch
+xi10 dgnd dvdd net057 psamp inv_bhv
+xi9 dgnd dvdd platch platch_b inv_bhv
+xnot1 dgnd dvdd clk_sar_b clk_sar_tmp inv_bhv
+xnot2 dgnd dvdd net47 psamp_tmp inv_bhv
+xi12 dgnd dvdd p1 psamp_pre net057 nand2_bhv
+xi11 dgnd dvdd p1_b psamp_pre platch nand2_bhv
+xnand1 dgnd dvdd residual_en clk_sar_pre clk_sar_b nand2_bhv
+xnand2 dgnd dvdd residual_en psamp_pre net47 nand2_bhv
+xsar agnd avdd clk_sar d_0 d_1 d_2 d_3 d_4 d_5 d_6 d_7 dgnd dvdd psamp sa_7 sa_6 sa_5 sa_4 sa_3 sa_2 sa_1 sa_0 sa_b_7 sa_b_6 sa_b_5 sa_b_4 sa_b_3 sa_b_2 sa_b_1 sa_b_0 residualxg1o3_n residualxg1o3_p vrefn vrefp ADC_SAR_diff_8bit_v4_monotonic
+xds agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dgnd ds_out dvdd inn inp iref_1 iref_2 iref_3 residualxg1o3_n residualxg1o3_p pdn rst rst_b vcm vrefn vrefp adc_mod2_bit1_ff
+*****  .END

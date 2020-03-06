@@ -1,0 +1,134 @@
+** Generated for: hspiceD
+** Generated on: May 16 16:50:49 2019
+** Design library name: myfirstlib
+** Design cell name: 1int_1bit_fb_v2
+** Design view name: schematic
+
+** Library name: cell_bhv
+** Cell name: inv_bhv
+** View name: schematic
+.subckt inv_bhv dgnd vdd y yn
+r1 net23 yn 10
+c1 yn dgnd 5e-15
+xp1 vdd net23 y vdd PMOS_B
+xn1 dgnd net23 y dgnd NMOS_B
+.ends inv_bhv
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: Dlatch
+** View name: schematic
+.subckt Dlatch q d clk clkb dvdd dgnd
+xi2 dgnd dvdd net017 q inv_bhv
+xi1 dgnd dvdd net22 net8 inv_bhv
+c0 q dgnd 5e-15
+c1 net017 dgnd 5e-15
+r1 net8 net017 2
+xi29 d net22 dvdd dgnd clk clkb TGB
+xsw1 net22 q dvdd dgnd clkb clk TGB
+.ends Dlatch
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: dff
+** View name: schematic
+.subckt dff q d clk clkb dvdd dgnd
+xi13 net275 d clkb clk dvdd dgnd Dlatch
+xi14 q net275 clk clkb dvdd dgnd Dlatch
+.ends dff
+** End of subcircuit definition.
+
+
+** Library name: ET710_ADC_bhv
+** Cell name: cmp_clk
+** View name: schematic
+.subckt cmp_clk agnd avdd clk clk_b inn inp y
+xdff y net22 clk clk_b avdd agnd dff
+xpreamp inn net22 inp amp_cmp
+.ends cmp_clk
+** End of subcircuit definition.
+
+** Library name: myfirstlib
+** Cell name: 1lev_adc
+** View name: schematic
+.subckt myfirstlib_1lev_adc_schematic agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout iref pdn vcm vthn vthp int1n_m1n int1p_m1p
+xi15 vcm opin_cmp avdd agnd p2 p2_b TGB
+xi52 vcm opip_cmp avdd agnd p2 p2_b TGB
+xsw1 int1p_m1p acp_cmp avdd agnd p1d p1d_b TGB
+xsw4 vthp acp_cmp avdd agnd p2d p2d_b TGB
+xi16 int1n_m1n acn_cmp avdd agnd p1d p1d_b TGB
+xi9 vthn acn_cmp avdd agnd p2d p2d_b TGB
+xpreamp_bhv agnd avdd opip_cmp opin_cmp iref amp_n amp_p pdn vcm vcm preamp_cmp_b
+xcmp3 agnd avdd p1_b p1 amp_n amp_p d_b cmp_clk
+xi14 agnd avdd d_b dout inv_bhv
+cintp opip_cmp acp_cmp 5e-15
+cintn opin_cmp acn_cmp 5e-15
+.ends myfirstlib_1lev_adc_schematic
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: dac_int_1bit
+** View name: schematic
+.subckt dac_int_1bit agnd avdd dacn dacp pvrefn pvrefn_b pvrefp pvrefp_b vrefn vrefp
+xi6 vrefn dacn avdd agnd pvrefp pvrefp_b TGB
+xi7 vrefp dacn avdd agnd pvrefn pvrefn_b TGB
+xi40 vrefp dacp avdd agnd pvrefp pvrefp_b TGB
+xi41 vrefn dacp avdd agnd pvrefn pvrefn_b TGB
+.ends dac_int_1bit
+** End of subcircuit definition.
+
+
+** Library name: myfirstlib
+** Cell name: int1_with_1bit_adc
+** View name: schematic
+.subckt int1_with_1bit_adc agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref out_int1_n out_int1_p pdn pvrefn pvrefn_b pvrefp pvrefp_b rst rst_b vcm vrefn vrefp
+xdac agnd avdd dacn dacp pvrefn pvrefn_b pvrefp pvrefp_b vrefn vrefp dac_int_1bit
+cfbp opip out_int1_p 100e-15
+c1 cinp dacp 100e-15
+c2 cinn dacn 100e-15
+cfbn opin out_int1_n 100e-15
+xi12 out_int1_n opin avdd agnd rst rst_b TGB
+xi13 out_int1_p opip avdd agnd rst rst_b TGB
+xi7 vcm cinp avdd agnd p1 p1_b TGB
+xi5 vcm cinn avdd agnd p1 p1_b TGB
+xi3 cinp opip avdd agnd p2 p2_b TGB
+xi2 opin cinn avdd agnd p2 p2_b TGB
+xi1 dacn inn avdd agnd p1d p1d_b TGB
+xi0 inp dacp avdd agnd p1d p1d_b TGB
+xi8 agnd avdd opip opin iref out_int1_n out_int1_p pdn vcm vcm fdopb
+.ends int1_with_1bit_adc
+** End of subcircuit definition.
+
+** Library name: cell_bhv
+** Cell name: nand2_bhv
+** View name: schematic
+.subckt nand2_bhv dgnd vdd y1 y2 yn
+xn1 dgnd yn y2 net8 NMOS_B
+xi9 dgnd net8 y1 dgnd NMOS_B
+xp1 vdd yn y1 vdd PMOS_B
+xi10 vdd yn y2 vdd PMOS_B
+.ends nand2_bhv
+** End of subcircuit definition.
+
+** Library name: ET710_ADC_bhv
+** Cell name: clk_fb_1bit
+** View name: schematic
+.subckt clk_fb_1bit agnd avdd d p2 pvrefn pvrefn_b pvrefp pvrefp_b
+xi64 agnd avdd pvrefn pvrefn_b inv_bhv
+xi20 agnd avdd net43 pvrefp inv_bhv
+xi60 agnd avdd net48 pvrefn inv_bhv
+xi59 agnd avdd d d_b inv_bhv
+xi63 agnd avdd pvrefp pvrefp_b inv_bhv
+xi62 agnd avdd p2 d_b net48 nand2_bhv
+xi19 agnd avdd p2 d net43 nand2_bhv
+.ends clk_fb_1bit
+** End of subcircuit definition.
+
+** Library name: myfirstlib
+** Cell name: 1int_1bit_fb_v2
+** View name: schematic
+*.subckt INT1_1BIT_FB agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref_1 iref_2 out_int1_n out_int1_p dout dacp dacn cinp cinn opip opin  pdn rst rst_b vcm  vthp vthn acp_cmp amp_p amp_n d_b cmp_res 
+xi19 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b dout iref_3 pdn vcm vcm vcm out_int1_n out_int1_p myfirstlib_1lev_adc_schematic
+xi17 agnd avdd p1 p1_b p1d p1d_b p2 p2_b p2d p2d_b inn inp iref_1 out_int1_n out_int1_p pdn pvrefn pvrefn_b pvrefp pvrefp_b rst rst_b vcm vrefn vrefp int1_with_1bit_adc
+xclk_fb agnd avdd dout p2d pvrefn pvrefn_b pvrefp pvrefp_b clk_fb_1bit
+*.ends INT1_1BIT_FB

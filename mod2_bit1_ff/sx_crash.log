@@ -1,0 +1,575 @@
+### Custom WaveView ADV log file, revision O-2018.09 (build Aug 27, ) ###
+### created at 03:54:49 on Fri May 17 2019 (Linux AMD64) ###
+### Host Name: adc   User ID: ychuang   PID: 29524   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+wv_move_window {Custom WaveView} {} 133 152
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {RecentFile0} 
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)} {0} {+sep=@}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)} {+sep=@}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)@toplevel(0)} {+sep=@}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {42}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {11}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {4}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {0}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {8}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {17}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {23}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {25}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {28}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {30}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {32}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(dout)} 23
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(dout)} 23
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {34}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {55}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {85}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {89}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {91}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {93}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {115}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {151}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {166}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {168}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {170}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {172}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {170}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {168}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {166}
+wv_press_tool_button {Custom WaveView} {waveview 1:1} {Waveview.CloseBtn} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_press_tool_button {Custom WaveView} {} {OpenWaveformFile0} 
+wv_select_dialog {FileDialog} 
+wv_select_list_item {FileDialog} {} {FileList} {bhv.tr0} 11
+wv_dclick_list_item {FileDialog} {} {FileList} {bhv.tr0} 11
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 746 519
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:bhv.tr0(0)} {0} {+sep=@}
+wv_tree_context_menu {Custom WaveView} {} {hierview} 80 10 {D0:bhv.tr0(0)} {+sep=@}
+wv_select_menu_item {Custom WaveView} {} {FileViewPopMenu.Close This File} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)} {+sep=@}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)@xclk_fb(0)} {0} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {6}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {9}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {17}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {36}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {79}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {87}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {90}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {96}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {107}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {117}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {120}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {124}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {126}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {128}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {130}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {147}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {152}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {156}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {158}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 19
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 19
+wv_select_list_item {Custom WaveView} {} {sigview} {v(out_int1_n)} 18
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(out_int1_n)} 18
+wv_select_list_item {Custom WaveView} {} {sigview} {v(out_int2_p)} 21
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(out_int2_p)} 21
+wv_select_list_item {Custom WaveView} {} {sigview} {v(out_int2_n)} 20
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(out_int2_n)} 20
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {160}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {171}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {194}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {207}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {192}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {177}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {158}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {147}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {130}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {120}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {113}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {111}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {107}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {105}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {102}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {92}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {73}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {51}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {47}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {45}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {43}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {41}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {38}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {36}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {32}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {19}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {6}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {0}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(dout)} 23
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(dout)} 23
+wv_select_waveview 1 {waveview 1}
+wv_select_panel WV1.PANEL5:1 2.7529e-05 0.60945
+wv_drag_item_to WV1 292 423
+wv_zoom WV1.PANEL5:1 2.7529e-05 0.60945 1.26036e-05 2.23725
+wv_select_waveview 1 {waveview 1}
+wv_select_panel WV1.PANEL5:1 1.79327e-05 1.33808
+wv_drag_item_to WV1 335 416
+wv_zoom WV1.PANEL5:1 1.79327e-05 1.33808 1.71925e-05 1.74971
+wv_select_waveview 1 {waveview 1}
+wv_select_toolbar_item {Custom WaveView} {waveview 1:1} {Full Unzoom} 
+wv_select_list_item {Custom WaveView} {} {sigview} {i(vinp)} 8
+wv_select_list_item {Custom WaveView} {} {sigview} {i(vinp)} 8
+wv_dclick_list_item {Custom WaveView} {} {sigview} {i(vinp)} 8
+wv_select_list_item {Custom WaveView} {} {sigview} {i(vinp)} 8
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL6:1.LINE1
+wv_select_line WV1.PANEL6:1.LINE1
+wv_press_key Delete 279 562
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {60}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {79}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {90}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {92}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {94}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {96}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {107}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {132}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {141}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {145}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {147}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {149}
+wv_move_scrollbar {Custom WaveView} {} {sigview.HScrolBar} {152}
+wv_select_list_item {Custom WaveView} {} {sigview} {v(inp)} 14
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(inp)} 14
+wv_select_list_item {Custom WaveView} {} {sigview} {v(inn)} 13
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(inn)} 13
+wv_move_window {Custom WaveView} {} 473 52
+wv_select_window {Custom WaveView} 
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1.LINE1
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {SignalPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_press_button {WaveformExportParameters} {} {Browse} 
+wv_select_dialog {FileDialog} 
+wv_select_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_dclick_list_item {FileDialog} {} {FileList} {m_file} 2
+wv_select_list_item {FileDialog} {} {FileList} {int2_1bit_ff_vin_n6db_np_1280_fsig_20M.m} 4
+wv_press_button {FileDialog} {} {Ok} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {MFile} 
+wv_move_window {WaveformExportParameters} {} 562 45
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_waveview 1 {waveview 1}
+wv_select_panel WV1.PANEL6:1 4.41128e-05 1.25083
+wv_drag_item_to WV1 390 340
+wv_zoom WV1.PANEL6:1 4.41128e-05 1.25083 2.71973e-05 2.42027
+wv_move_window {Custom WaveView} {} 158 84
+wv_move_window {Custom WaveView} {} 0 0
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 158 84
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 0 0
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 158 84
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 277 33
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_tab {Custom WaveView} {} {RBMenu} {Bar.Waveform}
+wv_move_window {Custom WaveView} {} 675 122
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_move_window {Custom WaveView} {} 0 22
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 563
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 1106 537
+wv_resize_window {Custom WaveView} 1366 706
+wv_select_waveview 1 {waveview 1}
+wv_select_toolbar_item {Custom WaveView} {waveview 1:1} {Full Unzoom} 
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_move_window {Custom WaveView} {} 294 174
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 545
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 746 519
+wv_resize_window {Custom WaveView} 1006 688
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 252 30
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1.LEGEND
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_move_window {WaveformExportParameters} {} 389 75
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_move_window {Custom WaveView} {} 453 34
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_move_window {Custom WaveView} {} 325 30
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_window {Custom WaveView} 
+wv_select_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 4
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(out_int1_p)} 4
+wv_select_list_item {Custom WaveView} {} {sigview} {v(out_int2_p)} 6
+wv_dclick_list_item {Custom WaveView} {} {sigview} {v(out_int2_p)} 6
+wv_select_waveview 1 {waveview 1}
+wv_select_toolbar_item {Custom WaveView} {waveview 1:1} {Full Unzoom} 
+wv_move_window {Custom WaveView} {} 259 166
+wv_move_window {Custom WaveView} {} 655 53
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 514 60
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_move_window {Custom WaveView} {} 514 30
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 547
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 746 521
+wv_resize_window {Custom WaveView} 1006 690
+wv_move_window {Custom WaveView} {} 166 100
+wv_resize_browser {Custom WaveView} {} {WV.Browser} 250 545
+wv_resize_browser {Custom WaveView} {} {waveview 1:1} 746 519
+wv_resize_window {Custom WaveView} 1006 688
+wv_move_window {Custom WaveView} {} 429 61
+wv_move_window {Custom WaveView} {} 437 53
+wv_select_waveview 1 {waveview 1}
+wv_select_toolbar_item {Custom WaveView} {waveview 1:1} {Full Unzoom} 
+wv_tree_context_menu {Custom WaveView} {} {hierview} 145 27 {D1:bhv.tr0(0)@toplevel(0)} {+sep=@}
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1.LEGEND
+wv_select_waveview 1 {waveview 1}
+wv_select_menu_item {Custom WaveView} {waveview 1:1} {PanelPopMenu.Export Waveforms} 
+wv_select_dialog {WaveformExportParameters} 
+wv_set_radion {WaveformExportParameters} {} {AllPanels} 
+wv_move_window {WaveformExportParameters} {} 482 48
+wv_press_button {WaveformExportParameters} {} {Ok} 
+wv_select_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+wv_press_button {Confirmation} {} {Ok} 
+wv_move_window {Custom WaveView} {} 300 30
+wv_move_window {Custom WaveView} {} 0 0
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 300 30
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 0 0
+wv_move_window {Custom WaveView} {} 300 30
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 137 745
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 156 104
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} -14 34
+wv_move_window {Custom WaveView} {} 118 30
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 0 0
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 118 30
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)} {+sep=@}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)@xi4(1)} {+sep=@}
+wv_collapse_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)@xi4(1)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)@xi4(1)} {0} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)@xi5(2)} {0} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)@xi7(3)} {0} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)@xi5(2)} {0} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D1:bhv.tr0(0)@toplevel(0)@xi4(1)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_p)} 1
+wv_select_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_p)} 1
+wv_dclick_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_p)} 1
+wv_select_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_n)} 0
+wv_dclick_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_n)} 0
+wv_press_tool_button {Custom WaveView} {} {NewWaveView0} 
+wv_select_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_n)} 0
+wv_dclick_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_n)} 0
+wv_select_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_p)} 1
+wv_drag_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_p)} 1
+wv_dclick_list_item {Custom WaveView} {} {sigview} {xi4.v(amp_p)} 1
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {Yes} 
+wv_select_window {Custom WaveView} 
+wv_select_waveview 2 {waveview 2}
+wv_select_wv_item WV2.PANEL1:1.LEGEND
+wv_select_panel WV2.PANEL1:1.LEGEND
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_select_dialog {ReloadFiles} 
+wv_press_button {ReloadFiles} {} {KeepOld} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_press_tool_button {Custom WaveView} {} {UpdateWave0} 
+wv_tree_context_menu {Custom WaveView} {} {hierview} 87 104 {D1:bhv.tr0(1)} {+sep=@}
+wv_select_menu_item {Custom WaveView} {} {FileViewPopMenu.Close Selected Files} 
+wv_select_dialog {SelectFilesForCloseOrMeasure} 
+wv_press_button {SelectFilesForCloseOrMeasure} {} {Ok} 
+wv_select_window {Custom WaveView} 
+## TYPE S abort
+## memory usage 923.39MB
+#0x6CD30F /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x6cd30f]
+#0x6CD7B0 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x6cd7b0]
+#0x5FEF8280 /lib64/libc.so.6(+0x36280) [0x7f3b5fef8280]
+#0x201A430 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x201a430]
+#0x11237D1 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv(qiDlgCloseDialog+0x29) [0x11237d1]
+#0x1123C3C /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv(qiCloseDialog+0x9) [0x1123c3c]
+#0xC9888F /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv(qxCloseOwnBrowser+0x39) [0xc9888f]
+#0xA41813 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv(gfCloseBrowser+0x9) [0xa41813]
+#0xA4F7E9 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv(wdfDeleteWDF+0x142) [0xa4f7e9]
+#0xC96314 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0xc96314]
+#0x108CB4A /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv(_ZN10QX_PushBtn11callFuctionEv+0x50a) [0x108cb4a]
+#0x108E232 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x108e232]
+#0x201FA12 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x201fa12]
+#0x1E174E1 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x1e174e1]
+#0x1C0265D /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x1c0265d]
+#0x1C02E99 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x1c02e99]
+#0x1C030FD /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x1c030fd]
+#0x19868D3 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x19868d3]
+#0x1937A6C /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x1937a6c]
+#0x193C9A9 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x193c9a9]
+#0x20093ED /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x20093ed]
+#0x193893B /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x193893b]
+#0x19AF34D /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x19af34d]
+#0x19ADBE2 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x19adbe2]
+#0x19D11DD /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x19d11dd]
+#0x200D211 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x200d211]
+#0x108CBF1 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv(_ZN10QX_PushBtn11callFuctionEv+0x5b1) [0x108cbf1]
+#0x108E232 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x108e232]
+#0x201FA12 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x201fa12]
+#0x1E174E1 /usr/cad/synopsys/customexplorer/cur/platforms/linux64/bin/wv() [0x1e174e1]
+#session saved in: 'sx_crash.sx'
+### auto-generated spxrc ###
+### General Settings ###
+gui_font small
+hide_ribbon false
+show_console false
+use_qtfsb false
+replay_delay 1
+gui_color bright
+wv_iconizable 1
+show_eqn_err_msg 1
+user_colors false
+line_thickness 1
+lock_color false
+same_color_sweep false
+bus_diff_color false
+loop_linestyles_sweep false
+delete_confirm true
+reload_confirm true
+exit_confirm true
+archive_data_on_crash false
+dynamic_filter true
+sensitive_filter false
+hiersensitive_filter false
+keep_signalsearchstring false
+suppress_eqn_func_completion false
+disable_star_expand_tree false
+precision_digits 3
+unit_scale 0
+axis_font 0
+browser_width 250
+browser_width_last 0
+### SPICE lint ###
+spice_netlist_erc off
+spice_inst_casesensitive false
+spice_parm_casesensitive false
+spice_sort_subckt_cells false
+spice_cell_index_depth true
+spice_smart_sort false
+use_hspiceini false
+lint_suppress_list 
+lint_min_resistance    1.000E-05
+lint_max_capacitance    1.000E-03
+lint_min_mos_width    1.000E-08
+lint_max_mos_width    1.000E-02
+lint_min_mos_length    1.000E-08
+lint_max_mos_length    1.000E-02
+### Custom WaveView ###
+waveview_TabPos top
+waveview_background black
+cycle_color_by panel+waveview
+clamp_ac_phase true
+left_button_action zoom
+init_xy_mode hvsel
+cds_link_plot_mode replace
+cds_link_update_mode append
+show_inf_data false
+inf_value    1.000E+50
+switch_mouse_button false
+group_display_order file
+signal_filter_option glob
+support_substr_search false
+def_ac_stack complex
+def_acx_type log
+def_acy_type linear
+def_trx_type linear
+def_try_type linear
+def_fft_xscale log
+def_fft_yscale db
+signal_dnd_mode move
+logic_style_default vcd
+signal_font normal
+signame_spacing normal
+signal_name name+file
+signame_align left
+signal_path path+name
+load_data_at_open false
+auto_connect_split_files true
+grid_default on
+grid_brightness normal
+auto_y_axes off
+auto_y_width off
+y_label_width 30
+alias_bracket true
+flatten_single_point_sweep true
+signame_popup false
+show_MP_prefix false
+show_ytype false
+limit_zoom_range false
+plotsig_bottompanel false
+smart_hsort false
+sweep_expand user
+remove_dupsig false
+case_sens_tr0 false
+flatten_segs true
+extend_waveform false
+filter_byxrange false
+convert_s_to_yz false
+not_show_vhdl_processes true
+disable_reload_wdf_confirm false
+disable_update_signal false
+disable_update_equation false
+add_toplevel_for_fsdb false
+logic_real_pwc_fsdb true
+use_snn false
+sync_alias true
+alias_signal_name_only false
+real_time_scroll true
+snap_marker false
+snap_interp false
+btn_add_hcursor false
+show_cross_label false
+hide_cursor_distance false
+click_move_cursor true
+ref_cursor_value_indv false
+bar_grip_scroll false
+auto_x_extend false
+auto_x_extend_dig true
+hide_panel_div false
+logic_cursor_snap true
+panel_mode_only false
+logic_glitch_highlight true
+stack_auto_fit on
+wdf_filter allfiles
+horz_panel_height 80
+default_panels_perrow 4
+default_hist_binsize 10
+default_hist_one false
+max_visible_panels 0
+read_top_hier true
+read_top_hier_threshold 5
+user_fixed_yrange false
+vmin 0
+vmax 3.3
+imin 0
+imax 1m
+lines_per_panel 0
+min_panel_height 20
+analog_panel_height 120
+max_log_span 25
+logic_panel_height 24
+panel_spacing 0
+horizontal_slider_step 50
+zoom_in_ratio 50
+smith_char_impedance    5.000E+01
+calc_eng false
+d2a_xtol true
+d2a_fullext true
+d2a_high_value    3.300E+00
+d2a_low_value    0.000E+00
+d2a_rise_slew    1.000E-11
+d2a_fall_slew    1.000E-11
+a2d_single_threshold true
+a2d_center_threshold    2.500E+00
+a2d_high_threshold    4.000E+00
+a2d_low_threshold    1.000E+00
+SX_DM_DMScale false
+SX_DM_ResultPanelScale false
+SNR_inc_floor_noise false
+#0  0x00007f3b5ff86a89 in waitpid () from /lib64/libc.so.6
+#1  0x00007f3b5ff04de2 in do_system () from /lib64/libc.so.6
+#2  0x00007f3b5ff05191 in system () from /lib64/libc.so.6
+#3  0x00000000006cd53b in _appMemoryError ()
+#4  0x00000000006cd7b0 in _appSignalSeg ()
+#5  <signal handler called>
+#6  0x000000000201a430 in QObject::objectName() const ()
+#7  0x00000000011237d1 in qiDlgCloseDialog ()
+#8  0x0000000001123c3c in qiCloseDialog ()
+#9  0x0000000000c9888f in qxCloseOwnBrowser ()
+#10 0x0000000000a41813 in gfCloseBrowser ()
+#11 0x0000000000a4f7e9 in wdfDeleteWDF ()
+#12 0x0000000000c96314 in _cls_ok ()
+#13 0x000000000108cb4a in QX_PushBtn::callFuction() ()
+#14 0x000000000108e232 in QX_PushBtn::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) ()
+#15 0x000000000201fa12 in QMetaObject::activate(QObject*, QMetaObject const*, int, void**) ()
+#16 0x0000000001e174e1 in QAbstractButton::clicked(bool) ()
+#17 0x0000000001c0265d in QAbstractButtonPrivate::emitClicked() ()
+#18 0x0000000001c02e99 in QAbstractButtonPrivate::click() ()
+#19 0x0000000001c030fd in QAbstractButton::mouseReleaseEvent(QMouseEvent*) ()
+#20 0x00000000019868d3 in QWidget::event(QEvent*) ()
+#21 0x0000000001937a6c in QApplicationPrivate::notify_helper(QObject*, QEvent*) ()
+#22 0x000000000193c9a9 in QApplication::notify(QObject*, QEvent*) ()
+#23 0x00000000020093ed in QCoreApplication::notifyInternal(QObject*, QEvent*) ()
+#24 0x000000000193893b in QApplicationPrivate::sendMouseEvent(QWidget*, QMouseEvent*, QWidget*, QWidget*, QWidget**, QPointer<QWidget>&, bool) ()
+#25 0x00000000019af34d in QETWidget::translateMouseEvent(_XEvent const*) ()
+#26 0x00000000019adbe2 in QApplication::x11ProcessEvent(_XEvent*) ()
+#27 0x00000000019d11dd in QEventDispatcherX11::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) ()
+#28 0x000000000200d211 in QCoreApplication::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) ()
+#29 0x000000000108cbf1 in QX_PushBtn::callFuction() ()
+#30 0x000000000108e232 in QX_PushBtn::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) ()
+#31 0x000000000201fa12 in QMetaObject::activate(QObject*, QMetaObject const*, int, void**) ()
+#32 0x0000000001e174e1 in QAbstractButton::clicked(bool) ()
+#33 0x0000000001c0265d in QAbstractButtonPrivate::emitClicked() ()
+#34 0x0000000001c02e99 in QAbstractButtonPrivate::click() ()
+#35 0x0000000001c030fd in QAbstractButton::mouseReleaseEvent(QMouseEvent*) ()
+#36 0x00000000019868d3 in QWidget::event(QEvent*) ()
+#37 0x0000000001937a6c in QApplicationPrivate::notify_helper(QObject*, QEvent*) ()
+#38 0x000000000193c9a9 in QApplication::notify(QObject*, QEvent*) ()
+#39 0x00000000020093ed in QCoreApplication::notifyInternal(QObject*, QEvent*) ()
+#40 0x000000000193893b in QApplicationPrivate::sendMouseEvent(QWidget*, QMouseEvent*, QWidget*, QWidget*, QWidget**, QPointer<QWidget>&, bool) ()
+#41 0x00000000019af34d in QETWidget::translateMouseEvent(_XEvent const*) ()
+#42 0x00000000019adbe2 in QApplication::x11ProcessEvent(_XEvent*) ()
+#43 0x00000000019d11dd in QEventDispatcherX11::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) ()
+#44 0x0000000002008015 in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) ()
+#45 0x00000000020082f6 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) ()
+#46 0x000000000200d079 in QCoreApplication::exec() ()
+#47 0x00000000010f07fa in qxLoop ()
+#48 0x00000000006bb3cb in main ()

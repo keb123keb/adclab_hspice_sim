@@ -1,0 +1,2564 @@
+Using: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv2_v4_4.sp
+ ****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+  Copyright (c) 1986 - 2019 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: bhv2_v4_4.sp                                                      
+  Command line options: /usr/cad/synopsys/hspice/cur/hspice/linux64/hspice bhv2_v4_4.sp
+ lic:  
+ lic: FLEXlm: SDK_11.6.9.6 
+ lic: USER:   ychuang              HOSTNAME: adc 
+ lic: HOSTID: "b4969141dd1f"       PID:      113943 
+ lic: Using FLEXlm license file: 
+ lic: 26585@lsnctu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 14-may-2022/2018.09 
+ lic: 147(in_use)/190(total) FLOATING license(s) on SERVER 26585@lsnctu 
+ lic:   
+  **warning** (bhv2_v4_4.sp:113) Unrecognized output type for xsar.v in .print or .probe; The line is ignored.
+1****** HSPICE -- O-2018.09 linux64 (Aug 26 2018) ******                        
+ ******  
+ *behavior simulation
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xsar.                           adc_sar_diff_8bit_v4_monotonic_v4_unit_cap_two_stage
+                                                                 1.00 
+        2 xds.                            adc_mod2_lev5_ff_v2_8bit_sar_in
+                                                                 1.00 
+        3 xsar.xc_array_p.                sa_8bit_c_array_with_dac_monotonic_v4_unit_cap_two_stage
+                                                                 1.00 
+        4 xsar.xc_array_n.                sa_8bit_c_array_with_dac_monotonic_v4_unit_cap_two_stage
+                                                                 1.00 
+        5 xsar.xcmp.                      vcvs_cmp           1.00 
+        6 xsar.xsa_logic.                 sa_logic_8bit_monotonic
+                                                                 1.00 
+        7 xsar.xdffout_7.                 dff_set_rst_schematic
+                                                                 1.00 
+        8 xsar.xdffout_6.                 dff_set_rst_schematic
+                                                                 1.00 
+        9 xsar.xdffout_5.                 dff_set_rst_schematic
+                                                                 1.00 
+       10 xsar.xdffout_4.                 dff_set_rst_schematic
+                                                                 1.00 
+       11 xsar.xdffout_3.                 dff_set_rst_schematic
+                                                                 1.00 
+       12 xsar.xdffout_2.                 dff_set_rst_schematic
+                                                                 1.00 
+       13 xsar.xdffout_1.                 dff_set_rst_schematic
+                                                                 1.00 
+       14 xsar.xdffout_0.                 dff_set_rst_schematic
+                                                                 1.00 
+       15 xsar.xi7.                       nand2_bhv          1.00 
+       16 xsar.xi28.                      inv_bhv            1.00 
+       17 xsar.xi6.                       inv_bhv            1.00 
+       18 xsar.xi5.                       inv_bhv            1.00 
+       19 xds.xint1.                      int1_with_lev5_dac_v2_8bit_sar_in
+                                                                 1.00 
+       20 xds.xint2.                      int2               1.00 
+       21 xds.xquantizer_1b_0.            adder_cmp_1b_ciff2
+                                                                 1.00 
+       22 xds.xquantizer_1b_1.            adder_cmp_1b_ciff2
+                                                                 1.00 
+       23 xds.xquantizer_1b_2.            adder_cmp_1b_ciff2
+                                                                 1.00 
+       24 xds.xquantizer_1b_3.            adder_cmp_1b_ciff2
+                                                                 1.00 
+       25 xds.xvth.                       vth_5lev           1.00 
+       26 xds.xclk_fb_0.                  clk_fb_1bit        1.00 
+       27 xds.xclk_fb_1.                  clk_fb_1bit        1.00 
+       28 xds.xclk_fb_2.                  clk_fb_1bit        1.00 
+       29 xds.xclk_fb_3.                  clk_fb_1bit        1.00 
+       30 xsar.xc_array_p.xsa_dac.        sa_dac_8bit        1.00 
+       31 xsar.xc_array_p.xswvcmp.        tgb                1.00 
+       32 xsar.xc_array_n.xsa_dac.        sa_dac_8bit        1.00 
+       33 xsar.xc_array_n.xswvcmp.        tgb                1.00 
+       34 xsar.xsa_logic.xi36.            inv_bhv            1.00 
+       35 xsar.xsa_logic.xi19.            nor2_bhv           1.00 
+       36 xsar.xsa_logic.xi23.            nor2_bhv           1.00 
+       37 xsar.xsa_logic.xi22.            nor2_bhv           1.00 
+       38 xsar.xsa_logic.xi26.            nor2_bhv           1.00 
+       39 xsar.xsa_logic.xi27.            nor2_bhv           1.00 
+       40 xsar.xsa_logic.xi29.            nor2_bhv           1.00 
+       41 xsar.xsa_logic.xi32.            nor2_bhv           1.00 
+       42 xsar.xsa_logic.xi33.            nor2_bhv           1.00 
+       43 xsar.xsa_logic.xi24.            nand2_bhv          1.00 
+       44 xsar.xsa_logic.xi20.            nand2_bhv          1.00 
+       45 xsar.xsa_logic.xi21.            nand2_bhv          1.00 
+       46 xsar.xsa_logic.xi25.            nand2_bhv          1.00 
+       47 xsar.xsa_logic.xi28.            nand2_bhv          1.00 
+       48 xsar.xsa_logic.xi30.            nand2_bhv          1.00 
+       49 xsar.xsa_logic.xi31.            nand2_bhv          1.00 
+       50 xsar.xsa_logic.xi34.            nand2_bhv          1.00 
+       51 xsar.xsa_logic.xdata3.          dff_set_rst        1.00 
+       52 xsar.xsa_logic.xdata2.          dff_set_rst        1.00 
+       53 xsar.xsa_logic.xdata1.          dff_set_rst        1.00 
+       54 xsar.xsa_logic.xdata0.          dff_set_rst        1.00 
+       55 xsar.xsa_logic.xdata5.          dff_set_rst        1.00 
+       56 xsar.xsa_logic.xrsh0.           dff_set_rst        1.00 
+       57 xsar.xsa_logic.xrsh3.           dff_set_rst        1.00 
+       58 xsar.xsa_logic.xrsh2.           dff_set_rst        1.00 
+       59 xsar.xsa_logic.xrsh1.           dff_set_rst        1.00 
+       60 xsar.xsa_logic.xrsh4.           dff_set_rst        1.00 
+       61 xsar.xsa_logic.xdata7.          dff_set_rst        1.00 
+       62 xsar.xsa_logic.xrsh5.           dff_set_rst        1.00 
+       63 xsar.xsa_logic.xdata6.          dff_set_rst        1.00 
+       64 xsar.xsa_logic.xdata4.          dff_set_rst        1.00 
+       65 xsar.xsa_logic.xrsh6.           dff_set_rst        1.00 
+       66 xsar.xsa_logic.xrsh7.           dff_set_rst        1.00 
+       67 xsar.xdffout_7.xi1.             inv_bhv            1.00 
+       68 xsar.xdffout_7.xi40.            tgb                1.00 
+       69 xsar.xdffout_7.xi34.            tgb                1.00 
+       70 xsar.xdffout_7.xi41.            tgb                1.00 
+       71 xsar.xdffout_7.xsw1.            tgb                1.00 
+       72 xsar.xdffout_7.xi42.            nor2_bhv           1.00 
+       73 xsar.xdffout_7.xi43.            nor2_bhv           1.00 
+       74 xsar.xdffout_7.xi31.            nor2_bhv           1.00 
+       75 xsar.xdffout_7.xi37.            nor2_bhv           1.00 
+       76 xsar.xdffout_6.xi1.             inv_bhv            1.00 
+       77 xsar.xdffout_6.xi40.            tgb                1.00 
+       78 xsar.xdffout_6.xi34.            tgb                1.00 
+       79 xsar.xdffout_6.xi41.            tgb                1.00 
+       80 xsar.xdffout_6.xsw1.            tgb                1.00 
+       81 xsar.xdffout_6.xi42.            nor2_bhv           1.00 
+       82 xsar.xdffout_6.xi43.            nor2_bhv           1.00 
+       83 xsar.xdffout_6.xi31.            nor2_bhv           1.00 
+       84 xsar.xdffout_6.xi37.            nor2_bhv           1.00 
+       85 xsar.xdffout_5.xi1.             inv_bhv            1.00 
+       86 xsar.xdffout_5.xi40.            tgb                1.00 
+       87 xsar.xdffout_5.xi34.            tgb                1.00 
+       88 xsar.xdffout_5.xi41.            tgb                1.00 
+       89 xsar.xdffout_5.xsw1.            tgb                1.00 
+       90 xsar.xdffout_5.xi42.            nor2_bhv           1.00 
+       91 xsar.xdffout_5.xi43.            nor2_bhv           1.00 
+       92 xsar.xdffout_5.xi31.            nor2_bhv           1.00 
+       93 xsar.xdffout_5.xi37.            nor2_bhv           1.00 
+       94 xsar.xdffout_4.xi1.             inv_bhv            1.00 
+       95 xsar.xdffout_4.xi40.            tgb                1.00 
+       96 xsar.xdffout_4.xi34.            tgb                1.00 
+       97 xsar.xdffout_4.xi41.            tgb                1.00 
+       98 xsar.xdffout_4.xsw1.            tgb                1.00 
+       99 xsar.xdffout_4.xi42.            nor2_bhv           1.00 
+      100 xsar.xdffout_4.xi43.            nor2_bhv           1.00 
+      101 xsar.xdffout_4.xi31.            nor2_bhv           1.00 
+      102 xsar.xdffout_4.xi37.            nor2_bhv           1.00 
+      103 xsar.xdffout_3.xi1.             inv_bhv            1.00 
+      104 xsar.xdffout_3.xi40.            tgb                1.00 
+      105 xsar.xdffout_3.xi34.            tgb                1.00 
+      106 xsar.xdffout_3.xi41.            tgb                1.00 
+      107 xsar.xdffout_3.xsw1.            tgb                1.00 
+      108 xsar.xdffout_3.xi42.            nor2_bhv           1.00 
+      109 xsar.xdffout_3.xi43.            nor2_bhv           1.00 
+      110 xsar.xdffout_3.xi31.            nor2_bhv           1.00 
+      111 xsar.xdffout_3.xi37.            nor2_bhv           1.00 
+      112 xsar.xdffout_2.xi1.             inv_bhv            1.00 
+      113 xsar.xdffout_2.xi40.            tgb                1.00 
+      114 xsar.xdffout_2.xi34.            tgb                1.00 
+      115 xsar.xdffout_2.xi41.            tgb                1.00 
+      116 xsar.xdffout_2.xsw1.            tgb                1.00 
+      117 xsar.xdffout_2.xi42.            nor2_bhv           1.00 
+      118 xsar.xdffout_2.xi43.            nor2_bhv           1.00 
+      119 xsar.xdffout_2.xi31.            nor2_bhv           1.00 
+      120 xsar.xdffout_2.xi37.            nor2_bhv           1.00 
+      121 xsar.xdffout_1.xi1.             inv_bhv            1.00 
+      122 xsar.xdffout_1.xi40.            tgb                1.00 
+      123 xsar.xdffout_1.xi34.            tgb                1.00 
+      124 xsar.xdffout_1.xi41.            tgb                1.00 
+      125 xsar.xdffout_1.xsw1.            tgb                1.00 
+      126 xsar.xdffout_1.xi42.            nor2_bhv           1.00 
+      127 xsar.xdffout_1.xi43.            nor2_bhv           1.00 
+      128 xsar.xdffout_1.xi31.            nor2_bhv           1.00 
+      129 xsar.xdffout_1.xi37.            nor2_bhv           1.00 
+      130 xsar.xdffout_0.xi1.             inv_bhv            1.00 
+      131 xsar.xdffout_0.xi40.            tgb                1.00 
+      132 xsar.xdffout_0.xi34.            tgb                1.00 
+      133 xsar.xdffout_0.xi41.            tgb                1.00 
+      134 xsar.xdffout_0.xsw1.            tgb                1.00 
+      135 xsar.xdffout_0.xi42.            nor2_bhv           1.00 
+      136 xsar.xdffout_0.xi43.            nor2_bhv           1.00 
+      137 xsar.xdffout_0.xi31.            nor2_bhv           1.00 
+      138 xsar.xdffout_0.xi37.            nor2_bhv           1.00 
+      139 xsar.xi7.xn1.                   nmos_b             1.00 
+      140 xsar.xi7.xi9.                   nmos_b             1.00 
+      141 xsar.xi7.xp1.                   pmos_b             1.00 
+      142 xsar.xi7.xi10.                  pmos_b             1.00 
+      143 xsar.xi28.xp1.                  pmos_b             1.00 
+      144 xsar.xi28.xn1.                  nmos_b             1.00 
+      145 xsar.xi6.xp1.                   pmos_b             1.00 
+      146 xsar.xi6.xn1.                   nmos_b             1.00 
+      147 xsar.xi5.xp1.                   pmos_b             1.00 
+      148 xsar.xi5.xn1.                   nmos_b             1.00 
+      149 xds.xint1.xcarrayp.             carray_8bit_sar_in
+                                                                 1.00 
+      150 xds.xint1.xcarrayn.             carray_8bit_sar_in
+                                                                 1.00 
+      151 xds.xint1.xdac_0.               dac_int_1bit       1.00 
+      152 xds.xint1.xdac_1.               dac_int_1bit       1.00 
+      153 xds.xint1.xdac_2.               dac_int_1bit       1.00 
+      154 xds.xint1.xdac_3.               dac_int_1bit       1.00 
+      155 xds.xint1.xsw3.                 tgb                1.00 
+      156 xds.xint1.xsw7.                 tgb                1.00 
+      157 xds.xint1.xsw4_0.               tgb                1.00 
+      158 xds.xint1.xsw4_1.               tgb                1.00 
+      159 xds.xint1.xsw4_2.               tgb                1.00 
+      160 xds.xint1.xsw4_3.               tgb                1.00 
+      161 xds.xint1.xsw4_4.               tgb                1.00 
+      162 xds.xint1.xsw4_5.               tgb                1.00 
+      163 xds.xint1.xsw4_6.               tgb                1.00 
+      164 xds.xint1.xsw4_7.               tgb                1.00 
+      165 xds.xint1.xsw_sar_inp_0.        tgb                1.00 
+      166 xds.xint1.xsw_sar_inp_1.        tgb                1.00 
+      167 xds.xint1.xsw_sar_inp_2.        tgb                1.00 
+      168 xds.xint1.xsw_sar_inp_3.        tgb                1.00 
+      169 xds.xint1.xsw_sar_inp_4.        tgb                1.00 
+      170 xds.xint1.xsw_sar_inp_5.        tgb                1.00 
+      171 xds.xint1.xsw_sar_inp_6.        tgb                1.00 
+      172 xds.xint1.xsw_sar_inp_7.        tgb                1.00 
+      173 xds.xint1.xsw_sar_inn_0.        tgb                1.00 
+      174 xds.xint1.xsw_sar_inn_1.        tgb                1.00 
+      175 xds.xint1.xsw_sar_inn_2.        tgb                1.00 
+      176 xds.xint1.xsw_sar_inn_3.        tgb                1.00 
+      177 xds.xint1.xsw_sar_inn_4.        tgb                1.00 
+      178 xds.xint1.xsw_sar_inn_5.        tgb                1.00 
+      179 xds.xint1.xsw_sar_inn_6.        tgb                1.00 
+      180 xds.xint1.xsw_sar_inn_7.        tgb                1.00 
+      181 xds.xint1.xswinn_0.             tgb                1.00 
+      182 xds.xint1.xswinn_1.             tgb                1.00 
+      183 xds.xint1.xswinn_2.             tgb                1.00 
+      184 xds.xint1.xswinn_3.             tgb                1.00 
+      185 xds.xint1.xsw5_0.               tgb                1.00 
+      186 xds.xint1.xsw5_1.               tgb                1.00 
+      187 xds.xint1.xsw5_2.               tgb                1.00 
+      188 xds.xint1.xsw5_3.               tgb                1.00 
+      189 xds.xint1.xsw5_4.               tgb                1.00 
+      190 xds.xint1.xsw5_5.               tgb                1.00 
+      191 xds.xint1.xsw5_6.               tgb                1.00 
+      192 xds.xint1.xsw5_7.               tgb                1.00 
+      193 xds.xint1.xsw2.                 tgb                1.00 
+      194 xds.xint1.xsw6.                 tgb                1.00 
+      195 xds.xint1.xi12.                 tgb                1.00 
+      196 xds.xint1.xi13.                 tgb                1.00 
+      197 xds.xint1.xswinp_0.             tgb                1.00 
+      198 xds.xint1.xswinp_1.             tgb                1.00 
+      199 xds.xint1.xswinp_2.             tgb                1.00 
+      200 xds.xint1.xswinp_3.             tgb                1.00 
+      201 xds.xint1.xop.                  fdopb              1.00 
+      202 xds.xint2.xi65.                 tgb                1.00 
+      203 xds.xint2.xsw7.                 tgb                1.00 
+      204 xds.xint2.xsw3.                 tgb                1.00 
+      205 xds.xint2.xswinn_0.             tgb                1.00 
+      206 xds.xint2.xswinn_1.             tgb                1.00 
+      207 xds.xint2.xswinn_2.             tgb                1.00 
+      208 xds.xint2.xswinn_3.             tgb                1.00 
+      209 xds.xint2.xswinp_0.             tgb                1.00 
+      210 xds.xint2.xswinp_1.             tgb                1.00 
+      211 xds.xint2.xswinp_2.             tgb                1.00 
+      212 xds.xint2.xswinp_3.             tgb                1.00 
+      213 xds.xint2.xsw2.                 tgb                1.00 
+      214 xds.xint2.xsw6.                 tgb                1.00 
+      215 xds.xint2.xi6.                  tgb                1.00 
+      216 xds.xint2.xi9.                  tgb                1.00 
+      217 xds.xint2.xi66.                 tgb                1.00 
+      218 xds.xint2.xop.                  fdopb              1.00 
+      219 xds.xquantizer_1b_0.xpreamp_bhv.
+                                            preamp_cmp_b       1.00 
+      220 xds.xquantizer_1b_0.xcmp3.      cmp_clk            1.00 
+      221 xds.xquantizer_1b_0.xi1.        inv_bhv            1.00 
+      222 xds.xquantizer_1b_0.xi52.       tgb                1.00 
+      223 xds.xquantizer_1b_0.xi63.       tgb                1.00 
+      224 xds.xquantizer_1b_0.xi62.       tgb                1.00 
+      225 xds.xquantizer_1b_0.xi55.       tgb                1.00 
+      226 xds.xquantizer_1b_0.xi56.       tgb                1.00 
+      227 xds.xquantizer_1b_0.xi65.       tgb                1.00 
+      228 xds.xquantizer_1b_0.xi64.       tgb                1.00 
+      229 xds.xquantizer_1b_0.xi60.       tgb                1.00 
+      230 xds.xquantizer_1b_0.xi59.       tgb                1.00 
+      231 xds.xquantizer_1b_0.xi13.       tgb                1.00 
+      232 xds.xquantizer_1b_0.xi9.        tgb                1.00 
+      233 xds.xquantizer_1b_0.xsw1.       tgb                1.00 
+      234 xds.xquantizer_1b_0.xi2.        tgb                1.00 
+      235 xds.xquantizer_1b_0.xsw4.       tgb                1.00 
+      236 xds.xquantizer_1b_1.xpreamp_bhv.
+                                            preamp_cmp_b       1.00 
+      237 xds.xquantizer_1b_1.xcmp3.      cmp_clk            1.00 
+      238 xds.xquantizer_1b_1.xi1.        inv_bhv            1.00 
+      239 xds.xquantizer_1b_1.xi52.       tgb                1.00 
+      240 xds.xquantizer_1b_1.xi63.       tgb                1.00 
+      241 xds.xquantizer_1b_1.xi62.       tgb                1.00 
+      242 xds.xquantizer_1b_1.xi55.       tgb                1.00 
+      243 xds.xquantizer_1b_1.xi56.       tgb                1.00 
+      244 xds.xquantizer_1b_1.xi65.       tgb                1.00 
+      245 xds.xquantizer_1b_1.xi64.       tgb                1.00 
+      246 xds.xquantizer_1b_1.xi60.       tgb                1.00 
+      247 xds.xquantizer_1b_1.xi59.       tgb                1.00 
+      248 xds.xquantizer_1b_1.xi13.       tgb                1.00 
+      249 xds.xquantizer_1b_1.xi9.        tgb                1.00 
+      250 xds.xquantizer_1b_1.xsw1.       tgb                1.00 
+      251 xds.xquantizer_1b_1.xi2.        tgb                1.00 
+      252 xds.xquantizer_1b_1.xsw4.       tgb                1.00 
+      253 xds.xquantizer_1b_2.xpreamp_bhv.
+                                            preamp_cmp_b       1.00 
+      254 xds.xquantizer_1b_2.xcmp3.      cmp_clk            1.00 
+      255 xds.xquantizer_1b_2.xi1.        inv_bhv            1.00 
+      256 xds.xquantizer_1b_2.xi52.       tgb                1.00 
+      257 xds.xquantizer_1b_2.xi63.       tgb                1.00 
+      258 xds.xquantizer_1b_2.xi62.       tgb                1.00 
+      259 xds.xquantizer_1b_2.xi55.       tgb                1.00 
+      260 xds.xquantizer_1b_2.xi56.       tgb                1.00 
+      261 xds.xquantizer_1b_2.xi65.       tgb                1.00 
+      262 xds.xquantizer_1b_2.xi64.       tgb                1.00 
+      263 xds.xquantizer_1b_2.xi60.       tgb                1.00 
+      264 xds.xquantizer_1b_2.xi59.       tgb                1.00 
+      265 xds.xquantizer_1b_2.xi13.       tgb                1.00 
+      266 xds.xquantizer_1b_2.xi9.        tgb                1.00 
+      267 xds.xquantizer_1b_2.xsw1.       tgb                1.00 
+      268 xds.xquantizer_1b_2.xi2.        tgb                1.00 
+      269 xds.xquantizer_1b_2.xsw4.       tgb                1.00 
+      270 xds.xquantizer_1b_3.xpreamp_bhv.
+                                            preamp_cmp_b       1.00 
+      271 xds.xquantizer_1b_3.xcmp3.      cmp_clk            1.00 
+      272 xds.xquantizer_1b_3.xi1.        inv_bhv            1.00 
+      273 xds.xquantizer_1b_3.xi52.       tgb                1.00 
+      274 xds.xquantizer_1b_3.xi63.       tgb                1.00 
+      275 xds.xquantizer_1b_3.xi62.       tgb                1.00 
+      276 xds.xquantizer_1b_3.xi55.       tgb                1.00 
+      277 xds.xquantizer_1b_3.xi56.       tgb                1.00 
+      278 xds.xquantizer_1b_3.xi65.       tgb                1.00 
+      279 xds.xquantizer_1b_3.xi64.       tgb                1.00 
+      280 xds.xquantizer_1b_3.xi60.       tgb                1.00 
+      281 xds.xquantizer_1b_3.xi59.       tgb                1.00 
+      282 xds.xquantizer_1b_3.xi13.       tgb                1.00 
+      283 xds.xquantizer_1b_3.xi9.        tgb                1.00 
+      284 xds.xquantizer_1b_3.xsw1.       tgb                1.00 
+      285 xds.xquantizer_1b_3.xi2.        tgb                1.00 
+      286 xds.xquantizer_1b_3.xsw4.       tgb                1.00 
+      287 xds.xclk_fb_0.xi64.             inv_bhv            1.00 
+      288 xds.xclk_fb_0.xi20.             inv_bhv            1.00 
+      289 xds.xclk_fb_0.xi60.             inv_bhv            1.00 
+      290 xds.xclk_fb_0.xi59.             inv_bhv            1.00 
+      291 xds.xclk_fb_0.xi63.             inv_bhv            1.00 
+      292 xds.xclk_fb_0.xi62.             nand2_bhv          1.00 
+      293 xds.xclk_fb_0.xi19.             nand2_bhv          1.00 
+      294 xds.xclk_fb_1.xi64.             inv_bhv            1.00 
+      295 xds.xclk_fb_1.xi20.             inv_bhv            1.00 
+      296 xds.xclk_fb_1.xi60.             inv_bhv            1.00 
+      297 xds.xclk_fb_1.xi59.             inv_bhv            1.00 
+      298 xds.xclk_fb_1.xi63.             inv_bhv            1.00 
+      299 xds.xclk_fb_1.xi62.             nand2_bhv          1.00 
+      300 xds.xclk_fb_1.xi19.             nand2_bhv          1.00 
+      301 xds.xclk_fb_2.xi64.             inv_bhv            1.00 
+      302 xds.xclk_fb_2.xi20.             inv_bhv            1.00 
+      303 xds.xclk_fb_2.xi60.             inv_bhv            1.00 
+      304 xds.xclk_fb_2.xi59.             inv_bhv            1.00 
+      305 xds.xclk_fb_2.xi63.             inv_bhv            1.00 
+      306 xds.xclk_fb_2.xi62.             nand2_bhv          1.00 
+      307 xds.xclk_fb_2.xi19.             nand2_bhv          1.00 
+      308 xds.xclk_fb_3.xi64.             inv_bhv            1.00 
+      309 xds.xclk_fb_3.xi20.             inv_bhv            1.00 
+      310 xds.xclk_fb_3.xi60.             inv_bhv            1.00 
+      311 xds.xclk_fb_3.xi59.             inv_bhv            1.00 
+      312 xds.xclk_fb_3.xi63.             inv_bhv            1.00 
+      313 xds.xclk_fb_3.xi62.             nand2_bhv          1.00 
+      314 xds.xclk_fb_3.xi19.             nand2_bhv          1.00 
+      315 xsar.xc_array_p.xsa_dac.xswdac_0.
+                                            dac_sw             1.00 
+      316 xsar.xc_array_p.xsa_dac.xswdac_1.
+                                            dac_sw             1.00 
+      317 xsar.xc_array_p.xsa_dac.xswdac_2.
+                                            dac_sw             1.00 
+      318 xsar.xc_array_p.xsa_dac.xswdac_3.
+                                            dac_sw             1.00 
+      319 xsar.xc_array_p.xsa_dac.xswdac_4.
+                                            dac_sw             1.00 
+      320 xsar.xc_array_p.xsa_dac.xswdac_5.
+                                            dac_sw             1.00 
+      321 xsar.xc_array_p.xsa_dac.xswdac_6.
+                                            dac_sw             1.00 
+      322 xsar.xc_array_p.xsa_dac.xswdac_7.
+                                            dac_sw             1.00 
+      323 xsar.xc_array_p.xsa_dac.xi1.    inv_bhv            1.00 
+      324 xsar.xc_array_p.xsa_dac.xswdac00.
+                                            tgb                1.00 
+      325 xsar.xc_array_p.xsa_dac.xswvin. tgb                1.00 
+      326 xsar.xc_array_n.xsa_dac.xswdac_0.
+                                            dac_sw             1.00 
+      327 xsar.xc_array_n.xsa_dac.xswdac_1.
+                                            dac_sw             1.00 
+      328 xsar.xc_array_n.xsa_dac.xswdac_2.
+                                            dac_sw             1.00 
+      329 xsar.xc_array_n.xsa_dac.xswdac_3.
+                                            dac_sw             1.00 
+      330 xsar.xc_array_n.xsa_dac.xswdac_4.
+                                            dac_sw             1.00 
+      331 xsar.xc_array_n.xsa_dac.xswdac_5.
+                                            dac_sw             1.00 
+      332 xsar.xc_array_n.xsa_dac.xswdac_6.
+                                            dac_sw             1.00 
+      333 xsar.xc_array_n.xsa_dac.xswdac_7.
+                                            dac_sw             1.00 
+      334 xsar.xc_array_n.xsa_dac.xi1.    inv_bhv            1.00 
+      335 xsar.xc_array_n.xsa_dac.xswdac00.
+                                            tgb                1.00 
+      336 xsar.xc_array_n.xsa_dac.xswvin. tgb                1.00 
+      337 xsar.xsa_logic.xi36.xp1.        pmos_b             1.00 
+      338 xsar.xsa_logic.xi36.xn1.        nmos_b             1.00 
+      339 xsar.xsa_logic.xi19.xn1.        nmos_b             1.00 
+      340 xsar.xsa_logic.xi19.xi9.        nmos_b             1.00 
+      341 xsar.xsa_logic.xi19.xp1.        pmos_b             1.00 
+      342 xsar.xsa_logic.xi19.xi10.       pmos_b             1.00 
+      343 xsar.xsa_logic.xi23.xn1.        nmos_b             1.00 
+      344 xsar.xsa_logic.xi23.xi9.        nmos_b             1.00 
+      345 xsar.xsa_logic.xi23.xp1.        pmos_b             1.00 
+      346 xsar.xsa_logic.xi23.xi10.       pmos_b             1.00 
+      347 xsar.xsa_logic.xi22.xn1.        nmos_b             1.00 
+      348 xsar.xsa_logic.xi22.xi9.        nmos_b             1.00 
+      349 xsar.xsa_logic.xi22.xp1.        pmos_b             1.00 
+      350 xsar.xsa_logic.xi22.xi10.       pmos_b             1.00 
+      351 xsar.xsa_logic.xi26.xn1.        nmos_b             1.00 
+      352 xsar.xsa_logic.xi26.xi9.        nmos_b             1.00 
+      353 xsar.xsa_logic.xi26.xp1.        pmos_b             1.00 
+      354 xsar.xsa_logic.xi26.xi10.       pmos_b             1.00 
+      355 xsar.xsa_logic.xi27.xn1.        nmos_b             1.00 
+      356 xsar.xsa_logic.xi27.xi9.        nmos_b             1.00 
+      357 xsar.xsa_logic.xi27.xp1.        pmos_b             1.00 
+      358 xsar.xsa_logic.xi27.xi10.       pmos_b             1.00 
+      359 xsar.xsa_logic.xi29.xn1.        nmos_b             1.00 
+      360 xsar.xsa_logic.xi29.xi9.        nmos_b             1.00 
+      361 xsar.xsa_logic.xi29.xp1.        pmos_b             1.00 
+      362 xsar.xsa_logic.xi29.xi10.       pmos_b             1.00 
+      363 xsar.xsa_logic.xi32.xn1.        nmos_b             1.00 
+      364 xsar.xsa_logic.xi32.xi9.        nmos_b             1.00 
+      365 xsar.xsa_logic.xi32.xp1.        pmos_b             1.00 
+      366 xsar.xsa_logic.xi32.xi10.       pmos_b             1.00 
+      367 xsar.xsa_logic.xi33.xn1.        nmos_b             1.00 
+      368 xsar.xsa_logic.xi33.xi9.        nmos_b             1.00 
+      369 xsar.xsa_logic.xi33.xp1.        pmos_b             1.00 
+      370 xsar.xsa_logic.xi33.xi10.       pmos_b             1.00 
+      371 xsar.xsa_logic.xi24.xn1.        nmos_b             1.00 
+      372 xsar.xsa_logic.xi24.xi9.        nmos_b             1.00 
+      373 xsar.xsa_logic.xi24.xp1.        pmos_b             1.00 
+      374 xsar.xsa_logic.xi24.xi10.       pmos_b             1.00 
+      375 xsar.xsa_logic.xi20.xn1.        nmos_b             1.00 
+      376 xsar.xsa_logic.xi20.xi9.        nmos_b             1.00 
+      377 xsar.xsa_logic.xi20.xp1.        pmos_b             1.00 
+      378 xsar.xsa_logic.xi20.xi10.       pmos_b             1.00 
+      379 xsar.xsa_logic.xi21.xn1.        nmos_b             1.00 
+      380 xsar.xsa_logic.xi21.xi9.        nmos_b             1.00 
+      381 xsar.xsa_logic.xi21.xp1.        pmos_b             1.00 
+      382 xsar.xsa_logic.xi21.xi10.       pmos_b             1.00 
+      383 xsar.xsa_logic.xi25.xn1.        nmos_b             1.00 
+      384 xsar.xsa_logic.xi25.xi9.        nmos_b             1.00 
+      385 xsar.xsa_logic.xi25.xp1.        pmos_b             1.00 
+      386 xsar.xsa_logic.xi25.xi10.       pmos_b             1.00 
+      387 xsar.xsa_logic.xi28.xn1.        nmos_b             1.00 
+      388 xsar.xsa_logic.xi28.xi9.        nmos_b             1.00 
+      389 xsar.xsa_logic.xi28.xp1.        pmos_b             1.00 
+      390 xsar.xsa_logic.xi28.xi10.       pmos_b             1.00 
+      391 xsar.xsa_logic.xi30.xn1.        nmos_b             1.00 
+      392 xsar.xsa_logic.xi30.xi9.        nmos_b             1.00 
+      393 xsar.xsa_logic.xi30.xp1.        pmos_b             1.00 
+      394 xsar.xsa_logic.xi30.xi10.       pmos_b             1.00 
+      395 xsar.xsa_logic.xi31.xn1.        nmos_b             1.00 
+      396 xsar.xsa_logic.xi31.xi9.        nmos_b             1.00 
+      397 xsar.xsa_logic.xi31.xp1.        pmos_b             1.00 
+      398 xsar.xsa_logic.xi31.xi10.       pmos_b             1.00 
+      399 xsar.xsa_logic.xi34.xn1.        nmos_b             1.00 
+      400 xsar.xsa_logic.xi34.xi9.        nmos_b             1.00 
+      401 xsar.xsa_logic.xi34.xp1.        pmos_b             1.00 
+      402 xsar.xsa_logic.xi34.xi10.       pmos_b             1.00 
+      403 xsar.xsa_logic.xdata3.xi1.      inv_bhv            1.00 
+      404 xsar.xsa_logic.xdata3.xi40.     tgb                1.00 
+      405 xsar.xsa_logic.xdata3.xi34.     tgb                1.00 
+      406 xsar.xsa_logic.xdata3.xi41.     tgb                1.00 
+      407 xsar.xsa_logic.xdata3.xsw1.     tgb                1.00 
+      408 xsar.xsa_logic.xdata3.xi42.     nor2_bhv           1.00 
+      409 xsar.xsa_logic.xdata3.xi43.     nor2_bhv           1.00 
+      410 xsar.xsa_logic.xdata3.xi31.     nor2_bhv           1.00 
+      411 xsar.xsa_logic.xdata3.xi37.     nor2_bhv           1.00 
+      412 xsar.xsa_logic.xdata2.xi1.      inv_bhv            1.00 
+      413 xsar.xsa_logic.xdata2.xi40.     tgb                1.00 
+      414 xsar.xsa_logic.xdata2.xi34.     tgb                1.00 
+      415 xsar.xsa_logic.xdata2.xi41.     tgb                1.00 
+      416 xsar.xsa_logic.xdata2.xsw1.     tgb                1.00 
+      417 xsar.xsa_logic.xdata2.xi42.     nor2_bhv           1.00 
+      418 xsar.xsa_logic.xdata2.xi43.     nor2_bhv           1.00 
+      419 xsar.xsa_logic.xdata2.xi31.     nor2_bhv           1.00 
+      420 xsar.xsa_logic.xdata2.xi37.     nor2_bhv           1.00 
+      421 xsar.xsa_logic.xdata1.xi1.      inv_bhv            1.00 
+      422 xsar.xsa_logic.xdata1.xi40.     tgb                1.00 
+      423 xsar.xsa_logic.xdata1.xi34.     tgb                1.00 
+      424 xsar.xsa_logic.xdata1.xi41.     tgb                1.00 
+      425 xsar.xsa_logic.xdata1.xsw1.     tgb                1.00 
+      426 xsar.xsa_logic.xdata1.xi42.     nor2_bhv           1.00 
+      427 xsar.xsa_logic.xdata1.xi43.     nor2_bhv           1.00 
+      428 xsar.xsa_logic.xdata1.xi31.     nor2_bhv           1.00 
+      429 xsar.xsa_logic.xdata1.xi37.     nor2_bhv           1.00 
+      430 xsar.xsa_logic.xdata0.xi1.      inv_bhv            1.00 
+      431 xsar.xsa_logic.xdata0.xi40.     tgb                1.00 
+      432 xsar.xsa_logic.xdata0.xi34.     tgb                1.00 
+      433 xsar.xsa_logic.xdata0.xi41.     tgb                1.00 
+      434 xsar.xsa_logic.xdata0.xsw1.     tgb                1.00 
+      435 xsar.xsa_logic.xdata0.xi42.     nor2_bhv           1.00 
+      436 xsar.xsa_logic.xdata0.xi43.     nor2_bhv           1.00 
+      437 xsar.xsa_logic.xdata0.xi31.     nor2_bhv           1.00 
+      438 xsar.xsa_logic.xdata0.xi37.     nor2_bhv           1.00 
+      439 xsar.xsa_logic.xdata5.xi1.      inv_bhv            1.00 
+      440 xsar.xsa_logic.xdata5.xi40.     tgb                1.00 
+      441 xsar.xsa_logic.xdata5.xi34.     tgb                1.00 
+      442 xsar.xsa_logic.xdata5.xi41.     tgb                1.00 
+      443 xsar.xsa_logic.xdata5.xsw1.     tgb                1.00 
+      444 xsar.xsa_logic.xdata5.xi42.     nor2_bhv           1.00 
+      445 xsar.xsa_logic.xdata5.xi43.     nor2_bhv           1.00 
+      446 xsar.xsa_logic.xdata5.xi31.     nor2_bhv           1.00 
+      447 xsar.xsa_logic.xdata5.xi37.     nor2_bhv           1.00 
+      448 xsar.xsa_logic.xrsh0.xi1.       inv_bhv            1.00 
+      449 xsar.xsa_logic.xrsh0.xi40.      tgb                1.00 
+      450 xsar.xsa_logic.xrsh0.xi34.      tgb                1.00 
+      451 xsar.xsa_logic.xrsh0.xi41.      tgb                1.00 
+      452 xsar.xsa_logic.xrsh0.xsw1.      tgb                1.00 
+      453 xsar.xsa_logic.xrsh0.xi42.      nor2_bhv           1.00 
+      454 xsar.xsa_logic.xrsh0.xi43.      nor2_bhv           1.00 
+      455 xsar.xsa_logic.xrsh0.xi31.      nor2_bhv           1.00 
+      456 xsar.xsa_logic.xrsh0.xi37.      nor2_bhv           1.00 
+      457 xsar.xsa_logic.xrsh3.xi1.       inv_bhv            1.00 
+      458 xsar.xsa_logic.xrsh3.xi40.      tgb                1.00 
+      459 xsar.xsa_logic.xrsh3.xi34.      tgb                1.00 
+      460 xsar.xsa_logic.xrsh3.xi41.      tgb                1.00 
+      461 xsar.xsa_logic.xrsh3.xsw1.      tgb                1.00 
+      462 xsar.xsa_logic.xrsh3.xi42.      nor2_bhv           1.00 
+      463 xsar.xsa_logic.xrsh3.xi43.      nor2_bhv           1.00 
+      464 xsar.xsa_logic.xrsh3.xi31.      nor2_bhv           1.00 
+      465 xsar.xsa_logic.xrsh3.xi37.      nor2_bhv           1.00 
+      466 xsar.xsa_logic.xrsh2.xi1.       inv_bhv            1.00 
+      467 xsar.xsa_logic.xrsh2.xi40.      tgb                1.00 
+      468 xsar.xsa_logic.xrsh2.xi34.      tgb                1.00 
+      469 xsar.xsa_logic.xrsh2.xi41.      tgb                1.00 
+      470 xsar.xsa_logic.xrsh2.xsw1.      tgb                1.00 
+      471 xsar.xsa_logic.xrsh2.xi42.      nor2_bhv           1.00 
+      472 xsar.xsa_logic.xrsh2.xi43.      nor2_bhv           1.00 
+      473 xsar.xsa_logic.xrsh2.xi31.      nor2_bhv           1.00 
+      474 xsar.xsa_logic.xrsh2.xi37.      nor2_bhv           1.00 
+      475 xsar.xsa_logic.xrsh1.xi1.       inv_bhv            1.00 
+      476 xsar.xsa_logic.xrsh1.xi40.      tgb                1.00 
+      477 xsar.xsa_logic.xrsh1.xi34.      tgb                1.00 
+      478 xsar.xsa_logic.xrsh1.xi41.      tgb                1.00 
+      479 xsar.xsa_logic.xrsh1.xsw1.      tgb                1.00 
+      480 xsar.xsa_logic.xrsh1.xi42.      nor2_bhv           1.00 
+      481 xsar.xsa_logic.xrsh1.xi43.      nor2_bhv           1.00 
+      482 xsar.xsa_logic.xrsh1.xi31.      nor2_bhv           1.00 
+      483 xsar.xsa_logic.xrsh1.xi37.      nor2_bhv           1.00 
+      484 xsar.xsa_logic.xrsh4.xi1.       inv_bhv            1.00 
+      485 xsar.xsa_logic.xrsh4.xi40.      tgb                1.00 
+      486 xsar.xsa_logic.xrsh4.xi34.      tgb                1.00 
+      487 xsar.xsa_logic.xrsh4.xi41.      tgb                1.00 
+      488 xsar.xsa_logic.xrsh4.xsw1.      tgb                1.00 
+      489 xsar.xsa_logic.xrsh4.xi42.      nor2_bhv           1.00 
+      490 xsar.xsa_logic.xrsh4.xi43.      nor2_bhv           1.00 
+      491 xsar.xsa_logic.xrsh4.xi31.      nor2_bhv           1.00 
+      492 xsar.xsa_logic.xrsh4.xi37.      nor2_bhv           1.00 
+      493 xsar.xsa_logic.xdata7.xi1.      inv_bhv            1.00 
+      494 xsar.xsa_logic.xdata7.xi40.     tgb                1.00 
+      495 xsar.xsa_logic.xdata7.xi34.     tgb                1.00 
+      496 xsar.xsa_logic.xdata7.xi41.     tgb                1.00 
+      497 xsar.xsa_logic.xdata7.xsw1.     tgb                1.00 
+      498 xsar.xsa_logic.xdata7.xi42.     nor2_bhv           1.00 
+      499 xsar.xsa_logic.xdata7.xi43.     nor2_bhv           1.00 
+      500 xsar.xsa_logic.xdata7.xi31.     nor2_bhv           1.00 
+      501 xsar.xsa_logic.xdata7.xi37.     nor2_bhv           1.00 
+      502 xsar.xsa_logic.xrsh5.xi1.       inv_bhv            1.00 
+      503 xsar.xsa_logic.xrsh5.xi40.      tgb                1.00 
+      504 xsar.xsa_logic.xrsh5.xi34.      tgb                1.00 
+      505 xsar.xsa_logic.xrsh5.xi41.      tgb                1.00 
+      506 xsar.xsa_logic.xrsh5.xsw1.      tgb                1.00 
+      507 xsar.xsa_logic.xrsh5.xi42.      nor2_bhv           1.00 
+      508 xsar.xsa_logic.xrsh5.xi43.      nor2_bhv           1.00 
+      509 xsar.xsa_logic.xrsh5.xi31.      nor2_bhv           1.00 
+      510 xsar.xsa_logic.xrsh5.xi37.      nor2_bhv           1.00 
+      511 xsar.xsa_logic.xdata6.xi1.      inv_bhv            1.00 
+      512 xsar.xsa_logic.xdata6.xi40.     tgb                1.00 
+      513 xsar.xsa_logic.xdata6.xi34.     tgb                1.00 
+      514 xsar.xsa_logic.xdata6.xi41.     tgb                1.00 
+      515 xsar.xsa_logic.xdata6.xsw1.     tgb                1.00 
+      516 xsar.xsa_logic.xdata6.xi42.     nor2_bhv           1.00 
+      517 xsar.xsa_logic.xdata6.xi43.     nor2_bhv           1.00 
+      518 xsar.xsa_logic.xdata6.xi31.     nor2_bhv           1.00 
+      519 xsar.xsa_logic.xdata6.xi37.     nor2_bhv           1.00 
+      520 xsar.xsa_logic.xdata4.xi1.      inv_bhv            1.00 
+      521 xsar.xsa_logic.xdata4.xi40.     tgb                1.00 
+      522 xsar.xsa_logic.xdata4.xi34.     tgb                1.00 
+      523 xsar.xsa_logic.xdata4.xi41.     tgb                1.00 
+      524 xsar.xsa_logic.xdata4.xsw1.     tgb                1.00 
+      525 xsar.xsa_logic.xdata4.xi42.     nor2_bhv           1.00 
+      526 xsar.xsa_logic.xdata4.xi43.     nor2_bhv           1.00 
+      527 xsar.xsa_logic.xdata4.xi31.     nor2_bhv           1.00 
+      528 xsar.xsa_logic.xdata4.xi37.     nor2_bhv           1.00 
+      529 xsar.xsa_logic.xrsh6.xi1.       inv_bhv            1.00 
+      530 xsar.xsa_logic.xrsh6.xi40.      tgb                1.00 
+      531 xsar.xsa_logic.xrsh6.xi34.      tgb                1.00 
+      532 xsar.xsa_logic.xrsh6.xi41.      tgb                1.00 
+      533 xsar.xsa_logic.xrsh6.xsw1.      tgb                1.00 
+      534 xsar.xsa_logic.xrsh6.xi42.      nor2_bhv           1.00 
+      535 xsar.xsa_logic.xrsh6.xi43.      nor2_bhv           1.00 
+      536 xsar.xsa_logic.xrsh6.xi31.      nor2_bhv           1.00 
+      537 xsar.xsa_logic.xrsh6.xi37.      nor2_bhv           1.00 
+      538 xsar.xsa_logic.xrsh7.xi1.       inv_bhv            1.00 
+      539 xsar.xsa_logic.xrsh7.xi40.      tgb                1.00 
+      540 xsar.xsa_logic.xrsh7.xi34.      tgb                1.00 
+      541 xsar.xsa_logic.xrsh7.xi41.      tgb                1.00 
+      542 xsar.xsa_logic.xrsh7.xsw1.      tgb                1.00 
+      543 xsar.xsa_logic.xrsh7.xi42.      nor2_bhv           1.00 
+      544 xsar.xsa_logic.xrsh7.xi43.      nor2_bhv           1.00 
+      545 xsar.xsa_logic.xrsh7.xi31.      nor2_bhv           1.00 
+      546 xsar.xsa_logic.xrsh7.xi37.      nor2_bhv           1.00 
+      547 xsar.xdffout_7.xi1.xp1.         pmos_b             1.00 
+      548 xsar.xdffout_7.xi1.xn1.         nmos_b             1.00 
+      549 xsar.xdffout_7.xi42.xn1.        nmos_b             1.00 
+      550 xsar.xdffout_7.xi42.xi9.        nmos_b             1.00 
+      551 xsar.xdffout_7.xi42.xp1.        pmos_b             1.00 
+      552 xsar.xdffout_7.xi42.xi10.       pmos_b             1.00 
+      553 xsar.xdffout_7.xi43.xn1.        nmos_b             1.00 
+      554 xsar.xdffout_7.xi43.xi9.        nmos_b             1.00 
+      555 xsar.xdffout_7.xi43.xp1.        pmos_b             1.00 
+      556 xsar.xdffout_7.xi43.xi10.       pmos_b             1.00 
+      557 xsar.xdffout_7.xi31.xn1.        nmos_b             1.00 
+      558 xsar.xdffout_7.xi31.xi9.        nmos_b             1.00 
+      559 xsar.xdffout_7.xi31.xp1.        pmos_b             1.00 
+      560 xsar.xdffout_7.xi31.xi10.       pmos_b             1.00 
+      561 xsar.xdffout_7.xi37.xn1.        nmos_b             1.00 
+      562 xsar.xdffout_7.xi37.xi9.        nmos_b             1.00 
+      563 xsar.xdffout_7.xi37.xp1.        pmos_b             1.00 
+      564 xsar.xdffout_7.xi37.xi10.       pmos_b             1.00 
+      565 xsar.xdffout_6.xi1.xp1.         pmos_b             1.00 
+      566 xsar.xdffout_6.xi1.xn1.         nmos_b             1.00 
+      567 xsar.xdffout_6.xi42.xn1.        nmos_b             1.00 
+      568 xsar.xdffout_6.xi42.xi9.        nmos_b             1.00 
+      569 xsar.xdffout_6.xi42.xp1.        pmos_b             1.00 
+      570 xsar.xdffout_6.xi42.xi10.       pmos_b             1.00 
+      571 xsar.xdffout_6.xi43.xn1.        nmos_b             1.00 
+      572 xsar.xdffout_6.xi43.xi9.        nmos_b             1.00 
+      573 xsar.xdffout_6.xi43.xp1.        pmos_b             1.00 
+      574 xsar.xdffout_6.xi43.xi10.       pmos_b             1.00 
+      575 xsar.xdffout_6.xi31.xn1.        nmos_b             1.00 
+      576 xsar.xdffout_6.xi31.xi9.        nmos_b             1.00 
+      577 xsar.xdffout_6.xi31.xp1.        pmos_b             1.00 
+      578 xsar.xdffout_6.xi31.xi10.       pmos_b             1.00 
+      579 xsar.xdffout_6.xi37.xn1.        nmos_b             1.00 
+      580 xsar.xdffout_6.xi37.xi9.        nmos_b             1.00 
+      581 xsar.xdffout_6.xi37.xp1.        pmos_b             1.00 
+      582 xsar.xdffout_6.xi37.xi10.       pmos_b             1.00 
+      583 xsar.xdffout_5.xi1.xp1.         pmos_b             1.00 
+      584 xsar.xdffout_5.xi1.xn1.         nmos_b             1.00 
+      585 xsar.xdffout_5.xi42.xn1.        nmos_b             1.00 
+      586 xsar.xdffout_5.xi42.xi9.        nmos_b             1.00 
+      587 xsar.xdffout_5.xi42.xp1.        pmos_b             1.00 
+      588 xsar.xdffout_5.xi42.xi10.       pmos_b             1.00 
+      589 xsar.xdffout_5.xi43.xn1.        nmos_b             1.00 
+      590 xsar.xdffout_5.xi43.xi9.        nmos_b             1.00 
+      591 xsar.xdffout_5.xi43.xp1.        pmos_b             1.00 
+      592 xsar.xdffout_5.xi43.xi10.       pmos_b             1.00 
+      593 xsar.xdffout_5.xi31.xn1.        nmos_b             1.00 
+      594 xsar.xdffout_5.xi31.xi9.        nmos_b             1.00 
+      595 xsar.xdffout_5.xi31.xp1.        pmos_b             1.00 
+      596 xsar.xdffout_5.xi31.xi10.       pmos_b             1.00 
+      597 xsar.xdffout_5.xi37.xn1.        nmos_b             1.00 
+      598 xsar.xdffout_5.xi37.xi9.        nmos_b             1.00 
+      599 xsar.xdffout_5.xi37.xp1.        pmos_b             1.00 
+      600 xsar.xdffout_5.xi37.xi10.       pmos_b             1.00 
+      601 xsar.xdffout_4.xi1.xp1.         pmos_b             1.00 
+      602 xsar.xdffout_4.xi1.xn1.         nmos_b             1.00 
+      603 xsar.xdffout_4.xi42.xn1.        nmos_b             1.00 
+      604 xsar.xdffout_4.xi42.xi9.        nmos_b             1.00 
+      605 xsar.xdffout_4.xi42.xp1.        pmos_b             1.00 
+      606 xsar.xdffout_4.xi42.xi10.       pmos_b             1.00 
+      607 xsar.xdffout_4.xi43.xn1.        nmos_b             1.00 
+      608 xsar.xdffout_4.xi43.xi9.        nmos_b             1.00 
+      609 xsar.xdffout_4.xi43.xp1.        pmos_b             1.00 
+      610 xsar.xdffout_4.xi43.xi10.       pmos_b             1.00 
+      611 xsar.xdffout_4.xi31.xn1.        nmos_b             1.00 
+      612 xsar.xdffout_4.xi31.xi9.        nmos_b             1.00 
+      613 xsar.xdffout_4.xi31.xp1.        pmos_b             1.00 
+      614 xsar.xdffout_4.xi31.xi10.       pmos_b             1.00 
+      615 xsar.xdffout_4.xi37.xn1.        nmos_b             1.00 
+      616 xsar.xdffout_4.xi37.xi9.        nmos_b             1.00 
+      617 xsar.xdffout_4.xi37.xp1.        pmos_b             1.00 
+      618 xsar.xdffout_4.xi37.xi10.       pmos_b             1.00 
+      619 xsar.xdffout_3.xi1.xp1.         pmos_b             1.00 
+      620 xsar.xdffout_3.xi1.xn1.         nmos_b             1.00 
+      621 xsar.xdffout_3.xi42.xn1.        nmos_b             1.00 
+      622 xsar.xdffout_3.xi42.xi9.        nmos_b             1.00 
+      623 xsar.xdffout_3.xi42.xp1.        pmos_b             1.00 
+      624 xsar.xdffout_3.xi42.xi10.       pmos_b             1.00 
+      625 xsar.xdffout_3.xi43.xn1.        nmos_b             1.00 
+      626 xsar.xdffout_3.xi43.xi9.        nmos_b             1.00 
+      627 xsar.xdffout_3.xi43.xp1.        pmos_b             1.00 
+      628 xsar.xdffout_3.xi43.xi10.       pmos_b             1.00 
+      629 xsar.xdffout_3.xi31.xn1.        nmos_b             1.00 
+      630 xsar.xdffout_3.xi31.xi9.        nmos_b             1.00 
+      631 xsar.xdffout_3.xi31.xp1.        pmos_b             1.00 
+      632 xsar.xdffout_3.xi31.xi10.       pmos_b             1.00 
+      633 xsar.xdffout_3.xi37.xn1.        nmos_b             1.00 
+      634 xsar.xdffout_3.xi37.xi9.        nmos_b             1.00 
+      635 xsar.xdffout_3.xi37.xp1.        pmos_b             1.00 
+      636 xsar.xdffout_3.xi37.xi10.       pmos_b             1.00 
+      637 xsar.xdffout_2.xi1.xp1.         pmos_b             1.00 
+      638 xsar.xdffout_2.xi1.xn1.         nmos_b             1.00 
+      639 xsar.xdffout_2.xi42.xn1.        nmos_b             1.00 
+      640 xsar.xdffout_2.xi42.xi9.        nmos_b             1.00 
+      641 xsar.xdffout_2.xi42.xp1.        pmos_b             1.00 
+      642 xsar.xdffout_2.xi42.xi10.       pmos_b             1.00 
+      643 xsar.xdffout_2.xi43.xn1.        nmos_b             1.00 
+      644 xsar.xdffout_2.xi43.xi9.        nmos_b             1.00 
+      645 xsar.xdffout_2.xi43.xp1.        pmos_b             1.00 
+      646 xsar.xdffout_2.xi43.xi10.       pmos_b             1.00 
+      647 xsar.xdffout_2.xi31.xn1.        nmos_b             1.00 
+      648 xsar.xdffout_2.xi31.xi9.        nmos_b             1.00 
+      649 xsar.xdffout_2.xi31.xp1.        pmos_b             1.00 
+      650 xsar.xdffout_2.xi31.xi10.       pmos_b             1.00 
+      651 xsar.xdffout_2.xi37.xn1.        nmos_b             1.00 
+      652 xsar.xdffout_2.xi37.xi9.        nmos_b             1.00 
+      653 xsar.xdffout_2.xi37.xp1.        pmos_b             1.00 
+      654 xsar.xdffout_2.xi37.xi10.       pmos_b             1.00 
+      655 xsar.xdffout_1.xi1.xp1.         pmos_b             1.00 
+      656 xsar.xdffout_1.xi1.xn1.         nmos_b             1.00 
+      657 xsar.xdffout_1.xi42.xn1.        nmos_b             1.00 
+      658 xsar.xdffout_1.xi42.xi9.        nmos_b             1.00 
+      659 xsar.xdffout_1.xi42.xp1.        pmos_b             1.00 
+      660 xsar.xdffout_1.xi42.xi10.       pmos_b             1.00 
+      661 xsar.xdffout_1.xi43.xn1.        nmos_b             1.00 
+      662 xsar.xdffout_1.xi43.xi9.        nmos_b             1.00 
+      663 xsar.xdffout_1.xi43.xp1.        pmos_b             1.00 
+      664 xsar.xdffout_1.xi43.xi10.       pmos_b             1.00 
+      665 xsar.xdffout_1.xi31.xn1.        nmos_b             1.00 
+      666 xsar.xdffout_1.xi31.xi9.        nmos_b             1.00 
+      667 xsar.xdffout_1.xi31.xp1.        pmos_b             1.00 
+      668 xsar.xdffout_1.xi31.xi10.       pmos_b             1.00 
+      669 xsar.xdffout_1.xi37.xn1.        nmos_b             1.00 
+      670 xsar.xdffout_1.xi37.xi9.        nmos_b             1.00 
+      671 xsar.xdffout_1.xi37.xp1.        pmos_b             1.00 
+      672 xsar.xdffout_1.xi37.xi10.       pmos_b             1.00 
+      673 xsar.xdffout_0.xi1.xp1.         pmos_b             1.00 
+      674 xsar.xdffout_0.xi1.xn1.         nmos_b             1.00 
+      675 xsar.xdffout_0.xi42.xn1.        nmos_b             1.00 
+      676 xsar.xdffout_0.xi42.xi9.        nmos_b             1.00 
+      677 xsar.xdffout_0.xi42.xp1.        pmos_b             1.00 
+      678 xsar.xdffout_0.xi42.xi10.       pmos_b             1.00 
+      679 xsar.xdffout_0.xi43.xn1.        nmos_b             1.00 
+      680 xsar.xdffout_0.xi43.xi9.        nmos_b             1.00 
+      681 xsar.xdffout_0.xi43.xp1.        pmos_b             1.00 
+      682 xsar.xdffout_0.xi43.xi10.       pmos_b             1.00 
+      683 xsar.xdffout_0.xi31.xn1.        nmos_b             1.00 
+      684 xsar.xdffout_0.xi31.xi9.        nmos_b             1.00 
+      685 xsar.xdffout_0.xi31.xp1.        pmos_b             1.00 
+      686 xsar.xdffout_0.xi31.xi10.       pmos_b             1.00 
+      687 xsar.xdffout_0.xi37.xn1.        nmos_b             1.00 
+      688 xsar.xdffout_0.xi37.xi9.        nmos_b             1.00 
+      689 xsar.xdffout_0.xi37.xp1.        pmos_b             1.00 
+      690 xsar.xdffout_0.xi37.xi10.       pmos_b             1.00 
+      691 xds.xint1.xdac_0.xi6.           tgb                1.00 
+      692 xds.xint1.xdac_0.xi7.           tgb                1.00 
+      693 xds.xint1.xdac_0.xi40.          tgb                1.00 
+      694 xds.xint1.xdac_0.xi41.          tgb                1.00 
+      695 xds.xint1.xdac_1.xi6.           tgb                1.00 
+      696 xds.xint1.xdac_1.xi7.           tgb                1.00 
+      697 xds.xint1.xdac_1.xi40.          tgb                1.00 
+      698 xds.xint1.xdac_1.xi41.          tgb                1.00 
+      699 xds.xint1.xdac_2.xi6.           tgb                1.00 
+      700 xds.xint1.xdac_2.xi7.           tgb                1.00 
+      701 xds.xint1.xdac_2.xi40.          tgb                1.00 
+      702 xds.xint1.xdac_2.xi41.          tgb                1.00 
+      703 xds.xint1.xdac_3.xi6.           tgb                1.00 
+      704 xds.xint1.xdac_3.xi7.           tgb                1.00 
+      705 xds.xint1.xdac_3.xi40.          tgb                1.00 
+      706 xds.xint1.xdac_3.xi41.          tgb                1.00 
+      707 xds.xquantizer_1b_0.xcmp3.xdff. dff                1.00 
+      708 xds.xquantizer_1b_0.xcmp3.xpreamp.
+                                            amp_cmp            1.00 
+      709 xds.xquantizer_1b_0.xi1.xp1.    pmos_b             1.00 
+      710 xds.xquantizer_1b_0.xi1.xn1.    nmos_b             1.00 
+      711 xds.xquantizer_1b_1.xcmp3.xdff. dff                1.00 
+      712 xds.xquantizer_1b_1.xcmp3.xpreamp.
+                                            amp_cmp            1.00 
+      713 xds.xquantizer_1b_1.xi1.xp1.    pmos_b             1.00 
+      714 xds.xquantizer_1b_1.xi1.xn1.    nmos_b             1.00 
+      715 xds.xquantizer_1b_2.xcmp3.xdff. dff                1.00 
+      716 xds.xquantizer_1b_2.xcmp3.xpreamp.
+                                            amp_cmp            1.00 
+      717 xds.xquantizer_1b_2.xi1.xp1.    pmos_b             1.00 
+      718 xds.xquantizer_1b_2.xi1.xn1.    nmos_b             1.00 
+      719 xds.xquantizer_1b_3.xcmp3.xdff. dff                1.00 
+      720 xds.xquantizer_1b_3.xcmp3.xpreamp.
+                                            amp_cmp            1.00 
+      721 xds.xquantizer_1b_3.xi1.xp1.    pmos_b             1.00 
+      722 xds.xquantizer_1b_3.xi1.xn1.    nmos_b             1.00 
+      723 xds.xclk_fb_0.xi64.xp1.         pmos_b             1.00 
+      724 xds.xclk_fb_0.xi64.xn1.         nmos_b             1.00 
+      725 xds.xclk_fb_0.xi20.xp1.         pmos_b             1.00 
+      726 xds.xclk_fb_0.xi20.xn1.         nmos_b             1.00 
+      727 xds.xclk_fb_0.xi60.xp1.         pmos_b             1.00 
+      728 xds.xclk_fb_0.xi60.xn1.         nmos_b             1.00 
+      729 xds.xclk_fb_0.xi59.xp1.         pmos_b             1.00 
+      730 xds.xclk_fb_0.xi59.xn1.         nmos_b             1.00 
+      731 xds.xclk_fb_0.xi63.xp1.         pmos_b             1.00 
+      732 xds.xclk_fb_0.xi63.xn1.         nmos_b             1.00 
+      733 xds.xclk_fb_0.xi62.xn1.         nmos_b             1.00 
+      734 xds.xclk_fb_0.xi62.xi9.         nmos_b             1.00 
+      735 xds.xclk_fb_0.xi62.xp1.         pmos_b             1.00 
+      736 xds.xclk_fb_0.xi62.xi10.        pmos_b             1.00 
+      737 xds.xclk_fb_0.xi19.xn1.         nmos_b             1.00 
+      738 xds.xclk_fb_0.xi19.xi9.         nmos_b             1.00 
+      739 xds.xclk_fb_0.xi19.xp1.         pmos_b             1.00 
+      740 xds.xclk_fb_0.xi19.xi10.        pmos_b             1.00 
+      741 xds.xclk_fb_1.xi64.xp1.         pmos_b             1.00 
+      742 xds.xclk_fb_1.xi64.xn1.         nmos_b             1.00 
+      743 xds.xclk_fb_1.xi20.xp1.         pmos_b             1.00 
+      744 xds.xclk_fb_1.xi20.xn1.         nmos_b             1.00 
+      745 xds.xclk_fb_1.xi60.xp1.         pmos_b             1.00 
+      746 xds.xclk_fb_1.xi60.xn1.         nmos_b             1.00 
+      747 xds.xclk_fb_1.xi59.xp1.         pmos_b             1.00 
+      748 xds.xclk_fb_1.xi59.xn1.         nmos_b             1.00 
+      749 xds.xclk_fb_1.xi63.xp1.         pmos_b             1.00 
+      750 xds.xclk_fb_1.xi63.xn1.         nmos_b             1.00 
+      751 xds.xclk_fb_1.xi62.xn1.         nmos_b             1.00 
+      752 xds.xclk_fb_1.xi62.xi9.         nmos_b             1.00 
+      753 xds.xclk_fb_1.xi62.xp1.         pmos_b             1.00 
+      754 xds.xclk_fb_1.xi62.xi10.        pmos_b             1.00 
+      755 xds.xclk_fb_1.xi19.xn1.         nmos_b             1.00 
+      756 xds.xclk_fb_1.xi19.xi9.         nmos_b             1.00 
+      757 xds.xclk_fb_1.xi19.xp1.         pmos_b             1.00 
+      758 xds.xclk_fb_1.xi19.xi10.        pmos_b             1.00 
+      759 xds.xclk_fb_2.xi64.xp1.         pmos_b             1.00 
+      760 xds.xclk_fb_2.xi64.xn1.         nmos_b             1.00 
+      761 xds.xclk_fb_2.xi20.xp1.         pmos_b             1.00 
+      762 xds.xclk_fb_2.xi20.xn1.         nmos_b             1.00 
+      763 xds.xclk_fb_2.xi60.xp1.         pmos_b             1.00 
+      764 xds.xclk_fb_2.xi60.xn1.         nmos_b             1.00 
+      765 xds.xclk_fb_2.xi59.xp1.         pmos_b             1.00 
+      766 xds.xclk_fb_2.xi59.xn1.         nmos_b             1.00 
+      767 xds.xclk_fb_2.xi63.xp1.         pmos_b             1.00 
+      768 xds.xclk_fb_2.xi63.xn1.         nmos_b             1.00 
+      769 xds.xclk_fb_2.xi62.xn1.         nmos_b             1.00 
+      770 xds.xclk_fb_2.xi62.xi9.         nmos_b             1.00 
+      771 xds.xclk_fb_2.xi62.xp1.         pmos_b             1.00 
+      772 xds.xclk_fb_2.xi62.xi10.        pmos_b             1.00 
+      773 xds.xclk_fb_2.xi19.xn1.         nmos_b             1.00 
+      774 xds.xclk_fb_2.xi19.xi9.         nmos_b             1.00 
+      775 xds.xclk_fb_2.xi19.xp1.         pmos_b             1.00 
+      776 xds.xclk_fb_2.xi19.xi10.        pmos_b             1.00 
+      777 xds.xclk_fb_3.xi64.xp1.         pmos_b             1.00 
+      778 xds.xclk_fb_3.xi64.xn1.         nmos_b             1.00 
+      779 xds.xclk_fb_3.xi20.xp1.         pmos_b             1.00 
+      780 xds.xclk_fb_3.xi20.xn1.         nmos_b             1.00 
+      781 xds.xclk_fb_3.xi60.xp1.         pmos_b             1.00 
+      782 xds.xclk_fb_3.xi60.xn1.         nmos_b             1.00 
+      783 xds.xclk_fb_3.xi59.xp1.         pmos_b             1.00 
+      784 xds.xclk_fb_3.xi59.xn1.         nmos_b             1.00 
+      785 xds.xclk_fb_3.xi63.xp1.         pmos_b             1.00 
+      786 xds.xclk_fb_3.xi63.xn1.         nmos_b             1.00 
+      787 xds.xclk_fb_3.xi62.xn1.         nmos_b             1.00 
+      788 xds.xclk_fb_3.xi62.xi9.         nmos_b             1.00 
+      789 xds.xclk_fb_3.xi62.xp1.         pmos_b             1.00 
+      790 xds.xclk_fb_3.xi62.xi10.        pmos_b             1.00 
+      791 xds.xclk_fb_3.xi19.xn1.         nmos_b             1.00 
+      792 xds.xclk_fb_3.xi19.xi9.         nmos_b             1.00 
+      793 xds.xclk_fb_3.xi19.xp1.         pmos_b             1.00 
+      794 xds.xclk_fb_3.xi19.xi10.        pmos_b             1.00 
+      795 xsar.xc_array_p.xsa_dac.xswdac_0.xi7.
+                                            inv_bhv            1.00 
+      796 xsar.xc_array_p.xsa_dac.xswdac_0.xi3.
+                                            inv_bhv            1.00 
+      797 xsar.xc_array_p.xsa_dac.xswdac_0.xi20.
+                                            inv_bhv            1.00 
+      798 xsar.xc_array_p.xsa_dac.xswdac_0.xi1.
+                                            inv_bhv            1.00 
+      799 xsar.xc_array_p.xsa_dac.xswdac_0.xi2.
+                                            nand2_bhv          1.00 
+      800 xsar.xc_array_p.xsa_dac.xswdac_0.xi19.
+                                            nand2_bhv          1.00 
+      801 xsar.xc_array_p.xsa_dac.xswdac_0.xswp.
+                                            tgb                1.00 
+      802 xsar.xc_array_p.xsa_dac.xswdac_0.xswn.
+                                            tgb                1.00 
+      803 xsar.xc_array_p.xsa_dac.xswdac_0.xswin.
+                                            tgb                1.00 
+      804 xsar.xc_array_p.xsa_dac.xswdac_1.xi7.
+                                            inv_bhv            1.00 
+      805 xsar.xc_array_p.xsa_dac.xswdac_1.xi3.
+                                            inv_bhv            1.00 
+      806 xsar.xc_array_p.xsa_dac.xswdac_1.xi20.
+                                            inv_bhv            1.00 
+      807 xsar.xc_array_p.xsa_dac.xswdac_1.xi1.
+                                            inv_bhv            1.00 
+      808 xsar.xc_array_p.xsa_dac.xswdac_1.xi2.
+                                            nand2_bhv          1.00 
+      809 xsar.xc_array_p.xsa_dac.xswdac_1.xi19.
+                                            nand2_bhv          1.00 
+      810 xsar.xc_array_p.xsa_dac.xswdac_1.xswp.
+                                            tgb                1.00 
+      811 xsar.xc_array_p.xsa_dac.xswdac_1.xswn.
+                                            tgb                1.00 
+      812 xsar.xc_array_p.xsa_dac.xswdac_1.xswin.
+                                            tgb                1.00 
+      813 xsar.xc_array_p.xsa_dac.xswdac_2.xi7.
+                                            inv_bhv            1.00 
+      814 xsar.xc_array_p.xsa_dac.xswdac_2.xi3.
+                                            inv_bhv            1.00 
+      815 xsar.xc_array_p.xsa_dac.xswdac_2.xi20.
+                                            inv_bhv            1.00 
+      816 xsar.xc_array_p.xsa_dac.xswdac_2.xi1.
+                                            inv_bhv            1.00 
+      817 xsar.xc_array_p.xsa_dac.xswdac_2.xi2.
+                                            nand2_bhv          1.00 
+      818 xsar.xc_array_p.xsa_dac.xswdac_2.xi19.
+                                            nand2_bhv          1.00 
+      819 xsar.xc_array_p.xsa_dac.xswdac_2.xswp.
+                                            tgb                1.00 
+      820 xsar.xc_array_p.xsa_dac.xswdac_2.xswn.
+                                            tgb                1.00 
+      821 xsar.xc_array_p.xsa_dac.xswdac_2.xswin.
+                                            tgb                1.00 
+      822 xsar.xc_array_p.xsa_dac.xswdac_3.xi7.
+                                            inv_bhv            1.00 
+      823 xsar.xc_array_p.xsa_dac.xswdac_3.xi3.
+                                            inv_bhv            1.00 
+      824 xsar.xc_array_p.xsa_dac.xswdac_3.xi20.
+                                            inv_bhv            1.00 
+      825 xsar.xc_array_p.xsa_dac.xswdac_3.xi1.
+                                            inv_bhv            1.00 
+      826 xsar.xc_array_p.xsa_dac.xswdac_3.xi2.
+                                            nand2_bhv          1.00 
+      827 xsar.xc_array_p.xsa_dac.xswdac_3.xi19.
+                                            nand2_bhv          1.00 
+      828 xsar.xc_array_p.xsa_dac.xswdac_3.xswp.
+                                            tgb                1.00 
+      829 xsar.xc_array_p.xsa_dac.xswdac_3.xswn.
+                                            tgb                1.00 
+      830 xsar.xc_array_p.xsa_dac.xswdac_3.xswin.
+                                            tgb                1.00 
+      831 xsar.xc_array_p.xsa_dac.xswdac_4.xi7.
+                                            inv_bhv            1.00 
+      832 xsar.xc_array_p.xsa_dac.xswdac_4.xi3.
+                                            inv_bhv            1.00 
+      833 xsar.xc_array_p.xsa_dac.xswdac_4.xi20.
+                                            inv_bhv            1.00 
+      834 xsar.xc_array_p.xsa_dac.xswdac_4.xi1.
+                                            inv_bhv            1.00 
+      835 xsar.xc_array_p.xsa_dac.xswdac_4.xi2.
+                                            nand2_bhv          1.00 
+      836 xsar.xc_array_p.xsa_dac.xswdac_4.xi19.
+                                            nand2_bhv          1.00 
+      837 xsar.xc_array_p.xsa_dac.xswdac_4.xswp.
+                                            tgb                1.00 
+      838 xsar.xc_array_p.xsa_dac.xswdac_4.xswn.
+                                            tgb                1.00 
+      839 xsar.xc_array_p.xsa_dac.xswdac_4.xswin.
+                                            tgb                1.00 
+      840 xsar.xc_array_p.xsa_dac.xswdac_5.xi7.
+                                            inv_bhv            1.00 
+      841 xsar.xc_array_p.xsa_dac.xswdac_5.xi3.
+                                            inv_bhv            1.00 
+      842 xsar.xc_array_p.xsa_dac.xswdac_5.xi20.
+                                            inv_bhv            1.00 
+      843 xsar.xc_array_p.xsa_dac.xswdac_5.xi1.
+                                            inv_bhv            1.00 
+      844 xsar.xc_array_p.xsa_dac.xswdac_5.xi2.
+                                            nand2_bhv          1.00 
+      845 xsar.xc_array_p.xsa_dac.xswdac_5.xi19.
+                                            nand2_bhv          1.00 
+      846 xsar.xc_array_p.xsa_dac.xswdac_5.xswp.
+                                            tgb                1.00 
+      847 xsar.xc_array_p.xsa_dac.xswdac_5.xswn.
+                                            tgb                1.00 
+      848 xsar.xc_array_p.xsa_dac.xswdac_5.xswin.
+                                            tgb                1.00 
+      849 xsar.xc_array_p.xsa_dac.xswdac_6.xi7.
+                                            inv_bhv            1.00 
+      850 xsar.xc_array_p.xsa_dac.xswdac_6.xi3.
+                                            inv_bhv            1.00 
+      851 xsar.xc_array_p.xsa_dac.xswdac_6.xi20.
+                                            inv_bhv            1.00 
+      852 xsar.xc_array_p.xsa_dac.xswdac_6.xi1.
+                                            inv_bhv            1.00 
+      853 xsar.xc_array_p.xsa_dac.xswdac_6.xi2.
+                                            nand2_bhv          1.00 
+      854 xsar.xc_array_p.xsa_dac.xswdac_6.xi19.
+                                            nand2_bhv          1.00 
+      855 xsar.xc_array_p.xsa_dac.xswdac_6.xswp.
+                                            tgb                1.00 
+      856 xsar.xc_array_p.xsa_dac.xswdac_6.xswn.
+                                            tgb                1.00 
+      857 xsar.xc_array_p.xsa_dac.xswdac_6.xswin.
+                                            tgb                1.00 
+      858 xsar.xc_array_p.xsa_dac.xswdac_7.xi7.
+                                            inv_bhv            1.00 
+      859 xsar.xc_array_p.xsa_dac.xswdac_7.xi3.
+                                            inv_bhv            1.00 
+      860 xsar.xc_array_p.xsa_dac.xswdac_7.xi20.
+                                            inv_bhv            1.00 
+      861 xsar.xc_array_p.xsa_dac.xswdac_7.xi1.
+                                            inv_bhv            1.00 
+      862 xsar.xc_array_p.xsa_dac.xswdac_7.xi2.
+                                            nand2_bhv          1.00 
+      863 xsar.xc_array_p.xsa_dac.xswdac_7.xi19.
+                                            nand2_bhv          1.00 
+      864 xsar.xc_array_p.xsa_dac.xswdac_7.xswp.
+                                            tgb                1.00 
+      865 xsar.xc_array_p.xsa_dac.xswdac_7.xswn.
+                                            tgb                1.00 
+      866 xsar.xc_array_p.xsa_dac.xswdac_7.xswin.
+                                            tgb                1.00 
+      867 xsar.xc_array_p.xsa_dac.xi1.xp1.
+                                            pmos_b             1.00 
+      868 xsar.xc_array_p.xsa_dac.xi1.xn1.
+                                            nmos_b             1.00 
+      869 xsar.xc_array_n.xsa_dac.xswdac_0.xi7.
+                                            inv_bhv            1.00 
+      870 xsar.xc_array_n.xsa_dac.xswdac_0.xi3.
+                                            inv_bhv            1.00 
+      871 xsar.xc_array_n.xsa_dac.xswdac_0.xi20.
+                                            inv_bhv            1.00 
+      872 xsar.xc_array_n.xsa_dac.xswdac_0.xi1.
+                                            inv_bhv            1.00 
+      873 xsar.xc_array_n.xsa_dac.xswdac_0.xi2.
+                                            nand2_bhv          1.00 
+      874 xsar.xc_array_n.xsa_dac.xswdac_0.xi19.
+                                            nand2_bhv          1.00 
+      875 xsar.xc_array_n.xsa_dac.xswdac_0.xswp.
+                                            tgb                1.00 
+      876 xsar.xc_array_n.xsa_dac.xswdac_0.xswn.
+                                            tgb                1.00 
+      877 xsar.xc_array_n.xsa_dac.xswdac_0.xswin.
+                                            tgb                1.00 
+      878 xsar.xc_array_n.xsa_dac.xswdac_1.xi7.
+                                            inv_bhv            1.00 
+      879 xsar.xc_array_n.xsa_dac.xswdac_1.xi3.
+                                            inv_bhv            1.00 
+      880 xsar.xc_array_n.xsa_dac.xswdac_1.xi20.
+                                            inv_bhv            1.00 
+      881 xsar.xc_array_n.xsa_dac.xswdac_1.xi1.
+                                            inv_bhv            1.00 
+      882 xsar.xc_array_n.xsa_dac.xswdac_1.xi2.
+                                            nand2_bhv          1.00 
+      883 xsar.xc_array_n.xsa_dac.xswdac_1.xi19.
+                                            nand2_bhv          1.00 
+      884 xsar.xc_array_n.xsa_dac.xswdac_1.xswp.
+                                            tgb                1.00 
+      885 xsar.xc_array_n.xsa_dac.xswdac_1.xswn.
+                                            tgb                1.00 
+      886 xsar.xc_array_n.xsa_dac.xswdac_1.xswin.
+                                            tgb                1.00 
+      887 xsar.xc_array_n.xsa_dac.xswdac_2.xi7.
+                                            inv_bhv            1.00 
+      888 xsar.xc_array_n.xsa_dac.xswdac_2.xi3.
+                                            inv_bhv            1.00 
+      889 xsar.xc_array_n.xsa_dac.xswdac_2.xi20.
+                                            inv_bhv            1.00 
+      890 xsar.xc_array_n.xsa_dac.xswdac_2.xi1.
+                                            inv_bhv            1.00 
+      891 xsar.xc_array_n.xsa_dac.xswdac_2.xi2.
+                                            nand2_bhv          1.00 
+      892 xsar.xc_array_n.xsa_dac.xswdac_2.xi19.
+                                            nand2_bhv          1.00 
+      893 xsar.xc_array_n.xsa_dac.xswdac_2.xswp.
+                                            tgb                1.00 
+      894 xsar.xc_array_n.xsa_dac.xswdac_2.xswn.
+                                            tgb                1.00 
+      895 xsar.xc_array_n.xsa_dac.xswdac_2.xswin.
+                                            tgb                1.00 
+      896 xsar.xc_array_n.xsa_dac.xswdac_3.xi7.
+                                            inv_bhv            1.00 
+      897 xsar.xc_array_n.xsa_dac.xswdac_3.xi3.
+                                            inv_bhv            1.00 
+      898 xsar.xc_array_n.xsa_dac.xswdac_3.xi20.
+                                            inv_bhv            1.00 
+      899 xsar.xc_array_n.xsa_dac.xswdac_3.xi1.
+                                            inv_bhv            1.00 
+      900 xsar.xc_array_n.xsa_dac.xswdac_3.xi2.
+                                            nand2_bhv          1.00 
+      901 xsar.xc_array_n.xsa_dac.xswdac_3.xi19.
+                                            nand2_bhv          1.00 
+      902 xsar.xc_array_n.xsa_dac.xswdac_3.xswp.
+                                            tgb                1.00 
+      903 xsar.xc_array_n.xsa_dac.xswdac_3.xswn.
+                                            tgb                1.00 
+      904 xsar.xc_array_n.xsa_dac.xswdac_3.xswin.
+                                            tgb                1.00 
+      905 xsar.xc_array_n.xsa_dac.xswdac_4.xi7.
+                                            inv_bhv            1.00 
+      906 xsar.xc_array_n.xsa_dac.xswdac_4.xi3.
+                                            inv_bhv            1.00 
+      907 xsar.xc_array_n.xsa_dac.xswdac_4.xi20.
+                                            inv_bhv            1.00 
+      908 xsar.xc_array_n.xsa_dac.xswdac_4.xi1.
+                                            inv_bhv            1.00 
+      909 xsar.xc_array_n.xsa_dac.xswdac_4.xi2.
+                                            nand2_bhv          1.00 
+      910 xsar.xc_array_n.xsa_dac.xswdac_4.xi19.
+                                            nand2_bhv          1.00 
+      911 xsar.xc_array_n.xsa_dac.xswdac_4.xswp.
+                                            tgb                1.00 
+      912 xsar.xc_array_n.xsa_dac.xswdac_4.xswn.
+                                            tgb                1.00 
+      913 xsar.xc_array_n.xsa_dac.xswdac_4.xswin.
+                                            tgb                1.00 
+      914 xsar.xc_array_n.xsa_dac.xswdac_5.xi7.
+                                            inv_bhv            1.00 
+      915 xsar.xc_array_n.xsa_dac.xswdac_5.xi3.
+                                            inv_bhv            1.00 
+      916 xsar.xc_array_n.xsa_dac.xswdac_5.xi20.
+                                            inv_bhv            1.00 
+      917 xsar.xc_array_n.xsa_dac.xswdac_5.xi1.
+                                            inv_bhv            1.00 
+      918 xsar.xc_array_n.xsa_dac.xswdac_5.xi2.
+                                            nand2_bhv          1.00 
+      919 xsar.xc_array_n.xsa_dac.xswdac_5.xi19.
+                                            nand2_bhv          1.00 
+      920 xsar.xc_array_n.xsa_dac.xswdac_5.xswp.
+                                            tgb                1.00 
+      921 xsar.xc_array_n.xsa_dac.xswdac_5.xswn.
+                                            tgb                1.00 
+      922 xsar.xc_array_n.xsa_dac.xswdac_5.xswin.
+                                            tgb                1.00 
+      923 xsar.xc_array_n.xsa_dac.xswdac_6.xi7.
+                                            inv_bhv            1.00 
+      924 xsar.xc_array_n.xsa_dac.xswdac_6.xi3.
+                                            inv_bhv            1.00 
+      925 xsar.xc_array_n.xsa_dac.xswdac_6.xi20.
+                                            inv_bhv            1.00 
+      926 xsar.xc_array_n.xsa_dac.xswdac_6.xi1.
+                                            inv_bhv            1.00 
+      927 xsar.xc_array_n.xsa_dac.xswdac_6.xi2.
+                                            nand2_bhv          1.00 
+      928 xsar.xc_array_n.xsa_dac.xswdac_6.xi19.
+                                            nand2_bhv          1.00 
+      929 xsar.xc_array_n.xsa_dac.xswdac_6.xswp.
+                                            tgb                1.00 
+      930 xsar.xc_array_n.xsa_dac.xswdac_6.xswn.
+                                            tgb                1.00 
+      931 xsar.xc_array_n.xsa_dac.xswdac_6.xswin.
+                                            tgb                1.00 
+      932 xsar.xc_array_n.xsa_dac.xswdac_7.xi7.
+                                            inv_bhv            1.00 
+      933 xsar.xc_array_n.xsa_dac.xswdac_7.xi3.
+                                            inv_bhv            1.00 
+      934 xsar.xc_array_n.xsa_dac.xswdac_7.xi20.
+                                            inv_bhv            1.00 
+      935 xsar.xc_array_n.xsa_dac.xswdac_7.xi1.
+                                            inv_bhv            1.00 
+      936 xsar.xc_array_n.xsa_dac.xswdac_7.xi2.
+                                            nand2_bhv          1.00 
+      937 xsar.xc_array_n.xsa_dac.xswdac_7.xi19.
+                                            nand2_bhv          1.00 
+      938 xsar.xc_array_n.xsa_dac.xswdac_7.xswp.
+                                            tgb                1.00 
+      939 xsar.xc_array_n.xsa_dac.xswdac_7.xswn.
+                                            tgb                1.00 
+      940 xsar.xc_array_n.xsa_dac.xswdac_7.xswin.
+                                            tgb                1.00 
+      941 xsar.xc_array_n.xsa_dac.xi1.xp1.
+                                            pmos_b             1.00 
+      942 xsar.xc_array_n.xsa_dac.xi1.xn1.
+                                            nmos_b             1.00 
+      943 xsar.xsa_logic.xdata3.xi1.xp1.  pmos_b             1.00 
+      944 xsar.xsa_logic.xdata3.xi1.xn1.  nmos_b             1.00 
+      945 xsar.xsa_logic.xdata3.xi42.xn1. nmos_b             1.00 
+      946 xsar.xsa_logic.xdata3.xi42.xi9. nmos_b             1.00 
+      947 xsar.xsa_logic.xdata3.xi42.xp1. pmos_b             1.00 
+      948 xsar.xsa_logic.xdata3.xi42.xi10.
+                                            pmos_b             1.00 
+      949 xsar.xsa_logic.xdata3.xi43.xn1. nmos_b             1.00 
+      950 xsar.xsa_logic.xdata3.xi43.xi9. nmos_b             1.00 
+      951 xsar.xsa_logic.xdata3.xi43.xp1. pmos_b             1.00 
+      952 xsar.xsa_logic.xdata3.xi43.xi10.
+                                            pmos_b             1.00 
+      953 xsar.xsa_logic.xdata3.xi31.xn1. nmos_b             1.00 
+      954 xsar.xsa_logic.xdata3.xi31.xi9. nmos_b             1.00 
+      955 xsar.xsa_logic.xdata3.xi31.xp1. pmos_b             1.00 
+      956 xsar.xsa_logic.xdata3.xi31.xi10.
+                                            pmos_b             1.00 
+      957 xsar.xsa_logic.xdata3.xi37.xn1. nmos_b             1.00 
+      958 xsar.xsa_logic.xdata3.xi37.xi9. nmos_b             1.00 
+      959 xsar.xsa_logic.xdata3.xi37.xp1. pmos_b             1.00 
+      960 xsar.xsa_logic.xdata3.xi37.xi10.
+                                            pmos_b             1.00 
+      961 xsar.xsa_logic.xdata2.xi1.xp1.  pmos_b             1.00 
+      962 xsar.xsa_logic.xdata2.xi1.xn1.  nmos_b             1.00 
+      963 xsar.xsa_logic.xdata2.xi42.xn1. nmos_b             1.00 
+      964 xsar.xsa_logic.xdata2.xi42.xi9. nmos_b             1.00 
+      965 xsar.xsa_logic.xdata2.xi42.xp1. pmos_b             1.00 
+      966 xsar.xsa_logic.xdata2.xi42.xi10.
+                                            pmos_b             1.00 
+      967 xsar.xsa_logic.xdata2.xi43.xn1. nmos_b             1.00 
+      968 xsar.xsa_logic.xdata2.xi43.xi9. nmos_b             1.00 
+      969 xsar.xsa_logic.xdata2.xi43.xp1. pmos_b             1.00 
+      970 xsar.xsa_logic.xdata2.xi43.xi10.
+                                            pmos_b             1.00 
+      971 xsar.xsa_logic.xdata2.xi31.xn1. nmos_b             1.00 
+      972 xsar.xsa_logic.xdata2.xi31.xi9. nmos_b             1.00 
+      973 xsar.xsa_logic.xdata2.xi31.xp1. pmos_b             1.00 
+      974 xsar.xsa_logic.xdata2.xi31.xi10.
+                                            pmos_b             1.00 
+      975 xsar.xsa_logic.xdata2.xi37.xn1. nmos_b             1.00 
+      976 xsar.xsa_logic.xdata2.xi37.xi9. nmos_b             1.00 
+      977 xsar.xsa_logic.xdata2.xi37.xp1. pmos_b             1.00 
+      978 xsar.xsa_logic.xdata2.xi37.xi10.
+                                            pmos_b             1.00 
+      979 xsar.xsa_logic.xdata1.xi1.xp1.  pmos_b             1.00 
+      980 xsar.xsa_logic.xdata1.xi1.xn1.  nmos_b             1.00 
+      981 xsar.xsa_logic.xdata1.xi42.xn1. nmos_b             1.00 
+      982 xsar.xsa_logic.xdata1.xi42.xi9. nmos_b             1.00 
+      983 xsar.xsa_logic.xdata1.xi42.xp1. pmos_b             1.00 
+      984 xsar.xsa_logic.xdata1.xi42.xi10.
+                                            pmos_b             1.00 
+      985 xsar.xsa_logic.xdata1.xi43.xn1. nmos_b             1.00 
+      986 xsar.xsa_logic.xdata1.xi43.xi9. nmos_b             1.00 
+      987 xsar.xsa_logic.xdata1.xi43.xp1. pmos_b             1.00 
+      988 xsar.xsa_logic.xdata1.xi43.xi10.
+                                            pmos_b             1.00 
+      989 xsar.xsa_logic.xdata1.xi31.xn1. nmos_b             1.00 
+      990 xsar.xsa_logic.xdata1.xi31.xi9. nmos_b             1.00 
+      991 xsar.xsa_logic.xdata1.xi31.xp1. pmos_b             1.00 
+      992 xsar.xsa_logic.xdata1.xi31.xi10.
+                                            pmos_b             1.00 
+      993 xsar.xsa_logic.xdata1.xi37.xn1. nmos_b             1.00 
+      994 xsar.xsa_logic.xdata1.xi37.xi9. nmos_b             1.00 
+      995 xsar.xsa_logic.xdata1.xi37.xp1. pmos_b             1.00 
+      996 xsar.xsa_logic.xdata1.xi37.xi10.
+                                            pmos_b             1.00 
+      997 xsar.xsa_logic.xdata0.xi1.xp1.  pmos_b             1.00 
+      998 xsar.xsa_logic.xdata0.xi1.xn1.  nmos_b             1.00 
+      999 xsar.xsa_logic.xdata0.xi42.xn1. nmos_b             1.00 
+     1000 xsar.xsa_logic.xdata0.xi42.xi9. nmos_b             1.00 
+     1001 xsar.xsa_logic.xdata0.xi42.xp1. pmos_b             1.00 
+     1002 xsar.xsa_logic.xdata0.xi42.xi10.
+                                            pmos_b             1.00 
+     1003 xsar.xsa_logic.xdata0.xi43.xn1. nmos_b             1.00 
+     1004 xsar.xsa_logic.xdata0.xi43.xi9. nmos_b             1.00 
+     1005 xsar.xsa_logic.xdata0.xi43.xp1. pmos_b             1.00 
+     1006 xsar.xsa_logic.xdata0.xi43.xi10.
+                                            pmos_b             1.00 
+     1007 xsar.xsa_logic.xdata0.xi31.xn1. nmos_b             1.00 
+     1008 xsar.xsa_logic.xdata0.xi31.xi9. nmos_b             1.00 
+     1009 xsar.xsa_logic.xdata0.xi31.xp1. pmos_b             1.00 
+     1010 xsar.xsa_logic.xdata0.xi31.xi10.
+                                            pmos_b             1.00 
+     1011 xsar.xsa_logic.xdata0.xi37.xn1. nmos_b             1.00 
+     1012 xsar.xsa_logic.xdata0.xi37.xi9. nmos_b             1.00 
+     1013 xsar.xsa_logic.xdata0.xi37.xp1. pmos_b             1.00 
+     1014 xsar.xsa_logic.xdata0.xi37.xi10.
+                                            pmos_b             1.00 
+     1015 xsar.xsa_logic.xdata5.xi1.xp1.  pmos_b             1.00 
+     1016 xsar.xsa_logic.xdata5.xi1.xn1.  nmos_b             1.00 
+     1017 xsar.xsa_logic.xdata5.xi42.xn1. nmos_b             1.00 
+     1018 xsar.xsa_logic.xdata5.xi42.xi9. nmos_b             1.00 
+     1019 xsar.xsa_logic.xdata5.xi42.xp1. pmos_b             1.00 
+     1020 xsar.xsa_logic.xdata5.xi42.xi10.
+                                            pmos_b             1.00 
+     1021 xsar.xsa_logic.xdata5.xi43.xn1. nmos_b             1.00 
+     1022 xsar.xsa_logic.xdata5.xi43.xi9. nmos_b             1.00 
+     1023 xsar.xsa_logic.xdata5.xi43.xp1. pmos_b             1.00 
+     1024 xsar.xsa_logic.xdata5.xi43.xi10.
+                                            pmos_b             1.00 
+     1025 xsar.xsa_logic.xdata5.xi31.xn1. nmos_b             1.00 
+     1026 xsar.xsa_logic.xdata5.xi31.xi9. nmos_b             1.00 
+     1027 xsar.xsa_logic.xdata5.xi31.xp1. pmos_b             1.00 
+     1028 xsar.xsa_logic.xdata5.xi31.xi10.
+                                            pmos_b             1.00 
+     1029 xsar.xsa_logic.xdata5.xi37.xn1. nmos_b             1.00 
+     1030 xsar.xsa_logic.xdata5.xi37.xi9. nmos_b             1.00 
+     1031 xsar.xsa_logic.xdata5.xi37.xp1. pmos_b             1.00 
+     1032 xsar.xsa_logic.xdata5.xi37.xi10.
+                                            pmos_b             1.00 
+     1033 xsar.xsa_logic.xrsh0.xi1.xp1.   pmos_b             1.00 
+     1034 xsar.xsa_logic.xrsh0.xi1.xn1.   nmos_b             1.00 
+     1035 xsar.xsa_logic.xrsh0.xi42.xn1.  nmos_b             1.00 
+     1036 xsar.xsa_logic.xrsh0.xi42.xi9.  nmos_b             1.00 
+     1037 xsar.xsa_logic.xrsh0.xi42.xp1.  pmos_b             1.00 
+     1038 xsar.xsa_logic.xrsh0.xi42.xi10. pmos_b             1.00 
+     1039 xsar.xsa_logic.xrsh0.xi43.xn1.  nmos_b             1.00 
+     1040 xsar.xsa_logic.xrsh0.xi43.xi9.  nmos_b             1.00 
+     1041 xsar.xsa_logic.xrsh0.xi43.xp1.  pmos_b             1.00 
+     1042 xsar.xsa_logic.xrsh0.xi43.xi10. pmos_b             1.00 
+     1043 xsar.xsa_logic.xrsh0.xi31.xn1.  nmos_b             1.00 
+     1044 xsar.xsa_logic.xrsh0.xi31.xi9.  nmos_b             1.00 
+     1045 xsar.xsa_logic.xrsh0.xi31.xp1.  pmos_b             1.00 
+     1046 xsar.xsa_logic.xrsh0.xi31.xi10. pmos_b             1.00 
+     1047 xsar.xsa_logic.xrsh0.xi37.xn1.  nmos_b             1.00 
+     1048 xsar.xsa_logic.xrsh0.xi37.xi9.  nmos_b             1.00 
+     1049 xsar.xsa_logic.xrsh0.xi37.xp1.  pmos_b             1.00 
+     1050 xsar.xsa_logic.xrsh0.xi37.xi10. pmos_b             1.00 
+     1051 xsar.xsa_logic.xrsh3.xi1.xp1.   pmos_b             1.00 
+     1052 xsar.xsa_logic.xrsh3.xi1.xn1.   nmos_b             1.00 
+     1053 xsar.xsa_logic.xrsh3.xi42.xn1.  nmos_b             1.00 
+     1054 xsar.xsa_logic.xrsh3.xi42.xi9.  nmos_b             1.00 
+     1055 xsar.xsa_logic.xrsh3.xi42.xp1.  pmos_b             1.00 
+     1056 xsar.xsa_logic.xrsh3.xi42.xi10. pmos_b             1.00 
+     1057 xsar.xsa_logic.xrsh3.xi43.xn1.  nmos_b             1.00 
+     1058 xsar.xsa_logic.xrsh3.xi43.xi9.  nmos_b             1.00 
+     1059 xsar.xsa_logic.xrsh3.xi43.xp1.  pmos_b             1.00 
+     1060 xsar.xsa_logic.xrsh3.xi43.xi10. pmos_b             1.00 
+     1061 xsar.xsa_logic.xrsh3.xi31.xn1.  nmos_b             1.00 
+     1062 xsar.xsa_logic.xrsh3.xi31.xi9.  nmos_b             1.00 
+     1063 xsar.xsa_logic.xrsh3.xi31.xp1.  pmos_b             1.00 
+     1064 xsar.xsa_logic.xrsh3.xi31.xi10. pmos_b             1.00 
+     1065 xsar.xsa_logic.xrsh3.xi37.xn1.  nmos_b             1.00 
+     1066 xsar.xsa_logic.xrsh3.xi37.xi9.  nmos_b             1.00 
+     1067 xsar.xsa_logic.xrsh3.xi37.xp1.  pmos_b             1.00 
+     1068 xsar.xsa_logic.xrsh3.xi37.xi10. pmos_b             1.00 
+     1069 xsar.xsa_logic.xrsh2.xi1.xp1.   pmos_b             1.00 
+     1070 xsar.xsa_logic.xrsh2.xi1.xn1.   nmos_b             1.00 
+     1071 xsar.xsa_logic.xrsh2.xi42.xn1.  nmos_b             1.00 
+     1072 xsar.xsa_logic.xrsh2.xi42.xi9.  nmos_b             1.00 
+     1073 xsar.xsa_logic.xrsh2.xi42.xp1.  pmos_b             1.00 
+     1074 xsar.xsa_logic.xrsh2.xi42.xi10. pmos_b             1.00 
+     1075 xsar.xsa_logic.xrsh2.xi43.xn1.  nmos_b             1.00 
+     1076 xsar.xsa_logic.xrsh2.xi43.xi9.  nmos_b             1.00 
+     1077 xsar.xsa_logic.xrsh2.xi43.xp1.  pmos_b             1.00 
+     1078 xsar.xsa_logic.xrsh2.xi43.xi10. pmos_b             1.00 
+     1079 xsar.xsa_logic.xrsh2.xi31.xn1.  nmos_b             1.00 
+     1080 xsar.xsa_logic.xrsh2.xi31.xi9.  nmos_b             1.00 
+     1081 xsar.xsa_logic.xrsh2.xi31.xp1.  pmos_b             1.00 
+     1082 xsar.xsa_logic.xrsh2.xi31.xi10. pmos_b             1.00 
+     1083 xsar.xsa_logic.xrsh2.xi37.xn1.  nmos_b             1.00 
+     1084 xsar.xsa_logic.xrsh2.xi37.xi9.  nmos_b             1.00 
+     1085 xsar.xsa_logic.xrsh2.xi37.xp1.  pmos_b             1.00 
+     1086 xsar.xsa_logic.xrsh2.xi37.xi10. pmos_b             1.00 
+     1087 xsar.xsa_logic.xrsh1.xi1.xp1.   pmos_b             1.00 
+     1088 xsar.xsa_logic.xrsh1.xi1.xn1.   nmos_b             1.00 
+     1089 xsar.xsa_logic.xrsh1.xi42.xn1.  nmos_b             1.00 
+     1090 xsar.xsa_logic.xrsh1.xi42.xi9.  nmos_b             1.00 
+     1091 xsar.xsa_logic.xrsh1.xi42.xp1.  pmos_b             1.00 
+     1092 xsar.xsa_logic.xrsh1.xi42.xi10. pmos_b             1.00 
+     1093 xsar.xsa_logic.xrsh1.xi43.xn1.  nmos_b             1.00 
+     1094 xsar.xsa_logic.xrsh1.xi43.xi9.  nmos_b             1.00 
+     1095 xsar.xsa_logic.xrsh1.xi43.xp1.  pmos_b             1.00 
+     1096 xsar.xsa_logic.xrsh1.xi43.xi10. pmos_b             1.00 
+     1097 xsar.xsa_logic.xrsh1.xi31.xn1.  nmos_b             1.00 
+     1098 xsar.xsa_logic.xrsh1.xi31.xi9.  nmos_b             1.00 
+     1099 xsar.xsa_logic.xrsh1.xi31.xp1.  pmos_b             1.00 
+     1100 xsar.xsa_logic.xrsh1.xi31.xi10. pmos_b             1.00 
+     1101 xsar.xsa_logic.xrsh1.xi37.xn1.  nmos_b             1.00 
+     1102 xsar.xsa_logic.xrsh1.xi37.xi9.  nmos_b             1.00 
+     1103 xsar.xsa_logic.xrsh1.xi37.xp1.  pmos_b             1.00 
+     1104 xsar.xsa_logic.xrsh1.xi37.xi10. pmos_b             1.00 
+     1105 xsar.xsa_logic.xrsh4.xi1.xp1.   pmos_b             1.00 
+     1106 xsar.xsa_logic.xrsh4.xi1.xn1.   nmos_b             1.00 
+     1107 xsar.xsa_logic.xrsh4.xi42.xn1.  nmos_b             1.00 
+     1108 xsar.xsa_logic.xrsh4.xi42.xi9.  nmos_b             1.00 
+     1109 xsar.xsa_logic.xrsh4.xi42.xp1.  pmos_b             1.00 
+     1110 xsar.xsa_logic.xrsh4.xi42.xi10. pmos_b             1.00 
+     1111 xsar.xsa_logic.xrsh4.xi43.xn1.  nmos_b             1.00 
+     1112 xsar.xsa_logic.xrsh4.xi43.xi9.  nmos_b             1.00 
+     1113 xsar.xsa_logic.xrsh4.xi43.xp1.  pmos_b             1.00 
+     1114 xsar.xsa_logic.xrsh4.xi43.xi10. pmos_b             1.00 
+     1115 xsar.xsa_logic.xrsh4.xi31.xn1.  nmos_b             1.00 
+     1116 xsar.xsa_logic.xrsh4.xi31.xi9.  nmos_b             1.00 
+     1117 xsar.xsa_logic.xrsh4.xi31.xp1.  pmos_b             1.00 
+     1118 xsar.xsa_logic.xrsh4.xi31.xi10. pmos_b             1.00 
+     1119 xsar.xsa_logic.xrsh4.xi37.xn1.  nmos_b             1.00 
+     1120 xsar.xsa_logic.xrsh4.xi37.xi9.  nmos_b             1.00 
+     1121 xsar.xsa_logic.xrsh4.xi37.xp1.  pmos_b             1.00 
+     1122 xsar.xsa_logic.xrsh4.xi37.xi10. pmos_b             1.00 
+     1123 xsar.xsa_logic.xdata7.xi1.xp1.  pmos_b             1.00 
+     1124 xsar.xsa_logic.xdata7.xi1.xn1.  nmos_b             1.00 
+     1125 xsar.xsa_logic.xdata7.xi42.xn1. nmos_b             1.00 
+     1126 xsar.xsa_logic.xdata7.xi42.xi9. nmos_b             1.00 
+     1127 xsar.xsa_logic.xdata7.xi42.xp1. pmos_b             1.00 
+     1128 xsar.xsa_logic.xdata7.xi42.xi10.
+                                            pmos_b             1.00 
+     1129 xsar.xsa_logic.xdata7.xi43.xn1. nmos_b             1.00 
+     1130 xsar.xsa_logic.xdata7.xi43.xi9. nmos_b             1.00 
+     1131 xsar.xsa_logic.xdata7.xi43.xp1. pmos_b             1.00 
+     1132 xsar.xsa_logic.xdata7.xi43.xi10.
+                                            pmos_b             1.00 
+     1133 xsar.xsa_logic.xdata7.xi31.xn1. nmos_b             1.00 
+     1134 xsar.xsa_logic.xdata7.xi31.xi9. nmos_b             1.00 
+     1135 xsar.xsa_logic.xdata7.xi31.xp1. pmos_b             1.00 
+     1136 xsar.xsa_logic.xdata7.xi31.xi10.
+                                            pmos_b             1.00 
+     1137 xsar.xsa_logic.xdata7.xi37.xn1. nmos_b             1.00 
+     1138 xsar.xsa_logic.xdata7.xi37.xi9. nmos_b             1.00 
+     1139 xsar.xsa_logic.xdata7.xi37.xp1. pmos_b             1.00 
+     1140 xsar.xsa_logic.xdata7.xi37.xi10.
+                                            pmos_b             1.00 
+     1141 xsar.xsa_logic.xrsh5.xi1.xp1.   pmos_b             1.00 
+     1142 xsar.xsa_logic.xrsh5.xi1.xn1.   nmos_b             1.00 
+     1143 xsar.xsa_logic.xrsh5.xi42.xn1.  nmos_b             1.00 
+     1144 xsar.xsa_logic.xrsh5.xi42.xi9.  nmos_b             1.00 
+     1145 xsar.xsa_logic.xrsh5.xi42.xp1.  pmos_b             1.00 
+     1146 xsar.xsa_logic.xrsh5.xi42.xi10. pmos_b             1.00 
+     1147 xsar.xsa_logic.xrsh5.xi43.xn1.  nmos_b             1.00 
+     1148 xsar.xsa_logic.xrsh5.xi43.xi9.  nmos_b             1.00 
+     1149 xsar.xsa_logic.xrsh5.xi43.xp1.  pmos_b             1.00 
+     1150 xsar.xsa_logic.xrsh5.xi43.xi10. pmos_b             1.00 
+     1151 xsar.xsa_logic.xrsh5.xi31.xn1.  nmos_b             1.00 
+     1152 xsar.xsa_logic.xrsh5.xi31.xi9.  nmos_b             1.00 
+     1153 xsar.xsa_logic.xrsh5.xi31.xp1.  pmos_b             1.00 
+     1154 xsar.xsa_logic.xrsh5.xi31.xi10. pmos_b             1.00 
+     1155 xsar.xsa_logic.xrsh5.xi37.xn1.  nmos_b             1.00 
+     1156 xsar.xsa_logic.xrsh5.xi37.xi9.  nmos_b             1.00 
+     1157 xsar.xsa_logic.xrsh5.xi37.xp1.  pmos_b             1.00 
+     1158 xsar.xsa_logic.xrsh5.xi37.xi10. pmos_b             1.00 
+     1159 xsar.xsa_logic.xdata6.xi1.xp1.  pmos_b             1.00 
+     1160 xsar.xsa_logic.xdata6.xi1.xn1.  nmos_b             1.00 
+     1161 xsar.xsa_logic.xdata6.xi42.xn1. nmos_b             1.00 
+     1162 xsar.xsa_logic.xdata6.xi42.xi9. nmos_b             1.00 
+     1163 xsar.xsa_logic.xdata6.xi42.xp1. pmos_b             1.00 
+     1164 xsar.xsa_logic.xdata6.xi42.xi10.
+                                            pmos_b             1.00 
+     1165 xsar.xsa_logic.xdata6.xi43.xn1. nmos_b             1.00 
+     1166 xsar.xsa_logic.xdata6.xi43.xi9. nmos_b             1.00 
+     1167 xsar.xsa_logic.xdata6.xi43.xp1. pmos_b             1.00 
+     1168 xsar.xsa_logic.xdata6.xi43.xi10.
+                                            pmos_b             1.00 
+     1169 xsar.xsa_logic.xdata6.xi31.xn1. nmos_b             1.00 
+     1170 xsar.xsa_logic.xdata6.xi31.xi9. nmos_b             1.00 
+     1171 xsar.xsa_logic.xdata6.xi31.xp1. pmos_b             1.00 
+     1172 xsar.xsa_logic.xdata6.xi31.xi10.
+                                            pmos_b             1.00 
+     1173 xsar.xsa_logic.xdata6.xi37.xn1. nmos_b             1.00 
+     1174 xsar.xsa_logic.xdata6.xi37.xi9. nmos_b             1.00 
+     1175 xsar.xsa_logic.xdata6.xi37.xp1. pmos_b             1.00 
+     1176 xsar.xsa_logic.xdata6.xi37.xi10.
+                                            pmos_b             1.00 
+     1177 xsar.xsa_logic.xdata4.xi1.xp1.  pmos_b             1.00 
+     1178 xsar.xsa_logic.xdata4.xi1.xn1.  nmos_b             1.00 
+     1179 xsar.xsa_logic.xdata4.xi42.xn1. nmos_b             1.00 
+     1180 xsar.xsa_logic.xdata4.xi42.xi9. nmos_b             1.00 
+     1181 xsar.xsa_logic.xdata4.xi42.xp1. pmos_b             1.00 
+     1182 xsar.xsa_logic.xdata4.xi42.xi10.
+                                            pmos_b             1.00 
+     1183 xsar.xsa_logic.xdata4.xi43.xn1. nmos_b             1.00 
+     1184 xsar.xsa_logic.xdata4.xi43.xi9. nmos_b             1.00 
+     1185 xsar.xsa_logic.xdata4.xi43.xp1. pmos_b             1.00 
+     1186 xsar.xsa_logic.xdata4.xi43.xi10.
+                                            pmos_b             1.00 
+     1187 xsar.xsa_logic.xdata4.xi31.xn1. nmos_b             1.00 
+     1188 xsar.xsa_logic.xdata4.xi31.xi9. nmos_b             1.00 
+     1189 xsar.xsa_logic.xdata4.xi31.xp1. pmos_b             1.00 
+     1190 xsar.xsa_logic.xdata4.xi31.xi10.
+                                            pmos_b             1.00 
+     1191 xsar.xsa_logic.xdata4.xi37.xn1. nmos_b             1.00 
+     1192 xsar.xsa_logic.xdata4.xi37.xi9. nmos_b             1.00 
+     1193 xsar.xsa_logic.xdata4.xi37.xp1. pmos_b             1.00 
+     1194 xsar.xsa_logic.xdata4.xi37.xi10.
+                                            pmos_b             1.00 
+     1195 xsar.xsa_logic.xrsh6.xi1.xp1.   pmos_b             1.00 
+     1196 xsar.xsa_logic.xrsh6.xi1.xn1.   nmos_b             1.00 
+     1197 xsar.xsa_logic.xrsh6.xi42.xn1.  nmos_b             1.00 
+     1198 xsar.xsa_logic.xrsh6.xi42.xi9.  nmos_b             1.00 
+     1199 xsar.xsa_logic.xrsh6.xi42.xp1.  pmos_b             1.00 
+     1200 xsar.xsa_logic.xrsh6.xi42.xi10. pmos_b             1.00 
+     1201 xsar.xsa_logic.xrsh6.xi43.xn1.  nmos_b             1.00 
+     1202 xsar.xsa_logic.xrsh6.xi43.xi9.  nmos_b             1.00 
+     1203 xsar.xsa_logic.xrsh6.xi43.xp1.  pmos_b             1.00 
+     1204 xsar.xsa_logic.xrsh6.xi43.xi10. pmos_b             1.00 
+     1205 xsar.xsa_logic.xrsh6.xi31.xn1.  nmos_b             1.00 
+     1206 xsar.xsa_logic.xrsh6.xi31.xi9.  nmos_b             1.00 
+     1207 xsar.xsa_logic.xrsh6.xi31.xp1.  pmos_b             1.00 
+     1208 xsar.xsa_logic.xrsh6.xi31.xi10. pmos_b             1.00 
+     1209 xsar.xsa_logic.xrsh6.xi37.xn1.  nmos_b             1.00 
+     1210 xsar.xsa_logic.xrsh6.xi37.xi9.  nmos_b             1.00 
+     1211 xsar.xsa_logic.xrsh6.xi37.xp1.  pmos_b             1.00 
+     1212 xsar.xsa_logic.xrsh6.xi37.xi10. pmos_b             1.00 
+     1213 xsar.xsa_logic.xrsh7.xi1.xp1.   pmos_b             1.00 
+     1214 xsar.xsa_logic.xrsh7.xi1.xn1.   nmos_b             1.00 
+     1215 xsar.xsa_logic.xrsh7.xi42.xn1.  nmos_b             1.00 
+     1216 xsar.xsa_logic.xrsh7.xi42.xi9.  nmos_b             1.00 
+     1217 xsar.xsa_logic.xrsh7.xi42.xp1.  pmos_b             1.00 
+     1218 xsar.xsa_logic.xrsh7.xi42.xi10. pmos_b             1.00 
+     1219 xsar.xsa_logic.xrsh7.xi43.xn1.  nmos_b             1.00 
+     1220 xsar.xsa_logic.xrsh7.xi43.xi9.  nmos_b             1.00 
+     1221 xsar.xsa_logic.xrsh7.xi43.xp1.  pmos_b             1.00 
+     1222 xsar.xsa_logic.xrsh7.xi43.xi10. pmos_b             1.00 
+     1223 xsar.xsa_logic.xrsh7.xi31.xn1.  nmos_b             1.00 
+     1224 xsar.xsa_logic.xrsh7.xi31.xi9.  nmos_b             1.00 
+     1225 xsar.xsa_logic.xrsh7.xi31.xp1.  pmos_b             1.00 
+     1226 xsar.xsa_logic.xrsh7.xi31.xi10. pmos_b             1.00 
+     1227 xsar.xsa_logic.xrsh7.xi37.xn1.  nmos_b             1.00 
+     1228 xsar.xsa_logic.xrsh7.xi37.xi9.  nmos_b             1.00 
+     1229 xsar.xsa_logic.xrsh7.xi37.xp1.  pmos_b             1.00 
+     1230 xsar.xsa_logic.xrsh7.xi37.xi10. pmos_b             1.00 
+     1231 xds.xquantizer_1b_0.xcmp3.xdff.xi13.
+                                            dlatch             1.00 
+     1232 xds.xquantizer_1b_0.xcmp3.xdff.xi14.
+                                            dlatch             1.00 
+     1233 xds.xquantizer_1b_1.xcmp3.xdff.xi13.
+                                            dlatch             1.00 
+     1234 xds.xquantizer_1b_1.xcmp3.xdff.xi14.
+                                            dlatch             1.00 
+     1235 xds.xquantizer_1b_2.xcmp3.xdff.xi13.
+                                            dlatch             1.00 
+     1236 xds.xquantizer_1b_2.xcmp3.xdff.xi14.
+                                            dlatch             1.00 
+     1237 xds.xquantizer_1b_3.xcmp3.xdff.xi13.
+                                            dlatch             1.00 
+     1238 xds.xquantizer_1b_3.xcmp3.xdff.xi14.
+                                            dlatch             1.00 
+     1239 xsar.xc_array_p.xsa_dac.xswdac_0.xi7.xp1.
+                                            pmos_b             1.00 
+     1240 xsar.xc_array_p.xsa_dac.xswdac_0.xi7.xn1.
+                                            nmos_b             1.00 
+     1241 xsar.xc_array_p.xsa_dac.xswdac_0.xi3.xp1.
+                                            pmos_b             1.00 
+     1242 xsar.xc_array_p.xsa_dac.xswdac_0.xi3.xn1.
+                                            nmos_b             1.00 
+     1243 xsar.xc_array_p.xsa_dac.xswdac_0.xi20.xp1.
+                                            pmos_b             1.00 
+     1244 xsar.xc_array_p.xsa_dac.xswdac_0.xi20.xn1.
+                                            nmos_b             1.00 
+     1245 xsar.xc_array_p.xsa_dac.xswdac_0.xi1.xp1.
+                                            pmos_b             1.00 
+     1246 xsar.xc_array_p.xsa_dac.xswdac_0.xi1.xn1.
+                                            nmos_b             1.00 
+     1247 xsar.xc_array_p.xsa_dac.xswdac_0.xi2.xn1.
+                                            nmos_b             1.00 
+     1248 xsar.xc_array_p.xsa_dac.xswdac_0.xi2.xi9.
+                                            nmos_b             1.00 
+     1249 xsar.xc_array_p.xsa_dac.xswdac_0.xi2.xp1.
+                                            pmos_b             1.00 
+     1250 xsar.xc_array_p.xsa_dac.xswdac_0.xi2.xi10.
+                                            pmos_b             1.00 
+     1251 xsar.xc_array_p.xsa_dac.xswdac_0.xi19.xn1.
+                                            nmos_b             1.00 
+     1252 xsar.xc_array_p.xsa_dac.xswdac_0.xi19.xi9.
+                                            nmos_b             1.00 
+     1253 xsar.xc_array_p.xsa_dac.xswdac_0.xi19.xp1.
+                                            pmos_b             1.00 
+     1254 xsar.xc_array_p.xsa_dac.xswdac_0.xi19.xi10.
+                                            pmos_b             1.00 
+     1255 xsar.xc_array_p.xsa_dac.xswdac_1.xi7.xp1.
+                                            pmos_b             1.00 
+     1256 xsar.xc_array_p.xsa_dac.xswdac_1.xi7.xn1.
+                                            nmos_b             1.00 
+     1257 xsar.xc_array_p.xsa_dac.xswdac_1.xi3.xp1.
+                                            pmos_b             1.00 
+     1258 xsar.xc_array_p.xsa_dac.xswdac_1.xi3.xn1.
+                                            nmos_b             1.00 
+     1259 xsar.xc_array_p.xsa_dac.xswdac_1.xi20.xp1.
+                                            pmos_b             1.00 
+     1260 xsar.xc_array_p.xsa_dac.xswdac_1.xi20.xn1.
+                                            nmos_b             1.00 
+     1261 xsar.xc_array_p.xsa_dac.xswdac_1.xi1.xp1.
+                                            pmos_b             1.00 
+     1262 xsar.xc_array_p.xsa_dac.xswdac_1.xi1.xn1.
+                                            nmos_b             1.00 
+     1263 xsar.xc_array_p.xsa_dac.xswdac_1.xi2.xn1.
+                                            nmos_b             1.00 
+     1264 xsar.xc_array_p.xsa_dac.xswdac_1.xi2.xi9.
+                                            nmos_b             1.00 
+     1265 xsar.xc_array_p.xsa_dac.xswdac_1.xi2.xp1.
+                                            pmos_b             1.00 
+     1266 xsar.xc_array_p.xsa_dac.xswdac_1.xi2.xi10.
+                                            pmos_b             1.00 
+     1267 xsar.xc_array_p.xsa_dac.xswdac_1.xi19.xn1.
+                                            nmos_b             1.00 
+     1268 xsar.xc_array_p.xsa_dac.xswdac_1.xi19.xi9.
+                                            nmos_b             1.00 
+     1269 xsar.xc_array_p.xsa_dac.xswdac_1.xi19.xp1.
+                                            pmos_b             1.00 
+     1270 xsar.xc_array_p.xsa_dac.xswdac_1.xi19.xi10.
+                                            pmos_b             1.00 
+     1271 xsar.xc_array_p.xsa_dac.xswdac_2.xi7.xp1.
+                                            pmos_b             1.00 
+     1272 xsar.xc_array_p.xsa_dac.xswdac_2.xi7.xn1.
+                                            nmos_b             1.00 
+     1273 xsar.xc_array_p.xsa_dac.xswdac_2.xi3.xp1.
+                                            pmos_b             1.00 
+     1274 xsar.xc_array_p.xsa_dac.xswdac_2.xi3.xn1.
+                                            nmos_b             1.00 
+     1275 xsar.xc_array_p.xsa_dac.xswdac_2.xi20.xp1.
+                                            pmos_b             1.00 
+     1276 xsar.xc_array_p.xsa_dac.xswdac_2.xi20.xn1.
+                                            nmos_b             1.00 
+     1277 xsar.xc_array_p.xsa_dac.xswdac_2.xi1.xp1.
+                                            pmos_b             1.00 
+     1278 xsar.xc_array_p.xsa_dac.xswdac_2.xi1.xn1.
+                                            nmos_b             1.00 
+     1279 xsar.xc_array_p.xsa_dac.xswdac_2.xi2.xn1.
+                                            nmos_b             1.00 
+     1280 xsar.xc_array_p.xsa_dac.xswdac_2.xi2.xi9.
+                                            nmos_b             1.00 
+     1281 xsar.xc_array_p.xsa_dac.xswdac_2.xi2.xp1.
+                                            pmos_b             1.00 
+     1282 xsar.xc_array_p.xsa_dac.xswdac_2.xi2.xi10.
+                                            pmos_b             1.00 
+     1283 xsar.xc_array_p.xsa_dac.xswdac_2.xi19.xn1.
+                                            nmos_b             1.00 
+     1284 xsar.xc_array_p.xsa_dac.xswdac_2.xi19.xi9.
+                                            nmos_b             1.00 
+     1285 xsar.xc_array_p.xsa_dac.xswdac_2.xi19.xp1.
+                                            pmos_b             1.00 
+     1286 xsar.xc_array_p.xsa_dac.xswdac_2.xi19.xi10.
+                                            pmos_b             1.00 
+     1287 xsar.xc_array_p.xsa_dac.xswdac_3.xi7.xp1.
+                                            pmos_b             1.00 
+     1288 xsar.xc_array_p.xsa_dac.xswdac_3.xi7.xn1.
+                                            nmos_b             1.00 
+     1289 xsar.xc_array_p.xsa_dac.xswdac_3.xi3.xp1.
+                                            pmos_b             1.00 
+     1290 xsar.xc_array_p.xsa_dac.xswdac_3.xi3.xn1.
+                                            nmos_b             1.00 
+     1291 xsar.xc_array_p.xsa_dac.xswdac_3.xi20.xp1.
+                                            pmos_b             1.00 
+     1292 xsar.xc_array_p.xsa_dac.xswdac_3.xi20.xn1.
+                                            nmos_b             1.00 
+     1293 xsar.xc_array_p.xsa_dac.xswdac_3.xi1.xp1.
+                                            pmos_b             1.00 
+     1294 xsar.xc_array_p.xsa_dac.xswdac_3.xi1.xn1.
+                                            nmos_b             1.00 
+     1295 xsar.xc_array_p.xsa_dac.xswdac_3.xi2.xn1.
+                                            nmos_b             1.00 
+     1296 xsar.xc_array_p.xsa_dac.xswdac_3.xi2.xi9.
+                                            nmos_b             1.00 
+     1297 xsar.xc_array_p.xsa_dac.xswdac_3.xi2.xp1.
+                                            pmos_b             1.00 
+     1298 xsar.xc_array_p.xsa_dac.xswdac_3.xi2.xi10.
+                                            pmos_b             1.00 
+     1299 xsar.xc_array_p.xsa_dac.xswdac_3.xi19.xn1.
+                                            nmos_b             1.00 
+     1300 xsar.xc_array_p.xsa_dac.xswdac_3.xi19.xi9.
+                                            nmos_b             1.00 
+     1301 xsar.xc_array_p.xsa_dac.xswdac_3.xi19.xp1.
+                                            pmos_b             1.00 
+     1302 xsar.xc_array_p.xsa_dac.xswdac_3.xi19.xi10.
+                                            pmos_b             1.00 
+     1303 xsar.xc_array_p.xsa_dac.xswdac_4.xi7.xp1.
+                                            pmos_b             1.00 
+     1304 xsar.xc_array_p.xsa_dac.xswdac_4.xi7.xn1.
+                                            nmos_b             1.00 
+     1305 xsar.xc_array_p.xsa_dac.xswdac_4.xi3.xp1.
+                                            pmos_b             1.00 
+     1306 xsar.xc_array_p.xsa_dac.xswdac_4.xi3.xn1.
+                                            nmos_b             1.00 
+     1307 xsar.xc_array_p.xsa_dac.xswdac_4.xi20.xp1.
+                                            pmos_b             1.00 
+     1308 xsar.xc_array_p.xsa_dac.xswdac_4.xi20.xn1.
+                                            nmos_b             1.00 
+     1309 xsar.xc_array_p.xsa_dac.xswdac_4.xi1.xp1.
+                                            pmos_b             1.00 
+     1310 xsar.xc_array_p.xsa_dac.xswdac_4.xi1.xn1.
+                                            nmos_b             1.00 
+     1311 xsar.xc_array_p.xsa_dac.xswdac_4.xi2.xn1.
+                                            nmos_b             1.00 
+     1312 xsar.xc_array_p.xsa_dac.xswdac_4.xi2.xi9.
+                                            nmos_b             1.00 
+     1313 xsar.xc_array_p.xsa_dac.xswdac_4.xi2.xp1.
+                                            pmos_b             1.00 
+     1314 xsar.xc_array_p.xsa_dac.xswdac_4.xi2.xi10.
+                                            pmos_b             1.00 
+     1315 xsar.xc_array_p.xsa_dac.xswdac_4.xi19.xn1.
+                                            nmos_b             1.00 
+     1316 xsar.xc_array_p.xsa_dac.xswdac_4.xi19.xi9.
+                                            nmos_b             1.00 
+     1317 xsar.xc_array_p.xsa_dac.xswdac_4.xi19.xp1.
+                                            pmos_b             1.00 
+     1318 xsar.xc_array_p.xsa_dac.xswdac_4.xi19.xi10.
+                                            pmos_b             1.00 
+     1319 xsar.xc_array_p.xsa_dac.xswdac_5.xi7.xp1.
+                                            pmos_b             1.00 
+     1320 xsar.xc_array_p.xsa_dac.xswdac_5.xi7.xn1.
+                                            nmos_b             1.00 
+     1321 xsar.xc_array_p.xsa_dac.xswdac_5.xi3.xp1.
+                                            pmos_b             1.00 
+     1322 xsar.xc_array_p.xsa_dac.xswdac_5.xi3.xn1.
+                                            nmos_b             1.00 
+     1323 xsar.xc_array_p.xsa_dac.xswdac_5.xi20.xp1.
+                                            pmos_b             1.00 
+     1324 xsar.xc_array_p.xsa_dac.xswdac_5.xi20.xn1.
+                                            nmos_b             1.00 
+     1325 xsar.xc_array_p.xsa_dac.xswdac_5.xi1.xp1.
+                                            pmos_b             1.00 
+     1326 xsar.xc_array_p.xsa_dac.xswdac_5.xi1.xn1.
+                                            nmos_b             1.00 
+     1327 xsar.xc_array_p.xsa_dac.xswdac_5.xi2.xn1.
+                                            nmos_b             1.00 
+     1328 xsar.xc_array_p.xsa_dac.xswdac_5.xi2.xi9.
+                                            nmos_b             1.00 
+     1329 xsar.xc_array_p.xsa_dac.xswdac_5.xi2.xp1.
+                                            pmos_b             1.00 
+     1330 xsar.xc_array_p.xsa_dac.xswdac_5.xi2.xi10.
+                                            pmos_b             1.00 
+     1331 xsar.xc_array_p.xsa_dac.xswdac_5.xi19.xn1.
+                                            nmos_b             1.00 
+     1332 xsar.xc_array_p.xsa_dac.xswdac_5.xi19.xi9.
+                                            nmos_b             1.00 
+     1333 xsar.xc_array_p.xsa_dac.xswdac_5.xi19.xp1.
+                                            pmos_b             1.00 
+     1334 xsar.xc_array_p.xsa_dac.xswdac_5.xi19.xi10.
+                                            pmos_b             1.00 
+     1335 xsar.xc_array_p.xsa_dac.xswdac_6.xi7.xp1.
+                                            pmos_b             1.00 
+     1336 xsar.xc_array_p.xsa_dac.xswdac_6.xi7.xn1.
+                                            nmos_b             1.00 
+     1337 xsar.xc_array_p.xsa_dac.xswdac_6.xi3.xp1.
+                                            pmos_b             1.00 
+     1338 xsar.xc_array_p.xsa_dac.xswdac_6.xi3.xn1.
+                                            nmos_b             1.00 
+     1339 xsar.xc_array_p.xsa_dac.xswdac_6.xi20.xp1.
+                                            pmos_b             1.00 
+     1340 xsar.xc_array_p.xsa_dac.xswdac_6.xi20.xn1.
+                                            nmos_b             1.00 
+     1341 xsar.xc_array_p.xsa_dac.xswdac_6.xi1.xp1.
+                                            pmos_b             1.00 
+     1342 xsar.xc_array_p.xsa_dac.xswdac_6.xi1.xn1.
+                                            nmos_b             1.00 
+     1343 xsar.xc_array_p.xsa_dac.xswdac_6.xi2.xn1.
+                                            nmos_b             1.00 
+     1344 xsar.xc_array_p.xsa_dac.xswdac_6.xi2.xi9.
+                                            nmos_b             1.00 
+     1345 xsar.xc_array_p.xsa_dac.xswdac_6.xi2.xp1.
+                                            pmos_b             1.00 
+     1346 xsar.xc_array_p.xsa_dac.xswdac_6.xi2.xi10.
+                                            pmos_b             1.00 
+     1347 xsar.xc_array_p.xsa_dac.xswdac_6.xi19.xn1.
+                                            nmos_b             1.00 
+     1348 xsar.xc_array_p.xsa_dac.xswdac_6.xi19.xi9.
+                                            nmos_b             1.00 
+     1349 xsar.xc_array_p.xsa_dac.xswdac_6.xi19.xp1.
+                                            pmos_b             1.00 
+     1350 xsar.xc_array_p.xsa_dac.xswdac_6.xi19.xi10.
+                                            pmos_b             1.00 
+     1351 xsar.xc_array_p.xsa_dac.xswdac_7.xi7.xp1.
+                                            pmos_b             1.00 
+     1352 xsar.xc_array_p.xsa_dac.xswdac_7.xi7.xn1.
+                                            nmos_b             1.00 
+     1353 xsar.xc_array_p.xsa_dac.xswdac_7.xi3.xp1.
+                                            pmos_b             1.00 
+     1354 xsar.xc_array_p.xsa_dac.xswdac_7.xi3.xn1.
+                                            nmos_b             1.00 
+     1355 xsar.xc_array_p.xsa_dac.xswdac_7.xi20.xp1.
+                                            pmos_b             1.00 
+     1356 xsar.xc_array_p.xsa_dac.xswdac_7.xi20.xn1.
+                                            nmos_b             1.00 
+     1357 xsar.xc_array_p.xsa_dac.xswdac_7.xi1.xp1.
+                                            pmos_b             1.00 
+     1358 xsar.xc_array_p.xsa_dac.xswdac_7.xi1.xn1.
+                                            nmos_b             1.00 
+     1359 xsar.xc_array_p.xsa_dac.xswdac_7.xi2.xn1.
+                                            nmos_b             1.00 
+     1360 xsar.xc_array_p.xsa_dac.xswdac_7.xi2.xi9.
+                                            nmos_b             1.00 
+     1361 xsar.xc_array_p.xsa_dac.xswdac_7.xi2.xp1.
+                                            pmos_b             1.00 
+     1362 xsar.xc_array_p.xsa_dac.xswdac_7.xi2.xi10.
+                                            pmos_b             1.00 
+     1363 xsar.xc_array_p.xsa_dac.xswdac_7.xi19.xn1.
+                                            nmos_b             1.00 
+     1364 xsar.xc_array_p.xsa_dac.xswdac_7.xi19.xi9.
+                                            nmos_b             1.00 
+     1365 xsar.xc_array_p.xsa_dac.xswdac_7.xi19.xp1.
+                                            pmos_b             1.00 
+     1366 xsar.xc_array_p.xsa_dac.xswdac_7.xi19.xi10.
+                                            pmos_b             1.00 
+     1367 xsar.xc_array_n.xsa_dac.xswdac_0.xi7.xp1.
+                                            pmos_b             1.00 
+     1368 xsar.xc_array_n.xsa_dac.xswdac_0.xi7.xn1.
+                                            nmos_b             1.00 
+     1369 xsar.xc_array_n.xsa_dac.xswdac_0.xi3.xp1.
+                                            pmos_b             1.00 
+     1370 xsar.xc_array_n.xsa_dac.xswdac_0.xi3.xn1.
+                                            nmos_b             1.00 
+     1371 xsar.xc_array_n.xsa_dac.xswdac_0.xi20.xp1.
+                                            pmos_b             1.00 
+     1372 xsar.xc_array_n.xsa_dac.xswdac_0.xi20.xn1.
+                                            nmos_b             1.00 
+     1373 xsar.xc_array_n.xsa_dac.xswdac_0.xi1.xp1.
+                                            pmos_b             1.00 
+     1374 xsar.xc_array_n.xsa_dac.xswdac_0.xi1.xn1.
+                                            nmos_b             1.00 
+     1375 xsar.xc_array_n.xsa_dac.xswdac_0.xi2.xn1.
+                                            nmos_b             1.00 
+     1376 xsar.xc_array_n.xsa_dac.xswdac_0.xi2.xi9.
+                                            nmos_b             1.00 
+     1377 xsar.xc_array_n.xsa_dac.xswdac_0.xi2.xp1.
+                                            pmos_b             1.00 
+     1378 xsar.xc_array_n.xsa_dac.xswdac_0.xi2.xi10.
+                                            pmos_b             1.00 
+     1379 xsar.xc_array_n.xsa_dac.xswdac_0.xi19.xn1.
+                                            nmos_b             1.00 
+     1380 xsar.xc_array_n.xsa_dac.xswdac_0.xi19.xi9.
+                                            nmos_b             1.00 
+     1381 xsar.xc_array_n.xsa_dac.xswdac_0.xi19.xp1.
+                                            pmos_b             1.00 
+     1382 xsar.xc_array_n.xsa_dac.xswdac_0.xi19.xi10.
+                                            pmos_b             1.00 
+     1383 xsar.xc_array_n.xsa_dac.xswdac_1.xi7.xp1.
+                                            pmos_b             1.00 
+     1384 xsar.xc_array_n.xsa_dac.xswdac_1.xi7.xn1.
+                                            nmos_b             1.00 
+     1385 xsar.xc_array_n.xsa_dac.xswdac_1.xi3.xp1.
+                                            pmos_b             1.00 
+     1386 xsar.xc_array_n.xsa_dac.xswdac_1.xi3.xn1.
+                                            nmos_b             1.00 
+     1387 xsar.xc_array_n.xsa_dac.xswdac_1.xi20.xp1.
+                                            pmos_b             1.00 
+     1388 xsar.xc_array_n.xsa_dac.xswdac_1.xi20.xn1.
+                                            nmos_b             1.00 
+     1389 xsar.xc_array_n.xsa_dac.xswdac_1.xi1.xp1.
+                                            pmos_b             1.00 
+     1390 xsar.xc_array_n.xsa_dac.xswdac_1.xi1.xn1.
+                                            nmos_b             1.00 
+     1391 xsar.xc_array_n.xsa_dac.xswdac_1.xi2.xn1.
+                                            nmos_b             1.00 
+     1392 xsar.xc_array_n.xsa_dac.xswdac_1.xi2.xi9.
+                                            nmos_b             1.00 
+     1393 xsar.xc_array_n.xsa_dac.xswdac_1.xi2.xp1.
+                                            pmos_b             1.00 
+     1394 xsar.xc_array_n.xsa_dac.xswdac_1.xi2.xi10.
+                                            pmos_b             1.00 
+     1395 xsar.xc_array_n.xsa_dac.xswdac_1.xi19.xn1.
+                                            nmos_b             1.00 
+     1396 xsar.xc_array_n.xsa_dac.xswdac_1.xi19.xi9.
+                                            nmos_b             1.00 
+     1397 xsar.xc_array_n.xsa_dac.xswdac_1.xi19.xp1.
+                                            pmos_b             1.00 
+     1398 xsar.xc_array_n.xsa_dac.xswdac_1.xi19.xi10.
+                                            pmos_b             1.00 
+     1399 xsar.xc_array_n.xsa_dac.xswdac_2.xi7.xp1.
+                                            pmos_b             1.00 
+     1400 xsar.xc_array_n.xsa_dac.xswdac_2.xi7.xn1.
+                                            nmos_b             1.00 
+     1401 xsar.xc_array_n.xsa_dac.xswdac_2.xi3.xp1.
+                                            pmos_b             1.00 
+     1402 xsar.xc_array_n.xsa_dac.xswdac_2.xi3.xn1.
+                                            nmos_b             1.00 
+     1403 xsar.xc_array_n.xsa_dac.xswdac_2.xi20.xp1.
+                                            pmos_b             1.00 
+     1404 xsar.xc_array_n.xsa_dac.xswdac_2.xi20.xn1.
+                                            nmos_b             1.00 
+     1405 xsar.xc_array_n.xsa_dac.xswdac_2.xi1.xp1.
+                                            pmos_b             1.00 
+     1406 xsar.xc_array_n.xsa_dac.xswdac_2.xi1.xn1.
+                                            nmos_b             1.00 
+     1407 xsar.xc_array_n.xsa_dac.xswdac_2.xi2.xn1.
+                                            nmos_b             1.00 
+     1408 xsar.xc_array_n.xsa_dac.xswdac_2.xi2.xi9.
+                                            nmos_b             1.00 
+     1409 xsar.xc_array_n.xsa_dac.xswdac_2.xi2.xp1.
+                                            pmos_b             1.00 
+     1410 xsar.xc_array_n.xsa_dac.xswdac_2.xi2.xi10.
+                                            pmos_b             1.00 
+     1411 xsar.xc_array_n.xsa_dac.xswdac_2.xi19.xn1.
+                                            nmos_b             1.00 
+     1412 xsar.xc_array_n.xsa_dac.xswdac_2.xi19.xi9.
+                                            nmos_b             1.00 
+     1413 xsar.xc_array_n.xsa_dac.xswdac_2.xi19.xp1.
+                                            pmos_b             1.00 
+     1414 xsar.xc_array_n.xsa_dac.xswdac_2.xi19.xi10.
+                                            pmos_b             1.00 
+     1415 xsar.xc_array_n.xsa_dac.xswdac_3.xi7.xp1.
+                                            pmos_b             1.00 
+     1416 xsar.xc_array_n.xsa_dac.xswdac_3.xi7.xn1.
+                                            nmos_b             1.00 
+     1417 xsar.xc_array_n.xsa_dac.xswdac_3.xi3.xp1.
+                                            pmos_b             1.00 
+     1418 xsar.xc_array_n.xsa_dac.xswdac_3.xi3.xn1.
+                                            nmos_b             1.00 
+     1419 xsar.xc_array_n.xsa_dac.xswdac_3.xi20.xp1.
+                                            pmos_b             1.00 
+     1420 xsar.xc_array_n.xsa_dac.xswdac_3.xi20.xn1.
+                                            nmos_b             1.00 
+     1421 xsar.xc_array_n.xsa_dac.xswdac_3.xi1.xp1.
+                                            pmos_b             1.00 
+     1422 xsar.xc_array_n.xsa_dac.xswdac_3.xi1.xn1.
+                                            nmos_b             1.00 
+     1423 xsar.xc_array_n.xsa_dac.xswdac_3.xi2.xn1.
+                                            nmos_b             1.00 
+     1424 xsar.xc_array_n.xsa_dac.xswdac_3.xi2.xi9.
+                                            nmos_b             1.00 
+     1425 xsar.xc_array_n.xsa_dac.xswdac_3.xi2.xp1.
+                                            pmos_b             1.00 
+     1426 xsar.xc_array_n.xsa_dac.xswdac_3.xi2.xi10.
+                                            pmos_b             1.00 
+     1427 xsar.xc_array_n.xsa_dac.xswdac_3.xi19.xn1.
+                                            nmos_b             1.00 
+     1428 xsar.xc_array_n.xsa_dac.xswdac_3.xi19.xi9.
+                                            nmos_b             1.00 
+     1429 xsar.xc_array_n.xsa_dac.xswdac_3.xi19.xp1.
+                                            pmos_b             1.00 
+     1430 xsar.xc_array_n.xsa_dac.xswdac_3.xi19.xi10.
+                                            pmos_b             1.00 
+     1431 xsar.xc_array_n.xsa_dac.xswdac_4.xi7.xp1.
+                                            pmos_b             1.00 
+     1432 xsar.xc_array_n.xsa_dac.xswdac_4.xi7.xn1.
+                                            nmos_b             1.00 
+     1433 xsar.xc_array_n.xsa_dac.xswdac_4.xi3.xp1.
+                                            pmos_b             1.00 
+     1434 xsar.xc_array_n.xsa_dac.xswdac_4.xi3.xn1.
+                                            nmos_b             1.00 
+     1435 xsar.xc_array_n.xsa_dac.xswdac_4.xi20.xp1.
+                                            pmos_b             1.00 
+     1436 xsar.xc_array_n.xsa_dac.xswdac_4.xi20.xn1.
+                                            nmos_b             1.00 
+     1437 xsar.xc_array_n.xsa_dac.xswdac_4.xi1.xp1.
+                                            pmos_b             1.00 
+     1438 xsar.xc_array_n.xsa_dac.xswdac_4.xi1.xn1.
+                                            nmos_b             1.00 
+     1439 xsar.xc_array_n.xsa_dac.xswdac_4.xi2.xn1.
+                                            nmos_b             1.00 
+     1440 xsar.xc_array_n.xsa_dac.xswdac_4.xi2.xi9.
+                                            nmos_b             1.00 
+     1441 xsar.xc_array_n.xsa_dac.xswdac_4.xi2.xp1.
+                                            pmos_b             1.00 
+     1442 xsar.xc_array_n.xsa_dac.xswdac_4.xi2.xi10.
+                                            pmos_b             1.00 
+     1443 xsar.xc_array_n.xsa_dac.xswdac_4.xi19.xn1.
+                                            nmos_b             1.00 
+     1444 xsar.xc_array_n.xsa_dac.xswdac_4.xi19.xi9.
+                                            nmos_b             1.00 
+     1445 xsar.xc_array_n.xsa_dac.xswdac_4.xi19.xp1.
+                                            pmos_b             1.00 
+     1446 xsar.xc_array_n.xsa_dac.xswdac_4.xi19.xi10.
+                                            pmos_b             1.00 
+     1447 xsar.xc_array_n.xsa_dac.xswdac_5.xi7.xp1.
+                                            pmos_b             1.00 
+     1448 xsar.xc_array_n.xsa_dac.xswdac_5.xi7.xn1.
+                                            nmos_b             1.00 
+     1449 xsar.xc_array_n.xsa_dac.xswdac_5.xi3.xp1.
+                                            pmos_b             1.00 
+     1450 xsar.xc_array_n.xsa_dac.xswdac_5.xi3.xn1.
+                                            nmos_b             1.00 
+     1451 xsar.xc_array_n.xsa_dac.xswdac_5.xi20.xp1.
+                                            pmos_b             1.00 
+     1452 xsar.xc_array_n.xsa_dac.xswdac_5.xi20.xn1.
+                                            nmos_b             1.00 
+     1453 xsar.xc_array_n.xsa_dac.xswdac_5.xi1.xp1.
+                                            pmos_b             1.00 
+     1454 xsar.xc_array_n.xsa_dac.xswdac_5.xi1.xn1.
+                                            nmos_b             1.00 
+     1455 xsar.xc_array_n.xsa_dac.xswdac_5.xi2.xn1.
+                                            nmos_b             1.00 
+     1456 xsar.xc_array_n.xsa_dac.xswdac_5.xi2.xi9.
+                                            nmos_b             1.00 
+     1457 xsar.xc_array_n.xsa_dac.xswdac_5.xi2.xp1.
+                                            pmos_b             1.00 
+     1458 xsar.xc_array_n.xsa_dac.xswdac_5.xi2.xi10.
+                                            pmos_b             1.00 
+     1459 xsar.xc_array_n.xsa_dac.xswdac_5.xi19.xn1.
+                                            nmos_b             1.00 
+     1460 xsar.xc_array_n.xsa_dac.xswdac_5.xi19.xi9.
+                                            nmos_b             1.00 
+     1461 xsar.xc_array_n.xsa_dac.xswdac_5.xi19.xp1.
+                                            pmos_b             1.00 
+     1462 xsar.xc_array_n.xsa_dac.xswdac_5.xi19.xi10.
+                                            pmos_b             1.00 
+     1463 xsar.xc_array_n.xsa_dac.xswdac_6.xi7.xp1.
+                                            pmos_b             1.00 
+     1464 xsar.xc_array_n.xsa_dac.xswdac_6.xi7.xn1.
+                                            nmos_b             1.00 
+     1465 xsar.xc_array_n.xsa_dac.xswdac_6.xi3.xp1.
+                                            pmos_b             1.00 
+     1466 xsar.xc_array_n.xsa_dac.xswdac_6.xi3.xn1.
+                                            nmos_b             1.00 
+     1467 xsar.xc_array_n.xsa_dac.xswdac_6.xi20.xp1.
+                                            pmos_b             1.00 
+     1468 xsar.xc_array_n.xsa_dac.xswdac_6.xi20.xn1.
+                                            nmos_b             1.00 
+     1469 xsar.xc_array_n.xsa_dac.xswdac_6.xi1.xp1.
+                                            pmos_b             1.00 
+     1470 xsar.xc_array_n.xsa_dac.xswdac_6.xi1.xn1.
+                                            nmos_b             1.00 
+     1471 xsar.xc_array_n.xsa_dac.xswdac_6.xi2.xn1.
+                                            nmos_b             1.00 
+     1472 xsar.xc_array_n.xsa_dac.xswdac_6.xi2.xi9.
+                                            nmos_b             1.00 
+     1473 xsar.xc_array_n.xsa_dac.xswdac_6.xi2.xp1.
+                                            pmos_b             1.00 
+     1474 xsar.xc_array_n.xsa_dac.xswdac_6.xi2.xi10.
+                                            pmos_b             1.00 
+     1475 xsar.xc_array_n.xsa_dac.xswdac_6.xi19.xn1.
+                                            nmos_b             1.00 
+     1476 xsar.xc_array_n.xsa_dac.xswdac_6.xi19.xi9.
+                                            nmos_b             1.00 
+     1477 xsar.xc_array_n.xsa_dac.xswdac_6.xi19.xp1.
+                                            pmos_b             1.00 
+     1478 xsar.xc_array_n.xsa_dac.xswdac_6.xi19.xi10.
+                                            pmos_b             1.00 
+     1479 xsar.xc_array_n.xsa_dac.xswdac_7.xi7.xp1.
+                                            pmos_b             1.00 
+     1480 xsar.xc_array_n.xsa_dac.xswdac_7.xi7.xn1.
+                                            nmos_b             1.00 
+     1481 xsar.xc_array_n.xsa_dac.xswdac_7.xi3.xp1.
+                                            pmos_b             1.00 
+     1482 xsar.xc_array_n.xsa_dac.xswdac_7.xi3.xn1.
+                                            nmos_b             1.00 
+     1483 xsar.xc_array_n.xsa_dac.xswdac_7.xi20.xp1.
+                                            pmos_b             1.00 
+     1484 xsar.xc_array_n.xsa_dac.xswdac_7.xi20.xn1.
+                                            nmos_b             1.00 
+     1485 xsar.xc_array_n.xsa_dac.xswdac_7.xi1.xp1.
+                                            pmos_b             1.00 
+     1486 xsar.xc_array_n.xsa_dac.xswdac_7.xi1.xn1.
+                                            nmos_b             1.00 
+     1487 xsar.xc_array_n.xsa_dac.xswdac_7.xi2.xn1.
+                                            nmos_b             1.00 
+     1488 xsar.xc_array_n.xsa_dac.xswdac_7.xi2.xi9.
+                                            nmos_b             1.00 
+     1489 xsar.xc_array_n.xsa_dac.xswdac_7.xi2.xp1.
+                                            pmos_b             1.00 
+     1490 xsar.xc_array_n.xsa_dac.xswdac_7.xi2.xi10.
+                                            pmos_b             1.00 
+     1491 xsar.xc_array_n.xsa_dac.xswdac_7.xi19.xn1.
+                                            nmos_b             1.00 
+     1492 xsar.xc_array_n.xsa_dac.xswdac_7.xi19.xi9.
+                                            nmos_b             1.00 
+     1493 xsar.xc_array_n.xsa_dac.xswdac_7.xi19.xp1.
+                                            pmos_b             1.00 
+     1494 xsar.xc_array_n.xsa_dac.xswdac_7.xi19.xi10.
+                                            pmos_b             1.00 
+     1495 xds.xquantizer_1b_0.xcmp3.xdff.xi13.xi2.
+                                            inv_bhv            1.00 
+     1496 xds.xquantizer_1b_0.xcmp3.xdff.xi13.xi1.
+                                            inv_bhv            1.00 
+     1497 xds.xquantizer_1b_0.xcmp3.xdff.xi13.xi29.
+                                            tgb                1.00 
+     1498 xds.xquantizer_1b_0.xcmp3.xdff.xi13.xsw1.
+                                            tgb                1.00 
+     1499 xds.xquantizer_1b_0.xcmp3.xdff.xi14.xi2.
+                                            inv_bhv            1.00 
+     1500 xds.xquantizer_1b_0.xcmp3.xdff.xi14.xi1.
+                                            inv_bhv            1.00 
+     1501 xds.xquantizer_1b_0.xcmp3.xdff.xi14.xi29.
+                                            tgb                1.00 
+     1502 xds.xquantizer_1b_0.xcmp3.xdff.xi14.xsw1.
+                                            tgb                1.00 
+     1503 xds.xquantizer_1b_1.xcmp3.xdff.xi13.xi2.
+                                            inv_bhv            1.00 
+     1504 xds.xquantizer_1b_1.xcmp3.xdff.xi13.xi1.
+                                            inv_bhv            1.00 
+     1505 xds.xquantizer_1b_1.xcmp3.xdff.xi13.xi29.
+                                            tgb                1.00 
+     1506 xds.xquantizer_1b_1.xcmp3.xdff.xi13.xsw1.
+                                            tgb                1.00 
+     1507 xds.xquantizer_1b_1.xcmp3.xdff.xi14.xi2.
+                                            inv_bhv            1.00 
+     1508 xds.xquantizer_1b_1.xcmp3.xdff.xi14.xi1.
+                                            inv_bhv            1.00 
+     1509 xds.xquantizer_1b_1.xcmp3.xdff.xi14.xi29.
+                                            tgb                1.00 
+     1510 xds.xquantizer_1b_1.xcmp3.xdff.xi14.xsw1.
+                                            tgb                1.00 
+     1511 xds.xquantizer_1b_2.xcmp3.xdff.xi13.xi2.
+                                            inv_bhv            1.00 
+     1512 xds.xquantizer_1b_2.xcmp3.xdff.xi13.xi1.
+                                            inv_bhv            1.00 
+     1513 xds.xquantizer_1b_2.xcmp3.xdff.xi13.xi29.
+                                            tgb                1.00 
+     1514 xds.xquantizer_1b_2.xcmp3.xdff.xi13.xsw1.
+                                            tgb                1.00 
+     1515 xds.xquantizer_1b_2.xcmp3.xdff.xi14.xi2.
+                                            inv_bhv            1.00 
+     1516 xds.xquantizer_1b_2.xcmp3.xdff.xi14.xi1.
+                                            inv_bhv            1.00 
+     1517 xds.xquantizer_1b_2.xcmp3.xdff.xi14.xi29.
+                                            tgb                1.00 
+     1518 xds.xquantizer_1b_2.xcmp3.xdff.xi14.xsw1.
+                                            tgb                1.00 
+     1519 xds.xquantizer_1b_3.xcmp3.xdff.xi13.xi2.
+                                            inv_bhv            1.00 
+     1520 xds.xquantizer_1b_3.xcmp3.xdff.xi13.xi1.
+                                            inv_bhv            1.00 
+     1521 xds.xquantizer_1b_3.xcmp3.xdff.xi13.xi29.
+                                            tgb                1.00 
+     1522 xds.xquantizer_1b_3.xcmp3.xdff.xi13.xsw1.
+                                            tgb                1.00 
+     1523 xds.xquantizer_1b_3.xcmp3.xdff.xi14.xi2.
+                                            inv_bhv            1.00 
+     1524 xds.xquantizer_1b_3.xcmp3.xdff.xi14.xi1.
+                                            inv_bhv            1.00 
+     1525 xds.xquantizer_1b_3.xcmp3.xdff.xi14.xi29.
+                                            tgb                1.00 
+     1526 xds.xquantizer_1b_3.xcmp3.xdff.xi14.xsw1.
+                                            tgb                1.00 
+     1527 xds.xquantizer_1b_0.xcmp3.xdff.xi13.xi2.xp1.
+                                            pmos_b             1.00 
+     1528 xds.xquantizer_1b_0.xcmp3.xdff.xi13.xi2.xn1.
+                                            nmos_b             1.00 
+     1529 xds.xquantizer_1b_0.xcmp3.xdff.xi13.xi1.xp1.
+                                            pmos_b             1.00 
+     1530 xds.xquantizer_1b_0.xcmp3.xdff.xi13.xi1.xn1.
+                                            nmos_b             1.00 
+     1531 xds.xquantizer_1b_0.xcmp3.xdff.xi14.xi2.xp1.
+                                            pmos_b             1.00 
+     1532 xds.xquantizer_1b_0.xcmp3.xdff.xi14.xi2.xn1.
+                                            nmos_b             1.00 
+     1533 xds.xquantizer_1b_0.xcmp3.xdff.xi14.xi1.xp1.
+                                            pmos_b             1.00 
+     1534 xds.xquantizer_1b_0.xcmp3.xdff.xi14.xi1.xn1.
+                                            nmos_b             1.00 
+     1535 xds.xquantizer_1b_1.xcmp3.xdff.xi13.xi2.xp1.
+                                            pmos_b             1.00 
+     1536 xds.xquantizer_1b_1.xcmp3.xdff.xi13.xi2.xn1.
+                                            nmos_b             1.00 
+     1537 xds.xquantizer_1b_1.xcmp3.xdff.xi13.xi1.xp1.
+                                            pmos_b             1.00 
+     1538 xds.xquantizer_1b_1.xcmp3.xdff.xi13.xi1.xn1.
+                                            nmos_b             1.00 
+     1539 xds.xquantizer_1b_1.xcmp3.xdff.xi14.xi2.xp1.
+                                            pmos_b             1.00 
+     1540 xds.xquantizer_1b_1.xcmp3.xdff.xi14.xi2.xn1.
+                                            nmos_b             1.00 
+     1541 xds.xquantizer_1b_1.xcmp3.xdff.xi14.xi1.xp1.
+                                            pmos_b             1.00 
+     1542 xds.xquantizer_1b_1.xcmp3.xdff.xi14.xi1.xn1.
+                                            nmos_b             1.00 
+     1543 xds.xquantizer_1b_2.xcmp3.xdff.xi13.xi2.xp1.
+                                            pmos_b             1.00 
+     1544 xds.xquantizer_1b_2.xcmp3.xdff.xi13.xi2.xn1.
+                                            nmos_b             1.00 
+     1545 xds.xquantizer_1b_2.xcmp3.xdff.xi13.xi1.xp1.
+                                            pmos_b             1.00 
+     1546 xds.xquantizer_1b_2.xcmp3.xdff.xi13.xi1.xn1.
+                                            nmos_b             1.00 
+     1547 xds.xquantizer_1b_2.xcmp3.xdff.xi14.xi2.xp1.
+                                            pmos_b             1.00 
+     1548 xds.xquantizer_1b_2.xcmp3.xdff.xi14.xi2.xn1.
+                                            nmos_b             1.00 
+     1549 xds.xquantizer_1b_2.xcmp3.xdff.xi14.xi1.xp1.
+                                            pmos_b             1.00 
+     1550 xds.xquantizer_1b_2.xcmp3.xdff.xi14.xi1.xn1.
+                                            nmos_b             1.00 
+     1551 xds.xquantizer_1b_3.xcmp3.xdff.xi13.xi2.xp1.
+                                            pmos_b             1.00 
+     1552 xds.xquantizer_1b_3.xcmp3.xdff.xi13.xi2.xn1.
+                                            nmos_b             1.00 
+     1553 xds.xquantizer_1b_3.xcmp3.xdff.xi13.xi1.xp1.
+                                            pmos_b             1.00 
+     1554 xds.xquantizer_1b_3.xcmp3.xdff.xi13.xi1.xn1.
+                                            nmos_b             1.00 
+     1555 xds.xquantizer_1b_3.xcmp3.xdff.xi14.xi2.xp1.
+                                            pmos_b             1.00 
+     1556 xds.xquantizer_1b_3.xcmp3.xdff.xi14.xi2.xn1.
+                                            nmos_b             1.00 
+     1557 xds.xquantizer_1b_3.xcmp3.xdff.xi14.xi1.xp1.
+                                            pmos_b             1.00 
+     1558 xds.xquantizer_1b_3.xcmp3.xdff.xi14.xi1.xn1.
+                                            nmos_b             1.00 
+  **info** (bhv2_v4_4.sp:66) DC voltage reset to initial transient source value in source 0:vclk_sar. new dc=0.0000D+00
+  **warning** (bhv2_v4_4.sp:113) Unable to find referenced node residualxg103_n; Output variable ignored. Specify a valid node.
+  
+  **warning** No connections on node iref_1; Node ignored.
+
+  **warning** the following singular supplies were terminated to 1 meg resistor 
+          supply       node1            node2
+(bhv2_v4_4.sp:53)vp1dna                  0:p1d_b            defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2_v4_4.sp:55)vp2na                   0:p2_b             defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2_v4_4.sp:57)vp2dna                  0:p2d_b            defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2_v4_4.sp:78)vrst_b                  0:rst_b            defined in subckt 0                     0:0                defined in subckt 0               
+(bhv2_v4_4.sp:80)vrst_m                  0:rst_matlab       defined in subckt 0                     0:0                defined in subckt 0               
+(../et710/ece627_bhv_ckt.cir:65)e1                    201:vcmi             defined in subckt fdopb                 0:0                defined in subckt 0               
+(../et710/ece627_bhv_ckt.cir:65)e1                    218:vcmi             defined in subckt fdopb                 0:0                defined in subckt 0               
+             
+ Warning:'No DC path nodes' occurs 2 times
+ No DC path from the following nodes,connected with gdcpath:
+ ---------------------------------------------------------------------------------
+ |Node                  |Subckt                                                  |
+ |----------------------+--------------------------------------------------------|
+ |xsar.xc_array_p.net038|sa_8bit_c_array_with_dac_monotonic_v4_unit_cap_two_stage|
+ |xsar.xc_array_n.net038|sa_8bit_c_array_with_dac_monotonic_v4_unit_cap_two_stage|
+ ---------------------------------------------------------------------------------
+              
+      
+
+Element variations(Local):   element              parameter
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+             
+ Summary of Linear Res Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e+00  ~  1e+03|195       |7.5087    |
+ |1e+03  ~  1e+05|15        |0.5776    |
+ |1e+05  ~  1e+06|14        |0.5391    |
+ |1e+08  ~  1e+09|9         |0.3466    |
+ |1e+09  ~  1e+10|4         |0.1540    |
+ |1e+11  ~  1e+12|2360      |90.8741   |
+ ---------------------------------------
+              
+             
+ Summary of Linear Cap Distribution Info
+ ---------------------------------------
+ |Range          |Total     |Percent(%)|
+ |---------------+----------+----------|
+ |1e-17  ~  1e-16|1180      |76.4744   |
+ |1e-16  ~  1e-15|6         |0.3889    |
+ |1e-15  ~  1e-14|211       |13.6747   |
+ |1e-14  ~  1e-13|146       |9.4621    |
+ ---------------------------------------
+              
+             
+ Summary of Detailed RC Type Statistics
+ -----------------------------
+ |Element Type    |Number    |
+ |----------------+----------|
+ |Constant Res    |2590      |
+ |Other Linear Res|7         |
+ |                |          |
+ |Constant Cap    |1543      |
+ -----------------------------
+              
+  Opening plot unit= 15
+ file=bhv2_v4_4.pa0
+
+ **info** dc convergence successful at Newton-Raphson method 
+ ******  
+ *behavior simulation
+
+ ****** operating point information tnom=  25.000 temp=  27.000 ******
+ ****** operating point status is voltage   simulation time is     0.     
+       node    =voltage         node    =voltage         node    =voltage
+
+ +   0:agnd    =   0.         0:avdd    =   1.8000     0:clk_sar =   0.     
+ +   0:d_0     =  18.0000f    0:d_1     =  18.0000f    0:d_2     =  18.0000f
+ +   0:d_3     =  18.0000f    0:d_4     =  18.0000f    0:d_5     =  18.0000f
+ +   0:d_6     =  18.0000f    0:d_7     =   1.8000     0:dgnd    =   0.     
+ +   0:dsout_0 =   1.8000     0:dsout_1 =   1.8000     0:dsout_2 =   1.8000 
+ +   0:dsout_3 =   1.8000     0:dvdd    =   1.8000     0:inn     = 900.0000m
+ +   0:inp     = 900.0000m    0:iref_1  =   0.         0:iref_2  =   0.     
+ +   0:iref_cmp=   0.         0:iref_cmp=   0.         0:iref_cmp=   0.     
+ +   0:iref_cmp=   0.         0:out_int2= 900.0000m    0:out_int2= 900.0000m
+ +   0:p1      =   0.         0:p1_b    =   1.8000     0:p1d     =   0.     
+ +   0:p1d_b   =   1.8000     0:p2      =   0.         0:p2_b    =   1.8000 
+ +   0:p2d     =   0.         0:p2d_b   =   1.8000     0:pdn     =   0.     
+ +   0:psamp   =   0.         0:rst     =   0.         0:rst_b   =   1.8000 
+ +   0:rst_matl=   0.         0:sa_0    =   1.8000     0:sa_1    =   1.8000 
+ +   0:sa_2    =   1.8000     0:sa_3    =   1.8000     0:sa_4    =   1.8000 
+ +   0:sa_5    =   1.8000     0:sa_6    =   1.8000     0:sa_7    =   1.8000 
+ +   0:sa_b_0  =  36.0000f    0:sa_b_1  =  36.0000f    0:sa_b_2  =  36.0000f
+ +   0:sa_b_3  =  36.0000f    0:sa_b_4  =  36.0000f    0:sa_b_5  =  36.0000f
+ +   0:sa_b_6  =  36.0000f    0:sa_b_7  =  18.0000f    0:vcm     = 900.0000m
+ +   0:vcm1    = 900.0000m    0:vrefn   =   0.         0:vrefp   =   1.8000 
+ +   1:clk_b   =   1.8000     1:cmp_inn = 899.1009u    1:cmp_inp = 899.1009u
+ +   1:cmp_out =   0.         1:db_0    =   1.8000     1:db_1    =   1.8000 
+ +   1:db_2    =   1.8000     1:db_3    =   1.8000     1:db_4    =   1.8000 
+ +   1:db_5    =   1.8000     1:db_6    =   1.8000     1:db_7    =  18.0000f
+ +   1:n_sw_0  = 901.4046m    1:n_sw_1  = 900.6776m    1:n_sw_2  = 900.6776m
+ +   1:n_sw_3  = 900.6776m    1:n_sw_4  = 900.6776m    1:n_sw_5  = 900.6776m
+ +   1:n_sw_6  = 901.1285m    1:n_sw_7  =   1.8000     1:n_sw_b_0= 899.2687m
+ +   1:n_sw_b_1= 899.6730m    1:n_sw_b_2= 899.6730m    1:n_sw_b_3= 899.6730m
+ +   1:n_sw_b_4= 899.6730m    1:n_sw_b_5= 899.6730m    1:n_sw_b_6= 899.6723m
+ +   1:n_sw_b_7=  18.0000f    1:net23   =   1.8000     1:pdac    =  18.0000f
+ +   1:psamp_b =   1.8000     2:out_int1= 900.0000m    2:out_int1= 900.0000m
+ +   2:pvrefn_0=  18.0000f    2:pvrefn_1=  18.0000f    2:pvrefn_2=  18.0000f
+ +   2:pvrefn_3=  18.0000f    2:pvrefn_b=   1.8000     2:pvrefn_b=   1.8000 
+ +   2:pvrefn_b=   1.8000     2:pvrefn_b=   1.8000     2:pvrefp_0=  18.0000f
+ +   2:pvrefp_1=  18.0000f    2:pvrefp_2=  18.0000f    2:pvrefp_3=  18.0000f
+ +   2:pvrefp_b=   1.8000     2:pvrefp_b=   1.8000     2:pvrefp_b=   1.8000 
+ +   2:pvrefp_b=   1.8000     2:vthp_0  = 224.9999m    2:vthp_1  = 674.9998m
+ +   2:vthp_2  =   1.1250     2:vthp_3  =   1.5750     3:dac_0   =   1.8000 
+ +   3:dac_1   =   1.8000     3:dac_2   =   1.8000     3:dac_3   =   1.8000 
+ +   3:dac_4   =   1.8000     3:dac_5   =   1.8000     3:dac_6   =   1.8000 
+ +   3:dac_7   =  36.0000f    3:net023  = 898.2031n    3:net038  =   0.     
+ +   3:net30   = 899.1013u    4:dac_0   = 905.5864m    4:dac_1   = 902.2681m
+ +   4:dac_2   = 902.2681m    4:dac_3   = 902.2681m    4:dac_4   = 902.2681m
+ +   4:dac_5   = 902.2681m    4:dac_6   = 903.5969m    4:dac_7   =   1.8000 
+ +   4:net023  = 898.2031n    4:net038  =   0.         4:net30   = 899.1013u
+ +   5:vout1   =   0.         6:net383  =   1.8000     6:q0      = 900.0316m
+ +   6:q1      = 899.8071m    6:q2      = 899.8071m    6:q3      = 899.8071m
+ +   6:q4      = 899.8071m    6:q5      = 899.8071m    6:q6      = 899.8074m
+ +   6:q7      =  28.7923f    6:qb0     = 898.5956m    6:qb1     = 898.9996m
+ +   6:qb2     = 898.9996m    6:qb3     = 898.9996m    6:qb4     = 898.9996m
+ +   6:qb5     = 898.9996m    6:qb6     = 898.9989m    6:qb7     =   1.8000 
+ +   7:clkb    =   1.8000     7:dff1    =   1.8000     7:dff2    =  18.0000f
+ +   7:dff3    =  18.0000f    7:net41   =   1.8000     7:net54   =   1.8000 
+ +   7:net69   =  18.0000f    8:clkb    =   1.8000     8:dff1    =  18.0000f
+ +   8:dff2    =   1.8000     8:dff3    =  54.0000f    8:net41   =  18.0000f
+ +   8:net54   =   1.8000     8:net69   =   1.8000     9:clkb    =   1.8000 
+ +   9:dff1    =  18.0000f    9:dff2    =   1.8000     9:dff3    =  54.0000f
+ +   9:net41   =  18.0000f    9:net54   =   1.8000     9:net69   =   1.8000 
+ +  10:clkb    =   1.8000    10:dff1    =  18.0000f   10:dff2    =   1.8000 
+ +  10:dff3    =  54.0000f   10:net41   =  18.0000f   10:net54   =   1.8000 
+ +  10:net69   =   1.8000    11:clkb    =   1.8000    11:dff1    =  18.0000f
+ +  11:dff2    =   1.8000    11:dff3    =  54.0000f   11:net41   =  18.0000f
+ +  11:net54   =   1.8000    11:net69   =   1.8000    12:clkb    =   1.8000 
+ +  12:dff1    =  18.0000f   12:dff2    =   1.8000    12:dff3    =  54.0000f
+ +  12:net41   =  18.0000f   12:net54   =   1.8000    12:net69   =   1.8000 
+ +  13:clkb    =   1.8000    13:dff1    =  18.0000f   13:dff2    =   1.8000 
+ +  13:dff3    =  54.0000f   13:net41   =  18.0000f   13:net54   =   1.8000 
+ +  13:net69   =   1.8000    14:clkb    =   1.8000    14:dff1    =  18.0000f
+ +  14:dff2    =   1.8000    14:dff3    =  54.0000f   14:net41   =  18.0000f
+ +  14:net54   =   1.8000    14:net69   =   1.8000    15:net8    =  18.0000f
+ +  16:net23   =   1.8000    17:net23   =  18.0000f   18:net23   =   1.8000 
+ +  19:cinn    = 449.5954u   19:cinp    = 449.5954u   19:dacn_0  = 899.1009u
+ +  19:dacn_1  = 899.1009u   19:dacn_2  = 899.1009u   19:dacn_3  = 899.1009u
+ +  19:dacp_0  = 899.1009u   19:dacp_1  = 899.1009u   19:dacp_2  = 899.1009u
+ +  19:dacp_3  = 899.1009u   19:opin    =  89.9551u   19:opip    =  89.9551u
+ +  19:sar_cinn=  89.8652n   19:sar_cinn=  89.8652n   19:sar_cinn=  89.8652n
+ +  19:sar_cinn=  89.8652n   19:sar_cinn=  89.8652n   19:sar_cinn=  89.8652n
+ +  19:sar_cinn=  89.8652n   19:sar_cinn=  89.8652n   19:sar_cinp=  89.8652n
+ +  19:sar_cinp=  89.8652n   19:sar_cinp=  89.8652n   19:sar_cinp=  89.8652n
+ +  19:sar_cinp=  89.8652n   19:sar_cinp=  89.8652n   19:sar_cinp=  89.8652n
+ +  19:sar_cinp=  89.8652n   19:sar_dacn=  35.9640a   19:sar_dacn=  35.9640a
+ +  19:sar_dacn=  35.9640a   19:sar_dacn=  35.9640a   19:sar_dacn=  35.9640a
+ +  19:sar_dacn=  35.9640a   19:sar_dacn=  35.9640a   19:sar_dacn=  17.9820a
+ +  19:sar_dacp=   1.7982m   19:sar_dacp=   1.7982m   19:sar_dacp=   1.7982m
+ +  19:sar_dacp=   1.7982m   19:sar_dacp=   1.7982m   19:sar_dacp=   1.7982m
+ +  19:sar_dacp=   1.7982m   19:sar_dacp=   1.7982m   20:cinn    = 449.7751u
+ +  20:cinp    = 449.7751u   20:dacn    = 899.1009u   20:dacp    = 899.1009u
+ +  20:opin    = 449.7751u   20:opip    = 449.7751u   21:amp_n   = 900.0000m
+ +  21:amp_p   = 900.0000m   21:d_b     =  18.0000f   21:net0107 = 899.1009u
+ +  21:net0137 = 899.1009u   21:net0155 = 561.9380u   21:net0161 =   1.2363m
+ +  21:net082  = 899.1009u   21:net088  = 899.1009u   21:opin    = 899.1009u
+ +  21:opip    = 899.1009u   22:amp_n   = 900.0000m   22:amp_p   = 900.0000m
+ +  22:d_b     =  18.0000f   22:net0107 = 899.1009u   22:net0137 = 899.1009u
+ +  22:net0155 = 786.7132u   22:net0161 =   1.0115m   22:net082  = 899.1009u
+ +  22:net088  = 899.1009u   22:opin    = 899.1009u   22:opip    = 899.1009u
+ +  23:amp_n   = 900.0000m   23:amp_p   = 900.0000m   23:d_b     =  18.0000f
+ +  23:net0107 = 899.1009u   23:net0137 = 899.1009u   23:net0155 =   1.0115m
+ +  23:net0161 = 786.7132u   23:net082  = 899.1009u   23:net088  = 899.1009u
+ +  23:opin    = 899.1009u   23:opip    = 899.1009u   24:amp_n   = 900.0000m
+ +  24:amp_p   = 900.0000m   24:d_b     =  18.0000f   24:net0107 = 899.1009u
+ +  24:net0137 = 899.1009u   24:net0155 =   1.2363m   24:net0161 = 561.9380u
+ +  24:net082  = 899.1009u   24:net088  = 899.1009u   24:opin    = 899.1009u
+ +  24:opip    = 899.1009u   26:d_b     =  18.0000f   26:net43   =   1.8000 
+ +  26:net48   =   1.8000    27:d_b     =  18.0000f   27:net43   =   1.8000 
+ +  27:net48   =   1.8000    28:d_b     =  18.0000f   28:net43   =   1.8000 
+ +  28:net48   =   1.8000    29:d_b     =  18.0000f   29:net43   =   1.8000 
+ +  29:net48   =   1.8000    30:pdac_b  =   1.8000    32:pdac_b  =   1.8000 
+ +  34:net23   =   1.8000    35:net16   =  36.0000f   36:net16   =   1.8000 
+ +  37:net16   =   1.8000    38:net16   =   1.8000    39:net16   =   1.8000 
+ +  40:net16   =   1.8000    41:net16   =   1.8000    42:net16   =   1.8000 
+ +  43:net8    = 900.6775m   44:net8    =   1.8000    45:net8    =  17.9955n
+ +  46:net8    = 900.6775m   47:net8    = 900.6775m   48:net8    = 900.6775m
+ +  49:net8    = 900.6775m   50:net8    = 901.4046m   51:clkb    = 901.3522m
+ +  51:dff1    =   1.7991    51:dff2    =  18.1822f   51:dff3    =  18.0818f
+ +  51:net41   =   1.8000    51:net54   =   1.8000    51:net69   =  18.1822f
+ +  52:clkb    = 901.3522m   52:dff1    =   1.7991    52:dff2    =  18.1822f
+ +  52:dff3    =  18.0818f   52:net41   =   1.8000    52:net54   =   1.8000 
+ +  52:net69   =  18.1822f   53:clkb    = 901.3522m   53:dff1    =   1.7991 
+ +  53:dff2    =  18.1822f   53:dff3    =  18.0818f   53:net41   =   1.8000 
+ +  53:net54   =   1.8000    53:net69   =  18.1822f   54:clkb    = 902.0797m
+ +  54:dff1    =   1.7991    54:dff2    =  18.1821f   54:dff3    =  18.0817f
+ +  54:net41   =   1.8000    54:net54   =   1.8000    54:net69   =  18.1821f
+ +  55:clkb    = 901.3522m   55:dff1    =   1.7991    55:dff2    =  18.1822f
+ +  55:dff3    =  18.0818f   55:net41   =   1.8000    55:net54   =   1.8000 
+ +  55:net69   =  18.1822f   56:clkb    =  18.0000f   56:dff1    = 899.3583m
+ +  56:dff2    = 899.3582m   56:dff3    = 899.3582m   56:net41   = 899.3583m
+ +  56:net54   = 900.0316m   56:net69   = 899.3582m   57:clkb    =  18.0000f
+ +  57:dff1    = 899.3583m   57:dff2    = 899.3582m   57:dff3    = 899.3582m
+ +  57:net41   = 899.3583m   57:net54   = 899.8071m   57:net69   = 899.3582m
+ +  58:clkb    =  18.0000f   58:dff1    = 899.3583m   58:dff2    = 899.3582m
+ +  58:dff3    = 899.3582m   58:net41   = 899.3583m   58:net54   = 899.8071m
+ +  58:net69   = 899.3582m   59:clkb    =  18.0000f   59:dff1    = 899.3583m
+ +  59:dff2    = 899.3582m   59:dff3    = 899.3582m   59:net41   = 899.3583m
+ +  59:net54   = 899.8071m   59:net69   = 899.3582m   60:clkb    =  18.0000f
+ +  60:dff1    = 899.3583m   60:dff2    = 899.3582m   60:dff3    = 899.3582m
+ +  60:net41   = 899.3583m   60:net54   = 899.8071m   60:net69   = 899.3582m
+ +  61:clkb    =  18.0000f   61:dff1    =  54.0000f   61:dff2    =   1.8000 
+ +  61:dff3    =   1.8000    61:net41   =  36.0000f   61:net54   =  18.0000f
+ +  61:net69   =   1.8000    62:clkb    =  18.0000f   62:dff1    = 899.3583m
+ +  62:dff2    = 899.3582m   62:dff3    = 899.3582m   62:net41   = 899.3583m
+ +  62:net54   = 899.8071m   62:net69   = 899.3582m   63:clkb    = 901.3533m
+ +  63:dff1    =   1.7991    63:dff2    =  18.1822f   63:dff3    =  18.0818f
+ +  63:net41   =   1.8000    63:net54   =   1.8000    63:net69   =  18.1822f
+ +  64:clkb    = 901.3522m   64:dff1    =   1.7991    64:dff2    =  18.1822f
+ +  64:dff3    =  18.0818f   64:net41   =   1.8000    64:net54   =   1.8000 
+ +  64:net69   =  18.1822f   65:clkb    =  18.0000f   65:dff1    = 899.3584m
+ +  65:dff2    = 899.3581m   65:dff3    = 899.3581m   65:net41   = 899.3584m
+ +  65:net54   = 899.8074m   65:net69   = 899.3581m   66:clkb    =  18.0000f
+ +  66:dff1    =  18.0000f   66:dff2    =   1.8000    66:dff3    =   1.8000 
+ +  66:net41   =  18.0000f   66:net54   =  26.9936f   66:net69   =   1.8000 
+ +  67:net23   =   1.8000    72:net16   =   1.8000    73:net16   =  36.0000f
+ +  74:net16   =  36.0000f   75:net16   =   1.8000    76:net23   =   1.8000 
+ +  81:net16   =  36.0000f   82:net16   =  54.0000f   83:net16   =   1.8000 
+ +  84:net16   =   1.8000    85:net23   =   1.8000    90:net16   =  36.0000f
+ +  91:net16   =  54.0000f   92:net16   =   1.8000    93:net16   =   1.8000 
+ +  94:net23   =   1.8000    99:net16   =  36.0000f  100:net16   =  54.0000f
+ + 101:net16   =   1.8000   102:net16   =   1.8000   103:net23   =   1.8000 
+ + 108:net16   =  36.0000f  109:net16   =  54.0000f  110:net16   =   1.8000 
+ + 111:net16   =   1.8000   112:net23   =   1.8000   117:net16   =  36.0000f
+ + 118:net16   =  54.0000f  119:net16   =   1.8000   120:net16   =   1.8000 
+ + 121:net23   =   1.8000   126:net16   =  36.0000f  127:net16   =  54.0000f
+ + 128:net16   =   1.8000   129:net16   =   1.8000   130:net23   =   1.8000 
+ + 135:net16   =  36.0000f  136:net16   =  54.0000f  137:net16   =   1.8000 
+ + 138:net16   =   1.8000   201:vcmi    = 900.0000m  218:vcmi    = 900.0000m
+ + 219:on1     =   0.       219:op1     =   0.       219:vcm1    = 900.0000m
+ + 220:net22   = 1.800e-27  221:net23   =   1.8000   236:on1     =   0.     
+ + 236:op1     =   0.       236:vcm1    = 900.0000m  237:net22   = 1.800e-27
+ + 238:net23   =   1.8000   253:on1     =   0.       253:op1     =   0.     
+ + 253:vcm1    = 900.0000m  254:net22   = 1.800e-27  255:net23   =   1.8000 
+ + 270:on1     =   0.       270:op1     =   0.       270:vcm1    = 900.0000m
+ + 271:net22   = 1.800e-27  272:net23   =   1.8000   287:net23   =   1.8000 
+ + 288:net23   =  18.0000f  289:net23   =  18.0000f  290:net23   =  18.0000f
+ + 291:net23   =   1.8000   292:net8    = 899.1009u  293:net8    =   1.8000 
+ + 294:net23   =   1.8000   295:net23   =  18.0000f  296:net23   =  18.0000f
+ + 297:net23   =  18.0000f  298:net23   =   1.8000   299:net8    = 899.1009u
+ + 300:net8    =   1.8000   301:net23   =   1.8000   302:net23   =  18.0000f
+ + 303:net23   =  18.0000f  304:net23   =  18.0000f  305:net23   =   1.8000 
+ + 306:net8    = 899.1009u  307:net8    =   1.8000   308:net23   =   1.8000 
+ + 309:net23   =  18.0000f  310:net23   =  18.0000f  311:net23   =  18.0000f
+ + 312:net23   =   1.8000   313:net8    = 899.1009u  314:net8    =   1.8000 
+ + 315:net049  =   1.8000   315:net054  =  72.0000f  315:pvrefn  =  18.0000f
+ + 315:pvrefn_b=   1.8000   315:pvrefp  =   1.8000   315:pvrefp_b=  18.0000f
+ + 316:net049  =   1.8000   316:net054  =  72.0000f  316:pvrefn  =  18.0000f
+ + 316:pvrefn_b=   1.8000   316:pvrefp  =   1.8000   316:pvrefp_b=  18.0000f
+ + 317:net049  =   1.8000   317:net054  =  72.0000f  317:pvrefn  =  18.0000f
+ + 317:pvrefn_b=   1.8000   317:pvrefp  =   1.8000   317:pvrefp_b=  18.0000f
+ + 318:net049  =   1.8000   318:net054  =  72.0000f  318:pvrefn  =  18.0000f
+ + 318:pvrefn_b=   1.8000   318:pvrefp  =   1.8000   318:pvrefp_b=  18.0000f
+ + 319:net049  =   1.8000   319:net054  =  72.0000f  319:pvrefn  =  18.0000f
+ + 319:pvrefn_b=   1.8000   319:pvrefp  =   1.8000   319:pvrefp_b=  18.0000f
+ + 320:net049  =   1.8000   320:net054  =  72.0000f  320:pvrefn  =  18.0000f
+ + 320:pvrefn_b=   1.8000   320:pvrefp  =   1.8000   320:pvrefp_b=  18.0000f
+ + 321:net049  =   1.8000   321:net054  =  72.0000f  321:pvrefn  =  18.0000f
+ + 321:pvrefn_b=   1.8000   321:pvrefp  =   1.8000   321:pvrefp_b=  18.0000f
+ + 322:net049  =  72.0000f  322:net054  =   1.8000   322:pvrefn  =   1.8000 
+ + 322:pvrefn_b=  18.0000f  322:pvrefp  =  18.0000f  322:pvrefp_b=   1.8000 
+ + 323:net23   =   1.8000   326:net049  = 900.6428m  326:net054  = 896.7972m
+ + 326:pvrefn  = 898.3928m  326:pvrefn_b= 902.4449m  326:pvrefp  = 905.3184m
+ + 326:pvrefp_b= 889.9727m  327:net049  = 899.9149m  327:net054  = 898.1062m
+ + 327:pvrefn  = 899.7037m  327:pvrefn_b= 900.0840m  327:pvrefp  = 902.9611m
+ + 327:pvrefp_b= 894.2179m  328:net049  = 899.9149m  328:net054  = 898.1062m
+ + 328:pvrefn  = 899.7037m  328:pvrefn_b= 900.0840m  328:pvrefp  = 902.9611m
+ + 328:pvrefp_b= 894.2179m  329:net049  = 899.9149m  329:net054  = 898.1062m
+ + 329:pvrefn  = 899.7037m  329:pvrefn_b= 900.0840m  329:pvrefp  = 902.9611m
+ + 329:pvrefp_b= 894.2179m  330:net049  = 899.9149m  330:net054  = 898.1062m
+ + 330:pvrefn  = 899.7037m  330:pvrefn_b= 900.0841m  330:pvrefp  = 902.9611m
+ + 330:pvrefp_b= 894.2179m  331:net049  = 899.9149m  331:net054  = 898.1062m
+ + 331:pvrefn  = 899.7037m  331:pvrefn_b= 900.0841m  331:pvrefp  = 902.9611m
+ + 331:pvrefp_b= 894.2179m  332:net049  = 899.9160m  332:net054  = 897.2943m
+ + 332:pvrefn  = 899.7016m  332:pvrefn_b= 900.0877m  332:pvrefp  = 904.4231m
+ + 332:pvrefp_b= 891.5848m  333:net049  =   1.8000   333:net054  =  72.0000f
+ + 333:pvrefn  =  18.0000f  333:pvrefn_b=   1.8000   333:pvrefp  =   1.8000 
+ + 333:pvrefp_b=  18.0000f  334:net23   =   1.8000   403:net23   = 901.3522m
+ + 408:net16   =   1.8000   409:net16   =  36.0000f  410:net16   =  36.2004f
+ + 411:net16   =   1.8000   412:net23   = 901.3522m  417:net16   =   1.8000 
+ + 418:net16   =  36.0000f  419:net16   =  36.2004f  420:net16   =   1.8000 
+ + 421:net23   = 901.3522m  426:net16   =   1.8000   427:net16   =  36.0000f
+ + 428:net16   =  36.2004f  429:net16   =   1.8000   430:net23   = 902.0797m
+ + 435:net16   =   1.8000   436:net16   =  36.0000f  437:net16   =  36.2003f
+ + 438:net16   =   1.8000   439:net23   = 901.3522m  444:net16   =   1.8000 
+ + 445:net16   =  36.0000f  446:net16   =  36.2004f  447:net16   =   1.8000 
+ + 448:net23   =  18.0000f  453:net16   = 899.3583m  454:net16   = 898.5956m
+ + 455:net16   = 899.3583m  456:net16   = 900.0316m  457:net23   =  18.0000f
+ + 462:net16   = 899.3583m  463:net16   = 898.9996m  464:net16   = 899.3583m
+ + 465:net16   = 899.8071m  466:net23   =  18.0000f  471:net16   = 899.3583m
+ + 472:net16   = 898.9996m  473:net16   = 899.3583m  474:net16   = 899.8071m
+ + 475:net23   =  18.0000f  480:net16   = 899.3583m  481:net16   = 898.9996m
+ + 482:net16   = 899.3583m  483:net16   = 899.8071m  484:net23   =  18.0000f
+ + 489:net16   = 899.3583m  490:net16   = 898.9996m  491:net16   = 899.3583m
+ + 492:net16   = 899.8071m  493:net23   =  18.0000f  498:net16   =  54.0000f
+ + 499:net16   =   1.8000   500:net16   =   1.8000   501:net16   =  36.0000f
+ + 502:net23   =  18.0000f  507:net16   = 899.3583m  508:net16   = 898.9996m
+ + 509:net16   = 899.3583m  510:net16   = 899.8071m  511:net23   = 901.3533m
+ + 516:net16   =   1.8000   517:net16   =  36.0000f  518:net16   =  36.2004f
+ + 519:net16   =   1.8000   520:net23   = 901.3522m  525:net16   =   1.8000 
+ + 526:net16   =  36.0000f  527:net16   =  36.2004f  528:net16   =   1.8000 
+ + 529:net23   =  18.0000f  534:net16   = 899.3584m  535:net16   = 898.9989m
+ + 536:net16   = 899.3581m  537:net16   = 899.8074m  538:net23   =  18.0000f
+ + 543:net16   =  36.0000f  544:net16   =   1.8000   545:net16   =   1.8000 
+ + 546:net16   =  44.9936f  707:net275  =  18.0000f  708:vout1   =   0.     
+ + 711:net275  =  18.0000f  712:vout1   =   0.       715:net275  =  18.0000f
+ + 716:vout1   =   0.       719:net275  =  18.0000f  720:vout1   =   0.     
+ + 795:net23   =   1.8000   796:net23   =  18.0000f  797:net23   =   1.8000 
+ + 798:net23   =  18.0000f  799:net8    =  18.0000f  800:net8    =  36.0000f
+ + 804:net23   =   1.8000   805:net23   =  18.0000f  806:net23   =   1.8000 
+ + 807:net23   =  18.0000f  808:net8    =  18.0000f  809:net8    =  36.0000f
+ + 813:net23   =   1.8000   814:net23   =  18.0000f  815:net23   =   1.8000 
+ + 816:net23   =  18.0000f  817:net8    =  18.0000f  818:net8    =  36.0000f
+ + 822:net23   =   1.8000   823:net23   =  18.0000f  824:net23   =   1.8000 
+ + 825:net23   =  18.0000f  826:net8    =  18.0000f  827:net8    =  36.0000f
+ + 831:net23   =   1.8000   832:net23   =  18.0000f  833:net23   =   1.8000 
+ + 834:net23   =  18.0000f  835:net8    =  18.0000f  836:net8    =  36.0000f
+ + 840:net23   =   1.8000   841:net23   =  18.0000f  842:net23   =   1.8000 
+ + 843:net23   =  18.0000f  844:net8    =  18.0000f  845:net8    =  36.0000f
+ + 849:net23   =   1.8000   850:net23   =  18.0000f  851:net23   =   1.8000 
+ + 852:net23   =  18.0000f  853:net8    =  18.0000f  854:net8    =  36.0000f
+ + 858:net23   =  18.0000f  859:net23   =   1.8000   860:net23   =  18.0000f
+ + 861:net23   =   1.8000   862:net8    =  36.0000f  863:net8    =  18.0000f
+ + 869:net23   = 902.4449m  870:net23   = 889.9727m  871:net23   = 905.3184m
+ + 872:net23   = 898.3928m  873:net8    =  17.9955n  874:net8    =  17.9955n
+ + 878:net23   = 900.0840m  879:net23   = 894.2179m  880:net23   = 902.9611m
+ + 881:net23   = 899.7037m  882:net8    =  17.9955n  883:net8    =  17.9955n
+ + 887:net23   = 900.0840m  888:net23   = 894.2179m  889:net23   = 902.9611m
+ + 890:net23   = 899.7037m  891:net8    =  17.9955n  892:net8    =  17.9955n
+ + 896:net23   = 900.0840m  897:net23   = 894.2179m  898:net23   = 902.9611m
+ + 899:net23   = 899.7037m  900:net8    =  17.9955n  901:net8    =  17.9955n
+ + 905:net23   = 900.0841m  906:net23   = 894.2179m  907:net23   = 902.9611m
+ + 908:net23   = 899.7037m  909:net8    =  17.9955n  910:net8    =  17.9955n
+ + 914:net23   = 900.0841m  915:net23   = 894.2179m  916:net23   = 902.9611m
+ + 917:net23   = 899.7037m  918:net8    =  17.9955n  919:net8    =  17.9955n
+ + 923:net23   = 900.0877m  924:net23   = 891.5848m  925:net23   = 904.4231m
+ + 926:net23   = 899.7016m  927:net8    =  17.9955n  928:net8    =  17.9955n
+ + 932:net23   =   1.8000   933:net23   =  18.0000f  934:net23   =   1.8000 
+ + 935:net23   =  18.0000f  936:net8    =  18.0000f  937:net8    =  36.0000f
+ +1231:net017  =   1.8000  1231:net22   =  18.0000f 1231:net8    =   1.8000 
+ +1232:net017  =   1.8000  1232:net22   =  18.0000f 1232:net8    =   1.8000 
+ +1233:net017  =   1.8000  1233:net22   =  18.0000f 1233:net8    =   1.8000 
+ +1234:net017  =   1.8000  1234:net22   =  18.0000f 1234:net8    =   1.8000 
+ +1235:net017  =   1.8000  1235:net22   =  18.0000f 1235:net8    =   1.8000 
+ +1236:net017  =   1.8000  1236:net22   =  18.0000f 1236:net8    =   1.8000 
+ +1237:net017  =   1.8000  1237:net22   =  18.0000f 1237:net8    =   1.8000 
+ +1238:net017  =   1.8000  1238:net22   =  18.0000f 1238:net8    =   1.8000 
+ +1495:net23   =  18.0000f 1496:net23   =   1.8000  1499:net23   =  18.0000f
+ +1500:net23   =   1.8000  1503:net23   =  18.0000f 1504:net23   =   1.8000 
+ +1507:net23   =  18.0000f 1508:net23   =   1.8000  1511:net23   =  18.0000f
+ +1512:net23   =   1.8000  1515:net23   =  18.0000f 1516:net23   =   1.8000 
+ +1519:net23   =  18.0000f 1520:net23   =   1.8000  1523:net23   =  18.0000f
+ +1524:net23   =   1.8000 
+
+
+          ***** job concluded
+ ******  
+ *behavior simulation
+
+ ****** job statistics summary tnom=  25.000 temp=  27.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Core(TM) i7-7820X CPU @ 3.60GHz
+ cpu MHz	: 1200.146
+  
+ OS:
+ Linux version 3.10.0-957.21.3.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Tue Jun 18 16:35:19 UTC 2019
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    16
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =     863 # elements   =    5374
+  # resistors   =    2597 # capacitors =    1543 # inductors   =       0
+  # mutual_inds =       0 # vccs       =    1188 # vcvs        =      24
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =      22
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.01           1          23
+  transient       3033.49        1603     9958496     3406203 rev=    188088
+  readin             0.02
+  errchk             0.03
+  setup              0.01
+  output             0.00
+
+
+           peak memory used        327.01 megabytes
+           total cpu time         3033.56 seconds
+           total elapsed time     3053.29 seconds
+           job started at     14:35:29 09/24/2019
+           job ended   at     15:26:22 09/24/2019
+
+
+
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        5.80(s)
