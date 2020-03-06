@@ -1,0 +1,18 @@
+* "simulator" "HSPICE" 
+* "version" "O-2018.09 linux64"
+* "format" "HSP"
+* "rundate" "14:05:00 03/06/2020 "
+* "netlist" "OPAMP_1stage.sp "
+* "runtitle" "** generated for: hspiced"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ agnd = 0.000e+00       
++ avdd =-1.475e-37       
++ b1 = 9.000e-01       
++ b2 = 9.000e-01       
++ out =-1.475e-37       
+***   END: Saved Operating Point ***                     

@@ -1,0 +1,40 @@
+header
+"PSFversion" "1.00"
+"simulator" "HSPICE"
+"version" "O-2018.09 linux64"
+"rundate" "14:05:00 03/06/2020 "
+"runtitle" "** generated for: hspiced                                         "
+"runtype" "logFile"
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING * )
+VALUE
+"opBegin" "analysisInst" ( 
+"Operating Point"
+"OPAMP_1stage.op0"
+"PSF"
+""
+()
+"Operating Point"
+)
+"frequencySweep" "analysisInst" ( 
+"AC Analysis"
+"OPAMP_1stage.ac0"
+"PSF"
+""
+()
+"AC Analysis"
+)
+"summary" "analysisInst" ( 
+"Summary Information"
+"OPAMP_1stage.su0"
+"PSF"
+""
+()
+"Summary Information"
+)
